@@ -24,7 +24,7 @@
 <meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. 快速开始C">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-05-31T07:41:01.492Z">
-<meta property="article:modified_time" content="2024-07-10T14:19:48.959Z">
+<meta property="article:modified_time" content="2024-07-10T14:32:01.136Z">
 <meta property="article:author" content="张同学">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -221,7 +221,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          158 字
+          189 字
         
       </span>
     
@@ -297,11 +297,20 @@
 <h3 id="Hexo三连"><a href="#Hexo三连" class="headerlink" title="Hexo三连"></a>Hexo三连</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo c &amp;&amp; hexo g &amp;&amp; hexo d<br></code></pre></td></tr></table></figure>
 
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-<h2 id="Hexo遇到的问题"><a href="#Hexo遇到的问题" class="headerlink" title="Hexo遇到的问题"></a>Hexo遇到的问题</h2><h3 id="部署到GitHub后不能显示主题，只有文字"><a href="#部署到GitHub后不能显示主题，只有文字" class="headerlink" title="部署到GitHub后不能显示主题，只有文字"></a>部署到GitHub后不能显示主题，只有文字</h3><p><strong>原因：</strong> </p>
+<h2 id="Hexo遇到的问题"><a href="#Hexo遇到的问题" class="headerlink" title="Hexo遇到的问题"></a>Hexo遇到的问题</h2><h3 id="1、部署到GitHub后不能显示主题，只有文字"><a href="#1、部署到GitHub后不能显示主题，只有文字" class="headerlink" title="1、部署到GitHub后不能显示主题，只有文字"></a>1、部署到GitHub后不能显示主题，只有文字</h3><p><strong>原因：</strong> </p>
 <p>1、GitHub 上的博客搭建到了仓库里，也就是博客跟地址是<a target="_blank" rel="noopener" href="https://xxx.github.io/">https://XXX.github.io/</a><repository_name>上，而不是根目录<a target="_blank" rel="noopener" href="https://xxx.github.io/%E4%B8%AD">https://XXX.github.io/中</a></p>
 <p>2.由于主题中的各种图片、js脚本都是默认根路径的</p>
 <p><strong>如何修改：</strong> 将Hexo的 <code>config.yml</code> 中的 <code>url</code> 改为根目录</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">// 原来是 url: https://zy674517173.github.io/archive<br>url: https://zy674517173.github.io<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="2、如何在Hexo中插入图片"><a href="#2、如何在Hexo中插入图片" class="headerlink" title="2、如何在Hexo中插入图片"></a>2、如何在Hexo中插入图片</h3><p>最简单的方法是安装 hexo-image-link 插件，<a target="_blank" rel="noopener" href="http://home.ustc.edu.cn/~sdyzzy/posts/36e27ee1.html">参考博客</a></p>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs maxima">cnpm install hexo-<span class="hljs-built_in">image</span>-link --<span class="hljs-built_in">save</span><br></code></pre></td></tr></table></figure>
+
+
+
+
 
 
                 
