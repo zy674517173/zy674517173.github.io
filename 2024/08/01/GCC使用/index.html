@@ -24,7 +24,7 @@
 <meta property="og:description" content="GCC使用原文链接  GCC（GUN Compiler Collection）是一个开源的编译器套件，支持多种编程语言，包括 C、C++、Objective-C、Fortran、Ada 等。它是 Linux 和许多 Unix-like 系统中的默认编译器，也可以在 Windows 等平台上使用。 GCC的基本用法1、编译 C 程序gcc编译器将c源文件到生成一个可执行程序，中间一共经历了四个步骤：">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-08-01T13:06:47.000Z">
-<meta property="article:modified_time" content="2024-08-01T13:32:07.401Z">
+<meta property="article:modified_time" content="2024-08-01T14:50:49.188Z">
 <meta property="article:author" content="张同学">
 <meta property="article:tag" content="工具使用">
 <meta name="twitter:card" content="summary_large_image">
@@ -222,7 +222,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          626 字
+          1.3k 字
         
       </span>
     
@@ -233,7 +233,7 @@
         
         
         
-          6 分钟
+          11 分钟
         
       </span>
     
@@ -365,6 +365,102 @@
 <tr>
 <td align="center">-std</td>
 <td align="center">指定c方法，如：-std&#x3D;c99，gcc默认的方言时GNU C</td>
+</tr>
+</tbody></table>
+<h2 id="GDB使用"><a href="#GDB使用" class="headerlink" title="GDB使用"></a>GDB使用</h2><h3 id="1、什么时GDB"><a href="#1、什么时GDB" class="headerlink" title="1、什么时GDB"></a>1、什么时GDB</h3><p> GDB 是由 GNU 软件系统社区提供的调试工具，同 GCC 配套组成了一套完整的开发环境，GDB 是 Linux 和许多类 Unix 系统中的标准开发环境。</p>
+<p> 一般来说，GDB 主要帮助你完成下面四个方面的功能：</p>
+<ul>
+<li>启动程序，可以按照自定义的要求随心所欲的运行程序</li>
+<li>可让被调试的程序在所指定的调置的断点处停住（断点可以是条件表达式）</li>
+<li>当程序被停住时，可以检查此时程序中所发生的事</li>
+<li>可以改变程序，将一个 BUG 产生的影响修正从而测试其他 BUG</li>
+</ul>
+<h3 id="2、怎么使用GDB"><a href="#2、怎么使用GDB" class="headerlink" title="2、怎么使用GDB"></a>2、怎么使用GDB</h3><p>通常，在为调试而编译时，我们会（）关掉编译器的优化选项（ -O ）， 并打开调试选项（ -g ）。 另外， -Wall 在尽量不影响程序行为的情况下选项打开所有 warning，也可以发现许多问题，避免 一些不必要的 BUG。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">gcc -g -Wall program.c -o program<br>gcc test.c -o <span class="hljs-built_in">test</span> -g<br></code></pre></td></tr></table></figure>
+
+<p>-g 选项的作用是在可执行文件中加入源代码的信息，比如可执行文件中第几条机器指令对应源代 码的第几行，但并不是把整个源文件嵌入到可执行文件中，所以在调试时必须保证 gdb 能找到源文件。</p>
+<h3 id="3、GDB的命令"><a href="#3、GDB的命令" class="headerlink" title="3、GDB的命令"></a>3、GDB的命令</h3><table>
+<thead>
+<tr>
+<th align="center">功能</th>
+<th align="center">命令</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">启动<br />退出</td>
+<td align="center">gdb 可执行程序<br />quit&#x2F;q</td>
+</tr>
+<tr>
+<td align="center">给程序设置参数&#x2F;获取设置参数</td>
+<td align="center">set args 10 20  &#x2F;   show args</td>
+</tr>
+<tr>
+<td align="center">GDB使用帮助</td>
+<td align="center">help</td>
+</tr>
+<tr>
+<td align="center">查看当前文件代码</td>
+<td align="center">list&#x2F;l  (从默认位置显示)<br />list&#x2F;l 行号  (从指定的行显示)<br />list&#x2F;l  函数名  （从指定的函数显示）</td>
+</tr>
+<tr>
+<td align="center">查看非当前文件代码</td>
+<td align="center">list&#x2F;l  文件名：行号&#x2F;函数名</td>
+</tr>
+<tr>
+<td align="center">设置显示行数</td>
+<td align="center">show list&#x2F;listsize<br />set list&#x2F;listsize 行数</td>
+</tr>
+<tr>
+<td align="center">设置断点</td>
+<td align="center">b&#x2F;break 行号<br />b&#x2F;break 函数名<br />b&#x2F;break 文件名：行号<br />b&#x2F;break 文件名：函数</td>
+</tr>
+<tr>
+<td align="center">查看断点</td>
+<td align="center">i&#x2F;info b&#x2F;break</td>
+</tr>
+<tr>
+<td align="center">删除断点</td>
+<td align="center">d&#x2F;del&#x2F;delete 断点编号</td>
+</tr>
+<tr>
+<td align="center">设置断点无效</td>
+<td align="center">dis&#x2F;disable 断点编号</td>
+</tr>
+<tr>
+<td align="center">设置断点生效</td>
+<td align="center">ena&#x2F;enable 断点编号</td>
+</tr>
+<tr>
+<td align="center">设置条件断点（一般用在循环的位置）</td>
+<td align="center">b&#x2F;break 10 if i&#x3D;&#x3D;5</td>
+</tr>
+<tr>
+<td align="center">运行GDB程序</td>
+<td align="center">start (程序停在第一行)<br />run (遇到断点才停)</td>
+</tr>
+<tr>
+<td align="center">继续运行，到下一个断点</td>
+<td align="center">c&#x2F;continue</td>
+</tr>
+<tr>
+<td align="center">向下执行一行代码，不会进入函数体</td>
+<td align="center">n&#x2F;next</td>
+</tr>
+<tr>
+<td align="center">变量操作</td>
+<td align="center">p&#x2F;print 变量名 （打印变量值）<br />ptype 变量名 （打印变量类型）</td>
+</tr>
+<tr>
+<td align="center">向下单步调试（遇到函数进入函数体）</td>
+<td align="center">s&#x2F;step<br />finish (跳出函数体)</td>
+</tr>
+<tr>
+<td align="center">自动变量操作</td>
+<td align="center">display 变量名<br />i&#x2F;info display<br />undisplay 编号</td>
+</tr>
+<tr>
+<td align="center">其他操作</td>
+<td align="center">set var 变量名&#x3D;变量值<br />until （跳出循环）</td>
 </tr>
 </tbody></table>
 
