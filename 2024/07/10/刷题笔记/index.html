@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://zy674517173.github.io/2024/07/10/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/%E9%93%BE%E8%A1%A8%E6%80%BB%E7%BB%93.png">
 <meta property="article:published_time" content="2024-07-10T14:08:20.000Z">
-<meta property="article:modified_time" content="2024-07-10T14:28:31.187Z">
+<meta property="article:modified_time" content="2024-08-05T12:21:56.324Z">
 <meta property="article:author" content="张同学">
 <meta property="article:tag" content="算法">
 <meta name="twitter:card" content="summary_large_image">
@@ -224,7 +224,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2k 字
+          3.7k 字
         
       </span>
     
@@ -235,7 +235,7 @@
         
         
         
-          17 分钟
+          31 分钟
         
       </span>
     
@@ -351,7 +351,85 @@
 
 
 
-<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2>
+<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><h2 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h2><h3 id="1、二叉树理论基础"><a href="#1、二叉树理论基础" class="headerlink" title="1、二叉树理论基础"></a>1、二叉树理论基础</h3><h4 id="二叉树种类"><a href="#二叉树种类" class="headerlink" title="二叉树种类"></a>二叉树种类</h4><p>在我们解题过程中二叉树有两种主要的形式：满二叉树和完全二叉树。</p>
+<p><strong>满二叉树：</strong>如果一棵二叉树只有度为0的结点和度为2的结点，并且度为0的结点在同一层上，则这棵二叉树为满二叉树。</p>
+<p><strong>完全二叉树：</strong>在完全二叉树中，除了最底层节点可能没填满外，其余<strong>每层节点数都达到最大值</strong>，并且最下面一层的节点都集中在<strong>该层最左边</strong>的若干位置。</p>
+<p><strong>二叉搜索树：</strong>二叉搜索树是有数值的了，<strong>二叉搜索树是一个有序树</strong>。（左  &lt;  根  &lt;  右）</p>
+<ul>
+<li>若它的左子树不空，则左子树上所有结点的值均小于它的根结点的值；</li>
+<li>若它的右子树不空，则右子树上所有结点的值均大于它的根结点的值；</li>
+<li>它的左、右子树也分别为二叉排序树</li>
+</ul>
+<p><strong>平衡二叉树：</strong>又被称为AVL（Adelson-Velsky and Landis）树，且具有以下性质：它是一棵空树或它的左右两个子树的<strong>高度差</strong>的绝对值不超过1，并且左右两个子树都是一棵平衡二叉树。</p>
+<p>补充： <strong>C++中map、set、multimap，multiset的底层实现都是平衡二叉搜索树</strong>，所以map、set的增删操作时间时间复杂度是logn，注意我这里没有说unordered_map、unordered_set，unordered_map、unordered_set底层实现是哈希表。</p>
+<h4 id="二叉树存储方式"><a href="#二叉树存储方式" class="headerlink" title="二叉树存储方式"></a>二叉树存储方式</h4><p>1、链式存储：用指针</p>
+<p>2、顺序存储：用数组，<strong>如果父节点的数组下标是 i，那么它的左孩子就是 i * 2 + 1，右孩子就是 i * 2 + 2。</strong></p>
+<h4 id="二叉树的遍历方式"><a href="#二叉树的遍历方式" class="headerlink" title="二叉树的遍历方式"></a>二叉树的遍历方式</h4><ul>
+<li>深度优先遍历<ul>
+<li>前序遍历（递归法，迭代法）</li>
+<li>中序遍历（递归法，迭代法）</li>
+<li>后序遍历（递归法，迭代法）</li>
+</ul>
+</li>
+<li>广度优先遍历<ul>
+<li>层次遍历（迭代法）</li>
+</ul>
+</li>
+</ul>
+<p><strong>这里前中后，其实指的就是中间节点的遍历顺序</strong>，只要大家记住 前中后序指的就是中间节点的位置就可以了。</p>
+<p>看如下中间节点的顺序，就可以发现，中间节点的顺序就是所谓的遍历方式</p>
+<ul>
+<li>前序遍历：中左右</li>
+<li>中序遍历：左中右</li>
+<li>后序遍历：左右中</li>
+</ul>
+<h4 id="二叉树的定义"><a href="#二叉树的定义" class="headerlink" title="二叉树的定义"></a>二叉树的定义</h4><p>链式存储的节点定义方式</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">struct</span> <span class="hljs-title class_">TreeNode</span> &#123;<br>    <span class="hljs-type">int</span> val;<br>    TreeNode *left;<br>    TreeNode *right;<br>    <span class="hljs-comment">// 构造函数，初始化节点的值和子节点指针</span><br>    <span class="hljs-built_in">TreeNode</span>(<span class="hljs-type">int</span> x) : <span class="hljs-built_in">val</span>(x), <span class="hljs-built_in">left</span>(<span class="hljs-literal">NULL</span>), <span class="hljs-built_in">right</span>(<span class="hljs-literal">NULL</span>) &#123;&#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+
+<h3 id="2、二叉树的递归遍历"><a href="#2、二叉树的递归遍历" class="headerlink" title="2、二叉树的递归遍历"></a>2、二叉树的递归遍历</h3><p><strong>每次写递归，都按照这三要素来写，可以保证大家写出正确的递归算法！</strong></p>
+<ol>
+<li><strong>确定递归函数的参数和返回值：</strong> 确定哪些参数是递归的过程中需要处理的，那么就在递归函数里加上这个参数， 并且还要明确每次递归的返回值是什么进而确定递归函数的返回类型。</li>
+<li><strong>确定终止条件：</strong> 写完了递归算法, 运行的时候，经常会遇到栈溢出的错误，就是没写终止条件或者终止条件写的不对，操作系统也是用一个栈的结构来保存每一层递归的信息，如果递归没有终止，操作系统的内存栈必然就会溢出。</li>
+<li><strong>确定单层递归的逻辑：</strong> 确定每一层递归需要处理的信息。在这里也就会重复调用自己来实现递归的过程。</li>
+</ol>
+<p>前序遍历</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">traversal</span><span class="hljs-params">(TreeNode* cur, vector&lt;<span class="hljs-type">int</span>&gt;&amp; vec)</span> </span>&#123;<br>        <span class="hljs-keyword">if</span> (cur == <span class="hljs-literal">NULL</span>) <span class="hljs-keyword">return</span>;<br>        vec.<span class="hljs-built_in">push_back</span>(cur-&gt;val);    <span class="hljs-comment">// 中</span><br>        <span class="hljs-built_in">traversal</span>(cur-&gt;left, vec);  <span class="hljs-comment">// 左</span><br>        <span class="hljs-built_in">traversal</span>(cur-&gt;right, vec); <span class="hljs-comment">// 右</span><br>    &#125;<br>    <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">preorderTraversal</span><span class="hljs-params">(TreeNode* root)</span> </span>&#123;<br>        vector&lt;<span class="hljs-type">int</span>&gt; result;<br>        <span class="hljs-built_in">traversal</span>(root, result);<br>        <span class="hljs-keyword">return</span> result;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+
+<p><strong>注意：由于 <code>vec</code> 是引用传递，因此对 <code>vec</code> 的任何修改都会保留，并且在递归调用中不断累积结果。</strong></p>
+<h3 id="3、二叉树的迭代遍历"><a href="#3、二叉树的迭代遍历" class="headerlink" title="3、二叉树的迭代遍历"></a>3、二叉树的迭代遍历</h3><p><strong>递归的实现就是：每一次递归调用都会把函数的局部变量、参数值和返回地址等压入调用栈中</strong>，然后递归返回的时候，从栈顶弹出上一次递归的各项参数，所以这就是递归为什么可以返回上一层位置的原因。</p>
+<h4 id="前序遍历"><a href="#前序遍历" class="headerlink" title="前序遍历"></a>前序遍历</h4><p>前序遍历是中左右，每次先处理的是中间节点，那么先将根节点放入栈中，然后将右孩子加入栈，再加入左孩子。</p>
+<p><strong>为什么要先加入右孩子，再加入左孩子呢？ 因为这样出栈的时候才是中左右的顺序。</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">preorderTraversal</span><span class="hljs-params">(TreeNode* root)</span> </span>&#123;<br>        vector&lt;<span class="hljs-type">int</span>&gt; res;<br>        <span class="hljs-keyword">if</span>(root == <span class="hljs-literal">NULL</span>) <span class="hljs-keyword">return</span> res;<br><br>        stack&lt;TreeNode *&gt; myStk;<br>        myStk.<span class="hljs-built_in">push</span>(root);<br><br>        <span class="hljs-keyword">while</span>(!myStk.<span class="hljs-built_in">empty</span>())<br>        &#123;<br>            TreeNode* node = myStk.<span class="hljs-built_in">top</span>();<br>            myStk.<span class="hljs-built_in">pop</span>();<br><br>            res.<span class="hljs-built_in">push_back</span>(node-&gt;val);<br>            <span class="hljs-keyword">if</span>(node-&gt;right != <span class="hljs-literal">NULL</span>)     myStk.<span class="hljs-built_in">push</span>(node-&gt;right);<br>            <span class="hljs-keyword">if</span>(node-&gt;left != <span class="hljs-literal">NULL</span>)      myStk.<span class="hljs-built_in">push</span>(node-&gt;left);<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+
+<h4 id="后序遍历"><a href="#后序遍历" class="headerlink" title="后序遍历"></a>后序遍历</h4><p><strong>再来看后序遍历，先序遍历是中左右，后序遍历是左右中，那么我们只需要调整一下先序遍历的代码顺序，就变成中右左的遍历顺序，然后在反转result数组，输出的结果顺序就是左右中了</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs c++">=<br><span class="hljs-keyword">class</span> Solution &#123;<br><span class="hljs-keyword">public</span>:<br>    vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-built_in">postorderTraversal</span>(TreeNode* root) &#123;<br>        vector&lt;<span class="hljs-type">int</span>&gt; res;<br>        <span class="hljs-keyword">if</span>(root == <span class="hljs-literal">NULL</span>) <span class="hljs-keyword">return</span> res;<br><br>        stack&lt;TreeNode *&gt; myStk;<br>        myStk.<span class="hljs-built_in">push</span>(root);<br><br>        <span class="hljs-keyword">while</span>(!myStk.<span class="hljs-built_in">empty</span>())<br>        &#123;<br>            TreeNode* node = myStk.<span class="hljs-built_in">top</span>();<br>            myStk.<span class="hljs-built_in">pop</span>();<br><br>            res.<span class="hljs-built_in">push_back</span>(node-&gt;val);<br>            <span class="hljs-keyword">if</span>(node-&gt;left != <span class="hljs-literal">NULL</span>)      myStk.<span class="hljs-built_in">push</span>(node-&gt;left);		<span class="hljs-comment">////////</span><br>            <span class="hljs-keyword">if</span>(node-&gt;right != <span class="hljs-literal">NULL</span>)     myStk.<span class="hljs-built_in">push</span>(node-&gt;right);	<span class="hljs-comment">////////</span><br>        &#125;<br>        <span class="hljs-built_in">reverse</span>(res.<span class="hljs-built_in">begin</span>(), res.<span class="hljs-built_in">end</span>());			<span class="hljs-comment">//////////</span><br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+
+<h4 id="中序遍历"><a href="#中序遍历" class="headerlink" title="中序遍历"></a>中序遍历</h4><p>为什么刚刚写的前序遍历的代码，不能和中序遍历通用呢，因为前序遍历的顺序是中左右，先访问的元素是中间节点，要处理的元素也是中间节点，所以刚刚才能写出相对简洁的代码，<strong>因为要访问的元素和要处理的元素顺序是一致的，都是中间节点。</strong></p>
+<p>那么再看看中序遍历，中序遍历是左中右，先访问的是二叉树顶部的节点，然后一层一层向下访问，直到到达树左面的最底部，再开始处理节点（也就是在把节点的数值放进result数组中），这就造成了<strong>处理顺序和访问顺序是不一致的。</strong></p>
+<p>那么<strong>在使用迭代法写中序遍历，就需要借用指针的遍历来帮助访问节点，栈则用来处理节点上的元素。</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">inorderTraversal</span><span class="hljs-params">(TreeNode* root)</span> </span>&#123;<br>        vector&lt;<span class="hljs-type">int</span>&gt; res;<br>        stack&lt;TreeNode *&gt; myStk;<br>        TreeNode *cur = root;<br><br>        <span class="hljs-keyword">while</span>(cur != <span class="hljs-literal">NULL</span> || !myStk.<span class="hljs-built_in">empty</span>())<br>        &#123;   <br>            <span class="hljs-keyword">if</span>(cur != <span class="hljs-literal">NULL</span>)<br>            &#123;<br>                myStk.<span class="hljs-built_in">push</span>(cur);<br>                cur = cur-&gt;left;<br>            &#125;<br>            <span class="hljs-keyword">else</span><br>            &#123;<br>                cur = myStk.<span class="hljs-built_in">top</span>();<br>                myStk.<span class="hljs-built_in">pop</span>();<br>                res.<span class="hljs-built_in">push_back</span>(cur-&gt;val);<br>                cur = cur-&gt;right;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 
               </div>
             

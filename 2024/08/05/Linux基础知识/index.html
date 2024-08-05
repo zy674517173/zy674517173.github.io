@@ -16,24 +16,24 @@
   <meta name="author" content="张同学">
   <meta name="keywords" content="">
   
-    <meta name="description" content="GCC使用原文链接  GCC（GUN Compiler Collection）是一个开源的编译器套件，支持多种编程语言，包括 C、C++、Objective-C、Fortran、Ada 等。它是 Linux 和许多 Unix-like 系统中的默认编译器，也可以在 Windows 等平台上使用。 GCC的基本用法1、编译 C 程序gcc编译器将c源文件到生成一个可执行程序，中间一共经历了四个步骤：">
+    <meta name="description" content="Linux基础知识常用命令12345678910111213141516171819202122232425262728293031323334353637pwd		&#x2F;&#x2F; 显示当前路径rmdir   &#x2F;&#x2F; 删除空目录	rm -rf 目录名mkdir	&#x2F;&#x2F; 创建文件夹ls&#x2F;ll	&#x2F;&#x2F; 查看目录或文件信息	-l 列出详细信息	-a列出当前目录下的所有文件vi		&#x2F;&#x2F; 文本编辑器		i 进入编辑状态	E">
 <meta property="og:type" content="article">
-<meta property="og:title" content="GCC使用">
-<meta property="og:url" content="https://zy674517173.github.io/2024/08/01/GCC%E4%BD%BF%E7%94%A8/index.html">
+<meta property="og:title" content="Linux基础知识">
+<meta property="og:url" content="https://zy674517173.github.io/2024/08/05/Linux%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/index.html">
 <meta property="og:site_name" content="Hello-ZY">
-<meta property="og:description" content="GCC使用原文链接  GCC（GUN Compiler Collection）是一个开源的编译器套件，支持多种编程语言，包括 C、C++、Objective-C、Fortran、Ada 等。它是 Linux 和许多 Unix-like 系统中的默认编译器，也可以在 Windows 等平台上使用。 GCC的基本用法1、编译 C 程序gcc编译器将c源文件到生成一个可执行程序，中间一共经历了四个步骤：">
+<meta property="og:description" content="Linux基础知识常用命令12345678910111213141516171819202122232425262728293031323334353637pwd		&#x2F;&#x2F; 显示当前路径rmdir   &#x2F;&#x2F; 删除空目录	rm -rf 目录名mkdir	&#x2F;&#x2F; 创建文件夹ls&#x2F;ll	&#x2F;&#x2F; 查看目录或文件信息	-l 列出详细信息	-a列出当前目录下的所有文件vi		&#x2F;&#x2F; 文本编辑器		i 进入编辑状态	E">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-08-01T13:06:47.000Z">
-<meta property="article:modified_time" content="2024-08-02T09:17:20.409Z">
+<meta property="article:published_time" content="2024-08-05T08:53:27.000Z">
+<meta property="article:modified_time" content="2024-08-05T08:54:41.639Z">
 <meta property="article:author" content="张同学">
-<meta property="article:tag" content="工具使用">
+<meta property="article:tag" content="基础知识">
 <meta name="twitter:card" content="summary_large_image">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>GCC使用 - Hello-ZY</title>
+  <title>Linux基础知识 - Hello-ZY</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -199,7 +199,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="GCC使用"></span>
+            <span id="subtitle" data-typed-text="Linux基础知识"></span>
           
         </div>
 
@@ -210,8 +210,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-08-01 21:06" pubdate>
-          2024年8月1日 晚上
+        <time datetime="2024-08-05 16:53" pubdate>
+          2024年8月5日 下午
         </time>
       </span>
     
@@ -222,7 +222,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.5k 字
+          594 字
         
       </span>
     
@@ -233,7 +233,7 @@
         
         
         
-          13 分钟
+          5 分钟
         
       </span>
     
@@ -278,193 +278,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">GCC使用</h1>
+            <h1 id="seo-header">Linux基础知识</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="GCC使用"><a href="#GCC使用" class="headerlink" title="GCC使用"></a>GCC使用</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_42037383/article/details/140217436">原文链接</a></p>
-<p> GCC（GUN Compiler Collection）是一个开源的编译器套件，支持多种编程语言，包括 C、C++、Objective-C、Fortran、Ada 等。它是 Linux 和许多 Unix-like 系统中的默认编译器，也可以在 Windows 等平台上使用。</p>
-<h2 id="GCC的基本用法"><a href="#GCC的基本用法" class="headerlink" title="GCC的基本用法"></a>GCC的基本用法</h2><h3 id="1、编译-C-程序"><a href="#1、编译-C-程序" class="headerlink" title="1、编译 C 程序"></a>1、编译 C 程序</h3><p>gcc编译器将c源文件到生成一个可执行程序，中间一共经历了四个步骤：</p>
-<figure class="highlight xl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs xl">                     c文件                 汇编文件          二进制文件      可执行文件<br><span class="hljs-function"><span class="hljs-title">hello</span>.c   ---&gt;</span>      <span class="hljs-function"><span class="hljs-title">hello</span>.i     ---&gt;</span>      <span class="hljs-function"><span class="hljs-title">hello</span>.s   ---&gt;</span>   <span class="hljs-function"><span class="hljs-title">hello</span>.o  ---&gt;</span>   a.out<br>         预处理（CPP）         编译器（gcc）          汇编器(<span class="hljs-keyword">as</span>)       链接器(ld)<br>         gcc -E                gcc -S                 gcc -c           gcc<br></code></pre></td></tr></table></figure>
-
-<p>下面以hello.c为例介绍gcc的四个步骤:</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br> <br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Hello, world!\n&quot;</span>);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">gcc -E hello.c -o hello.i <span class="hljs-comment"># -E激活预处理，生成预处理后的文件</span><br>gcc -S hello.i -o hello.s <span class="hljs-comment"># —S激活预处理和编译，生成汇编代码</span><br>gcc -c hello.s -o hello.o <span class="hljs-comment"># -c激活预处理、编译和汇编，生成目标文件</span><br>gcc hello.o -o hello <span class="hljs-comment"># 执行所有阶段，生成可执行程序</span><br></code></pre></td></tr></table></figure>
-
-<p>其实没必要指定每一个步骤，我们常常会这样用：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">gcc -c hello.c <span class="hljs-comment"># 生成目标文件，gcc会根据文件名hello.c生成hello.o</span><br>gcc hello.o -o hello <span class="hljs-comment"># 生成可执行程序hello，这里我们需要指定可执行程序的名称，否则会默认生成a.out</span><br></code></pre></td></tr></table></figure>
-
-<p>一步生成最终的可执行程序:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">gcc hello.c -o hello <span class="hljs-comment"># 编译链接，生成可执行程序hello</span><br></code></pre></td></tr></table></figure>
-
-<h3 id="2、GCC常用参数选项"><a href="#2、GCC常用参数选项" class="headerlink" title="2、GCC常用参数选项"></a>2、GCC常用参数选项</h3><table>
-<thead>
-<tr>
-<th align="center"><strong>gcc编译选项</strong></th>
-<th align="center"><strong>说明</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">-E</td>
-<td align="center">预处理指定的源文件，不进行编译</td>
-</tr>
-<tr>
-<td align="center">-S</td>
-<td align="center">编译指定的源文件，但是不进行汇编</td>
-</tr>
-<tr>
-<td align="center">-C</td>
-<td align="center">编译、汇编指定的源文件，但是不进行链接</td>
-</tr>
-<tr>
-<td align="center">-o [file1] [file2] &#x2F; [file2] -o [file1]</td>
-<td align="center">将文件 file2 编译成可执行文件 file1</td>
-</tr>
-<tr>
-<td align="center">-I directory</td>
-<td align="center">指定include包含文件的搜索目录</td>
-</tr>
-<tr>
-<td align="center">-g</td>
-<td align="center">在编译的时候生成调试信息，该程序可以被调试器调试</td>
-</tr>
-<tr>
-<td align="center">-D</td>
-<td align="center">在程序编译的时候，指定一个宏</td>
-</tr>
-<tr>
-<td align="center">-w</td>
-<td align="center">不生成任何警告信息</td>
-</tr>
-<tr>
-<td align="center">-Wall</td>
-<td align="center">生成所有警告信息</td>
-</tr>
-<tr>
-<td align="center">-On</td>
-<td align="center">n的取值范围：0~3，编译器的优化选项的4个级别，-O0表示没有优化，-O1为缺省值，-O3优化级别最高</td>
-</tr>
-<tr>
-<td align="center">-l</td>
-<td align="center">在程序编译时，指定使用的库</td>
-</tr>
-<tr>
-<td align="center">-L</td>
-<td align="center">指定编译的时候，搜索的库的路径</td>
-</tr>
-<tr>
-<td align="center">-fPIC&#x2F;fpic</td>
-<td align="center">生成与位置无关的代码</td>
-</tr>
-<tr>
-<td align="center">-shared</td>
-<td align="center">生成共享目标文件，通常用在建立共享库</td>
-</tr>
-<tr>
-<td align="center">-std</td>
-<td align="center">指定c方法，如：-std&#x3D;c99，gcc默认的方言时GNU C</td>
-</tr>
-</tbody></table>
-<h2 id="GDB使用"><a href="#GDB使用" class="headerlink" title="GDB使用"></a>GDB使用</h2><h3 id="1、什么时GDB"><a href="#1、什么时GDB" class="headerlink" title="1、什么时GDB"></a>1、什么时GDB</h3><p> GDB 是由 GNU 软件系统社区提供的调试工具，同 GCC 配套组成了一套完整的开发环境，GDB 是 Linux 和许多类 Unix 系统中的标准开发环境。</p>
-<p> 一般来说，GDB 主要帮助你完成下面四个方面的功能：</p>
-<ul>
-<li>启动程序，可以按照自定义的要求随心所欲的运行程序</li>
-<li>可让被调试的程序在所指定的调置的断点处停住（断点可以是条件表达式）</li>
-<li>当程序被停住时，可以检查此时程序中所发生的事</li>
-<li>可以改变程序，将一个 BUG 产生的影响修正从而测试其他 BUG</li>
-</ul>
-<h3 id="2、怎么使用GDB"><a href="#2、怎么使用GDB" class="headerlink" title="2、怎么使用GDB"></a>2、怎么使用GDB</h3><p>通常，在为调试而编译时，我们会（）关掉编译器的优化选项（ -O ）， 并打开调试选项（ -g ）。 另外， -Wall 在尽量不影响程序行为的情况下选项打开所有 warning，也可以发现许多问题，避免 一些不必要的 BUG。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">gcc -g -Wall program.c -o program<br>gcc test.c -o <span class="hljs-built_in">test</span> -g<br></code></pre></td></tr></table></figure>
-
-<p>-g 选项的作用是在可执行文件中加入源代码的信息，比如可执行文件中第几条机器指令对应源代 码的第几行，但并不是把整个源文件嵌入到可执行文件中，所以在调试时必须保证 gdb 能找到源文件。</p>
-<h3 id="3、GDB的命令"><a href="#3、GDB的命令" class="headerlink" title="3、GDB的命令"></a>3、GDB的命令</h3><table>
-<thead>
-<tr>
-<th align="center">功能</th>
-<th align="center">命令</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">启动<br />退出</td>
-<td align="center">gdb 可执行程序<br />quit&#x2F;q</td>
-</tr>
-<tr>
-<td align="center">给程序设置参数&#x2F;获取设置参数</td>
-<td align="center">set args 10 20  &#x2F;   show args</td>
-</tr>
-<tr>
-<td align="center">GDB使用帮助</td>
-<td align="center">help</td>
-</tr>
-<tr>
-<td align="center">查看当前文件代码</td>
-<td align="center">list&#x2F;l  (从默认位置显示)<br />list&#x2F;l 行号  (从指定的行显示)<br />list&#x2F;l  函数名  （从指定的函数显示）</td>
-</tr>
-<tr>
-<td align="center">查看非当前文件代码</td>
-<td align="center">list&#x2F;l  文件名:行号&#x2F;函数名</td>
-</tr>
-<tr>
-<td align="center">设置显示行数</td>
-<td align="center">show list&#x2F;listsize<br />set list&#x2F;listsize 行数</td>
-</tr>
-<tr>
-<td align="center">设置断点</td>
-<td align="center">b&#x2F;break 行号<br />b&#x2F;break 函数名<br />b&#x2F;break 文件名:行号<br />b&#x2F;break 文件名:函数</td>
-</tr>
-<tr>
-<td align="center">查看断点</td>
-<td align="center">i&#x2F;info b&#x2F;break</td>
-</tr>
-<tr>
-<td align="center">删除断点</td>
-<td align="center">d&#x2F;del&#x2F;delete 断点编号</td>
-</tr>
-<tr>
-<td align="center">设置断点无效</td>
-<td align="center">dis&#x2F;disable 断点编号</td>
-</tr>
-<tr>
-<td align="center">设置断点生效</td>
-<td align="center">ena&#x2F;enable 断点编号</td>
-</tr>
-<tr>
-<td align="center">设置条件断点（一般用在循环的位置）</td>
-<td align="center">b&#x2F;break 10 if i&#x3D;&#x3D;5</td>
-</tr>
-<tr>
-<td align="center">运行GDB程序</td>
-<td align="center">start (程序停在第一行)<br />run (遇到断点才停)</td>
-</tr>
-<tr>
-<td align="center">继续运行，到下一个断点</td>
-<td align="center">c&#x2F;continue</td>
-</tr>
-<tr>
-<td align="center">向下执行一行代码，不会进入函数体</td>
-<td align="center">n&#x2F;next</td>
-</tr>
-<tr>
-<td align="center">变量操作</td>
-<td align="center">p&#x2F;print 变量名 （打印变量值）<br />ptype 变量名 （打印变量类型）</td>
-</tr>
-<tr>
-<td align="center">向下单步调试（遇到函数进入函数体）</td>
-<td align="center">s&#x2F;step<br />finish (跳出函数体)</td>
-</tr>
-<tr>
-<td align="center">自动变量操作</td>
-<td align="center">display 变量名<br />i&#x2F;info display<br />undisplay 编号</td>
-</tr>
-<tr>
-<td align="center">其他操作</td>
-<td align="center">set var 变量名&#x3D;变量值<br />until （跳出循环）</td>
-</tr>
-</tbody></table>
-<h3 id="4、GDB多进程调试"><a href="#4、GDB多进程调试" class="headerlink" title="4、GDB多进程调试"></a>4、GDB多进程调试</h3><p>使用GDB调试的时候，GDB默认只能跟踪一个进程，可以在fork函数调用之前，通过指令设置GDB调试工具跟踪父进程或者是跟踪子进程，默认跟踪父进程。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash">设置调试父进程或者子进程<br><span class="hljs-built_in">set</span> follow-fork-mode [parent (默认) | child]<br><br>设置调试模式<br><span class="hljs-built_in">set</span> detach-on-fork [on | off]<br>默认为 on， 表示当前进程的时候，其他的进程继续运行，如果为off，调试当前进程的时候，其他进程被GDB挂起<br><br>查看当前调试的进程：  info inferiors<br>切换当前调试的进程： inferior <span class="hljs-built_in">id</span><br>使进程脱离GDB调试： detach inferiors <span class="hljs-built_in">id</span><br></code></pre></td></tr></table></figure>
+                <h1 id="Linux基础知识"><a href="#Linux基础知识" class="headerlink" title="Linux基础知识"></a>Linux基础知识</h1><h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs c++">pwd		<span class="hljs-comment">// 显示当前路径</span><br>rmdir   <span class="hljs-comment">// 删除空目录	rm -rf 目录名</span><br>mkdir	<span class="hljs-comment">// 创建文件夹</span><br>ls/ll	<span class="hljs-comment">// 查看目录或文件信息	-l 列出详细信息	-a列出当前目录下的所有文件</span><br>vi		<span class="hljs-comment">// 文本编辑器	</span><br>	i 进入编辑状态	ESC 退出编辑	:q! 不保存退出	:wq 保存退出	G 定位到文件末尾<br>cp		<span class="hljs-comment">// 复制	cp [选项] 文件名或目录 目标地址		-R全部目录和文件	</span><br>	cp a.txt b.txt 将文件a复制并命令为b文件<br>mv		<span class="hljs-comment">// 移动	mv 文件名或目录 目标目录</span><br>rm		<span class="hljs-comment">// 删除文件或目录	-f 强制删除 -r 删除目录</span><br>grep	<span class="hljs-comment">// 分析一行的信息，如果存在所需信息，打印输出 	grep 字符串 文件名(grep band file)</span><br>find 	<span class="hljs-comment">// 查找文件	find [路径] [选项]	find . -name *log 在当前目录查找以.log结尾的文件</span><br>ps 		<span class="hljs-comment">// 查看进程（动态）		-ef 显示所有运行进程，并显示启动进程的命令</span><br>netstat	<span class="hljs-comment">// 查看网络状况（net status的简写）	</span><br>	netstat -apn 查看所有端口 -an 按一定顺序排列输出	p 表示显示那个进程在调用<br>|		<span class="hljs-comment">// 管道符	在命令之间建立管道，将前面命令的输出作为后面命令的输入</span><br>	通过命令查找tomcat进程：ps -ef | grep tomcat <br>	通过命令查找到占用此端口的进程编号：netstat -apn|grep <span class="hljs-number">8080</span><br>touch 	<span class="hljs-comment">// 创建一个空白文件	-a 修改access(访问) 时间	-m 修改modfiy(修改)时间</span><br>su		<span class="hljs-comment">// 切换用户		su root</span><br>chmod	<span class="hljs-comment">// 权限赋予命令 -R 递归改变目录下所有子目录和文件的权限(可读可写可执行) r=4 w=2 x=1</span><br>	chmod <span class="hljs-number">777</span> lemon<br>tar		<span class="hljs-comment">// 解压,压缩	</span><br>	tar -czvf test.tar.gz test	将test压缩	 tar -xzvf test.tar.gz	解压tast<br><br>which 	<span class="hljs-comment">// 查找文件、显示命令路径	which pwd</span><br>whereis <span class="hljs-comment">// 定位可执行文件、帮助文件和原文件代码在系统中的位置	</span><br>	whereis [选项] [路径/目录名 -f] 文件名<br><br>cat 	<span class="hljs-comment">// 显示文本文件内容		cat 文件名字</span><br>head 	<span class="hljs-comment">// 查看前几行	head -n 5 文件名字</span><br>tail	<span class="hljs-comment">// 从指定点开始将文件写到标准输出	tail -n 5 文件名     查看后几行 tail -f</span><br>echo 	<span class="hljs-comment">// 打印文件内容或编辑文件内容</span><br>uname	<span class="hljs-comment">// 查看系统		-m 查看系统是几位操作系统 -r 查看系统的内核版本 -a 查看详细的系统内核版本和系统的操作系统</span><br>rz		<span class="hljs-comment">// 上传</span><br>sz		<span class="hljs-comment">// 下载</span><br>history	<span class="hljs-comment">// 查看命令历史记录</span><br></code></pre></td></tr></table></figure>
 
 
                 
@@ -478,7 +297,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/" class="print-no-link">#工具使用</a>
+        <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="print-no-link">#基础知识</a>
       
     </div>
   
@@ -490,8 +309,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>GCC使用</div>
-      <div>https://zy674517173.github.io/2024/08/01/GCC使用/</div>
+      <div>Linux基础知识</div>
+      <div>https://zy674517173.github.io/2024/08/05/Linux基础知识/</div>
     </div>
     <div class="license-meta">
       
@@ -503,7 +322,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年8月1日</div>
+          <div>2024年8月5日</div>
         </div>
       
       
@@ -535,18 +354,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/08/05/Linux%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" title="Linux基础知识">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Linux基础知识</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/07/12/Latex%E4%BD%BF%E7%94%A8/" title="Latex使用">
-                        <span class="hidden-mobile">Latex使用</span>
+                      <a href="/2024/08/01/GCC%E4%BD%BF%E7%94%A8/" title="GCC使用">
+                        <span class="hidden-mobile">GCC使用</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

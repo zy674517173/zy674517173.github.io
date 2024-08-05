@@ -27,7 +27,7 @@
 <meta property="og:image" content="https://zy674517173.github.io/2024/06/02/MyWebServer/%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F.png">
 <meta property="og:image" content="https://zy674517173.github.io/2024/06/02/MyWebServer/%E6%9C%89%E5%90%8D%E7%AE%A1%E9%81%93%E7%9A%84%E4%BD%BF%E7%94%A8.png">
 <meta property="article:published_time" content="2024-06-02T05:58:56.000Z">
-<meta property="article:modified_time" content="2024-08-04T14:41:20.472Z">
+<meta property="article:modified_time" content="2024-08-05T08:56:18.003Z">
 <meta property="article:author" content="张同学">
 <meta property="article:tag" content="项目">
 <meta name="twitter:card" content="summary_large_image">
@@ -226,7 +226,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          9.8k 字
+          14k 字
         
       </span>
     
@@ -237,7 +237,7 @@
         
         
         
-          82 分钟
+          116 分钟
         
       </span>
     
@@ -519,7 +519,7 @@
 <li>第二个参数： length &#x3D; 0</li>
 <li>第三个参数： prot权限有问题<ul>
 <li>只指定了写权限</li>
-<li>prot PROT_READ | PROT_WRITE<br>  第五个参数fd 通过open函数时 未指定 O_RDONLY | O_WRONLY</li>
+<li>prot PROT_READ | PROT_WRITE<br>第五个参数fd 通过open函数时 未指定 O_RDONLY | O_WRONLY</li>
 </ul>
 </li>
 </ul>
@@ -536,7 +536,212 @@
 <li>mmap后关闭文件描述符，对mmap映射有没有影响？<br>答：int fd &#x3D; open(“xxx”)<br>mmap(,,, fd, 0);<br>close(fd);<br>映射区还存在， 创建映射区的fd被关闭， 没有任何影响</li>
 <li>对ptr越界操作会怎样？<br>答：越界操作，操作的是非法内存，-&gt; 段错误</li>
 </ol>
-<h4 id="4、信号"><a href="#4、信号" class="headerlink" title="4、信号"></a>4、信号</h4>
+<h4 id="4、信号"><a href="#4、信号" class="headerlink" title="4、信号"></a>4、信号</h4><p>信号是 Linux 进程间通信的最古老的方式之一，是事件发生时对进程的通知机制，有时也称之为软件中 断，它是在软件层次上对中断机制的一种模拟，是一种异步通信的方式。信号可以导致一个正在运行的 进程被另一个正在运行的异步进程中断，转而处理某一个突发事件。</p>
+<p>发往进程的诸多信号，通常都是源于内核。引发内核为进程产生信号的各类事件如下：</p>
+<ul>
+<li>对于前台进程，用户可以通过输入特殊的终端字符来给它发送信号。比如输入Ctrl+C 通常会给进程发送一个中断信号。 </li>
+<li>硬件发生异常，即硬件检测到一个错误条件并通知内核，随即再由内核发送相应信号给相关进程。 比如执行一条异常的机器语言指令，诸如被 0 除，或者引用了无法访问的内存区域。 </li>
+<li>系统状态变化，比如 alarm 定时器到期将引起 SIGALRM 信号，进程执行的 CPU 时间超限，或者 该进程的某个子进程退出。 </li>
+<li>运行 kill 命令或调用 kill 函数。</li>
+</ul>
+<p>使用信号的两个主要目的是：</p>
+<ul>
+<li>让进程知道已经发生了一个特定的事情。 </li>
+<li>强迫进程执行它自己代码中的信号处理程序。</li>
+</ul>
+<p>信号的特点： </p>
+<ul>
+<li>简单 </li>
+<li>不能携带大量信息 </li>
+<li>满足某个特定条件才发送 </li>
+<li>优先级比较高</li>
+</ul>
+<p>查看系统定义的信号列表：kill –l</p>
+<table>
+<thead>
+<tr>
+<th align="center">信号编号</th>
+<th align="center">信号名称</th>
+<th align="center">对应事件</th>
+<th align="center">默认动作</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">2</td>
+<td align="center">SIGINT</td>
+<td align="center">当用户按下了组合键时，用户终端向正在运行中 的由该终端启动的程序发出此信号</td>
+<td align="center">终止进程</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">SIGQUIT</td>
+<td align="center">用户按下组合键时产生该信号，用户终端向正在运 行中的由该终端启动的程序发出些信号</td>
+<td align="center">终止进程</td>
+</tr>
+<tr>
+<td align="center">9</td>
+<td align="center">SIGKILL</td>
+<td align="center">无条件终止进程。该信号不能被忽略，处理和阻塞</td>
+<td align="center">终止进程，可以杀死任何进程</td>
+</tr>
+<tr>
+<td align="center">11</td>
+<td align="center">SIGSEGV</td>
+<td align="center">指示进程进行了无效内存访问(段错误)</td>
+<td align="center">终止进程 并产生 core文件</td>
+</tr>
+<tr>
+<td align="center">13</td>
+<td align="center">SIGPIPE</td>
+<td align="center">Broken pipe向一个没有读端的管道写数据</td>
+<td align="center">终止进程</td>
+</tr>
+<tr>
+<td align="center">17</td>
+<td align="center">SIGCHLD</td>
+<td align="center">子进程结束时，父进程会收到这个信号</td>
+<td align="center">忽略这个信号</td>
+</tr>
+<tr>
+<td align="center">18</td>
+<td align="center">SIGCONT</td>
+<td align="center">如果进程已停止，则使其继续运行</td>
+<td align="center">继续&#x2F;忽略</td>
+</tr>
+<tr>
+<td align="center">19</td>
+<td align="center">SIGSTOP</td>
+<td align="center">停止进程的执行。信号不能被忽略，处理和阻塞</td>
+<td align="center">为终止进 程</td>
+</tr>
+</tbody></table>
+<h5 id="信号的-5-种默认处理动作"><a href="#信号的-5-种默认处理动作" class="headerlink" title="信号的 5 种默认处理动作"></a><strong>信号的 5 种默认处理动作</strong></h5><p>查看信号的详细信息：man 7 signal </p>
+<p>信号的 5 中默认处理动作 </p>
+<ul>
+<li>Term 终止进程 </li>
+<li>Ign 当前进程忽略掉这个信号 </li>
+<li>Core 终止进程，并生成一个Core文件 </li>
+<li>Stop 暂停当前进程 </li>
+<li>Cont 继续执行当前被暂停的进程</li>
+</ul>
+<p>信号的几种状态：产生、未决、递达 </p>
+<p>SIGKILL 和 SIGSTOP 信号不能被捕捉、阻塞或者忽略，只能执行默认动作。</p>
+<p><strong>信号相关函数</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">int</span> <span class="hljs-title function_">kill</span><span class="hljs-params">(<span class="hljs-type">pid_t</span> pid, <span class="hljs-type">int</span> sig)</span>;<br><span class="hljs-comment">/*</span><br><span class="hljs-comment">	- 功能： 给任何的进程或者进程组pid，发送任何信号</span><br><span class="hljs-comment">	- 参数：</span><br><span class="hljs-comment">		- pid：</span><br><span class="hljs-comment">			&gt; 0: 将信号发送给指定的进程</span><br><span class="hljs-comment">			= 0：将信号发送给当前的进程组</span><br><span class="hljs-comment">			= -1: 将信号发送给每一个有权限接收这个信号的进程</span><br><span class="hljs-comment">			&lt; -1: 这个pid=这个进程组的ID取反（-12345）</span><br><span class="hljs-comment">		- sig: 需要发送的信号的编号或者宏值，0表示不发送任何信号</span><br><span class="hljs-comment">*/</span>		<br><span class="hljs-type">int</span> <span class="hljs-title function_">raise</span><span class="hljs-params">(<span class="hljs-type">int</span> sig)</span>;<br><span class="hljs-comment">/*</span><br><span class="hljs-comment">	- 功能: 给当前进程发送信号</span><br><span class="hljs-comment">	- 参数：  </span><br><span class="hljs-comment">		- sig: 要发送的信号</span><br><span class="hljs-comment">	- 返回值：</span><br><span class="hljs-comment">		- 成功 0</span><br><span class="hljs-comment">		- 失败 非0</span><br><span class="hljs-comment">*/</span><br><span class="hljs-type">void</span> <span class="hljs-title function_">abort</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span>;<br><span class="hljs-comment">/*</span><br><span class="hljs-comment">	-功能： 发送SIGABRT信号给当前的进程，杀死当前进程</span><br><span class="hljs-comment">*/</span><br><span class="hljs-type">unsigned</span> <span class="hljs-type">int</span> <span class="hljs-title function_">alarm</span><span class="hljs-params">(<span class="hljs-type">unsigned</span> <span class="hljs-type">int</span> seconds)</span>;<br><span class="hljs-comment">/*</span><br><span class="hljs-comment">	- 功能：设置定时器，函数调用，开始倒计时，当倒计时为0的时候，函数会给当前的进程发发送一个信号SIGALARM</span><br><span class="hljs-comment">	- 参数：</span><br><span class="hljs-comment">    	seconds: 倒计时的时长，单位：秒。如果参数为0，定时器无效（不进行倒计时，也不会发送信号），取消一个定时器，通过alarm(0)</span><br><span class="hljs-comment">    - 返回值： </span><br><span class="hljs-comment">    	- 之前没有定时器，返回0</span><br><span class="hljs-comment">    	- 之前有定时器，返回之前的定时器剩余的时间</span><br><span class="hljs-comment">    </span><br><span class="hljs-comment">- SIGALARM: 默认终止当前的进程，每一个进程都有且只有唯一的一个定时器</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">该函数时不阻塞的</span><br><span class="hljs-comment">    </span><br><span class="hljs-comment">*/</span><br><span class="hljs-type">int</span> <span class="hljs-title function_">setitimer</span><span class="hljs-params">(<span class="hljs-type">int</span> which, <span class="hljs-type">const</span> <span class="hljs-keyword">struct</span> itimerval *new_val, <span class="hljs-keyword">struct</span> itimerval *old_value)</span>;	<br><span class="hljs-comment">/*	</span><br><span class="hljs-comment">	#include &lt;sys/time.h&gt;</span><br><span class="hljs-comment">	- 功能： 设置定时器（闹钟），可以替代alerm函数。精度达到us，可以实现周期性的定时</span><br><span class="hljs-comment">	- 参数：</span><br><span class="hljs-comment">    	- which: 定时器以什么时间计时</span><br><span class="hljs-comment">    		ITIMER_REAL: 真实时间，时间到达，发送 SIGALRM  常用</span><br><span class="hljs-comment">    		ITIMER_VIRTUAL: 用户时间，时间到达，发送 SIGVTALRM</span><br><span class="hljs-comment">    		ITIMER_PROF: 以该进程在用户态和内核态下所消耗的时间来计算，时间到达，发送 SIGPROT</span><br><span class="hljs-comment">    	- new_val: 设置定时器属性</span><br><span class="hljs-comment">             struct itimerval &#123;			// 定时器结构体</span><br><span class="hljs-comment">                   struct timeval it_interval; 	// 间隔时间 </span><br><span class="hljs-comment">                   struct timeval it_value;    	// 延长多长时间会执行定时器 </span><br><span class="hljs-comment">               &#125;;</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">               struct timeval &#123;			// 时间的结构体</span><br><span class="hljs-comment">                   time_t      tv_sec;         // 秒数 </span><br><span class="hljs-comment">                   suseconds_t tv_usec;        /* 微秒 </span><br><span class="hljs-comment">               &#125;;</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">               过10秒后，每个2秒定时一次</span><br><span class="hljs-comment">        - old_value: 记录上一次的计时参数，一般不使用，指定NULL</span><br><span class="hljs-comment">    - 返回值：</span><br><span class="hljs-comment">    	成功 0</span><br><span class="hljs-comment">    	失败 -1，并设置错误号</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">*/</span><br></code></pre></td></tr></table></figure>
+
+<h5 id="信号捕捉函数"><a href="#信号捕捉函数" class="headerlink" title="信号捕捉函数"></a><strong>信号捕捉函数</strong></h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;signal.h&gt;</span></span><br><br><span class="hljs-type">sighandler_t</span> <span class="hljs-title function_">signal</span><span class="hljs-params">(<span class="hljs-type">int</span> signum, <span class="hljs-type">sighandler_t</span> handler)</span>;<br><span class="hljs-type">int</span> <span class="hljs-title function_">sigaction</span><span class="hljs-params">(<span class="hljs-type">int</span> signum, <span class="hljs-type">const</span> <span class="hljs-keyword">struct</span> sigaction *act, <span class="hljs-keyword">struct</span> sigaction </span><br><span class="hljs-params">*oldact)</span>; <br><span class="hljs-comment">/*</span><br><span class="hljs-comment">	- 功能：检查或者改变信号的处理。信号捕捉</span><br><span class="hljs-comment">	- 参数：</span><br><span class="hljs-comment">		- signum: 需要捕捉的信号的编号或者宏值，推荐宏值</span><br><span class="hljs-comment">		- act: 捕捉信号之后的处理动作</span><br><span class="hljs-comment">		- oldset: 上一次对信号捕捉相关的设置，一般不适用，传递NULL</span><br><span class="hljs-comment">	- 返回值：</span><br><span class="hljs-comment">		成功 0</span><br><span class="hljs-comment">		失败 -1</span><br><span class="hljs-comment">		</span><br><span class="hljs-comment">		struct sigaction &#123;</span><br><span class="hljs-comment">				// 函数指针，指向的函数就是信号捕捉到之后的处理函数</span><br><span class="hljs-comment">               void     (*sa_handler)(int);		</span><br><span class="hljs-comment">             	// 不常用</span><br><span class="hljs-comment">               void     (*sa_sigaction)(int, siginfo_t *, void *);</span><br><span class="hljs-comment">             	// 临时阻塞信号集，信号捕捉函数执行过程中，临时阻塞某些信号</span><br><span class="hljs-comment">               sigset_t   sa_mask;</span><br><span class="hljs-comment">             	// 使用哪个信号处理对捕捉到的信号进行处理</span><br><span class="hljs-comment">                // 可以是0， 表示使用sa_handler, 等</span><br><span class="hljs-comment">               int        sa_flags;</span><br><span class="hljs-comment">               	// 被废弃掉了</span><br><span class="hljs-comment">               void     (*sa_restorer)(void);</span><br><span class="hljs-comment">           &#125;;</span><br><span class="hljs-comment">*/</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h5 id="阻塞信号和未决信号集"><a href="#阻塞信号和未决信号集" class="headerlink" title="阻塞信号和未决信号集"></a><strong>阻塞信号和未决信号集</strong></h5><p>阻塞信号集是可以修改的，未决信号集不能修改</p>
+<ol>
+<li>用户通过键盘  Ctrl + C, 产生2号信号SIGINT (信号被创建)</li>
+<li>信号产生但是没有被处理 （未决）<ul>
+<li>在内核中将所有的没有被处理的信号存储在一个集合中 （未决信号集）</li>
+<li>SIGINT信号状态被存储在第二个标志位上<ul>
+<li>这个标志位的值为0， 说明信号不是未决状态</li>
+<li>这个标志位的值为1， 说明信号处于未决状态</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>.这个未决状态的信号，需要被处理，处理之前需要和另一个信号集（阻塞信号集），进行比较<ul>
+<li>阻塞信号集默认不阻塞任何的信号</li>
+<li>如果想要阻塞某些信号需要用户调用系统的API</li>
+</ul>
+</li>
+<li>在处理的时候和阻塞信号集中的标志位进行查询，看是不是对该信号设置阻塞了<ul>
+<li>如果没有阻塞，这个信号就被处理</li>
+<li>如果阻塞了，这个信号就继续处于未决状态，直到阻塞解除，这个信号就被处理</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">int</span> <span class="hljs-title function_">sigemptyset</span><span class="hljs-params">(<span class="hljs-type">sigset_t</span> *<span class="hljs-built_in">set</span>)</span>;<br><span class="hljs-type">int</span> <span class="hljs-title function_">sigfillset</span><span class="hljs-params">(<span class="hljs-type">sigset_t</span> *<span class="hljs-built_in">set</span>)</span>;<br><span class="hljs-type">int</span> <span class="hljs-title function_">sigaddset</span><span class="hljs-params">(<span class="hljs-type">sigset_t</span> *<span class="hljs-built_in">set</span>, <span class="hljs-type">int</span> signum)</span>;<br><span class="hljs-type">int</span> <span class="hljs-title function_">sigdelset</span><span class="hljs-params">(<span class="hljs-type">sigset_t</span> *<span class="hljs-built_in">set</span>, <span class="hljs-type">int</span> signum)</span>;<br><span class="hljs-type">int</span> <span class="hljs-title function_">sigismember</span><span class="hljs-params">(<span class="hljs-type">const</span> <span class="hljs-type">sigset_t</span> *<span class="hljs-built_in">set</span>, <span class="hljs-type">int</span> signum)</span>;<br><span class="hljs-type">int</span> <span class="hljs-title function_">sigprocmask</span><span class="hljs-params">(<span class="hljs-type">int</span> how, <span class="hljs-type">const</span> <span class="hljs-type">sigset_t</span> *<span class="hljs-built_in">set</span>, <span class="hljs-type">sigset_t</span> *oldset)</span>;<br><span class="hljs-type">int</span> <span class="hljs-title function_">sigpending</span><span class="hljs-params">(<span class="hljs-type">sigset_t</span> *<span class="hljs-built_in">set</span>)</span>;<br></code></pre></td></tr></table></figure>
+
+<p>代码示例</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">/*</span><br><span class="hljs-comment">    int sigprocmask(int how, const sigset_t *set, sigset_t *oldset);</span><br><span class="hljs-comment">        - 功能：将自定义信号集中的数据设置到内核中（设置阻塞，解除阻塞，替换）</span><br><span class="hljs-comment">        - 参数：</span><br><span class="hljs-comment">            - how : 如何对内核阻塞信号集进行处理</span><br><span class="hljs-comment">                SIG_BLOCK: 将用户设置的阻塞信号集添加到内核中，内核中原来的数据不变</span><br><span class="hljs-comment">                    假设内核中默认的阻塞信号集是mask， mask | set</span><br><span class="hljs-comment">                SIG_UNBLOCK: 根据用户设置的数据，对内核中的数据进行解除阻塞</span><br><span class="hljs-comment">                    mask &amp;= ~set</span><br><span class="hljs-comment">                SIG_SETMASK:覆盖内核中原来的值</span><br><span class="hljs-comment">            </span><br><span class="hljs-comment">            - set ：已经初始化好的用户自定义的信号集</span><br><span class="hljs-comment">            - oldset : 保存设置之前的内核中的阻塞信号集的状态，可以是 NULL</span><br><span class="hljs-comment">        - 返回值：</span><br><span class="hljs-comment">            成功：0</span><br><span class="hljs-comment">            失败：-1</span><br><span class="hljs-comment">                设置错误号：EFAULT、EINVAL</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">    int sigpending(sigset_t *set);</span><br><span class="hljs-comment">        - 功能：获取内核中的未决信号集</span><br><span class="hljs-comment">        - 参数：set,传出参数，保存的是内核中的未决信号集中的信息。</span><br><span class="hljs-comment">        - 返回值：</span><br><span class="hljs-comment">            成功：0</span><br><span class="hljs-comment">            失败：-1</span><br><span class="hljs-comment">*/</span><br><br><span class="hljs-comment">// 编写一个程序，把所有的常规信号（1-31）的未决状态打印到屏幕</span><br><span class="hljs-comment">// 设置某些信号是阻塞的，通过键盘产生这些信号</span><br><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;signal.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdlib.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;unistd.h&gt;</span></span><br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span> &#123;<br><br>    <span class="hljs-comment">// 设置2、3号信号阻塞</span><br>    <span class="hljs-type">sigset_t</span> <span class="hljs-built_in">set</span>;<br>    sigemptyset(&amp;<span class="hljs-built_in">set</span>);<br>    <span class="hljs-comment">// 将2号和3号信号添加到信号集中</span><br>    sigaddset(&amp;<span class="hljs-built_in">set</span>, SIGINT);<br>    sigaddset(&amp;<span class="hljs-built_in">set</span>, SIGQUIT);<br><br>    <span class="hljs-comment">// 修改内核中的阻塞信号集</span><br>    sigprocmask(SIG_BLOCK, &amp;<span class="hljs-built_in">set</span>, <span class="hljs-literal">NULL</span>);<br><br>    <span class="hljs-type">int</span> num = <span class="hljs-number">0</span>;<br><br>    <span class="hljs-keyword">while</span>(<span class="hljs-number">1</span>) &#123;<br>        num++;<br>        <span class="hljs-comment">// 获取当前的未决信号集的数据</span><br>        <span class="hljs-type">sigset_t</span> pendingset;<br>        sigemptyset(&amp;pendingset);<br>        sigpending(&amp;pendingset);<br><br>        <span class="hljs-comment">// 遍历前32位</span><br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">31</span>; i++) &#123;<br>            <span class="hljs-keyword">if</span>(sigismember(&amp;pendingset, i) == <span class="hljs-number">1</span>) &#123;<br>                <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;1&quot;</span>);<br>            &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(sigismember(&amp;pendingset, i) == <span class="hljs-number">0</span>) &#123;<br>                <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;0&quot;</span>);<br>            &#125;<span class="hljs-keyword">else</span> &#123;<br>                perror(<span class="hljs-string">&quot;sigismember&quot;</span>);<br>                <span class="hljs-built_in">exit</span>(<span class="hljs-number">0</span>);<br>            &#125;<br>        &#125;<br><br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;\n&quot;</span>);<br>        sleep(<span class="hljs-number">1</span>);<br>        <span class="hljs-keyword">if</span>(num == <span class="hljs-number">10</span>) &#123;<br>            <span class="hljs-comment">// 解除阻塞</span><br>            sigprocmask(SIG_UNBLOCK, &amp;<span class="hljs-built_in">set</span>, <span class="hljs-literal">NULL</span>);<br>        &#125;<br><br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="5、共享内存"><a href="#5、共享内存" class="headerlink" title="5、共享内存"></a>5、共享内存</h4><p>共享内存允许两个或者多个进程共享物理内存的同一块区域（通常被称为段）。由于一个共享内存段会 称为一个进程用户空间的一部分，因此这种 IPC 机制无需内核介入。所有需要做的就是让一个进程将数据复制进共享内存中，并且这部分数据会对其他所有共享同一个段的进程可用。 </p>
+<p>与管道等要求发送进程将数据从用户空间的缓冲区复制进内核内存和接收进程将数据从内核内存复制进用户空间的缓冲区的做法相比，这种 IPC 技术的速度更快</p>
+<p><strong>使用步骤</strong></p>
+<ul>
+<li>调用 shmget() 创建一个新共享内存段或取得一个既有共享内存段的标识符（即由其他进程创建的 共享内存段）。这个调用将返回后续调用中需要用到的共享内存标识符。 </li>
+<li>使用 shmat() 来附上共享内存段，即使该段成为调用进程的虚拟内存的一部分。 此刻在程序中可以像对待其他可用内存那样对待这个共享内存段。为引用这块共享内存，程序需要 使用由 shmat()  </li>
+<li>调用返回的 addr 值，它是一个指向进程的虚拟地址空间中该共享内存段的起点的指针。</li>
+<li>调用 shmdt() 来分离共享内存段。在这个调用之后，进程就无法再引用这块共享内存了。这一步是 可选的，并且在进程终止时会自动完成这一步。 </li>
+<li>调用 shmctl() 来删除共享内存段。只有当当前所有附加内存段的进程都与之分离之后内存段才会销 毁。只有一个进程需要执行这一步。</li>
+</ul>
+<p><strong>相关函数</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">int</span> <span class="hljs-title function_">shmget</span><span class="hljs-params">(<span class="hljs-type">key_t</span> key, <span class="hljs-type">size_t</span> size, <span class="hljs-type">int</span> shmflg)</span>;<br><span class="hljs-comment">/*</span><br><span class="hljs-comment">	- 功能：创建一个新的共享内存段，或者获取一个既有的共享内存段的表示。</span><br><span class="hljs-comment">			新创建的内存段中的数据都会被初始化为0</span><br><span class="hljs-comment">	- 参数：</span><br><span class="hljs-comment">		- key:  ket_t类型是一个整形，通过这个找到或者创建一个共享内存</span><br><span class="hljs-comment">				一般使用16进制表示，非0值</span><br><span class="hljs-comment">		- size： 共享内存的大小</span><br><span class="hljs-comment">		- shmflg: 属性</span><br><span class="hljs-comment">			- 访问权限</span><br><span class="hljs-comment">			- 附加属性： 创建/判断共享内存是不是存在</span><br><span class="hljs-comment">				- 创建： IPC_CREAT</span><br><span class="hljs-comment">				- 判断共享内存是否存在： IPC_EXCL, 需要和IPC_CREAT一起使用</span><br><span class="hljs-comment">					IPC_CREAT | IPC_EXCL | 0664</span><br><span class="hljs-comment">		- 返回值： </span><br><span class="hljs-comment">			- 失败 -1 并设置错误号</span><br><span class="hljs-comment">			- 成功 &gt;0 返回共享的引用的ID, 后面操作共享内存都是通过这个值</span><br><span class="hljs-comment">*/</span><br><span class="hljs-type">void</span> *<span class="hljs-title function_">shmat</span><span class="hljs-params">(<span class="hljs-type">int</span> shmid, <span class="hljs-type">const</span> <span class="hljs-type">void</span> *shmaddr, <span class="hljs-type">int</span> shmflg)</span>;<br><span class="hljs-comment">/*</span><br><span class="hljs-comment">	- 功能： 和当前的进程进行关联</span><br><span class="hljs-comment">	- 参数： </span><br><span class="hljs-comment">		- shmid： 共享内存的表示（ID）,由shmget返回值获取</span><br><span class="hljs-comment">		- shmaddr： 申请的共享内存的起始地址，指定NULL，由内核指定</span><br><span class="hljs-comment">		- shmflg： 共享内存的操作</span><br><span class="hljs-comment">			- 读： SHM_RDONLY, 必须要有读权限</span><br><span class="hljs-comment">			- 读写： 0</span><br><span class="hljs-comment">	- 返回值：</span><br><span class="hljs-comment">		- 成功 返回共享内存的起始地址/首地址</span><br><span class="hljs-comment">		- 失败 (void *) -1</span><br><span class="hljs-comment">*/</span><br><br><span class="hljs-type">int</span> <span class="hljs-title function_">shmdt</span><span class="hljs-params">(<span class="hljs-type">const</span> <span class="hljs-type">void</span> *shmaddr)</span>;<br><span class="hljs-comment">/*</span><br><span class="hljs-comment">	- 功能： 接触当前进程和共享内存的关联</span><br><span class="hljs-comment">	- 参数：</span><br><span class="hljs-comment">		shmaddr： 共享内存的首地址</span><br><span class="hljs-comment">	- 返回值： 成功 0 失败 -1</span><br><span class="hljs-comment">*/</span><br><span class="hljs-type">int</span> <span class="hljs-title function_">shmctl</span><span class="hljs-params">(<span class="hljs-type">int</span> shmid, <span class="hljs-type">int</span> cmd, <span class="hljs-keyword">struct</span> shmid_ds *buf)</span>;<br><span class="hljs-comment">/*</span><br><span class="hljs-comment">	- 功能： 对共享内存进行操作。删除共享内存，共享内存要删除才会消失，创建共享内存的进程被销毁了对共享内存没有任何影响</span><br><span class="hljs-comment">	- 参数：</span><br><span class="hljs-comment">		- shmid： 共享内存的ID</span><br><span class="hljs-comment">		- cmd： 要做的操作</span><br><span class="hljs-comment">			- IPC_STAT : 获取共享内存当前的状态</span><br><span class="hljs-comment">			- IPC_SET: 设置共享内存的状态</span><br><span class="hljs-comment">			- IPC_RMID: 标记共享内存被销毁</span><br><span class="hljs-comment">		- buf: 需要设置或者获取的共享内存的属性信息</span><br><span class="hljs-comment">			- IPC_STAT: buf存储数据</span><br><span class="hljs-comment">			- IPC_SET: buf中需要初始化数据，设置到内核中</span><br><span class="hljs-comment">			- IPC_RMID: 没有用，NULL</span><br><span class="hljs-comment">*/</span><br><span class="hljs-type">key_t</span> <span class="hljs-title function_">ftok</span><span class="hljs-params">(<span class="hljs-type">const</span> <span class="hljs-type">char</span> *pathname, <span class="hljs-type">int</span> proj_id)</span>;<br><span class="hljs-comment">/*</span><br><span class="hljs-comment">	- 功能： 根据指定的路径名，和int值，生成一个共享的key</span><br><span class="hljs-comment">	- 参数：</span><br><span class="hljs-comment">		- pathname: 指定一个存在的路径</span><br><span class="hljs-comment">		- proj_id: int 类型的值，但是这系统调用指挥使用其中的1个字节</span><br><span class="hljs-comment">*/</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>问题</strong></p>
+<ol>
+<li>问题1：操作系统如何知道一块共享内存被多少个进程关联？<ul>
+<li>共享内存维护了一个结构体struct shmid_ds 这个结构体中有一个成员 shm_nattch</li>
+<li>shm_nattach 记录了关联的进程个数</li>
+</ul>
+</li>
+<li>问题2：可不可以对共享内存进行多次删除 shmctl<ul>
+<li>可以的</li>
+<li>因为shmctl 标记删除共享内存，不是直接删除</li>
+<li>什么时候真正删除呢?<ul>
+<li>当和共享内存关联的进程数为0的时候，就真正被删除</li>
+</ul>
+</li>
+<li>当共享内存的key为0的时候，表示共享内存被标记删除了<ul>
+<li>如果一个进程和共享内存取消关联，那么这个进程就不能继续操作这个共享内存。也不能进行关联。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p><strong>共享内存和内存映射的区别</strong></p>
+<ol>
+<li>共享内存可以直接创建，内存映射需要磁盘文件（匿名映射除外）</li>
+<li>共享内存效率更高</li>
+<li>内存<ul>
+<li>所有的进程操作的是同一块共享内存。</li>
+<li>内存映射，每个进程在自己的虚拟地址空间中有一个独立的内存。</li>
+</ul>
+</li>
+<li>数据安全<ul>
+<li>进程突然退出<ul>
+<li>共享内存还存在</li>
+<li>内存映射区消失</li>
+</ul>
+</li>
+<li>运行进程的电脑死机，宕机了<ul>
+<li>数据存在在共享内存中，没有了</li>
+<li>内存映射区的数据 ，由于磁盘文件中的数据还在，所以内存映射区的数据还存在。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>生命周期<ul>
+<li>内存映射区：进程退出，内存映射区销毁</li>
+<li>共享内存：进程退出，共享内存还在，标记删除（所有的关联的进程数为0），或者关机<ul>
+<li>如果一个进程退出，会自动和共享内存进行取消关联。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="守护进程"><a href="#守护进程" class="headerlink" title="守护进程"></a>守护进程</h3><p>守护进程（Daemon Process），也就是通常说的 Daemon 进程（精灵进程），是 Linux 中的后台服务进程。它是一个生存期较长的进程，通常独立于控制终端并且周期性地执行某种任务或等待处理某些发生的事件。一般采用以 d 结尾的名字。</p>
+<p>守护进程具备下列特征： </p>
+<ul>
+<li>生命周期很长，守护进程会在系统启动的时候被创建并一直运行直至系统被关闭。 </li>
+<li>它在后台运行并且不拥有控制终端。没有控制终端确保了内核永远不会为守护进程自动生成任何控制信号以及终端相关的信号（如 SIGINT、SIGQUIT）。</li>
+</ul>
+<p>Linux 的大多数服务器就是用守护进程实现的。比如，Internet 服务器 inetd， Web 服务器 httpd 等。</p>
+<p>执行一个 fork()，之后父进程退出，子进程继续执行。 </p>
+<p>子进程调用 setsid() 开启一个新会话。 </p>
+<p>清除进程的 umask 以确保当守护进程创建文件和目录时拥有所需的权限。 </p>
+<p>修改进程的当前工作目录，通常会改为根目录（&#x2F;）。 </p>
+<p>关闭守护进程从其父进程继承而来的所有打开着的文件描述符。 </p>
+<p>在关闭了文件描述符0、1、2之后，守护进程通常会打开&#x2F;dev&#x2F;null 并使用dup2()  使所有这些描述符指向这个设备。 </p>
+<h3 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h3>
                 
               </div>
             
