@@ -39,8 +39,19 @@
 <meta property="og:image" content="https://zy674517173.github.io/2024/06/02/MyWebServer/ARP%E5%8D%8F%E8%AE%AE.png">
 <meta property="og:image" content="https://zy674517173.github.io/2024/06/02/MyWebServer/%E5%B0%81%E8%A3%85.png">
 <meta property="og:image" content="https://zy674517173.github.io/2024/06/02/MyWebServer/%E5%88%86%E7%94%A8.png">
+<meta property="og:image" content="https://zy674517173.github.io/2024/06/02/MyWebServer/%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1%E8%BF%87%E7%A8%8B.png">
+<meta property="og:image" content="https://zy674517173.github.io/2024/06/02/MyWebServer/arp%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B.png">
+<meta property="og:image" content="https://zy674517173.github.io/2024/06/02/MyWebServer/%E5%B0%8F%E7%AB%AF%E5%AD%97%E8%8A%82%E5%BA%8F.png">
+<meta property="og:image" content="https://zy674517173.github.io/2024/06/02/MyWebServer/%E5%A4%A7%E7%AB%AF%E5%AD%97%E8%8A%82%E5%BA%8F.png">
+<meta property="og:image" content="https://zy674517173.github.io/2024/06/02/MyWebServer/TCP%E9%80%9A%E4%BF%A1%E8%BF%87%E7%A8%8B.png">
+<meta property="og:image" content="https://zy674517173.github.io/2024/06/02/MyWebServer/TCP%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B.png">
+<meta property="og:image" content="https://zy674517173.github.io/2024/06/02/MyWebServer/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3.png">
+<meta property="og:image" content="https://zy674517173.github.io/2024/06/02/MyWebServer/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A32.png">
+<meta property="og:image" content="https://zy674517173.github.io/2024/06/02/MyWebServer/%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B.png">
+<meta property="og:image" content="https://zy674517173.github.io/2024/06/02/MyWebServer/TCP%E7%8A%B6%E6%80%81%E8%BD%AC%E6%8D%A2.png">
+<meta property="og:image" content="https://zy674517173.github.io/2024/06/02/MyWebServer/TCP%E7%8A%B6%E6%80%81%E8%BD%AC%E6%8D%A22.png">
 <meta property="article:published_time" content="2024-06-02T05:58:56.000Z">
-<meta property="article:modified_time" content="2024-08-07T13:52:10.085Z">
+<meta property="article:modified_time" content="2024-08-08T13:43:06.923Z">
 <meta property="article:author" content="张同学">
 <meta property="article:tag" content="项目">
 <meta name="twitter:card" content="summary_large_image">
@@ -239,7 +250,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          24k 字
+          31k 字
         
       </span>
     
@@ -250,7 +261,7 @@
         
         
         
-          202 分钟
+          255 分钟
         
       </span>
     
@@ -874,7 +885,7 @@
 
 
 
-<h3 id="网络基础"><a href="#网络基础" class="headerlink" title="网络基础"></a>网络基础</h3><h4 id="1、网络结构模式"><a href="#1、网络结构模式" class="headerlink" title="1、网络结构模式"></a>1、网络结构模式</h4><h5 id="C-S结构"><a href="#C-S结构" class="headerlink" title="C&#x2F;S结构"></a>C&#x2F;S结构</h5><p><strong>简介</strong></p>
+<h3 id="网络编程（八股）"><a href="#网络编程（八股）" class="headerlink" title="网络编程（八股）"></a>网络编程（八股）</h3><h4 id="1、网络结构模式"><a href="#1、网络结构模式" class="headerlink" title="1、网络结构模式"></a>1、网络结构模式</h4><h5 id="C-S结构"><a href="#C-S结构" class="headerlink" title="C&#x2F;S结构"></a>C&#x2F;S结构</h5><p><strong>简介</strong></p>
 <p>服务器 - 客户机，即 Client - Server（C&#x2F;S）结构。C&#x2F;S 结构通常采取两层结构。<strong>服务器负责数据的管理，客户机负责完成与用户的交互任务</strong>。客户机是因特网上访问别人信息的机器，服务器则是提供信息供人访问的计算机。 </p>
 <p>客户机通过局域网与服务器相连，接受用户的请求，并通过网络向服务器提出请求，对数据库进行 操作。服务器接受客户机的请求，将数据提交给客户机，客户机将数据进行计算并将结果呈现给用 户。服务器还要提供完善安全保护及对数据完整性的处理等操作，并允许多个客户机同时访问服务器，这就对服务器的硬件处理数据能力提出了很高的要求。 </p>
 <p>在C&#x2F;S结构中，应用程序分为两部分：<strong>服务器部分和客户机部分</strong>。服务器部分是多个用户共享的信 息与功能，执行后台服务，如控制共享数据库的操作等；客户机部分为用户所专有，负责执行前台功能，在出错提示、在线帮助等方面都有强大的功能，并且可以在子程序间自由切换。</p>
@@ -1028,30 +1039,282 @@
 <p>分用是依靠头部信息中的类型字段实现的。</p>
 <img src="/2024/06/02/MyWebServer/%E5%88%86%E7%94%A8.png" srcset="/img/loading.gif" lazyload class="">
 
+<h4 id="7、网络通信过程"><a href="#7、网络通信过程" class="headerlink" title="7、网络通信过程"></a>7、网络通信过程</h4><h5 id="数据包封装-解封装"><a href="#数据包封装-解封装" class="headerlink" title="数据包封装-解封装"></a>数据包封装-解封装</h5><img src="/2024/06/02/MyWebServer/%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1%E8%BF%87%E7%A8%8B.png" srcset="/img/loading.gif" lazyload class="">
+
+<h5 id="arp工作流程"><a href="#arp工作流程" class="headerlink" title="arp工作流程"></a>arp工作流程</h5><img src="/2024/06/02/MyWebServer/arp%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B.png" srcset="/img/loading.gif" lazyload class="">
+
+<h4 id="8、socket介绍"><a href="#8、socket介绍" class="headerlink" title="8、socket介绍"></a>8、socket介绍</h4><p>所谓 socket（套接字），就是对网络中不同主机上的<strong>应用进程之间</strong>进行双向通信的端点的抽象。 一个套接字就是网络上进程通信的一端，提供了应用层进程利用网络协议交换数据的机制。从所处的地位来讲，套接字上联应用进程，下联网络协议栈，是应用程序通过网络协议进行通信的接口，是应用程序与网络协议根进行交互的接口。</p>
+<p>socket 可以看成是两个网络应用程序进行通信时，各自通信连接中的端点，这是一个逻辑上的概念。它是网络环境中进程间通信的 API，也是可以被命名和寻址的通信端点，使用中的每一个套接字都有其类型和一个与之相连进程。通信时其中一个网络应用程序将要传输的一段信息写入它所在主机的 socket 中，该 socket 通过与网络接口卡（NIC）相连的传输介质将这段信息送到另外一台主机的 socket 中，使对方能够接收到这段信息。<strong>socket 是由 IP 地址和端口结合的</strong>，提供向应用层进程传送数据包的机制。</p>
+<p>socket 本身有“插座”的意思，在 Linux 环境下，用于表示<strong>进程间网络通信</strong>的特殊文件类型。本质为 内核借助缓冲区形成的伪文件。既然是文件，那么理所当然的，我们可以使用<strong>文件描述符引用套接字</strong>。与管道类似的，Linux 系统将其封装成文件的目的是为了统一接口，使得读写套接字和读写文件的操作一致。区别是<strong>管道主要应用于本地进程间通信</strong>，<strong>而套接字多应用于网络进程间数据的传递</strong>。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">// 套接字通信分两部分：</span><br>- 服务器端：被动接受连接，一般不会主动发起连接<br>- 客户端：主动向服务器发起连接<br>    <br>socket是一套通信的接口，Linux 和 Windows 都有，但是有一些细微的差别。<br></code></pre></td></tr></table></figure>
+
+<h4 id="9、字节序"><a href="#9、字节序" class="headerlink" title="9、字节序"></a>9、字节序</h4><h5 id="简介-2"><a href="#简介-2" class="headerlink" title="简介"></a>简介</h5><p>现代 CPU 的累加器一次都能装载（至少）4 字节（这里考虑 32 位机），即一个整数。那么这 <strong>4  字节在内存中排列的顺序将影响它被累加器装载成的整数的值，这就是字节序问题</strong>。在各种计算机体系结构中，对于字节、字等的存储机制有所不同，因而引发了计算机通信领域中一个很重要的问题，即通信双方交流的信息单元（比特、字节、字、双字等等）应该以什么样的顺序进行传送。如果不达成一致的规则，通信双方将无法进行正确的编码&#x2F;译码从而导致通信失败。</p>
+<p><span style="color: red; font-weight: bold;">字节序，顾名思义字节的顺序，就是大于一个字节类型的数据在内存中的存放顺序(一个字节的数 据当然就无需谈顺序的问题了。</span></p>
+<p>字节序分为<strong>大端字节序</strong>（Big-Endian） 和<strong>小端字节序</strong>（Little-Endian）。大端字节序是指一个整数的最高位字节（23 ~ 31 bit）存储在内存的低地址处，低位字节（0 ~ 7 bit）存储在内存的高地址处；<strong>小端字节序则是指整数的高位字节存储在内存的高地址处，而低位字节则存储在内存的低地址处。</strong></p>
+<h5 id="字节序举例"><a href="#字节序举例" class="headerlink" title="字节序举例"></a>字节序举例</h5><ul>
+<li><p>小端字节序（大部分采用的）</p>
+<p>0x 01 02 03 04 –   ff &#x3D; 255</p>
+<p> 内存的方向	—–&gt;</p>
+</li>
+</ul>
+<p>​		内存的低位    ——&gt;    内存的高位</p>
+<p>​		04 03 02 01</p>
+<img src="/2024/06/02/MyWebServer/%E5%B0%8F%E7%AB%AF%E5%AD%97%E8%8A%82%E5%BA%8F.png" srcset="/img/loading.gif" lazyload class="">
+
+<p>​		存储的结果： 0x 11 22 33 44 12 34 56 78</p>
+<ul>
+<li><p>大端字节序</p>
+<p>内存的方向	—–&gt;</p>
+<p>内存的高位    ——&gt;    内存的低位</p>
+<img src="/2024/06/02/MyWebServer/%E5%A4%A7%E7%AB%AF%E5%AD%97%E8%8A%82%E5%BA%8F.png" srcset="/img/loading.gif" lazyload class=""></li>
+</ul>
+<p>​		存储的结果： 0x 11 22 33 44 12 34 56 78</p>
+<h5 id="字节序转换函数"><a href="#字节序转换函数" class="headerlink" title="字节序转换函数"></a>字节序转换函数</h5><p>当格式化的数据在两台使用不同字节序的主机之间直接传递时，接收端必然错误的解释之。解决问题的 方法是：<strong>发送端总是把要发送的数据转换成大端字节序数据后再发送</strong>，而接收端知道对方传送过来的数据总是<strong>采用大端字节序</strong>，所以接收端可以根据自身采用的字节序决定是否对接收到的数据进行转换（小端机转换，大端机不转换）。</p>
+<p><strong>网络字节顺序</strong>是 TCP&#x2F;IP 中规定好的一种数据表示格式，它与具体的 CPU 类型、操作系统等无关，从而可以保证数据在不同主机之间传输时能够被正确解释，<strong>网络字节顺序采用大端排序方式</strong>。</p>
+<p>BSD Socket提供了封装好的转换接口，方便程序员使用。包括从主机字节序到网络字节序的转换函数： htons、htonl；从网络字节序到主机字节序的转换函数：ntohs、ntohl。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs c">h   - host 主机，主机字节序<br>to  - 转换成什么<br>n   - network  网络字节序<br>s   - <span class="hljs-type">short</span>  <span class="hljs-type">unsigned</span> <span class="hljs-type">short</span><br>l   - <span class="hljs-type">long</span>  <span class="hljs-type">unsigned</span> <span class="hljs-type">int</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;arpa/inet.h&gt;</span></span><br> <span class="hljs-comment">// 转换端口</span><br><span class="hljs-type">uint16_t</span> <span class="hljs-title function_">htons</span><span class="hljs-params">(<span class="hljs-type">uint16_t</span> hostshort)</span>;     	<span class="hljs-comment">// 主机字节序 - 网络字节序</span><br><span class="hljs-type">uint16_t</span> <span class="hljs-title function_">ntohs</span><span class="hljs-params">(<span class="hljs-type">uint16_t</span> netshort)</span>;      	<span class="hljs-comment">// 网络子节序 - 主机字节序</span><br><br><span class="hljs-comment">// 转IP</span><br><span class="hljs-type">uint32_t</span> <span class="hljs-title function_">htonl</span><span class="hljs-params">(<span class="hljs-type">uint32_t</span> hostlong)</span>;      	<span class="hljs-comment">// 主机字节序 - 网络字节序</span><br><span class="hljs-type">uint32_t</span> <span class="hljs-title function_">ntohl</span><span class="hljs-params">(<span class="hljs-type">uint32_t</span> netlong)</span>;       	<span class="hljs-comment">// 网络子节序 - 主机字节序</span><br>  <br></code></pre></td></tr></table></figure>
+
+<p>代码示例</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">/*</span><br><span class="hljs-comment">    网络通信时，需要将主机字节序装换成网络字节序（大端）</span><br><span class="hljs-comment">    另外一段获取到数据以后根据情况将网络字节序转化成主机字节序</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">    #include &lt;arpa/inet.h&gt;</span><br><span class="hljs-comment">    // 转换端口</span><br><span class="hljs-comment">    uint16_t htons(uint16_t hostshort);     	// 主机字节序 - 网络字节序</span><br><span class="hljs-comment">    uint16_t ntohs(uint16_t netshort);      	// 网络子节序 - 主机字节序</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">    // 转IP</span><br><span class="hljs-comment">    uint32_t htonl(uint32_t hostlong);      	// 主机字节序 - 网络字节序</span><br><span class="hljs-comment">    uint32_t ntohl(uint32_t netlong);       	// 网络子节序 - 主机字节序</span><br><span class="hljs-comment">*/</span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;arpa/inet.h&gt;</span></span><br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span><br>&#123;       <br>    <span class="hljs-comment">// htons  转换端口</span><br>    <span class="hljs-type">unsigned</span> <span class="hljs-type">short</span> a = <span class="hljs-number">0x0102</span>; <br>    <span class="hljs-type">unsigned</span> <span class="hljs-type">short</span> b = htons(a);<br><br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;a : %x\n&quot;</span>, a);<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;b : %x\n&quot;</span>, b);<br><br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;===========================\n&quot;</span>);<br>    <br>    <span class="hljs-comment">// htonl  转换IP</span><br>    <span class="hljs-type">char</span> buf[<span class="hljs-number">4</span>] = &#123;<span class="hljs-number">192</span>, <span class="hljs-number">168</span>, <span class="hljs-number">200</span>, <span class="hljs-number">2</span>&#125;;<br>    <span class="hljs-type">int</span> num = *(<span class="hljs-type">int</span> *)buf;<br>    <span class="hljs-type">int</span> sum = htonl(num);<br>    <span class="hljs-type">unsigned</span> <span class="hljs-type">char</span> *p = (<span class="hljs-type">char</span> *)&amp;sum;  <span class="hljs-comment">// 取地址</span><br><br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d %d %d %d\n&quot;</span>, *p, *(p+<span class="hljs-number">1</span>), *(p+<span class="hljs-number">2</span>), *(p+<span class="hljs-number">3</span>));<br><br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;===========================\n&quot;</span>);<br><br>    <span class="hljs-comment">// ntohl</span><br>    <span class="hljs-type">char</span> buf1[<span class="hljs-number">4</span>] = &#123;<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">168</span>, <span class="hljs-number">192</span>&#125;;   <span class="hljs-comment">// 大端</span><br>    <span class="hljs-type">int</span> num1 = *(<span class="hljs-type">int</span> *)buf1;<br>    <span class="hljs-type">int</span> sum1 = ntohl(num1);<br>    <span class="hljs-type">unsigned</span> <span class="hljs-type">char</span> *p1 = (<span class="hljs-type">unsigned</span> <span class="hljs-type">char</span> *)&amp;sum1;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d %d %d %d\n&quot;</span>, *p1, *(p1+<span class="hljs-number">1</span>), *(p1+<span class="hljs-number">2</span>), *(p1+<span class="hljs-number">3</span>));<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 
 
+<h4 id="10、socket地址"><a href="#10、socket地址" class="headerlink" title="10、socket地址"></a>10、socket地址</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">// socket地址其实是一个结构体，封装端口号和IP等信息。后面的socket相关的api中需要使用到这个</span><br>socket地址。<br><span class="hljs-comment">// 客户端 -&gt;  服务器（IP, Port）</span><br></code></pre></td></tr></table></figure>
+
+<h5 id="通用socket地址（IP和端口信息）"><a href="#通用socket地址（IP和端口信息）" class="headerlink" title="通用socket地址（IP和端口信息）"></a>通用socket地址（IP和端口信息）</h5><p>socket 网络编程接口中表示 socket 地址的是结构体 sockaddr，其定义如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/socket.h&gt;</span></span><br><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">sockaddr</span> &#123;</span><br>	<span class="hljs-type">sa_family_t</span> 	 sa_family;<br> 	<span class="hljs-type">char</span>			sa_data[<span class="hljs-number">14</span>];<br> &#125;;<br><span class="hljs-keyword">typedef</span> <span class="hljs-type">unsigned</span> <span class="hljs-type">short</span> <span class="hljs-type">int</span> <span class="hljs-type">sa_family_t</span>;<br></code></pre></td></tr></table></figure>
+
+<p> sa_family 成员是地址族类型（sa_family_t）的变量。地址族类型通常与协议族类型对应。常见的协议族（protocol family，也称 domain）和对应的地址族入下所示：</p>
+<table>
+<thead>
+<tr>
+<th align="center">协议族</th>
+<th align="center">地址族</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">PF_UNIX</td>
+<td align="center">AF_UNIX</td>
+<td align="center">UNIX本地域协议族</td>
+</tr>
+<tr>
+<td align="center">PF_INET</td>
+<td align="center">AF_INET</td>
+<td align="center">TCP&#x2F;IPv4协议族</td>
+</tr>
+<tr>
+<td align="center">PF_INET6</td>
+<td align="center">AF_INET6</td>
+<td align="center">TCP&#x2F;IPv6协议族</td>
+</tr>
+</tbody></table>
+<p>宏 PF_* 和 AF_* 都定义在 bits&#x2F;socket.h 头文件中，且后者与前者有完全相同的值，所以二者通常混 用。</p>
+<p>sa_data 成员用于存放 socket 地址值。但是，不同的协议族的地址值具有不同的含义和长度，如下所 示：</p>
+<table>
+<thead>
+<tr>
+<th align="center">协议族</th>
+<th align="center">地址值含义和长度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">PF_UNIX</td>
+<td align="center">文件的路径名，长度可以达到108字节</td>
+</tr>
+<tr>
+<td align="center">PF_INET</td>
+<td align="center">16 bit 端口号和32 bit地址，共6字节</td>
+</tr>
+<tr>
+<td align="center">PF_INET6</td>
+<td align="center">16 bit 端口号，32 bit 流标识，128 bit IPv6地址，32 bit 范围ID, 共26字节</td>
+</tr>
+</tbody></table>
+<p>由上表可知，14 字节的 sa_data 根本无法容纳多数协议族的地址值。因此，Linux 定义了下面这个新的 通用的 socket 地址结构体，这个结构体不仅提供了足够大的空间用于存放地址值，而且是内存对齐的。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/socket.h&gt;</span></span><br><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">sockaddr_storage</span></span><br><span class="hljs-class">&#123;</span><br>	<span class="hljs-type">sa_family_t</span> sa_family;<br>	<span class="hljs-type">unsigned</span> <span class="hljs-type">long</span> <span class="hljs-type">int</span> __ss_align;<br>	<span class="hljs-type">char</span> __ss_padding[ <span class="hljs-number">128</span> - <span class="hljs-keyword">sizeof</span>(__ss_align) ];<br>&#125;;<br><span class="hljs-keyword">typedef</span> <span class="hljs-type">unsigned</span> <span class="hljs-type">short</span> <span class="hljs-type">int</span> <span class="hljs-type">sa_family_t</span>;<br></code></pre></td></tr></table></figure>
+
+<h5 id="专用-socket-地址"><a href="#专用-socket-地址" class="headerlink" title="专用 socket 地址"></a>专用 socket 地址</h5><p>很多网络编程函数诞生早于 IPv4 协议，那时候都使用的是 struct sockaddr 结构体，为了向前兼容，现 在sockaddr 退化成了（void *）的作用，传递一个地址给函数，至于这个函数是 sockaddr_in 还是  sockaddr_in6，由地址族确定，然后函数内部再强制类型转化为所需的地址类型。</p>
+<p>UNIX 本地域协议族使用如下专用的 socket 地址结构体：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;sys/un.h&gt;</span></span><br><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">sockaddr_un</span></span><br><span class="hljs-class">&#123;</span><br>	<span class="hljs-type">sa_family_t</span> sin_family;<br>	<span class="hljs-type">char</span> sun_path[<span class="hljs-number">108</span>];<br>&#125;;<br></code></pre></td></tr></table></figure>
+
+<p> TCP&#x2F;IP 协议族有 sockaddr_in 和 sockaddr_in6 两个专用的 socket 地址结构体，它们分别用于 IPv4 和  IPv6：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;netinet/in.h&gt;</span></span><br><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">sockaddr_in</span></span><br><span class="hljs-class">&#123;</span><br>	<span class="hljs-type">sa_family_t</span> sin_family;     	<span class="hljs-comment">/* __SOCKADDR_COMMON(sin_) */</span><br>	<span class="hljs-type">in_port_t</span> sin_port;         	<span class="hljs-comment">/* Port number.  */</span><br>	<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">in_addr</span> <span class="hljs-title">sin_addr</span>;</span>    	<span class="hljs-comment">/* Internet address.  */</span><br> 	<span class="hljs-comment">/* Pad to size of `struct sockaddr&#x27;. */</span><br> 	<span class="hljs-type">unsigned</span> <span class="hljs-type">char</span> sin_zero[<span class="hljs-keyword">sizeof</span> (<span class="hljs-keyword">struct</span> sockaddr) - __SOCKADDR_COMMON_SIZE <br>		<span class="hljs-title function_">sizeof</span> <span class="hljs-params">(<span class="hljs-type">in_port_t</span>)</span> - <span class="hljs-title function_">sizeof</span> <span class="hljs-params">(<span class="hljs-keyword">struct</span> in_addr)</span>];<br> &#125;;  <br><br><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">in_addr</span></span><br><span class="hljs-class">&#123;</span><br> 	<span class="hljs-type">in_addr_t</span> s_addr;<br>&#125;;<br><br><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">sockaddr_in6</span></span><br><span class="hljs-class">&#123;</span><br> 	<span class="hljs-type">sa_family_t</span> sin6_family;<br> 	<span class="hljs-type">in_port_t</span> sin6_port;    		<span class="hljs-comment">/* Transport layer port # */</span><br>	<span class="hljs-type">uint32_t</span> sin6_flowinfo; 		<span class="hljs-comment">/* IPv6 flow information */</span><br> 	<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">in6_addr</span> <span class="hljs-title">sin6_addr</span>;</span>  	<span class="hljs-comment">/* IPv6 address */</span><br> 	<span class="hljs-type">uint32_t</span> sin6_scope_id; 		<span class="hljs-comment">/* IPv6 scope-id */</span><br>&#125;;<br><span class="hljs-keyword">typedef</span> <span class="hljs-type">unsigned</span> <span class="hljs-type">short</span>  <span class="hljs-type">uint16_t</span>;<br><span class="hljs-keyword">typedef</span> <span class="hljs-type">unsigned</span> <span class="hljs-type">int</span>    <span class="hljs-type">uint32_t</span>;<br><span class="hljs-keyword">typedef</span> <span class="hljs-type">uint16_t</span> <span class="hljs-type">in_port_t</span>;<br><span class="hljs-keyword">typedef</span> <span class="hljs-type">uint32_t</span> <span class="hljs-type">in_addr_t</span>;<br><span class="hljs-meta">#<span class="hljs-keyword">define</span> __SOCKADDR_COMMON_SIZE (sizeof (unsigned short int))</span><br></code></pre></td></tr></table></figure>
+
+<p>所有专用 socket 地址（以及 sockaddr_storage）类型的变量在实际使用时都需要转化为通用 socket 地 址类型 sockaddr（强制转化即可），因为所有 socket 编程接口使用的地址参数类型都是 sockaddr。</p>
+<h4 id="11、IP地址转换（字符串ip-整数，-主机-网络字节序的转换）"><a href="#11、IP地址转换（字符串ip-整数，-主机-网络字节序的转换）" class="headerlink" title="11、IP地址转换（字符串ip-整数， 主机-网络字节序的转换）"></a>11、IP地址转换（字符串ip-整数， 主机-网络字节序的转换）</h4><p>通常，人们习惯用可读性好的字符串来表示 IP 地址，比如用点分十进制字符串表示 IPv4 地址，以及用十六进制字符串表示 IPv6 地址。但编程中我们需要先把它们<strong>转化为整数（二进制数）</strong>方能使用。而记录日志时则相反，我们要把整数表示的 <strong>IP 地址转化为可读的字符串</strong>。下面 3 个函数可用于用<strong>点分十进制字符串表示的 IPv4 地址和用网络字节序整数表示的 IPv4 地址之间的转换</strong>：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;arpa/inet.h&gt;</span></span><br><br><span class="hljs-type">in_addr_t</span> <span class="hljs-title function_">inet_addr</span><span class="hljs-params">(<span class="hljs-type">const</span> <span class="hljs-type">char</span> *cp)</span>;	<span class="hljs-comment">//   转换成int类型的整数，网络字节序</span><br><span class="hljs-type">int</span> <span class="hljs-title function_">inet_aton</span><span class="hljs-params">(<span class="hljs-type">const</span> <span class="hljs-type">char</span> *cp, <span class="hljs-keyword">struct</span> in_addr *inp)</span>;	<span class="hljs-comment">// 转换成网络字节序，保存在inp里</span><br><span class="hljs-type">char</span> *<span class="hljs-title function_">inet_ntoa</span><span class="hljs-params">(<span class="hljs-keyword">struct</span> in_addr in)</span>;		<span class="hljs-comment">// </span><br></code></pre></td></tr></table></figure>
+
+<p>下面这对更新的函数也能完成前面 3 个函数同样的功能，并且它们同时适用 IPv4 地址和 IPv6 地址：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;arpa/inet.h&gt;</span></span><br><span class="hljs-comment">// p:点分十进制的IP字符串，</span><br><span class="hljs-comment">// n:表示network，网络字节序的整数</span><br><span class="hljs-type">int</span> <span class="hljs-title function_">inet_pton</span><span class="hljs-params">(<span class="hljs-type">int</span> af, <span class="hljs-type">const</span> <span class="hljs-type">char</span> *src, <span class="hljs-type">void</span> *dst)</span>;<br> 	<span class="hljs-comment">// af:地址族： AF_INET  AF_INET6</span><br> 	<span class="hljs-comment">// src:需要转换的点分十进制的IP字符串</span><br>	<span class="hljs-comment">// dst:转换后的结果保存在这个里面</span><br><br><span class="hljs-comment">// 将网络字节序的整数，转换成点分十进制的IP地址字符串</span><br><span class="hljs-type">const</span> <span class="hljs-type">char</span> *<span class="hljs-title function_">inet_ntop</span><span class="hljs-params">(<span class="hljs-type">int</span> af, <span class="hljs-type">const</span> <span class="hljs-type">void</span> *src, <span class="hljs-type">char</span> *dst, <span class="hljs-type">socklen_t</span> size)</span>;<br>	<span class="hljs-comment">// af:地址族： AF_INET  AF_INET6</span><br> 	<span class="hljs-comment">// src: 要转换的ip的整数的地址</span><br>	<span class="hljs-comment">// dst: 转换成IP地址字符串保存的地方</span><br>	<span class="hljs-comment">// size：第三个参数的大小（数组的大小）</span><br>	<span class="hljs-comment">// 返回值：返回转换后的数据的地址（字符串），和 dst 是一样的</span><br></code></pre></td></tr></table></figure>
+
+<p>代码示例</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;arpa/inet.h&gt;</span></span><br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span><br>&#123;   <br>    <span class="hljs-comment">// 创建一个IP字符串，点分十进制的IP地址字符串</span><br>    <span class="hljs-type">char</span> buf[] = <span class="hljs-string">&quot;192.168.1.1&quot;</span>;<br>    <span class="hljs-type">int</span> num = <span class="hljs-number">0</span>;<br>    <span class="hljs-comment">// 将点分十进制的IP字符串转换成网络字节序的整数</span><br>    inet_pton(AF_INET, buf, &amp;num);<br>    <span class="hljs-type">unsigned</span> <span class="hljs-type">char</span> *p = (<span class="hljs-type">unsigned</span> <span class="hljs-type">char</span> *)&amp;num;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d %d %d %d\n&quot;</span>, *p, *(p+<span class="hljs-number">1</span>), *(p+<span class="hljs-number">2</span>), *(p+<span class="hljs-number">3</span>));<br><br>    <span class="hljs-comment">// 将网络字节序的IP整数转换成点分十进制的IP字符串</span><br>    <span class="hljs-type">char</span> ip[<span class="hljs-number">16</span>] = <span class="hljs-string">&quot;&quot;</span>;<br>    <span class="hljs-type">const</span> <span class="hljs-type">char</span> * str = inet_ntop(AF_INET, &amp;num, ip, <span class="hljs-number">16</span>);<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;str: %s\n&quot;</span>, str);<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;ip: %s\n&quot;</span>, ip);<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h4 id="12、TCP通信流程"><a href="#12、TCP通信流程" class="headerlink" title="12、TCP通信流程"></a>12、TCP通信流程</h4><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs dts"><span class="hljs-comment">// TCP 和 UDP  -&gt; 传输层的协议</span><br><span class="hljs-symbol">UDP:</span>用户数据报协议，面向无连接，可以单播，多播，广播， 面向数据报，不可靠<br><span class="hljs-symbol">TCP:</span>传输控制协议，面向连接的，可靠的，基于字节流，仅支持单播传输<br></code></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">UDP</th>
+<th align="center">TCP</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">是否创建连接</td>
+<td align="center">无连接</td>
+<td align="center">面向连接</td>
+</tr>
+<tr>
+<td align="center">是否可靠</td>
+<td align="center">不可靠</td>
+<td align="center">可靠</td>
+</tr>
+<tr>
+<td align="center">连接的对象个数</td>
+<td align="center">一对一、一对多<br />多对一、多对多</td>
+<td align="center">支持一对一</td>
+</tr>
+<tr>
+<td align="center">传输的方式</td>
+<td align="center">面向数据报</td>
+<td align="center">面向字节流</td>
+</tr>
+<tr>
+<td align="center">首部开销</td>
+<td align="center">8个字节</td>
+<td align="center">最少20个字节</td>
+</tr>
+<tr>
+<td align="center">适用场景</td>
+<td align="center">实时应用（视频会议、直播）</td>
+<td align="center">可靠性高的应用（文件传输）</td>
+</tr>
+</tbody></table>
+<img src="/2024/06/02/MyWebServer/TCP%E9%80%9A%E4%BF%A1%E8%BF%87%E7%A8%8B.png" srcset="/img/loading.gif" lazyload class="">
+
+<h5 id="TCP通信流程"><a href="#TCP通信流程" class="headerlink" title="TCP通信流程"></a>TCP通信流程</h5><p><strong>服务器端</strong></p>
+<ol>
+<li>创建一个用于监听的套接字<ul>
+<li>监听：监听有有客户端的连接</li>
+<li>套接字：这个套接字其实就是一个文件描述符</li>
+</ul>
+</li>
+<li>将这个监听文件描述符和本地的IP和端口绑定（IP和端口就是服务器的地址信息）<ul>
+<li>客户端连接服务器的时候使用的就是这个IP和端口</li>
+</ul>
+</li>
+<li>设置监听，监听的fd开始工作</li>
+<li>阻塞等待，当有客户端发起连接，接触阻塞，接受客户端的连接，会得到一个和客户端通信的套接字（fd）</li>
+<li>通信<ul>
+<li>接收数据</li>
+<li>发送数据</li>
+</ul>
+</li>
+<li>通信结束，断开连接</li>
+</ol>
+<p><strong>客户端</strong></p>
+<ol>
+<li>创建一个用于通信的套接字（fd）</li>
+<li>连接服务器，需要指定连接的服务器和IP和端口</li>
+<li>连接成功，客户端可以直接和服务器通信<ul>
+<li>接收数据</li>
+<li>发送数据</li>
+</ul>
+</li>
+<li>通信结束，断开连接</li>
+</ol>
+<h4 id="13、套接字函数"><a href="#13、套接字函数" class="headerlink" title="13、套接字函数"></a>13、套接字函数</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;sys/types.h&gt;</span>      </span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;sys/socket.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;arpa/inet.h&gt;</span>  <span class="hljs-comment">// 包含了这个头文件，上面两个就可以省略</span></span><br><br><span class="hljs-type">int</span> <span class="hljs-title function_">socket</span><span class="hljs-params">(<span class="hljs-type">int</span> domain, <span class="hljs-type">int</span> type, <span class="hljs-type">int</span> protocol)</span>;   <br><span class="hljs-comment">/*	- 功能：创建一个套接字</span><br><span class="hljs-comment">    - 参数：</span><br><span class="hljs-comment">        - domain: 协议族</span><br><span class="hljs-comment">            AF_INET : ipv4</span><br><span class="hljs-comment">            AF_INET6 : ipv6</span><br><span class="hljs-comment">            AF_UNIX, AF_LOCAL : 本地套接字通信（进程间通信）</span><br><span class="hljs-comment">        - type: 通信过程中使用的协议类型</span><br><span class="hljs-comment">            SOCK_STREAM : 流式协议</span><br><span class="hljs-comment">            SOCK_DGRAM  : 报式协议</span><br><span class="hljs-comment">        - protocol : 具体的一个协议。一般写0</span><br><span class="hljs-comment">            - SOCK_STREAM : 流式协议默认使用 TCP</span><br><span class="hljs-comment">            - SOCK_DGRAM  : 报式协议默认使用 UDP</span><br><span class="hljs-comment">        - 返回值：</span><br><span class="hljs-comment">            - 成功：返回文件描述符，操作的就是内核缓冲区。</span><br><span class="hljs-comment">            - 失败：-1     								*/</span>  <br><br><span class="hljs-type">int</span> <span class="hljs-title function_">bind</span><span class="hljs-params">(<span class="hljs-type">int</span> sockfd, <span class="hljs-type">const</span> <span class="hljs-keyword">struct</span> sockaddr *addr, <span class="hljs-type">socklen_t</span> addrlen)</span>; <br><span class="hljs-comment">// socket命名</span><br><span class="hljs-comment">/*  - 功能：绑定，将fd 和本地的IP + 端口进行绑定</span><br><span class="hljs-comment">    - 参数：</span><br><span class="hljs-comment">            - sockfd : 通过socket函数得到的文件描述符</span><br><span class="hljs-comment">            - addr : 需要绑定的socket地址，这个地址封装了ip和端口号的信息</span><br><span class="hljs-comment">            - addrlen : 第二个参数结构体占的内存大小</span><br><span class="hljs-comment">*/</span><br><br><span class="hljs-type">int</span> <span class="hljs-title function_">listen</span><span class="hljs-params">(<span class="hljs-type">int</span> sockfd, <span class="hljs-type">int</span> backlog)</span>;    <span class="hljs-comment">// /proc/sys/net/core/somaxconn</span><br><span class="hljs-comment">/*	- 功能：监听这个socket上的连接</span><br><span class="hljs-comment">	- 参数：</span><br><span class="hljs-comment">		- sockfd : 通过socket()函数得到的文件描述符</span><br><span class="hljs-comment">		- backlog : 未连接的和已经连接的和的最大值， 5</span><br><span class="hljs-comment">*/</span><br><br><span class="hljs-type">int</span> <span class="hljs-title function_">accept</span><span class="hljs-params">(<span class="hljs-type">int</span> sockfd, <span class="hljs-keyword">struct</span> sockaddr *addr, <span class="hljs-type">socklen_t</span> *addrlen)</span>;<br><span class="hljs-comment">/*	- 功能：接收客户端连接，默认是一个阻塞的函数，阻塞等待客户端连接 </span><br><span class="hljs-comment">	- 参数：</span><br><span class="hljs-comment">		- sockfd : 用于监听的文件描述符</span><br><span class="hljs-comment">		- addr : 传出参数，记录了连接成功后客户端的地址信息（ip，port）</span><br><span class="hljs-comment">		- addrlen : 指定第二个参数的对应的内存大小</span><br><span class="hljs-comment">	- 返回值：</span><br><span class="hljs-comment">		- 成功 ：用于通信的文件描述符</span><br><span class="hljs-comment">         - 失败 ：-1</span><br><span class="hljs-comment">*/</span><br><br><span class="hljs-type">int</span> <span class="hljs-title function_">connect</span><span class="hljs-params">(<span class="hljs-type">int</span> sockfd, <span class="hljs-type">const</span> <span class="hljs-keyword">struct</span> sockaddr *addr, <span class="hljs-type">socklen_t</span> addrlen)</span>;<br><span class="hljs-comment">/*	- 功能： 客户端连接服务器</span><br><span class="hljs-comment">	- 参数：</span><br><span class="hljs-comment">		- sockfd : 用于通信的文件描述符</span><br><span class="hljs-comment">		- addr : 客户端要连接的服务器的地址信息</span><br><span class="hljs-comment">		- addrlen : 第二个参数的内存大小</span><br><span class="hljs-comment">	- 返回值：</span><br><span class="hljs-comment">		成功 0， 失败 -1</span><br><span class="hljs-comment">*/</span><br><br><br><span class="hljs-type">ssize_t</span> <span class="hljs-title function_">write</span><span class="hljs-params">(<span class="hljs-type">int</span> fd, <span class="hljs-type">const</span> <span class="hljs-type">void</span> *buf, <span class="hljs-type">size_t</span> count)</span>;   <span class="hljs-comment">// 写数据</span><br><span class="hljs-type">ssize_t</span> <span class="hljs-title function_">read</span><span class="hljs-params">(<span class="hljs-type">int</span> fd, <span class="hljs-type">void</span> *buf, <span class="hljs-type">size_t</span> count)</span>;          <span class="hljs-comment">// 读数据</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>代码示例：服务器客户端通信</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">//TCP通信的客户端</span><br><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;arpa/inet.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;unistd.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;string.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdlib.h&gt;</span></span><br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span><br>&#123;   <br>    <span class="hljs-comment">// 1、建立套接字</span><br>    <span class="hljs-type">int</span> sockfd = socket(AF_INET, SOCK_STREAM, <span class="hljs-number">0</span>);<br>    <span class="hljs-keyword">if</span>(sockfd == <span class="hljs-number">-1</span>)<br>    &#123;<br>        perror(<span class="hljs-string">&quot;socket&quot;</span>);<br>        <span class="hljs-built_in">exit</span>(<span class="hljs-number">-1</span>);<br>    &#125;<br>    <br>    <span class="hljs-comment">// 2、连接服务器</span><br>    <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">sockaddr_in</span> <span class="hljs-title">clientaddr</span>;</span><br>    clientaddr.sin_family = AF_INET;<br>    inet_pton(AF_INET, <span class="hljs-string">&quot;127.0.0.1&quot;</span>, &amp;clientaddr.sin_addr.s_addr);<br>    clientaddr.sin_port = htons(<span class="hljs-number">9999</span>);<br>    <span class="hljs-type">int</span> ret = connect(sockfd, (<span class="hljs-keyword">struct</span> sockaddr *)&amp;clientaddr, <span class="hljs-keyword">sizeof</span>(clientaddr));<br><br>    <span class="hljs-keyword">if</span>(ret == <span class="hljs-number">-1</span>)<br>    &#123;<br>        perror(<span class="hljs-string">&quot;connect&quot;</span>);<br>        <span class="hljs-built_in">exit</span>(<span class="hljs-number">-1</span>);<br>    &#125;<br><br>    <span class="hljs-type">char</span> recvbuf[<span class="hljs-number">1024</span>] = &#123;<span class="hljs-number">0</span>&#125;;<br>    <span class="hljs-keyword">while</span>(<span class="hljs-number">1</span>)<br>    &#123;<br>        <span class="hljs-comment">// 3、发送数据</span><br>        <span class="hljs-type">char</span> data[<span class="hljs-number">1024</span>] = <span class="hljs-string">&quot;hello, i am client.&quot;</span>;<br>        write(sockfd, data, <span class="hljs-built_in">strlen</span>(data));<br>        sleep(<span class="hljs-number">1</span>);<br>    <br>        <span class="hljs-comment">// 4、接收数据</span><br>        <span class="hljs-type">ssize_t</span> len = read(sockfd, recvbuf, <span class="hljs-keyword">sizeof</span>(recvbuf));<br>        <span class="hljs-keyword">if</span>(len == <span class="hljs-number">-1</span>)<br>        &#123;<br>            perror(<span class="hljs-string">&quot;read&quot;</span>);<br>            <span class="hljs-built_in">exit</span>(<span class="hljs-number">-1</span>);<br>        &#125;<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(len &gt; <span class="hljs-number">0</span>)<br>        &#123;<br>            <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;recv client data : %s\n&quot;</span>, recvbuf);<br>        &#125;<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(len == <span class="hljs-number">0</span>)<br>        &#123;<br>            <span class="hljs-comment">// 表示客户端断开连接 </span><br>            <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;server closed .....\n&quot;</span>);<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-comment">// 5、关闭套接字</span><br>    close(sockfd);<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">//TCP通信的服务器端</span><br><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;arpa/inet.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;unistd.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;string.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdlib.h&gt;</span></span><br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span><br>&#123;   <br>    <span class="hljs-comment">// 1、 创建socket套接字</span><br>    <span class="hljs-type">int</span> lfd = socket(AF_INET, SOCK_STREAM, <span class="hljs-number">0</span>);<br><br>    <span class="hljs-keyword">if</span>(lfd == <span class="hljs-number">-1</span>)<br>    &#123;<br>        perror(<span class="hljs-string">&quot;socket&quot;</span>);<br>        <span class="hljs-built_in">exit</span>(<span class="hljs-number">-1</span>);<br>    &#125;<br>    <br>    <span class="hljs-comment">// 2、 绑定套接字 IP 和 端口</span><br>    <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">sockaddr_in</span> <span class="hljs-title">saddr</span>;</span><br>    saddr.sin_family = AF_INET;<br>    <span class="hljs-comment">// inet_pton(AF_INET, &quot;0.0.0.0&quot;, saddr.sin_addr.s_addr);</span><br>    <span class="hljs-comment">// INADDR_ANY 是一个在网络编程中常用的宏，</span><br>    <span class="hljs-comment">// 它通常被用于绑定一个套接字（socket）到所有可用的网络接口上。</span><br>    <span class="hljs-comment">// 这意味着服务器可以接收任何网络接口上的数据包，</span><br>    saddr.sin_addr.s_addr = INADDR_ANY;<br>    saddr.sin_port = htons(<span class="hljs-number">9999</span>);<br><br>    <span class="hljs-type">int</span> ret = bind(lfd, (<span class="hljs-keyword">struct</span> sockaddr *)&amp;saddr, <span class="hljs-keyword">sizeof</span>(saddr));<br>    <span class="hljs-keyword">if</span>(ret == <span class="hljs-number">-1</span>)<br>    &#123;<br>        perror(<span class="hljs-string">&quot;bind&quot;</span>);<br>        <span class="hljs-built_in">exit</span>(<span class="hljs-number">-1</span>);<br>    &#125;<br><br>    <span class="hljs-comment">// 3、 监听</span><br>    ret = listen(lfd, <span class="hljs-number">8</span>);<br>    <span class="hljs-keyword">if</span>(ret == <span class="hljs-number">-1</span>)<br>    &#123;<br>        perror(<span class="hljs-string">&quot;listen&quot;</span>);<br>        <span class="hljs-built_in">exit</span>(<span class="hljs-number">-1</span>);<br>    &#125;<br><br>    <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">sockaddr_in</span> <span class="hljs-title">clientaddr</span>;</span><br>    <span class="hljs-type">socklen_t</span> len = <span class="hljs-keyword">sizeof</span>(clientaddr);<br>    <span class="hljs-comment">// 4、接收客户端连接</span><br>    <span class="hljs-type">int</span> cfd = accept(lfd, (<span class="hljs-keyword">struct</span> sockaddr *)&amp;clientaddr, &amp;len);<br>    <span class="hljs-keyword">if</span>(cfd == <span class="hljs-number">-1</span>)<br>    &#123;<br>        perror(<span class="hljs-string">&quot;accept&quot;</span>);<br>        <span class="hljs-built_in">exit</span>(<span class="hljs-number">-1</span>);<br>    &#125;<br><br>    <span class="hljs-comment">// 4、输出客户端的信息   网络字节序  -》 主机字节序</span><br>    <span class="hljs-type">char</span> clientip[<span class="hljs-number">16</span>] = <span class="hljs-string">&quot;&quot;</span>;<br>    inet_ntop(AF_INET, &amp;clientaddr.sin_addr.s_addr, clientip, <span class="hljs-keyword">sizeof</span>(clientip));<br>    <span class="hljs-type">unsigned</span> <span class="hljs-type">short</span> clientport = ntohs(clientaddr.sin_port);<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;client ip : %s, prot : %d\n&quot;</span>, clientip, clientport);<br><br>    <span class="hljs-comment">// 5、通信</span><br>    <span class="hljs-comment">// 获取客户端的数据</span><br>    <span class="hljs-keyword">while</span>(<span class="hljs-number">1</span>)<br>    &#123;<br>        <span class="hljs-type">char</span> recvbuf[<span class="hljs-number">1024</span>];<br>        <span class="hljs-type">ssize_t</span> len1 = read(cfd, recvbuf, <span class="hljs-keyword">sizeof</span>(recvbuf));<br>        <span class="hljs-keyword">if</span>(len1 == <span class="hljs-number">-1</span>)<br>        &#123;<br>            perror(<span class="hljs-string">&quot;read&quot;</span>);<br>            <span class="hljs-built_in">exit</span>(<span class="hljs-number">-1</span>);<br>        &#125;<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(len1 &gt; <span class="hljs-number">0</span>)<br>        &#123;<br>            <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;recv client data : %s\n&quot;</span>, recvbuf);<br>        &#125;<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(len1 == <span class="hljs-number">0</span>)<br>        &#123;<br>            <span class="hljs-comment">// 表示客户端断开连接 </span><br>            <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;client closed .....\n&quot;</span>);<br>            <span class="hljs-keyword">break</span>;<br>        &#125;<br>        <span class="hljs-comment">// 给客户端发送数据</span><br>        <span class="hljs-type">char</span> * data = <span class="hljs-string">&quot;hello, i am server.&quot;</span>;<br>        write(cfd, data, <span class="hljs-built_in">strlen</span>(data));<br>    &#125;<br>    <br><br>    <span class="hljs-comment">// 关闭文件描述符</span><br>    close(cfd);<br>    close(lfd);<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 
 
+<h4 id="14、TCP三次握手"><a href="#14、TCP三次握手" class="headerlink" title="14、TCP三次握手"></a>14、TCP三次握手</h4><p>TCP 是一种面向连接的单播协议，在发送数据前，通信双方必须在彼此间建立一条连接。所谓的“连 接”，其实是客户端和服务器的内存里保存的一份关于对方的信息，如 IP 地址、端口号等。</p>
+<p>TCP 可以看成是一种字节流，它会处理 IP 层或以下的层的丢包、重复以及错误问题。在连接的建立过程 中，双方需要交换一些连接的参数。这些参数可以放在 TCP 头部。 </p>
+<p>TCP 提供了一种可靠、面向连接、字节流、传输层的服务，采用三次握手建立一个连接。采用四次挥手 来关闭一个连接。 </p>
+<p>三次握手的目的是保证双方互相之间建立了连接。 </p>
+<p>三次握手发生在客户端连接的时候，当调用connect()，底层会通过TCP协议进行三次握手。</p>
+<img src="/2024/06/02/MyWebServer/TCP%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B.png" srcset="/img/loading.gif" lazyload class="">
 
+<p><strong>第一次握手</strong></p>
+<ol>
+<li>客户端将 SYN 标志位置为1</li>
+<li>生成一个随机的32位的序号 seq&#x3D;j，这个序号后边是可以携带数据（数据的大小）</li>
+</ol>
+<p><strong>第二次握手</strong></p>
+<ol>
+<li>服务器端接收客户端的连接  ACK &#x3D; 1</li>
+<li>服务器会会发一个确认序号  ack &#x3D; 客户端的序号 + 数据长度 + SYN&#x2F;FIN（按一个字节算），一般是ack &#x3D; j + 1</li>
+<li>服务器端会向客户端发起连接请求：SYN &#x3D; 1</li>
+<li>服务器会生成一个随机序号 seq &#x3D; K</li>
+</ol>
+<p><strong>第三次握手</strong></p>
+<ol>
+<li>客户端应答服务器的连接请求：ACK &#x3D; 1</li>
+<li>客户端回复收到了服务器端的数据： ack&#x3D;服务端的序号 + 数据长度 + SYN&#x2F;FIN（按一个字节算）</li>
+</ol>
+<h4 id="15、TCP滑动窗口"><a href="#15、TCP滑动窗口" class="headerlink" title="15、TCP滑动窗口"></a>15、TCP滑动窗口</h4><p>滑动窗口（Sliding window）是一种流量控制技术。早期的网络通信中，通信双方不会考虑网络的 拥挤情况直接发送数据。由于大家不知道网络拥塞状况，同时发送数据，导致中间节点阻塞掉包， 谁也发不了数据，所以就有了滑动窗口机制来解决此问题。滑动窗口协议是用来改善吞吐量的一种 技术，即容许发送方在接收任何应答之前传送附加的包。接收方告诉发送方在某一时刻能送多少包 （称窗口尺寸）。</p>
+<p>TCP 中采用滑动窗口来进行传输控制，滑动窗口的大小意味着接收方还有多大的缓冲区可以用于 接收数据。发送方可以通过滑动窗口的大小来确定应该发送多少字节的数据。当滑动窗口为 0  时，发送方一般不能再发送数据报。</p>
+<p>滑动窗口是 TCP 中实现诸如 ACK 确认、流量控制、拥塞控制的承载结构。</p>
+<p>窗口理解为缓冲区的大小 </p>
+<p>滑动窗口的大小会随着发送数据和接收数据而变化。 </p>
+<p>通信的双方都有发送缓冲区和接收数据的缓冲区</p>
+<p>服务器</p>
+<ul>
+<li>发送缓冲区（发送缓冲区的窗口） </li>
+<li>接收缓冲区（接收缓冲区的窗口）</li>
+</ul>
+<p>客户端</p>
+<ul>
+<li>发送缓冲区（发送缓冲区的窗口） </li>
+<li>接收缓冲区（接收缓冲区的窗口）</li>
+</ul>
+<img src="/2024/06/02/MyWebServer/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3.png" srcset="/img/loading.gif" lazyload class="">
 
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs c">发送方的缓冲区：<br>    白色格子：空闲的空间<br>    灰色格子：数据已经被发送出去了，但是还没有被接收<br>    紫色格子：还没有发送出去的数据<br>接收方的缓冲区：<br>    白色格子：空闲的空间<br>    紫色格子：已经接收到的数据<br></code></pre></td></tr></table></figure>
 
+<img src="/2024/06/02/MyWebServer/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A32.png" srcset="/img/loading.gif" lazyload class="">
 
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta"># mss: Maximum Segment Size(一条数据的最大的数据量)</span><br><span class="hljs-meta"># win: 滑动窗口</span><br><span class="hljs-number">1.</span> 客户端向服务器发起连接，客户单的滑动窗口是<span class="hljs-number">4096</span>，一次发送的最大数据量是<span class="hljs-number">1460</span><br><span class="hljs-number">2.</span> 服务器接收连接情况，告诉客户端服务器的窗口大小是<span class="hljs-number">6144</span>，一次发送的最大数据量是<span class="hljs-number">1024</span><br><span class="hljs-number">3.</span> 第三次握手<br><span class="hljs-number">4.</span> <span class="hljs-number">4</span><span class="hljs-number">-9</span> 客户端连续给服务器发送了<span class="hljs-number">6</span>k的数据，每次发送<span class="hljs-number">1</span>k<br><span class="hljs-number">5.</span> 第<span class="hljs-number">10</span>次，服务器告诉客户端：发送的<span class="hljs-number">6</span>k数据以及接收到，存储在缓冲区中，缓冲区数据已经处理了<span class="hljs-number">2</span>k,窗口大小是<span class="hljs-number">2</span>k<br><span class="hljs-number">6.</span> 第<span class="hljs-number">11</span>次，服务器告诉客户端：发送的<span class="hljs-number">6</span>k数据以及接收到，存储在缓冲区中，缓冲区数据已经处理了<span class="hljs-number">4</span>k,窗<br>口大小是<span class="hljs-number">4</span>k<br><span class="hljs-number">7.</span> 第<span class="hljs-number">12</span>次，客户端给服务器发送了<span class="hljs-number">1</span>k的数据<br><span class="hljs-number">8.</span> 第<span class="hljs-number">13</span>次，客户端主动请求和服务器断开连接，并且给服务器发送了<span class="hljs-number">1</span>k的数据<br><span class="hljs-number">9.</span> 第<span class="hljs-number">14</span>次，服务器回复ACK <span class="hljs-number">8194</span>, a:同意断开连接的请求 b:告诉客户端已经接受到方才发的<span class="hljs-number">2</span>k的数据 <br>c:滑动窗口<span class="hljs-number">2</span>k<br><span class="hljs-number">10.</span>第<span class="hljs-number">15</span>、<span class="hljs-number">16</span>次，通知客户端滑动窗口的大小<br><span class="hljs-number">11.</span>第<span class="hljs-number">17</span>次，第三次挥手，服务器端给客户端发送FIN,请求断开连接<br><span class="hljs-number">12.</span>第<span class="hljs-number">18</span>次，第四次回收，客户端同意了服务器端的断开请求<br></code></pre></td></tr></table></figure>
 
+<h4 id="16、TCP四次挥手"><a href="#16、TCP四次挥手" class="headerlink" title="16、TCP四次挥手"></a>16、TCP四次挥手</h4><p>四次挥手发生在断开连接的时候，在程序中当调用了close()会使用TCP协议进行四次挥手。 客户端和服务器端都可以主动发起断开连接，<strong>谁先调用close()谁就是发起</strong>。 因为在TCP连接的时候，采用三次握手建立的的连接是双向的，<strong>在断开的时候需要双向断开</strong>。</p>
+<img src="/2024/06/02/MyWebServer/%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B.png" srcset="/img/loading.gif" lazyload class="">
 
+<h4 id="17、TCP通信并发"><a href="#17、TCP通信并发" class="headerlink" title="17、TCP通信并发"></a>17、TCP通信并发</h4><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs markdown">要实现TCP通信服务器处理并发的任务，使用多线程或者多进程来解决。<br>思路：<br><span class="hljs-bullet">1.</span> 一个父进程，多个子进程<br>2.父进程负责等待并接受客户端的连接<br>3.子进程：完成通信，接受一个客户端连接，就创建一个子进程用于通信。<br></code></pre></td></tr></table></figure>
 
+<h4 id="18、TCP状态转换"><a href="#18、TCP状态转换" class="headerlink" title="18、TCP状态转换"></a>18、TCP状态转换</h4><img src="/2024/06/02/MyWebServer/TCP%E7%8A%B6%E6%80%81%E8%BD%AC%E6%8D%A2.png" srcset="/img/loading.gif" lazyload class="">
 
+<img src="/2024/06/02/MyWebServer/TCP%E7%8A%B6%E6%80%81%E8%BD%AC%E6%8D%A22.png" srcset="/img/loading.gif" lazyload class="">
 
+<ul>
+<li><p>2MSL(Maximum Segment Lifetime)</p>
+<p>主动断开连接的一方，最后进入一个TIME_WAIT状态，这个状态会持续：2msl</p>
+<ul>
+<li>msl：官方建议：2分钟，实际是30s</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs">当 TCP 连接主动关闭方接收到被动关闭方发送的 FIN 和最终的 ACK 后，连接的主动关闭方<br>必须处于TIME_WAIT 状态并持续 2MSL 时间。<br><br>这样就能够让 TCP 连接的主动关闭方在它发送的 ACK 丢失的情况下重新发送最终的 ACK。<br><br>主动关闭方重新发送的最终 ACK 并不是因为被动关闭方重传了 ACK（它们并不消耗序列号，<br>被动关闭方也不会重传），而是因为被动关闭方重传了它的 FIN。事实上，被动关闭方总是<br>重传 FIN 直到它收到一个最终的 ACK。<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>半关闭</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">当 TCP 链接中 <span class="hljs-selector-tag">A</span> 向 <span class="hljs-selector-tag">B</span> 发送 FIN 请求关闭，另一端 <span class="hljs-selector-tag">B</span> 回应 ACK 之后（<span class="hljs-selector-tag">A</span> 端进入 FIN_WAIT_2 状态），并没有立即发送 FIN 给 <span class="hljs-selector-tag">A</span>，<span class="hljs-selector-tag">A</span> 方处于半连接状态（半开关），此时 <span class="hljs-selector-tag">A</span> 可以接收 <span class="hljs-selector-tag">B</span> 发送的数据，但是 <span class="hljs-selector-tag">A</span> 已经不能再向 <span class="hljs-selector-tag">B</span> 发送数据。<br></code></pre></td></tr></table></figure>
 
+<p>从程序的角度，可以使用 API 来控制实现半连接状态：</p>
+</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;sys/socket.h&gt;</span></span><br><span class="hljs-type">int</span> <span class="hljs-title function_">shutdown</span><span class="hljs-params">(<span class="hljs-type">int</span> sockfd, <span class="hljs-type">int</span> how)</span>;<br>sockfd: 需要关闭的socket的描述符<br>how:    允许为shutdown操作选择以下几种方式:<br>	SHUT_RD(<span class="hljs-number">0</span>)：	关闭sockfd上的读功能，此选项将不允许sockfd进行读操作。<br>				该套接字不再接收数据，任何当前在套接字接受缓冲区的数据将被无声的丢弃掉。<br>	SHUT_WR(<span class="hljs-number">1</span>):  关闭sockfd的写功能，此选项将不允许sockfd进行写操作。进程不能在对此套接字发出写操作。<br>	SHUT_RDWR(<span class="hljs-number">2</span>):关闭sockfd的读写功能。相当于调用shutdown两次：首先是以SHUT_RD,然后以<br>SHUT_WR。<br></code></pre></td></tr></table></figure>
 
-
-
-
-
-
-
-
+<p>使用 close 中止一个连接，但它只是减少描述符的引用计数，并不直接关闭连接，只有当描述符的引用 计数为 0 时才关闭连接。shutdown 不考虑描述符的引用计数，直接关闭描述符。也可选择中止一个方向的连接，只中止读或只中止写。 </p>
+<p>注意:</p>
+<ol>
+<li>如果有多个进程共享一个套接字，close 每被调用一次，计数减 1 ，直到计数为 0 时，也就是所用 进程都调用了 close，套接字将被释放。  </li>
+<li>在多进程中如果一个进程调用了 shutdown(sfd, SHUT_RDWR) 后，其它的进程将无法进行通信。 但如果一个进程 close(sfd) 将不会影响到其它进程</li>
+</ol>
 
                 
               </div>
