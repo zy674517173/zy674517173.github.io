@@ -24,8 +24,9 @@
 <meta property="og:description" content="刷题笔记STL基础 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192939495969798991">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://zy674517173.github.io/2024/07/10/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/%E9%93%BE%E8%A1%A8%E6%80%BB%E7%BB%93.png">
+<meta property="og:image" content="https://zy674517173.github.io/2024/07/10/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/%E5%AE%8C%E5%85%A8%E4%BA%8C%E5%8F%89%E6%A0%91.png">
 <meta property="article:published_time" content="2024-07-10T14:08:20.000Z">
-<meta property="article:modified_time" content="2024-08-30T02:18:51.255Z">
+<meta property="article:modified_time" content="2024-09-03T13:08:39.538Z">
 <meta property="article:author" content="张同学">
 <meta property="article:tag" content="算法">
 <meta name="twitter:card" content="summary_large_image">
@@ -224,7 +225,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          8.4k 字
+          9k 字
         
       </span>
     
@@ -235,7 +236,7 @@
         
         
         
-          71 分钟
+          76 分钟
         
       </span>
     
@@ -551,19 +552,24 @@
 
 
 
+<h3 id="11、完全三叉树的节点个数"><a href="#11、完全三叉树的节点个数" class="headerlink" title="11、完全三叉树的节点个数"></a>11、完全三叉树的节点个数</h3><h4 id="普通二叉树的做法"><a href="#普通二叉树的做法" class="headerlink" title="普通二叉树的做法"></a>普通二叉树的做法</h4><p>迭代：层序遍历</p>
+<p>低轨：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs c++">![完全二叉树](刷题笔记/完全二叉树.png)<span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">bianl</span><span class="hljs-params">(TreeNode* root)</span></span><br><span class="hljs-function">    </span>&#123;<br>        <span class="hljs-keyword">if</span>(root == <span class="hljs-literal">NULL</span>)    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-type">int</span> leftnum = <span class="hljs-built_in">bianl</span>(root-&gt;left);<br>        <span class="hljs-type">int</span> rightnum = <span class="hljs-built_in">bianl</span>(root-&gt;right);<br>        <span class="hljs-type">int</span> total = leftnum + rightnum + <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">return</span> total;<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">countNodes</span><span class="hljs-params">(TreeNode* root)</span> </span>&#123;<br>        <span class="hljs-type">int</span> num = <span class="hljs-built_in">bianl</span>(root);<br>        <br>        <span class="hljs-keyword">return</span> num;<br>    &#125;  <br>&#125;;<br></code></pre></td></tr></table></figure>
 
+<h4 id="完全二叉树"><a href="#完全二叉树" class="headerlink" title="完全二叉树"></a>完全二叉树</h4><p>在完全二叉树中，除了最底层节点可能没填满外，其余每层节点数都达到最大值，并且最下面一层的节点都集中在该层最左边的若干位置。若最底层为第 h 层，则该层包含 1~ 2^(h-1)  个节点</p>
+<img src="/2024/07/10/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/%E5%AE%8C%E5%85%A8%E4%BA%8C%E5%8F%89%E6%A0%91.png" srcset="/img/loading.gif" lazyload class="">
 
+<p>完全二叉树只有两种情况，情况一：就是满二叉树，情况二：最后一层叶子节点没有满。</p>
+<p>对于情况一，可以直接用 2^树深度 - 1 来计算，注意这里根节点深度为1。</p>
+<p>对于情况二，分别递归左孩子，和右孩子，递归到某一深度一定会有左孩子或者右孩子为满二叉树，然后依然可以按照情况1来计算。</p>
+<h5 id="第二部-终止条件"><a href="#第二部-终止条件" class="headerlink" title="第二部 终止条件"></a>第二部 终止条件</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">if</span> (root == <span class="hljs-literal">nullptr</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>; <br><span class="hljs-comment">// 开始根据左深度和右深度是否相同来判断该子树是不是满二叉树</span><br>TreeNode* left = root-&gt;left;<br>TreeNode* right = root-&gt;right;<br><span class="hljs-type">int</span> leftDepth = <span class="hljs-number">0</span>, rightDepth = <span class="hljs-number">0</span>; <span class="hljs-comment">// 这里初始为0是有目的的，为了下面求指数方便</span><br><span class="hljs-keyword">while</span> (left) &#123;  <span class="hljs-comment">// 求左子树深度</span><br>    left = left-&gt;left;<br>    leftDepth++;<br>&#125;<br><span class="hljs-keyword">while</span> (right) &#123; <span class="hljs-comment">// 求右子树深度</span><br>    right = right-&gt;right;<br>    rightDepth++;<br>&#125;<br><span class="hljs-keyword">if</span> (leftDepth == rightDepth) &#123;<br>    <span class="hljs-keyword">return</span> (<span class="hljs-number">2</span> &lt;&lt; leftDepth) - <span class="hljs-number">1</span>; <span class="hljs-comment">// 注意(2&lt;&lt;1) 相当于2^2，返回满足满二叉树的子树节点数量</span><br>&#125;<br></code></pre></td></tr></table></figure>
 
+<h5 id="第三步-单层递归的逻辑"><a href="#第三步-单层递归的逻辑" class="headerlink" title="第三步 单层递归的逻辑"></a>第三步 单层递归的逻辑</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-type">int</span> leftTreeNum = <span class="hljs-built_in">countNodes</span>(root-&gt;left);       <span class="hljs-comment">// 左</span><br><span class="hljs-type">int</span> rightTreeNum = <span class="hljs-built_in">countNodes</span>(root-&gt;right);     <span class="hljs-comment">// 右</span><br><span class="hljs-type">int</span> result = leftTreeNum + rightTreeNum + <span class="hljs-number">1</span>;    <span class="hljs-comment">// 中</span><br><span class="hljs-keyword">return</span> result;<br></code></pre></td></tr></table></figure>
 
+<p>精简后</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c+">return countNodes(root-&gt;left) + countNodes(root-&gt;right) + 1; 		<br></code></pre></td></tr></table></figure>
 
-
-
-
-
-
-
-
-
+<h5 id="最终代码"><a href="#最终代码" class="headerlink" title="最终代码"></a>最终代码</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">countNodes</span><span class="hljs-params">(TreeNode* root)</span> </span>&#123;<br>        <span class="hljs-keyword">if</span> (root == <span class="hljs-literal">nullptr</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>        TreeNode* left = root-&gt;left;<br>        TreeNode* right = root-&gt;right;<br>        <span class="hljs-type">int</span> leftDepth = <span class="hljs-number">0</span>, rightDepth = <span class="hljs-number">0</span>; <span class="hljs-comment">// 这里初始为0是有目的的，为了下面求指数方便</span><br>        <span class="hljs-keyword">while</span> (left) &#123;  <span class="hljs-comment">// 求左子树深度</span><br>            left = left-&gt;left;<br>            leftDepth++;<br>        &#125;<br>        <span class="hljs-keyword">while</span> (right) &#123; <span class="hljs-comment">// 求右子树深度</span><br>            right = right-&gt;right;<br>            rightDepth++;<br>        &#125;<br>        <span class="hljs-keyword">if</span> (leftDepth == rightDepth) &#123;<br>            <span class="hljs-keyword">return</span> (<span class="hljs-number">2</span> &lt;&lt; leftDepth) - <span class="hljs-number">1</span>; <span class="hljs-comment">// 注意(2&lt;&lt;1) 相当于2^2，所以leftDepth初始为0</span><br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">countNodes</span>(root-&gt;left) + <span class="hljs-built_in">countNodes</span>(root-&gt;right) + <span class="hljs-number">1</span>;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
 
 
 
