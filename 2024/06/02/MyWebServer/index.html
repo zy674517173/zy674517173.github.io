@@ -53,8 +53,9 @@
 <meta property="og:image" content="https://zy674517173.github.io/2024/06/02/MyWebServer/poll%E4%BA%8B%E4%BB%B6.png">
 <meta property="og:image" content="https://zy674517173.github.io/2024/06/02/MyWebServer/UDP%E9%80%9A%E4%BF%A1.png">
 <meta property="og:image" content="https://zy674517173.github.io/2024/06/02/MyWebServer/%E6%9C%AC%E5%9C%B0%E5%A5%97%E6%8E%A5%E5%AD%97.png">
+<meta property="og:image" content="https://zy674517173.github.io/2024/06/02/MyWebServer/Webserver%E6%A1%86%E6%9E%B6%E5%9B%BE.png">
 <meta property="article:published_time" content="2024-06-02T05:58:56.000Z">
-<meta property="article:modified_time" content="2024-08-27T12:56:11.354Z">
+<meta property="article:modified_time" content="2024-09-03T11:52:13.725Z">
 <meta property="article:author" content="张同学">
 <meta property="article:tag" content="项目">
 <meta name="twitter:card" content="summary_large_image">
@@ -253,7 +254,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          35k 字
+          39k 字
         
       </span>
     
@@ -264,7 +265,7 @@
         
         
         
-          293 分钟
+          327 分钟
         
       </span>
     
@@ -873,6 +874,25 @@
 <li>容器</li>
 </ol>
 <h5 id="条件变量"><a href="#条件变量" class="headerlink" title="条件变量"></a>条件变量</h5><p>配合互斥量去使用，实现线程同步</p>
+<p>条件变量（<code>cond</code>）是多线程编程中一种重要的同步机制，用于让线程等待某个特定的条件满足，然后继续执行。它通常与互斥锁（<code>mutex</code>）结合使用，以确保线程在访问共享资源时能够正确地同步。条件变量的主要作用是协调线程之间的执行顺序，使得线程在等待某些条件时能够有效地阻塞，直到条件满足后被唤醒。</p>
+<p><strong>条件变量的作用</strong></p>
+<ol>
+<li><strong>线程等待某个条件</strong>:<ul>
+<li>条件变量允许一个线程等待某个条件（如队列不为空，或某个标志变量被设置）。在条件满足之前，该线程会被阻塞，而不会消耗 CPU 资源。</li>
+<li>当其他线程改变了与该条件相关的状态（例如向队列中添加了一个新元素），它们可以通知等待的线程，使其继续执行。</li>
+</ul>
+</li>
+<li><strong>避免忙等待</strong>:<ul>
+<li>条件变量可以防止线程通过忙等待（不断检查某个条件是否满足）来浪费 CPU 资源。相反，线程可以高效地等待条件满足时被唤醒。</li>
+<li>这种机制通过让线程进入休眠状态直到被唤醒，显著提高了程序的性能和资源利用率。</li>
+</ul>
+</li>
+<li><strong>与互斥锁结合使用</strong>:<ul>
+<li>条件变量通常与互斥锁一起使用，以确保对共享资源的安全访问。</li>
+<li>线程在等待条件变量时，通常会先锁定一个互斥锁，进入等待状态时释放互斥锁，以便其他线程可以修改条件。当条件满足并唤醒等待线程时，线程会重新锁定互斥锁以检查条件并执行相应操作。</li>
+</ul>
+</li>
+</ol>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs c">条件变量的类型 <span class="hljs-type">pthread_cond_t</span><br><span class="hljs-type">int</span> <span class="hljs-title function_">pthread_cond_init</span><span class="hljs-params">(<span class="hljs-type">pthread_cond_t</span> *<span class="hljs-keyword">restrict</span> cond, <span class="hljs-type">const</span> <span class="hljs-type">pthread_condattr_t</span> *<span class="hljs-keyword">restrict</span> attr)</span>;		<span class="hljs-comment">// 初始化</span><br><span class="hljs-type">int</span> <span class="hljs-title function_">pthread_cond_destroy</span><span class="hljs-params">(<span class="hljs-type">pthread_cond_t</span> *cond)</span>;		<span class="hljs-comment">// 释放资源</span><br><span class="hljs-comment">//  等待唤醒，调用了该函数，线程会阻塞</span><br><span class="hljs-type">int</span> <span class="hljs-title function_">pthread_cond_wait</span><span class="hljs-params">(<span class="hljs-type">pthread_cond_t</span> *<span class="hljs-keyword">restrict</span> cond, <span class="hljs-type">pthread_mutex_t</span> *<span class="hljs-keyword">restrict</span> mutex)</span>;<br><span class="hljs-comment">// 等待多长时间，调用了这个函数，线程会阻塞，直到指定的时间结束</span><br><span class="hljs-type">int</span> <span class="hljs-title function_">pthread_cond_timedwait</span><span class="hljs-params">(<span class="hljs-type">pthread_cond_t</span> *<span class="hljs-keyword">restrict</span> cond, <span class="hljs-type">pthread_mutex_t</span> *<span class="hljs-keyword">restrict</span> mutex, <span class="hljs-type">const</span> <span class="hljs-keyword">struct</span> timespec *<span class="hljs-keyword">restrict</span> abstime)</span>;<br><span class="hljs-type">int</span> <span class="hljs-title function_">pthread_cond_signal</span><span class="hljs-params">(<span class="hljs-type">pthread_cond_t</span> *cond)</span>;		<span class="hljs-comment">// 唤醒一个或部分等待的线程</span><br><span class="hljs-type">int</span> <span class="hljs-title function_">pthread_cond_broadcast</span><span class="hljs-params">(<span class="hljs-type">pthread_cond_t</span> *cond)</span>;	<span class="hljs-comment">// 唤醒全部等待的线程</span><br></code></pre></td></tr></table></figure>
 
 <p><strong>代码示例</strong></p>
@@ -884,7 +904,7 @@
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs c">信号量的类型 <span class="hljs-type">sem_t</span><br><span class="hljs-type">int</span> <span class="hljs-title function_">sem_init</span><span class="hljs-params">(<span class="hljs-type">sem_t</span> *sem, <span class="hljs-type">int</span> pshared, <span class="hljs-type">unsigned</span> <span class="hljs-type">int</span> value)</span>;	<span class="hljs-comment">// value 多少个灯</span><br><span class="hljs-type">int</span> <span class="hljs-title function_">sem_destroy</span><span class="hljs-params">(<span class="hljs-type">sem_t</span> *sem)</span>;<br><span class="hljs-type">int</span> <span class="hljs-title function_">sem_wait</span><span class="hljs-params">(<span class="hljs-type">sem_t</span> *sem)</span>;<br><span class="hljs-type">int</span> <span class="hljs-title function_">sem_trywait</span><span class="hljs-params">(<span class="hljs-type">sem_t</span> *sem)</span>;<br><span class="hljs-type">int</span> <span class="hljs-title function_">sem_timedwait</span><span class="hljs-params">(<span class="hljs-type">sem_t</span> *sem, <span class="hljs-type">const</span> <span class="hljs-keyword">struct</span> timespec *abs_timeout)</span>;<br><span class="hljs-type">int</span> <span class="hljs-title function_">sem_post</span><span class="hljs-params">(<span class="hljs-type">sem_t</span> *sem)</span>;<br><span class="hljs-type">int</span> <span class="hljs-title function_">sem_getvalue</span><span class="hljs-params">(<span class="hljs-type">sem_t</span> *sem, <span class="hljs-type">int</span> *sval)</span>;<br></code></pre></td></tr></table></figure>
 
 <p>代码示例：信号量实现生产者和消费者模型</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">/*</span><br><span class="hljs-comment">    信号量的类型 sem_t</span><br><span class="hljs-comment">    int sem_init(sem_t *sem, int pshared, unsigned int value);	// value 多少个灯</span><br><span class="hljs-comment">        - 功能： 初始化信号量</span><br><span class="hljs-comment">        - 参数： </span><br><span class="hljs-comment">            - sem:  信号量变量的地址</span><br><span class="hljs-comment">            - pshared:  0 用在线程间 非0 用在进程间  </span><br><span class="hljs-comment">            - value:  信号量中的值</span><br><span class="hljs-comment">    int sem_destroy(sem_t *sem);</span><br><span class="hljs-comment">        - 功能： 释放资源</span><br><span class="hljs-comment">    int sem_wait(sem_t *sem);</span><br><span class="hljs-comment">        - 功能：对信号量加锁，调用一次对信号量的值-1，如果值为0，就阻塞</span><br><span class="hljs-comment">    int sem_trywait(sem_t *sem);</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">    int sem_timedwait(sem_t *sem, const struct timespec *abs_timeout);</span><br><span class="hljs-comment">    int sem_post(sem_t *sem);</span><br><span class="hljs-comment">        - 功能：对信号量解锁，调用一次对信号量的值+1</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">    int sem_getvalue(sem_t *sem, int *sval);</span><br><span class="hljs-comment"> </span><br><span class="hljs-comment">    sem_t psem;</span><br><span class="hljs-comment">    sem_t csem;</span><br><span class="hljs-comment">    init(psem, 0, 8);</span><br><span class="hljs-comment">    init(csem, 0, 0);</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">    producer()</span><br><span class="hljs-comment">    &#123;</span><br><span class="hljs-comment">        sem_wait(&amp;psem);</span><br><span class="hljs-comment">        sem_post(&amp;csem);    </span><br><span class="hljs-comment">    &#125;</span><br><span class="hljs-comment">    customer()</span><br><span class="hljs-comment">    &#123;</span><br><span class="hljs-comment">        sem_wait(&amp;csem);</span><br><span class="hljs-comment">        sem_post(&amp;psem)</span><br><span class="hljs-comment">    &#125;</span><br><span class="hljs-comment">*/</span><br><br><span class="hljs-comment">/*</span><br><span class="hljs-comment">    生产者消费者模型(粗略版本)</span><br><span class="hljs-comment">*/</span><br><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;pthread.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdlib.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;unistd.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;semaphore.h&gt;</span></span><br><br><span class="hljs-comment">// 创建一个互斥量</span><br><span class="hljs-type">pthread_mutex_t</span> mutex;<br><span class="hljs-comment">// 创建两个信号量</span><br><span class="hljs-type">sem_t</span> psem, csem;<br><br><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span>&#123;</span><br>    <span class="hljs-type">int</span> num;<br>    <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span> *<span class="hljs-title">next</span>;</span><br>&#125;;<br><br><span class="hljs-comment">// 头节点</span><br><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span> *<span class="hljs-title">head</span> =</span> <span class="hljs-literal">NULL</span>;<br><br><span class="hljs-type">void</span> * <span class="hljs-title function_">producer</span><span class="hljs-params">(<span class="hljs-type">void</span> * arg)</span><br>&#123;   <br>    <span class="hljs-comment">// 往容器里面添加内容， 不断创建新的节点，添加到链表中</span><br>    <span class="hljs-keyword">while</span>(<span class="hljs-number">1</span>)<br>    &#123;   <br>        sem_wait(&amp;psem);<br>        pthread_mutex_lock(&amp;mutex);<br>        <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span> * <span class="hljs-title">newNode</span> =</span> (<span class="hljs-keyword">struct</span> Node *)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">struct</span> Node));<br>        newNode-&gt;next = head;<br>        head = newNode;<br>        newNode-&gt;num = rand() % <span class="hljs-number">1000</span>;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;add node, num : %d, tid : %ld\n&quot;</span>, newNode-&gt;num, pthread_self());<br><br>        pthread_mutex_unlock(&amp;mutex);<br>        sem_post(&amp;csem);<br>        usleep(<span class="hljs-number">1000</span>);<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">NULL</span>;<br>&#125;<br><br><span class="hljs-type">void</span> * <span class="hljs-title function_">customer</span><span class="hljs-params">(<span class="hljs-type">void</span> * arg)</span><br>&#123;   <br>    <span class="hljs-comment">// 往容器中去除内容</span><br>    <span class="hljs-keyword">while</span>(<span class="hljs-number">1</span>)<br>    &#123;   <br>        sem_wait(&amp;csem);<br>        pthread_mutex_lock(&amp;mutex);<br>        <br>        <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span> *<span class="hljs-title">tmp</span> =</span> head;<br>        head = head-&gt;next;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;del node, num : %d, tid : %ld\n&quot;</span>, tmp-&gt;num, pthread_self());<br>        <span class="hljs-built_in">free</span>(tmp);<br>        pthread_mutex_unlock(&amp;mutex);<br>        sem_post(&amp;psem);<br>        usleep(<span class="hljs-number">1000</span>); <br>    &#125;<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">NULL</span>;<br>&#125;<br><br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span><br>&#123;   <br>    pthread_mutex_init(&amp;mutex, <span class="hljs-literal">NULL</span>);<br>    sem_init(&amp;psem, <span class="hljs-number">0</span>, <span class="hljs-number">8</span>);<br>    sem_init(&amp;csem, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);<br><br>    <span class="hljs-comment">// 创建5个生产者线程和5个消费者线程</span><br>    <span class="hljs-type">pthread_t</span> ptids[<span class="hljs-number">5</span>], ctids[<span class="hljs-number">5</span>];<br><br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++)  pthread_create(&amp;ptids[i], <span class="hljs-literal">NULL</span>, producer, <span class="hljs-literal">NULL</span>);<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++)  pthread_create(&amp;ctids[i], <span class="hljs-literal">NULL</span>, customer, <span class="hljs-literal">NULL</span>);<br>    <br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++)  pthread_detach(ptids[i]);<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++)  pthread_detach(ctids[i]);<br><br>    <span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>)<br>    &#123;<br>        sleep(<span class="hljs-number">10</span>);<br>    &#125;<br><br>    sem_destroy(&amp;csem);<br>    sem_destroy(&amp;psem);<br>    pthread_mutex_destroy(&amp;mutex);<br><br>    pthread_exit(<span class="hljs-literal">NULL</span>);<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">/*</span><br><span class="hljs-comment">    信号量的类型 sem_t</span><br><span class="hljs-comment">    int sem_init(sem_t *sem, int pshared, unsigned int value);	// value 多少个灯</span><br><span class="hljs-comment">        - 功能： 初始化信号量</span><br><span class="hljs-comment">        - 参数： </span><br><span class="hljs-comment">            - sem:  信号量变量的地址</span><br><span class="hljs-comment">            - pshared:  0 用在线程间 非0 用在进程间  </span><br><span class="hljs-comment">            - value:  信号量中的值</span><br><span class="hljs-comment">        - 返回值</span><br><span class="hljs-comment">        	- 0 成功</span><br><span class="hljs-comment">        	- -1 失败</span><br><span class="hljs-comment">    int sem_destroy(sem_t *sem);</span><br><span class="hljs-comment">        - 功能： 释放资源</span><br><span class="hljs-comment">    int sem_wait(sem_t *sem);</span><br><span class="hljs-comment">        - 功能：对信号量加锁，调用一次对信号量的值-1，如果值为0，就阻塞</span><br><span class="hljs-comment">    int sem_trywait(sem_t *sem);</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">    int sem_timedwait(sem_t *sem, const struct timespec *abs_timeout);</span><br><span class="hljs-comment">    int sem_post(sem_t *sem);</span><br><span class="hljs-comment">        - 功能：对信号量解锁，调用一次对信号量的值+1</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">    int sem_getvalue(sem_t *sem, int *sval);</span><br><span class="hljs-comment"> </span><br><span class="hljs-comment">    sem_t psem;</span><br><span class="hljs-comment">    sem_t csem;</span><br><span class="hljs-comment">    init(psem, 0, 8);</span><br><span class="hljs-comment">    init(csem, 0, 0);</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">    producer()</span><br><span class="hljs-comment">    &#123;</span><br><span class="hljs-comment">        sem_wait(&amp;psem);</span><br><span class="hljs-comment">        sem_post(&amp;csem);    </span><br><span class="hljs-comment">    &#125;</span><br><span class="hljs-comment">    customer()</span><br><span class="hljs-comment">    &#123;</span><br><span class="hljs-comment">        sem_wait(&amp;csem);</span><br><span class="hljs-comment">        sem_post(&amp;psem)</span><br><span class="hljs-comment">    &#125;</span><br><span class="hljs-comment">*/</span><br><br><span class="hljs-comment">/*</span><br><span class="hljs-comment">    生产者消费者模型(粗略版本)</span><br><span class="hljs-comment">*/</span><br><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;pthread.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdlib.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;unistd.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;semaphore.h&gt;</span></span><br><br><span class="hljs-comment">// 创建一个互斥量</span><br><span class="hljs-type">pthread_mutex_t</span> mutex;<br><span class="hljs-comment">// 创建两个信号量</span><br><span class="hljs-type">sem_t</span> psem, csem;<br><br><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span>&#123;</span><br>    <span class="hljs-type">int</span> num;<br>    <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span> *<span class="hljs-title">next</span>;</span><br>&#125;;<br><br><span class="hljs-comment">// 头节点</span><br><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span> *<span class="hljs-title">head</span> =</span> <span class="hljs-literal">NULL</span>;<br><br><span class="hljs-type">void</span> * <span class="hljs-title function_">producer</span><span class="hljs-params">(<span class="hljs-type">void</span> * arg)</span><br>&#123;   <br>    <span class="hljs-comment">// 往容器里面添加内容， 不断创建新的节点，添加到链表中</span><br>    <span class="hljs-keyword">while</span>(<span class="hljs-number">1</span>)<br>    &#123;   <br>        sem_wait(&amp;psem);<br>        pthread_mutex_lock(&amp;mutex);<br>        <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span> * <span class="hljs-title">newNode</span> =</span> (<span class="hljs-keyword">struct</span> Node *)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">struct</span> Node));<br>        newNode-&gt;next = head;<br>        head = newNode;<br>        newNode-&gt;num = rand() % <span class="hljs-number">1000</span>;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;add node, num : %d, tid : %ld\n&quot;</span>, newNode-&gt;num, pthread_self());<br><br>        pthread_mutex_unlock(&amp;mutex);<br>        sem_post(&amp;csem);<br>        usleep(<span class="hljs-number">1000</span>);<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">NULL</span>;<br>&#125;<br><br><span class="hljs-type">void</span> * <span class="hljs-title function_">customer</span><span class="hljs-params">(<span class="hljs-type">void</span> * arg)</span><br>&#123;   <br>    <span class="hljs-comment">// 往容器中去除内容</span><br>    <span class="hljs-keyword">while</span>(<span class="hljs-number">1</span>)<br>    &#123;   <br>        sem_wait(&amp;csem);<br>        pthread_mutex_lock(&amp;mutex);<br>        <br>        <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span> *<span class="hljs-title">tmp</span> =</span> head;<br>        head = head-&gt;next;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;del node, num : %d, tid : %ld\n&quot;</span>, tmp-&gt;num, pthread_self());<br>        <span class="hljs-built_in">free</span>(tmp);<br>        pthread_mutex_unlock(&amp;mutex);<br>        sem_post(&amp;psem);<br>        usleep(<span class="hljs-number">1000</span>); <br>    &#125;<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">NULL</span>;<br>&#125;<br><br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span><br>&#123;   <br>    pthread_mutex_init(&amp;mutex, <span class="hljs-literal">NULL</span>);<br>    sem_init(&amp;psem, <span class="hljs-number">0</span>, <span class="hljs-number">8</span>);<br>    sem_init(&amp;csem, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);<br><br>    <span class="hljs-comment">// 创建5个生产者线程和5个消费者线程</span><br>    <span class="hljs-type">pthread_t</span> ptids[<span class="hljs-number">5</span>], ctids[<span class="hljs-number">5</span>];<br><br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++)  pthread_create(&amp;ptids[i], <span class="hljs-literal">NULL</span>, producer, <span class="hljs-literal">NULL</span>);<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++)  pthread_create(&amp;ctids[i], <span class="hljs-literal">NULL</span>, customer, <span class="hljs-literal">NULL</span>);<br>    <br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++)  pthread_detach(ptids[i]);<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++)  pthread_detach(ctids[i]);<br><br>    <span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>)<br>    &#123;<br>        sleep(<span class="hljs-number">10</span>);<br>    &#125;<br><br>    sem_destroy(&amp;csem);<br>    sem_destroy(&amp;psem);<br>    pthread_mutex_destroy(&amp;mutex);<br><br>    pthread_exit(<span class="hljs-literal">NULL</span>);<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 
 
@@ -1421,36 +1441,159 @@
 
 
 
+<h2 id="自己实现WebServer笔记"><a href="#自己实现WebServer笔记" class="headerlink" title="自己实现WebServer笔记"></a>自己实现WebServer笔记</h2><img src="/2024/06/02/MyWebServer/Webserver%E6%A1%86%E6%9E%B6%E5%9B%BE.png" srcset="/img/loading.gif" lazyload class="">
 
+<h3 id="并发框架"><a href="#并发框架" class="headerlink" title="并发框架"></a>并发框架</h3><p>在具体的实现中，最核⼼的部分就是  EventLoop 、  Channel 以及  Poller 三个类，其中  EventLoop 可以看作是对业务线程的封装，⽽  Channel 可以看作是对每 个已经建⽴连接的封装（即  accept(3) 返回的⽂件描述符）</p>
+<h3 id="日志框架"><a href="#日志框架" class="headerlink" title="日志框架"></a>日志框架</h3><p>日志系统是一个典型的单例模式。</p>
+<p>单例模式作为最常用的设计模式之一，保证一个类仅有一个实例，并提供一个访问它的全局访问点，该实例被所有程序模块共享。</p>
+<p>实现思路：<strong>私有化它的构造函数，以防止外界创建单例类的对象；使用类的私有静态指针变量指向类的唯一实例，并用一个公有的静态方法获取该实例。</strong></p>
+<p>单例模式有两种实现方法，分别是懒汉和饿汉模式。</p>
+<p>顾名思义，懒汉模式，即非常懒，不用的时候不去初始化，所以在第一次被使用时才进行初始化；</p>
+<p>饿汉模式，即迫不及待，在程序运行时立即初始化。</p>
+<h4 id="1、设计模式"><a href="#1、设计模式" class="headerlink" title="1、设计模式"></a>1、设计模式</h4><p>设计模式（Design Patterns）是一套被反复使用、多数人知晓并经过时间验证的解决特定设计问题的典型解决方案。设计模式并不是具体的代码，而是一种对常见问题的抽象解决方案，旨在提高代码的可维护性、复用性和扩展性。设计模式通常可以分为以下三大类：</p>
+<h5 id="1）-创建型模式（Creational-Patterns）"><a href="#1）-创建型模式（Creational-Patterns）" class="headerlink" title="1） 创建型模式（Creational Patterns）"></a>1） <strong>创建型模式（Creational Patterns）</strong></h5><ul>
+<li><strong>工厂方法模式（Factory Method Pattern）</strong>：定义一个创建对象的接口，但让子类决定实例化哪一个类。工厂方法使得一个类的实例化延迟到其子类。</li>
+<li><strong>抽象工厂模式（Abstract Factory Pattern）</strong>：提供一个创建一系列相关或相互依赖对象的接口，而无需指定它们的具体类。</li>
+<li><strong>单例模式（Singleton Pattern）</strong>：确保一个类只有一个实例，并提供一个全局访问点来访问它。</li>
+<li><strong>建造者模式（Builder Pattern）</strong>：将一个复杂对象的构建与其表示分离，使得同样的构建过程可以创建不同的表示。</li>
+<li><strong>原型模式（Prototype Pattern）</strong>：通过复制现有实例来创建新对象，而不是从零构建实例。</li>
+</ul>
+<h5 id="2）-结构型模式（Structural-Patterns）"><a href="#2）-结构型模式（Structural-Patterns）" class="headerlink" title="2） 结构型模式（Structural Patterns）"></a>2） <strong>结构型模式（Structural Patterns）</strong></h5><ul>
+<li><strong>适配器模式（Adapter Pattern）</strong>：将一个类的接口转换成客户希望的另一个接口。适配器模式使得原本由于接口不兼容而不能一起工作的那些类可以一起工作。</li>
+<li><strong>桥接模式（Bridge Pattern）</strong>：将抽象部分与实现部分分离，使它们都可以独立地变化。</li>
+<li><strong>组合模式（Composite Pattern）</strong>：将对象组合成树形结构以表示“部分-整体”的层次结构。组合模式使得客户对单个对象和组合对象的使用具有一致性。</li>
+<li><strong>装饰模式（Decorator Pattern）</strong>：动态地给一个对象添加一些额外的职责，就增加功能来说，装饰模式比生成子类更为灵活。</li>
+<li><strong>外观模式（Facade Pattern）</strong>：为子系统中的一组接口提供一个一致的界面，使得子系统更加容易使用。</li>
+<li><strong>享元模式（Flyweight Pattern）</strong>：运用共享技术来有效地支持大量细粒度的对象。</li>
+<li><strong>代理模式（Proxy Pattern）</strong>：为其他对象提供一个代理以控制对这个对象的访问。</li>
+</ul>
+<h5 id="3）-行为型模式（Behavioral-Patterns）"><a href="#3）-行为型模式（Behavioral-Patterns）" class="headerlink" title="3） 行为型模式（Behavioral Patterns）"></a>3） <strong>行为型模式（Behavioral Patterns）</strong></h5><ul>
+<li><strong>观察者模式（Observer Pattern）</strong>：定义对象间的一种一对多的依赖关系，当一个对象的状态发生改变时，所有依赖于它的对象都得到通知并被自动更新。</li>
+<li><strong>策略模式（Strategy Pattern）</strong>：定义一系列算法，将每个算法封装起来，并让它们可以互换使用。策略模式让算法独立于使用它的客户而变化。</li>
+<li><strong>命令模式（Command Pattern）</strong>：将请求封装为对象，从而使你可以用不同的请求对客户进行参数化；对请求排队或记录请求日志，以及支持可撤销的操作。</li>
+<li><strong>状态模式（State Pattern）</strong>：允许对象在内部状态改变时改变它的行为，对象看起来好像修改了它的类。</li>
+<li><strong>模板方法模式（Template Method Pattern）</strong>：在一个方法中定义一个算法的框架，而将一些步骤的实现延迟到子类。模板方法使得子类可以在不改变算法结构的情况下，重新定义算法中的某些步骤。</li>
+<li><strong>中介者模式（Mediator Pattern）</strong>：用一个中介对象来封装一系列的对象交互。中介者使各对象不需要显式地相互引用，从而使其耦合松散，可以独立地改变它们之间的交互。</li>
+<li><strong>迭代器模式（Iterator Pattern）</strong>：提供一种方法顺序访问一个聚合对象中的各个元素，而又不暴露其内部的表示。</li>
+<li><strong>责任链模式（Chain of Responsibility Pattern）</strong>：使多个对象都有机会处理请求，从而避免请求的发送者和接受者之间的耦合关系。将这些对象连成一条链，并沿着这条链传递请求，直到有一个对象处理它为止。</li>
+<li><strong>访问者模式（Visitor Pattern）</strong>：表示一个作用于某对象结构中的各元素的操作。它使你可以在不改变各元素类的前提下定义作用于这些元素的新操作。</li>
+<li><strong>备忘录模式（Memento Pattern）</strong>：在不破坏封装性的前提下，捕获一个对象的内部状态，并在该对象之外保存这个状态。</li>
+</ul>
+<h4 id="2、虚析构函数"><a href="#2、虚析构函数" class="headerlink" title="2、虚析构函数"></a>2、虚析构函数</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">private</span>:<br>    <span class="hljs-built_in">Log</span>();<br>    <span class="hljs-keyword">virtual</span> ~<span class="hljs-built_in">Log</span>();			<span class="hljs-comment">/////////////////////////////////////////////</span><br>    <span class="hljs-function"><span class="hljs-type">void</span> *<span class="hljs-title">async_write_log</span><span class="hljs-params">()</span></span><br><span class="hljs-function">    </span>&#123;<br>        string single_log;<br>        <span class="hljs-comment">//从阻塞队列中取出一个日志string，写入文件</span><br>        <span class="hljs-keyword">while</span> (m_log_queue-&gt;<span class="hljs-built_in">pop</span>(single_log))<br>        &#123;<br>            m_mutex.<span class="hljs-built_in">lock</span>();<br>            <span class="hljs-built_in">fputs</span>(single_log.<span class="hljs-built_in">c_str</span>(), m_fp);<br>            m_mutex.<span class="hljs-built_in">unlock</span>();<br>        &#125;<br>    &#125;<br></code></pre></td></tr></table></figure>
 
+<p>将析构函数声明为虚函数的原因主要涉及继承和多态性。具体来说，声明为虚函数的原因如下：</p>
+<h5 id="1-确保正确的析构顺序"><a href="#1-确保正确的析构顺序" class="headerlink" title="1) 确保正确的析构顺序"></a>1) <strong>确保正确的析构顺序</strong></h5><ul>
+<li>当一个基类的指针或引用指向一个派生类的对象时，如果通过该指针或引用删除对象（例如，<code>delete</code> 一个指向派生类对象的基类指针），析构函数会被调用。</li>
+<li>如果基类的析构函数不是虚函数，调用 <code>delete</code> 时只会调用基类的析构函数，而不会调用派生类的析构函数。这会导致派生类对象的资源（如动态分配的内存、打开的文件、锁等）无法正确释放，造成资源泄漏。</li>
+<li>如果基类的析构函数是虚函数，删除对象时，编译器会根据实际对象的类型（基于虚表机制）调用正确的析构函数，从而确保派生类的析构函数也被调用，确保对象的所有资源都能正确释放。</li>
+</ul>
+<h5 id="2-支持多态性"><a href="#2-支持多态性" class="headerlink" title="2) 支持多态性"></a>2) <strong>支持多态性</strong></h5><ul>
+<li>在具有继承关系的类层次结构中，如果基类的析构函数是虚函数，它可以保证通过基类指针或引用来删除派生类对象时，派生类的析构函数能够正确执行。</li>
+</ul>
+<h5 id="3-避免未定义行为"><a href="#3-避免未定义行为" class="headerlink" title="3) 避免未定义行为"></a>3) <strong>避免未定义行为</strong></h5><ul>
+<li>如果基类析构函数不是虚拟的，但通过基类指针删除派生类对象，这将导致未定义行为。在大多数情况下，这会导致程序崩溃或者资源泄漏。因此，出于安全性考虑，如果一个类打算作为基类被继承，通常会将它的析构函数声明为虚函数</li>
+</ul>
+<p><code>Log</code> 类的析构函数被声明为虚函数，是为了确保在使用多态时（即通过基类指针或引用来操作派生类对象）可以正确调用派生类的析构函数，防止资源泄漏和未定义行为。这是一个良好的设计习惯，尤其是在设计用于继承和扩展的类时。</p>
+<h2 id="杂记"><a href="#杂记" class="headerlink" title="杂记"></a>杂记</h2><h3 id="srrlen和sizeof的区别"><a href="#srrlen和sizeof的区别" class="headerlink" title="srrlen和sizeof的区别"></a>srrlen和sizeof的区别</h3><p><strong>计算对象不同</strong>:</p>
+<ul>
+<li><code>sizeof</code> 计算任何类型（包括数组和对象）的大小（以字节为单位）。</li>
+<li><code>strlen</code> 只能用于计算以 <code>&#39;\0&#39;</code> 结尾的字符串的长度（以字符为单位）。</li>
+</ul>
+<p><strong>结果的含义不同</strong>:</p>
+<ul>
+<li><code>sizeof</code> 返回数据类型或变量在内存中占用的字节数。</li>
+<li><code>strlen</code> 返回字符串中的字符数，不包括终止符 <code>&#39;\0&#39;</code>。</li>
+</ul>
+<p><strong>包含范围不同</strong>:</p>
+<ul>
+<li><code>sizeof</code> 在处理字符数组时，包含字符串终止符 <code>&#39;\0&#39;</code>。</li>
+<li><code>strlen</code> 仅计算字符串中的实际字符数，不包括终止符。</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-type">char</span> *str = <span class="hljs-string">&quot;Hello&quot;</span>;<br><span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Size of str: %lu\n&quot;</span>, <span class="hljs-built_in">sizeof</span>(str));       <span class="hljs-comment">// 输出 4 或 8，取决于系统架构</span><br><span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Length of str: %lu\n&quot;</span>, <span class="hljs-built_in">strlen</span>(str));<br></code></pre></td></tr></table></figure>
 
+<p>在这个例子中，<code>sizeof(str)</code> 返回的是指针的大小，而 <code>strlen(str)</code> 返回的是字符串的长度。</p>
+<h3 id="c-中没有在类中函数，没有在忘记打public了，函数默认是什么状态的"><a href="#c-中没有在类中函数，没有在忘记打public了，函数默认是什么状态的" class="headerlink" title="c++中没有在类中函数，没有在忘记打public了，函数默认是什么状态的"></a>c++中没有在类中函数，没有在忘记打public了，函数默认是什么状态的</h3><h4 id="1-在-class-定义中："><a href="#1-在-class-定义中：" class="headerlink" title="1)在 class 定义中："></a>1)<strong>在 <code>class</code> 定义中</strong>：</h4><ul>
+<li>如果你在 <code>class</code> 中定义成员函数而没有明确指定访问控制修饰符，则该成员函数的默认访问级别是 <code>private</code>。也就是说，函数只能在类的内部使用，类的外部不能访问</li>
+</ul>
+<h4 id="2-在-struct-定义中："><a href="#2-在-struct-定义中：" class="headerlink" title="2)在 struct 定义中："></a>2)<strong>在 <code>struct</code> 定义中</strong>：</h4><ul>
+<li>如果你在 <code>struct</code> 中定义成员函数而没有明确指定访问控制修饰符，则该成员函数的默认访问级别是 <code>public</code>。也就是说，函数可以在类的外部直接访问。</li>
+</ul>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>class<code>中的默认访问级别是</code>private。      struct<code>中的默认访问级别是</code>public。</p>
+<p>这意味着，在 <code>class</code> 中，未指定访问控制的成员函数和数据成员只能被类的内部成员（如其他成员函数）访问，而在 <code>struct</code> 中，未指定访问控制的成员函数和数据成员可以在类外部直接访问。</p>
+<h3 id="include-和-include-string-有什么区别"><a href="#include-和-include-string-有什么区别" class="headerlink" title="#include &lt;string.h&gt;和#include  &lt; string &gt;有什么区别"></a>#include &lt;string.h&gt;和#include  &lt; string &gt;有什么区别</h3><p><code>#include &lt;string.h&gt;</code> 和 <code>#include &lt;string&gt;</code> 是用于包含不同头文件的指令，它们之间的主要区别在于它们属于不同的编程语言和提供的功能不同。</p>
+<h4 id="1-include"><a href="#1-include" class="headerlink" title="1. #include &lt;string.h&gt;"></a>1. <strong><code>#include &lt;string.h&gt;</code></strong></h4><ul>
+<li><strong>语言</strong>：C 和 C++</li>
+<li><strong>头文件内容</strong>：<code>&lt;string.h&gt;</code> 是C语言的标准库头文件，主要提供了一组用于处理C风格字符串的函数。这些字符串是以 <code>char</code> 数组形式存储的，以 <code>\0</code>（空字符）作为字符串的结束标志。</li>
+<li><strong>常用函数</strong>：<ul>
+<li><code>strlen(const char* str)</code>: 计算字符串的长度，不包括结尾的 <code>\0</code>。</li>
+<li><code>strcpy(char* dest, const char* src)</code>: 复制字符串 <code>src</code> 到 <code>dest</code>。</li>
+<li><code>strncpy(char* dest, const char* src, size_t n)</code>: 将最多 <code>n</code> 个字符从 <code>src</code> 复制到 <code>dest</code>。</li>
+<li><code>strcat(char* dest, const char* src)</code>: 将 <code>src</code> 字符串追加到 <code>dest</code> 字符串的末尾。</li>
+<li><code>strcmp(const char* str1, const char* str2)</code>: 比较两个字符串的内容。</li>
+<li><code>memset(void* ptr, int value, size_t num)</code>: 将指定内存区域 <code>ptr</code> 中的前 <code>num</code> 个字节设置为 <code>value</code>。</li>
+<li><code>memcpy(void* dest, const void* src, size_t num)</code>: 复制 <code>num</code> 个字节的数据从 <code>src</code> 到 <code>dest</code>。</li>
+</ul>
+</li>
+<li><strong>使用场景</strong>：<ul>
+<li>在需要处理C风格字符串（如 <code>char</code> 数组）时使用。</li>
+<li>常用于低级别的字符串操作或在需要与C代码兼容的C++程序中。</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-include"><a href="#2-include" class="headerlink" title="2. #include &lt;string&gt;"></a>2. <strong><code>#include &lt;string&gt;</code></strong></h4><ul>
+<li><p><strong>语言</strong>：C++（C++标准库）</p>
+</li>
+<li><p><strong>头文件内容</strong>：<code>&lt;string&gt;</code> 是C++标准库头文件，提供了一个专门用于处理字符串的 <code>std::string</code> 类。<code>std::string</code> 是C++中的字符串类，封装了字符串的管理，并提供了丰富的成员函数来处理字符串操作。</p>
+</li>
+<li><p><strong>常用功能</strong>：</p>
+<ul>
+<li><p>成员函数</p>
+<p>：</p>
+<ul>
+<li><code>std::string::length() / size()</code>: 获取字符串的长度。</li>
+<li><code>std::string::append(const std::string&amp; str)</code>: 追加字符串 <code>str</code> 到当前字符串末尾。</li>
+<li><code>std::string::substr(size_t pos, size_t len)</code>: 返回从 <code>pos</code> 开始长度为 <code>len</code> 的子字符串。</li>
+<li><code>std::string::find(const std::string&amp; str)</code>: 查找子字符串 <code>str</code> 在当前字符串中的位置。</li>
+<li><code>std::string::replace(size_t pos, size_t len, const std::string&amp; str)</code>: 用字符串 <code>str</code> 替换从 <code>pos</code> 开始长度为 <code>len</code> 的部分。</li>
+<li><code>std::string::c_str()</code>: 返回指向C风格字符串的指针（<code>const char*</code>），用于与C风格函数兼容。</li>
+</ul>
+</li>
+<li><p>运算符重载</p>
+<p>：</p>
+<ul>
+<li><code>+</code>：字符串连接。</li>
+<li><code>==</code>、<code>!=</code>：比较两个字符串是否相等。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>使用场景</strong>：</p>
+<ul>
+<li>在C++程序中，使用 <code>std::string</code> 提供的高级字符串操作，而不需要手动管理内存或处理字符串末尾的 <code>\0</code>。</li>
+<li>提供了更安全、简洁的字符串操作，是C++开发中处理字符串的首选工具。</li>
+</ul>
+</li>
+</ul>
+<h4 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h4><ul>
+<li><strong><code>#include &lt;string.h&gt;</code></strong> 是C标准库中的头文件，主要用于处理C风格的 <code>char</code> 数组字符串，提供了一些基本的字符串操作函数。</li>
+<li><strong><code>#include &lt;string&gt;</code></strong> 是C++标准库中的头文件，提供了功能强大的 <code>std::string</code> 类，能够方便、安全地处理字符串，避免了手动管理字符串内存和处理C风格字符串常见的问题。</li>
+</ul>
+<p>在C++开发中，优先使用 <code>std::string</code>（即 <code>#include &lt;string&gt;</code>），因为它更符合面向对象编程的思想，操作更加简单和安全。如果需要与C代码兼容或处理低级别的字符串操作，才会使用 <code>#include &lt;string.h&gt;</code>。</p>
+<h3 id="man手册使用"><a href="#man手册使用" class="headerlink" title="man手册使用"></a>man手册使用</h3><p><code>man</code> 命令是Linux和Unix系统中用于查看命令或函数的手册页（manual pages）的工具。它可以帮助你快速了解某个命令、系统调用、库函数、配置文件等的用法和详细信息。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">基本用法<br>man [section] name<br>section：可选参数，指定手册页的章节号（详见下文）。<br>name：必需参数，指定你要查询的命令、系统调用、库函数、配置文件等的名称。<br></code></pre></td></tr></table></figure>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<h4 id="常见的-man-手册页章节"><a href="#常见的-man-手册页章节" class="headerlink" title="常见的 man 手册页章节"></a>常见的 <code>man</code> 手册页章节</h4><p><code>man</code> 手册页分为不同的章节，每个章节包含不同类型的信息。常见的章节包括：</p>
+<ol>
+<li><strong>用户命令</strong>：通常是你在终端中运行的命令（如 <code>ls</code>, <code>cd</code>）。</li>
+<li><strong>系统调用</strong>：由内核提供的函数（如 <code>open</code>, <code>read</code>）。</li>
+<li><strong>库函数</strong>：C标准库函数（如 <code>printf</code>, <code>malloc</code>）。</li>
+<li><strong>设备文件和特殊文件</strong>：通常在 <code>/dev</code> 下找到的设备文件。</li>
+<li><strong>文件格式</strong>：文件格式和协议（如 <code>/etc/passwd</code>）。</li>
+<li><strong>游戏</strong>：游戏和其他杂项（很少使用）。</li>
+<li><strong>杂项</strong>：杂项（如 <code>man</code>、<code>groff</code> 等）。</li>
+<li><strong>系统管理命令</strong>：通常只有管理员可以使用的命令（如 <code>ifconfig</code>, <code>iptables</code>）。</li>
+<li><strong>内核例程</strong>：与内核相关的例程和接口。</li>
+</ol>
 
                 
               </div>
