@@ -55,7 +55,7 @@
 <meta property="og:image" content="https://zy674517173.github.io/2024/06/02/MyWebServer/%E6%9C%AC%E5%9C%B0%E5%A5%97%E6%8E%A5%E5%AD%97.png">
 <meta property="og:image" content="https://zy674517173.github.io/2024/06/02/MyWebServer/Webserver%E6%A1%86%E6%9E%B6%E5%9B%BE.png">
 <meta property="article:published_time" content="2024-06-02T05:58:56.000Z">
-<meta property="article:modified_time" content="2024-09-03T11:52:13.725Z">
+<meta property="article:modified_time" content="2024-09-11T07:36:03.357Z">
 <meta property="article:author" content="张同学">
 <meta property="article:tag" content="项目">
 <meta name="twitter:card" content="summary_large_image">
@@ -254,7 +254,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          39k 字
+          40k 字
         
       </span>
     
@@ -265,7 +265,7 @@
         
         
         
-          327 分钟
+          334 分钟
         
       </span>
     
@@ -1494,7 +1494,7 @@
 <li>如果基类析构函数不是虚拟的，但通过基类指针删除派生类对象，这将导致未定义行为。在大多数情况下，这会导致程序崩溃或者资源泄漏。因此，出于安全性考虑，如果一个类打算作为基类被继承，通常会将它的析构函数声明为虚函数</li>
 </ul>
 <p><code>Log</code> 类的析构函数被声明为虚函数，是为了确保在使用多态时（即通过基类指针或引用来操作派生类对象）可以正确调用派生类的析构函数，防止资源泄漏和未定义行为。这是一个良好的设计习惯，尤其是在设计用于继承和扩展的类时。</p>
-<h2 id="杂记"><a href="#杂记" class="headerlink" title="杂记"></a>杂记</h2><h3 id="srrlen和sizeof的区别"><a href="#srrlen和sizeof的区别" class="headerlink" title="srrlen和sizeof的区别"></a>srrlen和sizeof的区别</h3><p><strong>计算对象不同</strong>:</p>
+<h3 id="HTTP部分"><a href="#HTTP部分" class="headerlink" title="HTTP部分"></a>HTTP部分</h3><h2 id="杂记"><a href="#杂记" class="headerlink" title="杂记"></a>杂记</h2><h3 id="1、srrlen和sizeof的区别"><a href="#1、srrlen和sizeof的区别" class="headerlink" title="1、srrlen和sizeof的区别"></a>1、srrlen和sizeof的区别</h3><p><strong>计算对象不同</strong>:</p>
 <ul>
 <li><code>sizeof</code> 计算任何类型（包括数组和对象）的大小（以字节为单位）。</li>
 <li><code>strlen</code> 只能用于计算以 <code>&#39;\0&#39;</code> 结尾的字符串的长度（以字符为单位）。</li>
@@ -1512,7 +1512,7 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-type">char</span> *str = <span class="hljs-string">&quot;Hello&quot;</span>;<br><span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Size of str: %lu\n&quot;</span>, <span class="hljs-built_in">sizeof</span>(str));       <span class="hljs-comment">// 输出 4 或 8，取决于系统架构</span><br><span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Length of str: %lu\n&quot;</span>, <span class="hljs-built_in">strlen</span>(str));<br></code></pre></td></tr></table></figure>
 
 <p>在这个例子中，<code>sizeof(str)</code> 返回的是指针的大小，而 <code>strlen(str)</code> 返回的是字符串的长度。</p>
-<h3 id="c-中没有在类中函数，没有在忘记打public了，函数默认是什么状态的"><a href="#c-中没有在类中函数，没有在忘记打public了，函数默认是什么状态的" class="headerlink" title="c++中没有在类中函数，没有在忘记打public了，函数默认是什么状态的"></a>c++中没有在类中函数，没有在忘记打public了，函数默认是什么状态的</h3><h4 id="1-在-class-定义中："><a href="#1-在-class-定义中：" class="headerlink" title="1)在 class 定义中："></a>1)<strong>在 <code>class</code> 定义中</strong>：</h4><ul>
+<h3 id="2、c-中没有在类中函数，没有在忘记打public了，函数默认是什么状态的"><a href="#2、c-中没有在类中函数，没有在忘记打public了，函数默认是什么状态的" class="headerlink" title="2、c++中没有在类中函数，没有在忘记打public了，函数默认是什么状态的"></a>2、c++中没有在类中函数，没有在忘记打public了，函数默认是什么状态的</h3><h4 id="1-在-class-定义中："><a href="#1-在-class-定义中：" class="headerlink" title="1)在 class 定义中："></a>1)<strong>在 <code>class</code> 定义中</strong>：</h4><ul>
 <li>如果你在 <code>class</code> 中定义成员函数而没有明确指定访问控制修饰符，则该成员函数的默认访问级别是 <code>private</code>。也就是说，函数只能在类的内部使用，类的外部不能访问</li>
 </ul>
 <h4 id="2-在-struct-定义中："><a href="#2-在-struct-定义中：" class="headerlink" title="2)在 struct 定义中："></a>2)<strong>在 <code>struct</code> 定义中</strong>：</h4><ul>
@@ -1520,7 +1520,17 @@
 </ul>
 <h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>class<code>中的默认访问级别是</code>private。      struct<code>中的默认访问级别是</code>public。</p>
 <p>这意味着，在 <code>class</code> 中，未指定访问控制的成员函数和数据成员只能被类的内部成员（如其他成员函数）访问，而在 <code>struct</code> 中，未指定访问控制的成员函数和数据成员可以在类外部直接访问。</p>
-<h3 id="include-和-include-string-有什么区别"><a href="#include-和-include-string-有什么区别" class="headerlink" title="#include &lt;string.h&gt;和#include  &lt; string &gt;有什么区别"></a>#include &lt;string.h&gt;和#include  &lt; string &gt;有什么区别</h3><p><code>#include &lt;string.h&gt;</code> 和 <code>#include &lt;string&gt;</code> 是用于包含不同头文件的指令，它们之间的主要区别在于它们属于不同的编程语言和提供的功能不同。</p>
+<h4 id="struct-和Class的区别"><a href="#struct-和Class的区别" class="headerlink" title="struct 和Class的区别"></a>struct 和Class的区别</h4><ul>
+<li>通常，struct用来表示一组相关的数据，而class用于表示一个封装了数据和操作的对象，在实际使用中，可以根据具体的需求选择使用struct和class。如果只是用来组织一些数据，而不涉及复杂的封装和继承关系，struct可能更直观；如果需要进行封装、继承等面向对象编程的特性，可以选择使用class。</li>
+<li>struct结构体中的成员默认是共有的（public），类中的成员默认是私有的（private）</li>
+<li>struct继承时默认使用公有继承。class继承时默认使用私有继承</li>
+<li>如果结构体没有定义任何构造函数，编译器会生成默认的无参数构造函数。如果类没有定义任何构造函数，编译器也会生成默认的无参数构造函数。</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-comment">// 使用 struct 定义</span><br><span class="hljs-keyword">struct</span> <span class="hljs-title class_">Mystruct</span>&#123;<br>	<span class="hljs-type">int</span> x;  <span class="hljs-comment">// 默认时public</span><br>	<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">print</span><span class="hljs-params">()</span></span><br><span class="hljs-function">	</span>&#123;<br>		cout &lt;&lt; <span class="hljs-string">&quot;Struct method&quot;</span> &lt;&lt; endl;<br>	&#125;<br>&#125;;<br><br><br><span class="hljs-comment">// 使用Class 定义</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Myclass</span><br>&#123;<br><span class="hljs-keyword">public</span>:		<span class="hljs-comment">// 如果忽略， 默认时private</span><br>	<span class="hljs-type">int</span> y;<br>	<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">display</span><span class="hljs-params">()</span></span><br><span class="hljs-function">	</span>&#123;<br>		cout &lt;&lt; <span class="hljs-string">&quot;Class method&quot;</span> &lt;&lt; endl;<br>	&#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="3、-include-和-include-string-有什么区别"><a href="#3、-include-和-include-string-有什么区别" class="headerlink" title="3、#include &lt;string.h&gt;和#include  &lt; string &gt;有什么区别"></a>3、#include &lt;string.h&gt;和#include  &lt; string &gt;有什么区别</h3><p><code>#include &lt;string.h&gt;</code> 和 <code>#include &lt;string&gt;</code> 是用于包含不同头文件的指令，它们之间的主要区别在于它们属于不同的编程语言和提供的功能不同。</p>
 <h4 id="1-include"><a href="#1-include" class="headerlink" title="1. #include &lt;string.h&gt;"></a>1. <strong><code>#include &lt;string.h&gt;</code></strong></h4><ul>
 <li><strong>语言</strong>：C 和 C++</li>
 <li><strong>头文件内容</strong>：<code>&lt;string.h&gt;</code> 是C语言的标准库头文件，主要提供了一组用于处理C风格字符串的函数。这些字符串是以 <code>char</code> 数组形式存储的，以 <code>\0</code>（空字符）作为字符串的结束标志。</li>
@@ -1579,7 +1589,7 @@
 <li><strong><code>#include &lt;string&gt;</code></strong> 是C++标准库中的头文件，提供了功能强大的 <code>std::string</code> 类，能够方便、安全地处理字符串，避免了手动管理字符串内存和处理C风格字符串常见的问题。</li>
 </ul>
 <p>在C++开发中，优先使用 <code>std::string</code>（即 <code>#include &lt;string&gt;</code>），因为它更符合面向对象编程的思想，操作更加简单和安全。如果需要与C代码兼容或处理低级别的字符串操作，才会使用 <code>#include &lt;string.h&gt;</code>。</p>
-<h3 id="man手册使用"><a href="#man手册使用" class="headerlink" title="man手册使用"></a>man手册使用</h3><p><code>man</code> 命令是Linux和Unix系统中用于查看命令或函数的手册页（manual pages）的工具。它可以帮助你快速了解某个命令、系统调用、库函数、配置文件等的用法和详细信息。</p>
+<h3 id="4、man手册使用"><a href="#4、man手册使用" class="headerlink" title="4、man手册使用"></a>4、man手册使用</h3><p><code>man</code> 命令是Linux和Unix系统中用于查看命令或函数的手册页（manual pages）的工具。它可以帮助你快速了解某个命令、系统调用、库函数、配置文件等的用法和详细信息。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">基本用法<br>man [section] name<br>section：可选参数，指定手册页的章节号（详见下文）。<br>name：必需参数，指定你要查询的命令、系统调用、库函数、配置文件等的名称。<br></code></pre></td></tr></table></figure>
 
 <h4 id="常见的-man-手册页章节"><a href="#常见的-man-手册页章节" class="headerlink" title="常见的 man 手册页章节"></a>常见的 <code>man</code> 手册页章节</h4><p><code>man</code> 手册页分为不同的章节，每个章节包含不同类型的信息。常见的章节包括：</p>
@@ -1594,6 +1604,22 @@
 <li><strong>系统管理命令</strong>：通常只有管理员可以使用的命令（如 <code>ifconfig</code>, <code>iptables</code>）。</li>
 <li><strong>内核例程</strong>：与内核相关的例程和接口。</li>
 </ol>
+<h3 id="5、枚举类的作用"><a href="#5、枚举类的作用" class="headerlink" title="5、枚举类的作用"></a>5、枚举类的作用</h3><p>枚举类（枚举类型）的作用是为一组相关的常量赋予有意义的名称，从而提高代码的可读性、可维护性和安全性。具体作用如下：</p>
+<h4 id="1-可读性和可维护性："><a href="#1-可读性和可维护性：" class="headerlink" title="1. 可读性和可维护性："></a>1. <strong>可读性和可维护性</strong>：</h4><p>枚举类为一组相关的值（常量）提供了清晰的语义。例如，直接使用数字 <code>0</code>、<code>1</code> 来表示HTTP请求中的 <code>GET</code> 和 <code>POST</code> 方法，可能导致代码不易理解；而使用枚举类 <code>METHOD::GET</code> 和 <code>METHOD::POST</code> 能让人一眼就明白其含义。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">enum</span> <span class="hljs-title class_">METHOD</span> &#123;<br>    GET = <span class="hljs-number">0</span>,<br>    POST = <span class="hljs-number">1</span><br>&#125;;<br></code></pre></td></tr></table></figure>
+
+<h4 id="2-防止魔法数字："><a href="#2-防止魔法数字：" class="headerlink" title="2. 防止魔法数字："></a>2. <strong>防止魔法数字</strong>：</h4><p>枚举类避免了在代码中使用“魔法数字”（magic numbers），即没有明确含义的常量数字。例如，直接使用 <code>0</code>、<code>1</code> 等作为状态值，可能会让代码变得难以理解；使用枚举可以提供清晰的语义。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">enum</span> <span class="hljs-title class_">HTTP_CODE</span> &#123;<br>    NO_REQUEST = <span class="hljs-number">0</span>,<br>    GET_REQUEST,<br>    BAD_REQUEST<br>&#125;;<br></code></pre></td></tr></table></figure>
+
+<h4 id="3-类型安全："><a href="#3-类型安全：" class="headerlink" title="3. 类型安全："></a>3. <strong>类型安全</strong>：</h4><h4 id="枚举类是一种强类型，能够防止无关的值被赋予相关变量。例如，如果定义了枚举类-METHOD，那么只能将-METHOD-中定义的值赋给该类型的变量，而不会错误地传递无关的数字或其他枚举类型的值，从而提高了代码的安全性。"><a href="#枚举类是一种强类型，能够防止无关的值被赋予相关变量。例如，如果定义了枚举类-METHOD，那么只能将-METHOD-中定义的值赋给该类型的变量，而不会错误地传递无关的数字或其他枚举类型的值，从而提高了代码的安全性。" class="headerlink" title="枚举类是一种强类型，能够防止无关的值被赋予相关变量。例如，如果定义了枚举类 METHOD，那么只能将 METHOD 中定义的值赋给该类型的变量，而不会错误地传递无关的数字或其他枚举类型的值，从而提高了代码的安全性。"></a>枚举类是一种强类型，能够防止无关的值被赋予相关变量。例如，如果定义了枚举类 <code>METHOD</code>，那么只能将 <code>METHOD</code> 中定义的值赋给该类型的变量，而不会错误地传递无关的数字或其他枚举类型的值，从而提高了代码的安全性。</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c++">cpp复制代码METHOD method = METHOD::GET;<br><span class="hljs-comment">// method 只能是枚举类METHOD中的值，不能是其他任意的整数</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="4-易于调试："><a href="#4-易于调试：" class="headerlink" title="4. 易于调试："></a>4. <strong>易于调试</strong>：</h4><p>当代码中使用枚举类时，调试时可以轻松看到相关变量的含义，而不是仅仅看到一些数字。这使得调试过程中能够更快地理解程序的状态和问题。</p>
+<h4 id="5-范围限制："><a href="#5-范围限制：" class="headerlink" title="5. 范围限制："></a>5. <strong>范围限制</strong>：</h4><p>枚举类型限制了可能的取值范围。例如，在 <code>HTTP_CODE</code> 枚举中，状态只能是 <code>NO_REQUEST</code>、<code>GET_REQUEST</code>、<code>BAD_REQUEST</code> 等定义的值。这样可以避免程序中出现非法状态。</p>
+<h4 id="6-方便条件判断："><a href="#6-方便条件判断：" class="headerlink" title="6. 方便条件判断："></a>6. <strong>方便条件判断</strong>：</h4><p>枚举可以直接用于条件判断和 <code>switch</code> 语句中，简化代码逻辑。例如：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs c++">cpp复制代码<span class="hljs-keyword">switch</span>(method) &#123;<br>    <span class="hljs-keyword">case</span> METHOD::GET:<br>        <span class="hljs-comment">// 处理GET请求</span><br>        <span class="hljs-keyword">break</span>;<br>    <span class="hljs-keyword">case</span> METHOD::POST:<br>        <span class="hljs-comment">// 处理POST请求</span><br>        <span class="hljs-keyword">break</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>使用枚举类型，可以让条件判断更清晰易懂，且减少了人为错误的可能性。</p>
+<h4 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h4><p>枚举类的主要作用是为一组相关的常量提供有意义的名称，使代码更具可读性、可维护性，并提升类型安全性。</p>
 
                 
               </div>
