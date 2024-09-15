@@ -30,7 +30,7 @@
 <meta property="og:image" content="https://zy674517173.github.io/2024/07/10/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/%E5%89%AA%E6%9E%9D%E4%BC%98%E5%8C%96.png">
 <meta property="og:image" content="https://zy674517173.github.io/2024/07/10/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8C%E2%85%A1.png">
 <meta property="article:published_time" content="2024-07-10T14:08:20.000Z">
-<meta property="article:modified_time" content="2024-09-09T08:09:19.909Z">
+<meta property="article:modified_time" content="2024-09-12T09:23:10.862Z">
 <meta property="article:author" content="张同学">
 <meta property="article:tag" content="算法">
 <meta name="twitter:card" content="summary_large_image">
@@ -229,7 +229,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          13k 字
+          14k 字
         
       </span>
     
@@ -240,7 +240,7 @@
         
         
         
-          105 分钟
+          115 分钟
         
       </span>
     
@@ -699,37 +699,69 @@
 
 
 
+<h1 id="基础数据结构和算法"><a href="#基础数据结构和算法" class="headerlink" title="基础数据结构和算法"></a>基础数据结构和算法</h1><h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><h3 id="1、堆"><a href="#1、堆" class="headerlink" title="1、堆"></a>1、堆</h3><p>[参考视频](【【从堆的定义到优先队列、堆排序】 10分钟看懂必考的数据结构——堆】<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1AF411G7cA?vd_source=8cc270f687a3e8776461d428d0e05aa9">https://www.bilibili.com/video/BV1AF411G7cA?vd_source=8cc270f687a3e8776461d428d0e05aa9</a>)</p>
+<h3 id="2、红黑树与AVL树"><a href="#2、红黑树与AVL树" class="headerlink" title="2、红黑树与AVL树"></a>2、红黑树与AVL树</h3><h4 id="红黑树"><a href="#红黑树" class="headerlink" title="红黑树"></a>红黑树</h4><p>红黑树是一种自平衡的二叉搜索树，但在每个节点增加一个存储位表示节点的颜色，可以是红或黑（非红即黑）。</p>
+<p>通过对任何一条从根到叶子的路径上的路径上各个节点着色方式的限制，红黑树保证最长路径不超过最短路径的二倍，因而近似平衡</p>
+<p>红黑树是一种弱平衡二叉树，相对于要求严格的 <code>AVL</code> 树来说，它的旋转次数少，所以对于搜索，插入，删除操作较多的情况下，通常使用红黑树。</p>
+<p><strong>性质</strong></p>
+<ol>
+<li>每个节点非红即黑；</li>
+<li>根节点是黑的；</li>
+<li>每个叶节点（叶节点即树尾端NULL指针或NULL节点）都是黑的；</li>
+<li>如果一个节点是红色的，则它的子节点必须是黑色的</li>
+<li>对于任意节点而言，其到叶子点树NULL指针的每条路径都包含相同数目的黑节点</li>
+</ol>
+<h4 id="平衡二叉树（AVL树）"><a href="#平衡二叉树（AVL树）" class="headerlink" title="平衡二叉树（AVL树）"></a>平衡二叉树（AVL树）</h4><p>红黑树是在AVL树的基础上提出来的</p>
+<p>平衡二叉树又称AVL树，是一种特殊的二叉排序树</p>
+<p>其左右子树都是平衡二叉树，且左右子树高度只差不超过1</p>
+<p><strong>红黑树较AVL树的优点</strong></p>
+<p><code>AVL</code> 树是高度自平衡的，频繁的插入和删除，会引起频繁的rebalance，导致效率下降</p>
+<p>红黑树不是高度自平衡的，算是一种折中，插入最多两次旋转，删除最多三次旋转。</p>
+<p>所以红黑树在查找，插入删除的性能都是 <code>O(logn)</code> ，且性能稳定，所以STL里面很多结构包括 <code>set、map</code> 底层实现都是使用的红黑树。</p>
+<h3 id="3、字典树（Trie树）"><a href="#3、字典树（Trie树）" class="headerlink" title="3、字典树（Trie树）"></a>3、字典树（Trie树）</h3><p>性质：</p>
+<ol>
+<li>根节点不保存字符，每个节点保存一个字符</li>
+<li>从根节点到某一节点。路径上经过的字符连接起来，就是该节点对应的字符串</li>
+<li>每个节点的所有子节点包含的字符都不相同</li>
+</ol>
+<p>应用：统计，排序，保存大量字符串</p>
+<p>优点：利用字符的公共前缀减少查询时间，最大限度的减少无谓的字符串比较</p>
+<h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><h3 id="1、排序"><a href="#1、排序" class="headerlink" title="1、排序"></a>1、排序</h3><h5 id="快速排序——基于分治（nlogn）"><a href="#快速排序——基于分治（nlogn）" class="headerlink" title="快速排序——基于分治（nlogn）"></a>快速排序——基于分治（<code>nlogn</code>）</h5><p><strong>快速排序的基本思想</strong></p>
+<p>1、确定分界点   2、调整区间	3、低轨处理左右两端	</p>
+<ol>
+<li>确定分界点：最好取中间的元素，第一个和最后一个元素也可以</li>
+<li>调整区间：通过一次排序将数组分为了两个部分，一半比分界点小，另一半比分界点大</li>
+<li>低轨处理左右两端：低轨处理分界点左右两边的子数据进行快速排序</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">quickSort</span><span class="hljs-params">(<span class="hljs-type">int</span> q[], <span class="hljs-type">int</span> l, <span class="hljs-type">int</span> r)</span></span><br><span class="hljs-function"></span>&#123;<br>	<span class="hljs-keyword">if</span>(l &gt;= r)	<span class="hljs-keyword">return</span>;<br>    <br>    <span class="hljs-type">int</span> i = l - <span class="hljs-number">1</span>, j = r + <span class="hljs-number">1</span>, x = q[l + r &gt;&gt; <span class="hljs-number">1</span>];<br>    <br>    <span class="hljs-keyword">while</span>(i &lt; j)<br>    &#123;<br>        <span class="hljs-keyword">do</span> i++; <span class="hljs-keyword">while</span>(q[i] &lt; x);<br>        <span class="hljs-keyword">do</span> j--; <span class="hljs-keyword">while</span>(q[j] &gt; x);<br>        <span class="hljs-keyword">if</span>(i &lt; j)	<span class="hljs-built_in">swap</span>(q[i], q[j]);<br>    &#125;<br>    <span class="hljs-built_in">quick</span>(q, l, j);<br>    <span class="hljs-built_in">quick</span>(q, j + l, r);<br>    <span class="hljs-comment">//也可以改成i，quick_sort(q, l, i-1);  quick_sort(q, i, r);</span><br>&#125;<br></code></pre></td></tr></table></figure>
 
+<p><strong>优势</strong></p>
+<ol>
+<li>时间效率高：平均比其他 <code>O(nlogn)</code>算法（归并、堆排序）更快</li>
+<li><strong>原地排序</strong>：快速排序不需要额外的存储空间，适合处理大数据集</li>
+<li>广泛应用：常用于各种场景中排序操作的实现（标准函数库实现）</li>
+</ol>
+<p><strong>劣势</strong></p>
+<p>最坏情况退化为 <code>O(n^2)</code>:在特俗情况下（选择的分界点总是最大值或最小值），性能会退化</p>
+<p>快速排序不稳定：快速排序不是稳定排序，元素相等时，元素的相对位置可能会改变。</p>
+<h5 id="归并排序——基于分治（nlogn）"><a href="#归并排序——基于分治（nlogn）" class="headerlink" title="归并排序——基于分治（nlogn）"></a>归并排序——基于分治（<code>nlogn</code>）</h5><p><strong>归并排序的基本思想</strong></p>
+<p>1、以数组中间为分界点 mid &#x3D; (left + right) &#x2F; 2	2、低轨排序left和right	3、归并——合二为一</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">mergeSort</span><span class="hljs-params">(<span class="hljs-type">int</span> q[], <span class="hljs-type">int</span> l, <span class="hljs-type">int</span> r)</span></span><br><span class="hljs-function"></span>&#123;<br>	<span class="hljs-keyword">if</span>(l &gt;= r)	<span class="hljs-keyword">return</span>;<br>    <br>    <span class="hljs-type">int</span> mid = l + r &gt;&gt; <span class="hljs-number">1</span>;<br>    <span class="hljs-built_in">mergeSort</span>(q, l, mid);<br>    <span class="hljs-built_in">mergeSort</span>(q, mid + <span class="hljs-number">1</span>, r);<br>    <br>    <span class="hljs-type">int</span> k = <span class="hljs-number">0</span>, i = l, r = mid + <span class="hljs-number">1</span>;<br>    <span class="hljs-comment">// 合并两个有序数组</span><br>    <span class="hljs-keyword">while</span>(i &lt;= mid &amp;&amp; j &lt;= r)<br>    &#123;<br>        <span class="hljs-keyword">if</span>(q[i] &lt;= q[j])<br>            tmp[k++] = q[i++];<br>        <span class="hljs-keyword">else</span><br>            tmp[k++] = q[j++];<br>    &#125;<br>    <br>    <span class="hljs-keyword">while</span>(i &lt;= mid)	tmp[k++] = q[i++];<br>    <span class="hljs-keyword">while</span>(j &lt;= r)	tmp[k++] = q[j++];<br>    <br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = l, j = <span class="hljs-number">0</span>; i &lt;= r; i++, j++)	q[i] = tmp[j]; <br>&#125;<br></code></pre></td></tr></table></figure>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<p><strong>优点</strong></p>
+<ol>
+<li>稳定性：归并排序是稳定的排序算法，即相等元素的相对顺序不会改变</li>
+<li>时间复杂度良好：无论数据的初始状态，始终为 <code>O(nlogn)</code></li>
+<li>适用于大数据：对外部存储排序时，因为他是个稳定的线性时间排序算法</li>
+</ol>
+<p><strong>缺点</strong></p>
+<ol>
+<li><p>空间复杂度高：需要额外 <code>O(n)</code> 的空间</p>
+</li>
+<li><p>在小规模数据上效率不如快速排序</p>
+</li>
+</ol>
+<h5 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h5>
                 
               </div>
             
