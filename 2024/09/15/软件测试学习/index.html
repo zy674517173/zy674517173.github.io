@@ -16,19 +16,38 @@
   <meta name="author" content="张同学">
   <meta name="keywords" content="">
   
-    <meta name="description" content="记录学习过程">
+    <meta name="description" content="软件测试-黑马Day11、测试介绍1.1 什么是软件测试使⽤技术⼿段验证软件是否满⾜需求 1.2 测试主流技能 功能测试：测试主要验证程序的功能是否满足需求 自动化测试：使用代码或工具代替手工，对项目进行测试 接口测试：使用代码或工具验证程序中的接口是否访问正常 性能测试：模拟多人使用软件，查找服务器缺陷  主流方向建议：  功能测试 + 接口测试 自动化测试 + 接口 功能 + 性能  2、测试">
 <meta property="og:type" content="article">
 <meta property="og:title" content="软件测试学习">
 <meta property="og:url" content="https://zy674517173.github.io/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="Hello-ZY">
-<meta property="og:description" content="记录学习过程">
+<meta property="og:description" content="软件测试-黑马Day11、测试介绍1.1 什么是软件测试使⽤技术⼿段验证软件是否满⾜需求 1.2 测试主流技能 功能测试：测试主要验证程序的功能是否满足需求 自动化测试：使用代码或工具代替手工，对项目进行测试 接口测试：使用代码或工具验证程序中的接口是否访问正常 性能测试：模拟多人使用软件，查找服务器缺陷  主流方向建议：  功能测试 + 接口测试 自动化测试 + 接口 功能 + 性能  2、测试">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://zy674517173.github.io/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/QQ%E7%99%BB%E9%99%86%E6%B5%8B%E8%AF%95.png">
+<meta property="og:image" content="https://zy674517173.github.io/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/%E8%BE%B9%E7%95%8C%E5%80%BC%E5%88%86%E6%9E%90%E6%96%B9%E6%B3%95.png">
+<meta property="og:image" content="https://zy674517173.github.io/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/%E5%88%A4%E5%AE%9A%E8%A1%A8%E6%B3%95%E7%BB%84%E6%88%90.png">
+<meta property="og:image" content="https://zy674517173.github.io/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/%E6%B5%81%E7%A8%8B%E5%9B%BE%E6%B3%95.png">
+<meta property="og:image" content="https://zy674517173.github.io/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/%E6%B5%81%E7%A8%8B%E5%9B%BE%E6%A1%88%E4%BE%8B.png">
+<meta property="og:image" content="https://zy674517173.github.io/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/%E7%BC%BA%E9%99%B7%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png">
+<meta property="og:image" content="https://zy674517173.github.io/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/excel%E7%BC%BA%E9%99%B7%E7%A4%BA%E4%BE%8B.png">
+<meta property="og:image" content="https://zy674517173.github.io/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/%E7%BC%BA%E9%99%B7%E6%8F%90%E4%BA%A4%E6%B5%81%E7%A8%8B.png">
+<meta property="og:image" content="https://zy674517173.github.io/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/V%E6%A8%A1%E5%9E%8B.png">
+<meta property="og:image" content="https://zy674517173.github.io/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/W%E6%A8%A1%E5%9E%8B.png">
+<meta property="og:image" content="https://zy674517173.github.io/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/H%E6%A8%A1%E5%9E%8B.png">
+<meta property="og:image" content="https://zy674517173.github.io/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/%E5%BB%BA%E8%AE%AE%E7%9A%84%E6%A8%A1%E5%9E%8Bpng.png">
+<meta property="og:image" content="https://zy674517173.github.io/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/%E7%AD%89%E4%BB%B7%E7%B1%BB%E5%88%92%E5%88%86%E4%BE%8B%E5%AD%90.png">
+<meta property="og:image" content="https://zy674517173.github.io/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E9%9B%86%E6%88%90.png">
+<meta property="og:image" content="https://zy674517173.github.io/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/%E8%87%AA%E5%BA%95%E5%90%91%E4%B8%8A%E9%9B%86%E6%88%90.png">
+<meta property="og:image" content="https://zy674517173.github.io/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/%E4%B8%89%E6%98%8E%E6%B2%BB%E9%9B%86%E6%88%90.png">
+<meta property="og:image" content="https://zy674517173.github.io/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/%E6%88%90%E5%AF%B9%E9%9B%86%E6%88%90.png">
+<meta property="og:image" content="https://zy674517173.github.io/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/%E7%9B%B8%E9%82%BB%E9%9B%86%E6%88%90.png">
 <meta property="article:published_time" content="2024-09-15T08:05:25.000Z">
-<meta property="article:modified_time" content="2024-09-15T08:06:25.516Z">
+<meta property="article:modified_time" content="2024-10-06T14:00:14.444Z">
 <meta property="article:author" content="张同学">
 <meta property="article:tag" content="八股">
 <meta property="article:tag" content="测试">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://zy674517173.github.io/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/QQ%E7%99%BB%E9%99%86%E6%B5%8B%E8%AF%95.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -223,7 +242,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          0 字
+          6.9k 字
         
       </span>
     
@@ -234,7 +253,7 @@
         
         
         
-          1 分钟
+          58 分钟
         
       </span>
     
@@ -284,7 +303,500 @@
             
               <div class="markdown-body">
                 
-                
+                <h1 id="软件测试-黑马"><a href="#软件测试-黑马" class="headerlink" title="软件测试-黑马"></a>软件测试-黑马</h1><h2 id="Day1"><a href="#Day1" class="headerlink" title="Day1"></a>Day1</h2><h3 id="1、测试介绍"><a href="#1、测试介绍" class="headerlink" title="1、测试介绍"></a>1、测试介绍</h3><h4 id="1-1-什么是软件测试"><a href="#1-1-什么是软件测试" class="headerlink" title="1.1 什么是软件测试"></a>1.1 什么是软件测试</h4><p>使⽤技术⼿段验证软件是否满⾜需求</p>
+<h4 id="1-2-测试主流技能"><a href="#1-2-测试主流技能" class="headerlink" title="1.2 测试主流技能"></a>1.2 测试主流技能</h4><ol>
+<li>功能测试：测试主要验证程序的功能是否满足需求</li>
+<li>自动化测试：使用代码或工具代替手工，对项目进行测试</li>
+<li>接口测试：使用代码或工具验证程序中的接口是否访问正常</li>
+<li>性能测试：模拟多人使用软件，查找服务器缺陷</li>
+</ol>
+<p>主流方向建议：</p>
+<ol>
+<li>功能测试 + 接口测试</li>
+<li>自动化测试 + 接口</li>
+<li>功能 + 性能</li>
+</ol>
+<h3 id="2、测试常用分类"><a href="#2、测试常用分类" class="headerlink" title="2、测试常用分类"></a>2、测试常用分类</h3><p>分类</p>
+<ul>
+<li>阶段划分：（软件产出过程顺序）</li>
+<li>代码可见度</li>
+</ul>
+<h4 id="2-1-阶段划分"><a href="#2-1-阶段划分" class="headerlink" title="2.1 阶段划分"></a>2.1 阶段划分</h4><ul>
+<li>单元测试：针对程序源代码进行测试（单元：最小独立功能代码段）</li>
+<li>集成测试：针对单元与单元之间的接口进行测试（又叫接口测试）</li>
+<li>系统测试：针对系统整体功能+兼容+文档（说明、安装文档）</li>
+<li>验收测试：主要分为内测、公测，使用不同的人群来发掘项目缺陷</li>
+</ul>
+<h4 id="2-2-代码可见度划分"><a href="#2-2-代码可见度划分" class="headerlink" title="2.2 代码可见度划分"></a>2.2 代码可见度划分</h4><ul>
+<li>黑盒测试：看不见源代码，主要对<strong>程序功能</strong>进行测试。                                                      主要针对功能（阶段划分-&gt;系统测试）</li>
+<li>灰盒测试：看见部分代码，主要对<strong>程序接口</strong>进行测试。                                                      主要接口测试（阶段划分-&gt;集成测试）</li>
+<li>白盒测试：看见全部代码，主要对<strong>程序源代码</strong>进行测试。                                                      主要程序源代码（阶段划分-&gt;单元测试）</li>
+</ul>
+<h4 id="2-3-总结"><a href="#2-3-总结" class="headerlink" title="2.3 总结"></a>2.3 总结</h4><ul>
+<li>系统测试和⿊盒测试重点核⼼是功能测试 </li>
+<li>集成测试和灰盒测试⼜称接⼝测试  </li>
+<li>单元测试和⽩盒测试是对代码进⾏测试 </li>
+<li>⾃动化测试归属功能测试 </li>
+<li>性能测试、安全测试归属专项测试</li>
+</ul>
+<h3 id="3、模型"><a href="#3、模型" class="headerlink" title="3、模型"></a>3、模型</h3><p>角度</p>
+<ul>
+<li>质量模型</li>
+<li>测试模型</li>
+</ul>
+<h4 id="3-1-质量模型"><a href="#3-1-质量模型" class="headerlink" title="3.1 质量模型"></a>3.1 质量模型</h4><p>软件质量模型 ISO&#x2F;IEC 25010</p>
+<p>说明：质量模型能告诉我们，测试时应该考虑的方面</p>
+<ol>
+<li>功能性</li>
+<li>性能效率</li>
+<li>兼容性：多种浏览器内核、操作系统、手机</li>
+<li>易用性：简洁、友好、流畅、美观</li>
+<li>可靠性：出现无响应、相应时间慢</li>
+<li>信息安全</li>
+<li>可维护性：</li>
+<li>可移植性</li>
+</ol>
+<h3 id="4、测试流程"><a href="#4、测试流程" class="headerlink" title="4、测试流程"></a>4、测试流程</h3><ol>
+<li><p>需求分析：确保各部门需求理解一致</p>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs clean">前提：阅读<span class="hljs-number">1</span>遍需求⽂档，记录不明确之处。<br>参与⼈员：前端、后端、测试、产品<br>⽬的：<br>	<span class="hljs-number">1</span>、确保各部⻔需求理解⼀致<br>	<span class="hljs-number">2</span>、各⻆⾊对需求进⾏查漏补缺<br>	<span class="hljs-number">3</span>、了解软件有些功能<br>提示：需求分析阶段-&gt;软件还未实现（刚⽴项）<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>计划编写：测什么、谁来测、怎么测</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs">说明：指导测试执⾏的⽂档（重要）<br>测什么（⽬标、范围）<br>谁来测（⼈员进度及安排）<br>怎么测（测试⼯具、测试策略）<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>用例设计：验证项目是否符合需求的操作的文档</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs">说明：保证能准确验证软件测试点执⾏的⽂档。<br>1、分析需求<br>2、提取测试点<br>3、设计⽤例覆盖测试点<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>用例执行：项目模块开发完成开始执行用例文档实施测试</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">说明：实施测试<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>缺陷管理：对缺陷进行管理的过程（提交、回归、关闭）</p>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs clean">提交-&gt;验证-&gt;关闭<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>测试报告：实施测试结果文档</p>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs mipsasm"><span class="hljs-number">1</span>、<span class="hljs-keyword">bug分析及统计</span><br><span class="hljs-keyword"></span><span class="hljs-number">2</span>、测试中遇到的问题<br><span class="hljs-number">3</span>、测试总结（本次测试中的优点和不⾜）<br></code></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="5、测试用例"><a href="#5、测试用例" class="headerlink" title="5、测试用例"></a>5、测试用例</h3><p>是为测试项目而设计的执行文档</p>
+<p>用例：<strong>用</strong>户使用的案例，</p>
+<p>用例的作用：</p>
+<ol>
+<li>防止漏测</li>
+<li>衡量软件是否通过标准</li>
+</ol>
+<h4 id="5-1-八大要素编写规范"><a href="#5-1-八大要素编写规范" class="headerlink" title="5.1 八大要素编写规范"></a>5.1 八大要素编写规范</h4><ul>
+<li>用例编号：项目  模块  编号</li>
+<li>用例标题：预期结果（测试点）</li>
+<li>模块&#x2F;项目：所属项目或板块</li>
+<li>前置条件：要执行此条案例，有那些前置操作</li>
+<li>优先级：表示用例的重要程度或者影响力 P0~P4 (P0最高)</li>
+<li>测试步骤：描述操作步骤</li>
+<li>测试数据：操作的数据，没有的话可以为空</li>
+<li>预期结果：期望达到的结果</li>
+</ul>
+<h4 id="5-2-练习案例"><a href="#5-2-练习案例" class="headerlink" title="5.2 练习案例"></a>5.2 练习案例</h4><img src="/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/QQ%E7%99%BB%E9%99%86%E6%B5%8B%E8%AF%95.png" srcset="/img/loading.gif" lazyload class="">
+
+
+
+<table>
+<thead>
+<tr>
+<th align="center">项目模块编号</th>
+<th align="center">用例标题</th>
+<th>项目&#x2F;模块</th>
+<th>优先级</th>
+<th>前置条件</th>
+<th>测试步骤</th>
+<th>测试数据</th>
+<th align="center">预期结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">qq_login_001</td>
+<td align="center">登陆失败（账号为空）</td>
+<td>登陆</td>
+<td>P1</td>
+<td>1、打开QQ登陆界面<br />2、账号已注册</td>
+<td>1、输入账号<br />2、输入密码<br />3、点击登陆</td>
+<td>1、账号：为空<br />2、密码：12345</td>
+<td align="center">登陆失败。提示：账号不能为空</td>
+</tr>
+<tr>
+<td align="center">qq_login_002</td>
+<td align="center">登陆失败（账号未注册）</td>
+<td>登陆</td>
+<td>P1</td>
+<td>1、打开QQ登陆界面<br />2、账号未注册</td>
+<td>1、输入账号<br />2、输入密码<br />3、点击登陆</td>
+<td>1、账号：未注册正确格式账号<br />2、密码：12345</td>
+<td align="center">登陆失败。提示：账号不存在</td>
+</tr>
+<tr>
+<td align="center">qq_login_003</td>
+<td align="center">登陆失败（密码为空）</td>
+<td>登陆</td>
+<td>P1</td>
+<td>1、打开QQ登陆界面<br />2、账号已注册</td>
+<td>1、输入账号<br />2、输入密码<br />3、点击登陆</td>
+<td>1、账号：正确账号<br />2、密码：12345</td>
+<td align="center">登陆失败。提示：密码不能为空</td>
+</tr>
+<tr>
+<td align="center">qq_login_004</td>
+<td align="center">登陆失败（密码错误）</td>
+<td>登陆</td>
+<td>P1</td>
+<td>1、打开QQ登陆界面<br />2、账号已注册</td>
+<td>1、输入账号<br />2、输入密码<br />3、点击登陆</td>
+<td>1、账号：正确账号<br />2、密码：错误密码</td>
+<td align="center">登陆失败。提示：密码不正确</td>
+</tr>
+</tbody></table>
+<h3 id="6、用例设计方法"><a href="#6、用例设计方法" class="headerlink" title="6、用例设计方法"></a>6、用例设计方法</h3><p>目标</p>
+<ol>
+<li>能对穷举场景设计测试点</li>
+<li>能对限定边界规则设计测试点</li>
+<li>能对多条件依赖关系进行设计测试点</li>
+<li>能对于项目业务进行设计测试点</li>
+</ol>
+<h4 id="6-1-等价类划分"><a href="#6-1-等价类划分" class="headerlink" title="6.1 等价类划分"></a>6.1 等价类划分</h4><p>说明：在所有测试数据中，具有某种共同特征的数据集合进行划分</p>
+<p>分类：有效等价类、无效等价类</p>
+<p><strong>步骤</strong></p>
+<ol>
+<li>明确需求</li>
+<li>确定有效等价类 和 无效等价类       长度、类型、规则</li>
+<li>提取数据编写测试用例</li>
+</ol>
+<h4 id="6-2-边界值分析法"><a href="#6-2-边界值分析法" class="headerlink" title="6.2 边界值分析法"></a>6.2 边界值分析法</h4><p>选取正好等于、刚好大于、刚好小于边界的值作为测试数据</p>
+<ul>
+<li>上点：边界上的点（正好等于） （绿色）								 必选</li>
+<li>离店：距离上点最近的点（刚好大于、刚好小于）  （黄色）    必选</li>
+<li>内点：范围内的点（区间范围内的数据）   （蓝色）                 开内闭外</li>
+</ul>
+<p>开内闭外举例（用于优化边界值数量）</p>
+<p>需求：20 &lt;&#x3D; b &lt; 60</p>
+<p>上点：20、60</p>
+<p>内点：30</p>
+<p>离点：19、59</p>
+<img src="/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/%E8%BE%B9%E7%95%8C%E5%80%BC%E5%88%86%E6%9E%90%E6%96%B9%E6%B3%95.png" srcset="/img/loading.gif" lazyload class="">
+
+<p>边界值能解决位数限制问题，但是不能解决类型问题（要结合等价类）</p>
+<p><strong>步骤</strong></p>
+<ol>
+<li>明确需求</li>
+<li>确定有效和无效等价类             </li>
+<li>确定边界范围值</li>
+<li>提取数据编写测试用例</li>
+</ol>
+<p>类型用等价类、长度用边界值</p>
+<h4 id="6-3-判定表法"><a href="#6-3-判定表法" class="headerlink" title="6.3 判定表法"></a>6.3 判定表法</h4><p>案例：验证 “若用户欠费或者关机，则不允许主被叫”的功能测试</p>
+<p><strong>说明：</strong></p>
+<ul>
+<li>等价类边界值分析法主要关注单个输入类条件的测试</li>
+<li>并未考虑输入条件之间的各种组合、输入条件与输出结果之间有相互制约关系的测试</li>
+</ul>
+<p><strong>介绍</strong></p>
+<ul>
+<li><p>定义：是一种以表格形式表达多条件逻辑判断的工具</p>
+</li>
+<li><p>组成</p>
+<img src="/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/%E5%88%A4%E5%AE%9A%E8%A1%A8%E6%B3%95%E7%BB%84%E6%88%90.png" srcset="/img/loading.gif" lazyload class=""></li>
+</ul>
+<p><strong>规则</strong></p>
+<ul>
+<li>判定表中贯穿条件项和动作项的一列就是一条规则</li>
+<li>假设有n个条件，每个条件的取值有两个(0,1)，全组合有2的n次方种规则</li>
+</ul>
+<p><strong>步骤</strong></p>
+<ol>
+<li>明确要求</li>
+<li>画出判定表<ol>
+<li>列出条件桩和动作桩</li>
+<li>填写条件项、对条件进行全组合</li>
+<li>根据条件项的组合确定动作项</li>
+<li>简化、合并相似规则（有相同规则）</li>
+</ol>
+</li>
+<li>根据规则编写测试用例</li>
+</ol>
+<p><strong>总结</strong></p>
+<p>使用场景</p>
+<ul>
+<li>有多个输入条件，多个输出结果，输入条件之间有组合关系，输入条件和输出结果之间有依赖(制约)关系</li>
+<li>判定表一般适用于条件组合数量较少的情况(比如4个条件以下)</li>
+</ul>
+<p><strong>提示</strong>：</p>
+<ol>
+<li>多条件之间有依赖关系，使⽤判定表来进⾏测试覆盖。 </li>
+<li>判定表⼀般适合4个以内条件依赖关系 </li>
+<li>如果条件超过4个，就不适合覆盖所有条件，应采⽤（正交法）来解决。</li>
+</ol>
+<h4 id="6-4-场景法"><a href="#6-4-场景法" class="headerlink" title="6.4 场景法"></a>6.4 场景法</h4><p><strong>说明</strong></p>
+<p>场景法也可以叫流程图法，是用流程图描述用户的使用场景，然后通过覆盖流程路径来设计测试用例。</p>
+<p><strong>意义:</strong></p>
+<ul>
+<li>用户使用角度:用户平时使用的不是单个功能，而是多个功能组合起来进行使用</li>
+<li>测试人员角度:平时测试的都是单个功能点进行测试，容易忽略多个功能的组合测试</li>
+</ul>
+<p><strong>流程图</strong></p>
+<p>提示:业务⽤例是根据流程图来梳理的,需要先了解流程图</p>
+<img src="/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/%E6%B5%81%E7%A8%8B%E5%9B%BE%E6%B3%95.png" srcset="/img/loading.gif" lazyload class="">
+
+<p>开始都是椭圆，判断是菱形，语句是方形</p>
+<img src="/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/%E6%B5%81%E7%A8%8B%E5%9B%BE%E6%A1%88%E4%BE%8B.png" srcset="/img/loading.gif" lazyload class="">
+
+
+
+<h4 id="6-5-错误推荐法"><a href="#6-5-错误推荐法" class="headerlink" title="6.5 错误推荐法"></a>6.5 错误推荐法</h4><p>应⽤场景：当项⽬⽤例都执⾏完毕，且BUG修复完成，离上线还有⼀段时间， 在这段时间中可是使⽤错误推荐法复测主要业务或测试未覆盖的功能。</p>
+<p>定义：通过经验推测系统可能出现的问题</p>
+<p>场景：</p>
+<ol>
+<li>时间紧任务量大时，根据之前项目类似经验找出易出错的模块重点测试</li>
+<li>时间宽裕通过该方法列出之前出现问题较多的模块再次测试</li>
+</ol>
+<p>思想：根据经验列举出可能出现问题的清单，根据清单分析问题可能原因，推测发现缺陷。</p>
+<h2 id="Day2"><a href="#Day2" class="headerlink" title="Day2"></a>Day2</h2><h3 id="1、缺陷"><a href="#1、缺陷" class="headerlink" title="1、缺陷"></a>1、缺陷</h3><h4 id="1-1-定义"><a href="#1-1-定义" class="headerlink" title="1.1 定义"></a>1.1 定义</h4><p>软件中存在的各种问题，都为缺陷，简称bug；</p>
+<h4 id="1-2-缺陷标准"><a href="#1-2-缺陷标准" class="headerlink" title="1.2 缺陷标准"></a>1.2 缺陷标准</h4><ol>
+<li>少功能 </li>
+<li>功能错误 </li>
+<li>多功能 </li>
+<li>缺少隐性功能 </li>
+<li>易⽤性（软件测试⼈员专业⻆度）-不易使用</li>
+</ol>
+<h4 id="1-3-缺陷产生的原因"><a href="#1-3-缺陷产生的原因" class="headerlink" title="1.3 缺陷产生的原因"></a>1.3 缺陷产生的原因</h4><ol>
+<li>需求⽂档 </li>
+<li>架构设计 </li>
+<li>编码实现 </li>
+<li>环境（硬件、软件）</li>
+</ol>
+<h4 id="1-4-缺陷的生命周期"><a href="#1-4-缺陷的生命周期" class="headerlink" title="1.4 缺陷的生命周期"></a>1.4 缺陷的生命周期</h4><img src="/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/%E7%BC%BA%E9%99%B7%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png" srcset="/img/loading.gif" lazyload class="">
+
+<ol>
+<li>回归测试：<ol>
+<li>常规项⽬回归：项⽬本次发布新增2个模块，最基本要测新增模块功能及新增模块关联的旧模块。 </li>
+<li>⾮常规项⽬（银⾏、部队、航天）：新增功能，必须全部复测。</li>
+</ol>
+</li>
+<li>回归bug：上⼀个版本发现的缺陷，开发修复完毕，在下个版本进⾏重新验证。</li>
+</ol>
+<h4 id="1-5-缺陷的核心要素"><a href="#1-5-缺陷的核心要素" class="headerlink" title="1.5 缺陷的核心要素"></a>1.5 缺陷的核心要素</h4><ol>
+<li>缺陷的标题：描述缺陷的核心问题</li>
+<li>缺陷的预置条件：缺陷产生的前提</li>
+<li>缺陷的复现步骤：复现缺陷的步骤</li>
+<li>缺陷的预期结果：希望得到的结果</li>
+<li>缺陷的实际结果：实际得到的结果</li>
+<li>缺陷的必要附件：图片、日志等信息（证据）</li>
+</ol>
+<h4 id="1-6-缺陷提交要素"><a href="#1-6-缺陷提交要素" class="headerlink" title="1.6 缺陷提交要素"></a>1.6 缺陷提交要素</h4><ol>
+<li>缺陷报告编号：缺陷的唯一性标志</li>
+<li>严重程度：S1-S4，                                                                                                       S1(严重)主功能    S2(一般) 次要功能    S3(微小) 易用性、界面   S4(建议) 建议性问题</li>
+<li>缺陷优先级：P0~P3</li>
+<li>Bug类型：代码错误、兼容性问题、设计缺陷、性能问题</li>
+<li>缺陷状态：new(新建)、open(打开)、closed(关闭)、postponed(延期)</li>
+</ol>
+<h4 id="1-7-缺陷类型"><a href="#1-7-缺陷类型" class="headerlink" title="1.7 缺陷类型"></a>1.7 缺陷类型</h4><ol>
+<li>功能错误 </li>
+<li>UI⻚⾯错误 </li>
+<li>兼容性 </li>
+<li>数据（数据库） </li>
+<li>易⽤性 </li>
+<li>建议 </li>
+<li>架构缺陷</li>
+</ol>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs clean">设计⽤例-&gt;执⾏⽤例（执⾏测试）-&gt;缺陷（提交、验证、关闭）<br>缺陷定义：任何问题（Bug）<br>缺陷标准：多功能、少功能、错误、缺少隐性功能、易⽤性<br>描述缺陷重点：缺陷标题、前置条件、复现步骤、预期结果、实际结果、附件备注<br>提交缺陷信息：指派⼈、缺陷等级、修复优先级、类型、状态（统计缺陷）<br></code></pre></td></tr></table></figure>
+
+<h3 id="2、缺陷管理"><a href="#2、缺陷管理" class="headerlink" title="2、缺陷管理"></a>2、缺陷管理</h3><h4 id="2-1-excel示例"><a href="#2-1-excel示例" class="headerlink" title="2.1 excel示例"></a>2.1 excel示例</h4><img src="/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/excel%E7%BC%BA%E9%99%B7%E7%A4%BA%E4%BE%8B.png" srcset="/img/loading.gif" lazyload class="">
+
+<h4 id="2-2-缺陷跟踪流程"><a href="#2-2-缺陷跟踪流程" class="headerlink" title="2.2 缺陷跟踪流程"></a>2.2 缺陷跟踪流程</h4><img src="/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/%E7%BC%BA%E9%99%B7%E6%8F%90%E4%BA%A4%E6%B5%81%E7%A8%8B.png" srcset="/img/loading.gif" lazyload class="">
+
+<h4 id="2-3-提交注意事项"><a href="#2-3-提交注意事项" class="headerlink" title="2.3 提交注意事项"></a>2.3 提交注意事项</h4><ol>
+<li>可重现：缺陷可以复现</li>
+<li>规范性：符合公司或者项目要求</li>
+</ol>
+<p><strong>面试题</strong></p>
+<p>发现缺陷后，首先会怎么办？ 确定bug可复现，确定时bug</p>
+<h1 id="八股总结"><a href="#八股总结" class="headerlink" title="八股总结"></a>八股总结</h1><h2 id="软件测试的术语"><a href="#软件测试的术语" class="headerlink" title="软件测试的术语"></a>软件测试的术语</h2><p><strong>失效</strong></p>
+<p><strong>事故</strong></p>
+<p><strong>故障</strong></p>
+<p><strong>错误</strong></p>
+<p><strong>测试</strong></p>
+<p><strong>调试</strong></p>
+<p><strong>测试用例</strong></p>
+<p>- </p>
+<h2 id="软件测试的几个模型"><a href="#软件测试的几个模型" class="headerlink" title="软件测试的几个模型"></a>软件测试的几个模型</h2><h3 id="V-V模型"><a href="#V-V模型" class="headerlink" title="V&amp;V模型"></a>V&amp;V模型</h3><p>为把握软件开发各个环节的正确性，需要进行各种<strong>确认</strong>和<strong>验证</strong>工作</p>
+<p>验证(Verification)，在软件开发过程的某个阶段，决定此时的产品是否满⾜前⼀个阶段所确定需求的过程。（Are you building the product right?是否正确地构造软件？）</p>
+<p>确认(Validation)，在软件开发结尾时，评估软件以保证所开发的软件和预期⽤途相符的过程。（ Are you building the right product?是否构造正确的软件？）</p>
+<h2 id="软件测试过程模型"><a href="#软件测试过程模型" class="headerlink" title="软件测试过程模型"></a>软件测试过程模型</h2><h3 id="V模型"><a href="#V模型" class="headerlink" title="V模型"></a>V模型</h3><p>Paul Rook在20世纪80年代后期提出，最具有代表意义的测试模型，是软件开发瀑布模型的变 体，反映了测试活动与分析和设计的关系。</p>
+<p><strong>两个特点</strong></p>
+<ol>
+<li>展示了动态测试的全过程，并定义了动态测试与开发之间的关系。 </li>
+<li>动态测试的⾏为与开发过程的⾏为相对应，测试基础是对应开发阶段的⽂档。</li>
+</ol>
+<p><strong>三个缺点</strong></p>
+<ol>
+<li>测试与开发⽂档之间很少有完美的⼀对⼀关系。 </li>
+<li>完全没有提及静态测试，忽略了代码审查、需求规格说明审查等重要的测试⼿段。 </li>
+<li>软件测试时间经常由于前期开发阶段进度的拖延⽽被挤占，甚⾄取消，从⽽使得测试质量 得不到保证。</li>
+</ol>
+<img src="/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/V%E6%A8%A1%E5%9E%8B.png" srcset="/img/loading.gif" lazyload class="">
+
+
+
+<h3 id="W模型"><a href="#W模型" class="headerlink" title="W模型"></a>W模型</h3><p>Paul Herzlich在1993年提出，对V模型的改进，表明测试与开发的并⾏关系，充分体现测试贯 穿于整个开发过程。</p>
+<p><strong>两个特点：</strong></p>
+<ol>
+<li>W是V的发展，强调测试应在整个开发周期进⾏。 </li>
+<li>W和V⼀样，开发⾏为与测试⾏为⼀⼀对应，但W并不主张动态测试必须要与开发阶段对应 起来，W也不限制动态测试⾏为必须严格地基于开发⾏为产⽣的单⼀⽂档</li>
+</ol>
+<p><strong>一个缺点</strong></p>
+<ol>
+<li>在W模型中，需求、设计、编码等<strong>活动是串⾏</strong>的，测试和开发活动也保持⼀种线性的前后 关系。只有上⼀个阶段完成之后，才能正式开始下⼀个阶段⼯作，从⽽⽆法⽀持迭代的开 发模式。</li>
+</ol>
+<img src="/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/W%E6%A8%A1%E5%9E%8B.png" srcset="/img/loading.gif" lazyload class="">
+
+
+
+<h3 id="H模型"><a href="#H模型" class="headerlink" title="H模型"></a>H模型</h3><p>将测试活动视为⼀个完全独⽴的活动，具有独⽴的包括测试准备活动和测试执⾏活动的流程。</p>
+<p>只要测试准备就绪，就可以开始测试执⾏活动。在整个开发周期内，存在多个这样独⽴的 测试流程。 体现“尽早准备、尽早执⾏”的思想，并且不同测试活动可以按照合理的顺序进⾏。</p>
+<img src="/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/H%E6%A8%A1%E5%9E%8B.png" srcset="/img/loading.gif" lazyload class="">
+
+
+
+<h3 id="X模型"><a href="#X模型" class="headerlink" title="X模型"></a>X模型</h3><p>认为V模型⽆法引导项⽬的全部过程。认为模型必须能处理开发的所有⽅⾯，包括交接、 频繁重复的集成以及需求⽂档的缺乏等。 </p>
+<p>认为V是基于⼀套必须按照⼀定顺序严格排列的开发步骤，可能不能反映实际的实践过 程。 提倡探索性测试，即不进⾏事先计划的特殊类型的测试。</p>
+<h3 id="建议模型"><a href="#建议模型" class="headerlink" title="建议模型"></a>建议模型</h3><p>以W模型为基本框架，从开发过程⼀开始就介⼊，并与开发过程同步开展相应的测试⼯作 ，同时灵活运⽤H模型独⽴测试的思想，只要满⾜就绪条件就进⾏独⽴的测试，并对测试 ⼯作进⾏迭代，直⾄完成测试⽬标。体现了尽早测试、全⾯测试、独⽴迭代测试的思想。</p>
+<img src="/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/%E5%BB%BA%E8%AE%AE%E7%9A%84%E6%A8%A1%E5%9E%8Bpng.png" srcset="/img/loading.gif" lazyload class="">
+
+
+
+<h2 id="静态测试和动态测试"><a href="#静态测试和动态测试" class="headerlink" title="静态测试和动态测试"></a>静态测试和动态测试</h2><h3 id="静态测试"><a href="#静态测试" class="headerlink" title="静态测试"></a>静态测试</h3><p>静态分析，对模块的源代码进⾏研读，查找错误或收集⼀些度量数据，并不需要对代码进⾏编译和仿真运⾏，采⽤⼈⼯检测和计算机辅助静态分析⼿段进⾏检测。 静态测试包括对各阶段的软件产品进⾏审查。</p>
+<h4 id="软件评审"><a href="#软件评审" class="headerlink" title="软件评审"></a>软件评审</h4><p>30％－70％的缺陷是通过软件评审发现。 对所有⼈⼯静态分析技术和具体⽂档检查技术的通称。</p>
+<p><strong>五个优点</strong></p>
+<ol>
+<li>早发现错误早纠正，从⽽降低开发成本。 </li>
+<li>除了开发⼈员参加外，⽤户也要参与，这样可以兼容各家之⻓，从不同的视⻆考虑问题。 </li>
+<li>发现的缺陷较显⻅。⽽软件测试是从迹象判断缺陷存在（实际输出与预期输出不符），再 根据各种现象分析，才能判断造成缺陷的原因，这是⼀个困难的过程。 </li>
+<li>测试需对各个缺陷分别进⾏分析定位再纠正，⽽软件评审往往可以成批发现缺陷，同时也 可以成批纠正缺陷，效率较⾼。 </li>
+<li>测试时发现缺陷，程序⼈员往往急于纠正，⽽不能冷静考虑修正⽅案，会导致错上加错。 ⽽软件评审在早期，软件开发⼈员往往能够从容对待，全⾯衡量选择修改⽅法。</li>
+</ol>
+<h3 id="动态测试"><a href="#动态测试" class="headerlink" title="动态测试"></a>动态测试</h3><p>通过观察代码运⾏时的动作，来提供执⾏跟踪、测试覆盖率⽅⾯的信息。 通过有效的测试⽤例，对应的输⼊&#x2F;输出关系来分析被测程序的运⾏情况。</p>
+<h2 id="软件测试的10条原则"><a href="#软件测试的10条原则" class="headerlink" title="软件测试的10条原则"></a>软件测试的10条原则</h2><ol>
+<li>测试⽤例中⼀个必需部分是对预期输出或结果的定义； </li>
+<li>程序员应该避免测试⾃⼰的程序； </li>
+<li>编写软件的组织不应测试⾃⼰编写的软件； </li>
+<li>应当彻底检查每个测试的执⾏结果； </li>
+<li>测试⽤例的编写不仅应当根据有效和预期的输⼊情况，⽽且也应当根据⽆效和未预料到的 输⼊情况；</li>
+<li>检查程序是否“未做其应该做的”仅是测试的⼀半，测试的另⼀半是检查程序是否“做了其不应该做的”； </li>
+<li>应避免测试⽤例⽤后即弃，除⾮软件本身是⼀个⼀次性的软件； </li>
+<li>计划测试⼯作时不应默许假定不会发现错误； </li>
+<li><strong>程序某部分存在更多错误的可能性，与该部分已发现错误的数量成正⽐；</strong> </li>
+<li>测试是⼀项极富创造性、极具智⼒挑战性的⼯作</li>
+</ol>
+<h2 id="黑白盒测试"><a href="#黑白盒测试" class="headerlink" title="黑白盒测试"></a>黑白盒测试</h2><h3 id="四种功能性测试用例设计方法（黑盒测试）"><a href="#四种功能性测试用例设计方法（黑盒测试）" class="headerlink" title="四种功能性测试用例设计方法（黑盒测试）"></a>四种功能性测试用例设计方法（黑盒测试）</h3><h4 id="边界值分析法"><a href="#边界值分析法" class="headerlink" title="边界值分析法"></a>边界值分析法</h4><p>边界值分析法是对等价类划分的一种补充，因为大多数错误都在输入输出的边界上。如果边界附近取值不会导致程序出错，那么其他取值出错的可能性也就很小。</p>
+<h5 id="1、简单边界值测试"><a href="#1、简单边界值测试" class="headerlink" title="1、简单边界值测试"></a>1、简单边界值测试</h5><p>错误更可能出现在输⼊变量值的附近,即 <code>Min,Min+,Nom,Max-,Max</code>会产⽣ <code>4n+1</code> 个测试⽤例。</p>
+<h5 id="2、健壮性测试"><a href="#2、健壮性测试" class="headerlink" title="2、健壮性测试"></a>2、健壮性测试</h5><p>在1的基础上加⼊略超过最⼤值<code>Max+</code>的取值，以及略⼩于最⼩值<code>Min-</code>的取值，会产⽣ <code>6n+1</code> 个测试⽤例。</p>
+<h5 id="3、最坏情况测试"><a href="#3、最坏情况测试" class="headerlink" title="3、最坏情况测试"></a>3、最坏情况测试</h5><p>对1进⾏笛卡尔集计算，共<code>5^n</code>个测试⽤例</p>
+<h5 id="4、健壮性最坏情况测试"><a href="#4、健壮性最坏情况测试" class="headerlink" title="4、健壮性最坏情况测试"></a>4、健壮性最坏情况测试</h5><p>对2进⾏笛卡尔积计算，共<code>7^n</code>个测试⽤例</p>
+<h4 id="等价类"><a href="#等价类" class="headerlink" title="等价类"></a>等价类</h4><h5 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h5><p>是指把所有可能的输入数据，即程序的输入域划分成若干子集合，然后从每一个子集合中<br>选取少数具有代表性的数据作为测试用例。在该子集合中，所有的输入数据对于揭露软件中的错<br>误都是等效的。</p>
+<h5 id="等价类划分"><a href="#等价类划分" class="headerlink" title="等价类划分"></a>等价类划分</h5><ul>
+<li>有效等价类：指对程序的需求说明有意义的、合理的、正确的输入数据构成的集合</li>
+<li>无效等价类：指不合理的或无意义的输入数据所构成的集合</li>
+</ul>
+<img src="/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/%E7%AD%89%E4%BB%B7%E7%B1%BB%E5%88%92%E5%88%86%E4%BE%8B%E5%AD%90.png" srcset="/img/loading.gif" lazyload class="">
+
+<h5 id="等价类划分设计用例的步骤"><a href="#等价类划分设计用例的步骤" class="headerlink" title="等价类划分设计用例的步骤"></a>等价类划分设计用例的步骤</h5><ol>
+<li>按数据范围（长度）&#x2F;数据类型&#x2F;为空&#x2F;需求规则约束角度划分等价类，并规定唯一的编号。数据范围（长度）：用户名长度（类似最小 &lt; x &lt; 最大、最小 &gt; x、最大 ）；数据类型：比如金额只能是数字；为空：比如必填项；需求规则约束角度：例如系统规定用户名必须白名单、黑名单不支持</li>
+<li>设计测试用例，覆盖所有有效等价类：设计一个新的测试用例，<strong>尽可能多的</strong>覆盖有效等价类，直到所有的有效等价类都被覆盖</li>
+<li>设计测试用例，覆盖所有无效等价类：设计一个新的测试用例，<strong>仅覆盖一个</strong>无效等价类，直到所有的有效等价类都被覆盖</li>
+</ol>
+<h4 id="因果图"><a href="#因果图" class="headerlink" title="因果图"></a>因果图</h4><p>略</p>
+<h4 id="决策表"><a href="#决策表" class="headerlink" title="决策表"></a>决策表</h4><p>略</p>
+<h3 id="两种结构性测试用例设计方法（白盒测试）"><a href="#两种结构性测试用例设计方法（白盒测试）" class="headerlink" title="两种结构性测试用例设计方法（白盒测试）"></a>两种结构性测试用例设计方法（白盒测试）</h3><h4 id="控制流-路径测试"><a href="#控制流-路径测试" class="headerlink" title="控制流&#x2F;路径测试"></a>控制流&#x2F;路径测试</h4><p>强度由低到高</p>
+<ol>
+<li>语句覆盖：选择足够多的测试用例，使得程序中每个可执行语句至少执行一次</li>
+<li>分支覆盖：选择足够的测试用例，使得程序中每个判定至少都获得一次真值和假值</li>
+<li>条件覆盖：选择足够的测试用例，使得程序中每个判定中的每个条件的可能至少满足一次</li>
+<li>条件判定覆盖：选择足够的测试用例，使得程序中每个判定中的每个条件的所有可能（真、假）至少出现一次并且每个判定本身的结果（真、假）也至少出现一次。</li>
+<li>条件组合覆盖：选择⾜够的测试⽤例，使得程序中每个判定条件的各种可能组合都⾄少出 现⼀次，显然满⾜条件组合覆盖的测试⽤例⼀定满⾜”（判定）分⽀覆盖”、“分⽀条件覆 盖”和“条件判定覆盖”。</li>
+<li>路径覆盖：设计⾜够的测试⽤例要求覆盖程序中所有可能的路径。</li>
+</ol>
+<h4 id="数据流测试"><a href="#数据流测试" class="headerlink" title="数据流测试"></a>数据流测试</h4><h5 id="全定义覆盖"><a href="#全定义覆盖" class="headerlink" title="全定义覆盖"></a>全定义覆盖</h5><p>全定义覆盖（All Defs Coverage）要求每个变量的每个定义⾄少被有效使⽤⼀次。测试集合T满⾜全定义覆盖，当且仅当存在⼀个执⾏T产⽣的完整路径集合L的⼦路径集合包含每 个变量的每个定义和某个该定义的使⽤构成的定义-使⽤路径集合。</p>
+<h5 id="全使⽤覆盖"><a href="#全使⽤覆盖" class="headerlink" title="全使⽤覆盖"></a>全使⽤覆盖</h5><p>全使⽤覆盖（All Uses Coverage）要求每个变量的每个使⽤⾄少被执⾏⼀次。测试集合T 满⾜全使⽤覆盖，当且仅当存在⼀个执⾏T产⽣的完整路径集合L的⼦路径集合包含每个变 量的每个定义和所有该定义的使⽤构成的定义-使⽤路径集合。</p>
+<h5 id="全定义-使⽤覆盖"><a href="#全定义-使⽤覆盖" class="headerlink" title="全定义-使⽤覆盖"></a>全定义-使⽤覆盖</h5><p>全定义-使⽤路径覆盖（All DU-paths Coverage）要求所有定义-使⽤路径⾄少被执⾏⼀ 次。测试集合T满⾜全定义-使⽤路径覆盖，当且仅当执⾏T产⽣的完整路径集合L访问了所 有数据流图中的定义-使⽤路径。图6给出了上述3个覆盖准则之间的差异说明。 除开始结点，路径不存在变量的其他定义结点</p>
+<h3 id="黑盒和白盒测试的区别和联系"><a href="#黑盒和白盒测试的区别和联系" class="headerlink" title="黑盒和白盒测试的区别和联系"></a>黑盒和白盒测试的区别和联系</h3><table>
+<thead>
+<tr>
+<th></th>
+<th>黑盒测试</th>
+<th>白盒测试</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td>不查看内部代码结构</td>
+<td>了解程序内部的代码结构</td>
+</tr>
+<tr>
+<td></td>
+<td>根据软件需求和规范设计</td>
+<td>按照程序内部逻辑设计</td>
+</tr>
+<tr>
+<td></td>
+<td>涉及到单元、集成、系统和验收测试</td>
+<td>涉及到单元测试、集成测试</td>
+</tr>
+<tr>
+<td></td>
+<td>测试人员不需要程序经验</td>
+<td>需要一定的程序经验</td>
+</tr>
+<tr>
+<td></td>
+<td>可以手动或自动化测试</td>
+<td>可以手动话和自动化测试</td>
+</tr>
+<tr>
+<td>缺点</td>
+<td>覆盖率低</td>
+<td>穷举路径不太可能，只能测试开发人员做的对不对，不知道需求是否正确满足</td>
+</tr>
+</tbody></table>
+<h2 id="集成测试方法"><a href="#集成测试方法" class="headerlink" title="集成测试方法"></a>集成测试方法</h2><h3 id="1、基于功能分解的集成测试"><a href="#1、基于功能分解的集成测试" class="headerlink" title="1、基于功能分解的集成测试"></a>1、基于功能分解的集成测试</h3><h4 id="1）自顶向下集成"><a href="#1）自顶向下集成" class="headerlink" title="1）自顶向下集成"></a>1）自顶向下集成</h4><p>⾃顶向下集成从主程序（树根）开始。所有被主程序调⽤的下层单元都作为“桩” 出现，桩就是模拟被调⽤单元的⼀次性代码</p>
+<img src="/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E9%9B%86%E6%88%90.png" srcset="/img/loading.gif" lazyload class="">
+
+<h4 id="2）自底向上集成"><a href="#2）自底向上集成" class="headerlink" title="2）自底向上集成"></a>2）自底向上集成</h4><p>⾃底向上集成是⾃顶向下顺序的“镜像”，不同的是，桩由模拟功能分解树上⼀层 单元的驱动器模块替代。</p>
+<img src="/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/%E8%87%AA%E5%BA%95%E5%90%91%E4%B8%8A%E9%9B%86%E6%88%90.png" srcset="/img/loading.gif" lazyload class="">
+
+<h4 id="3）三明治集成"><a href="#3）三明治集成" class="headerlink" title="3）三明治集成"></a>3）三明治集成</h4><p>三明治是⾃顶向下和⾃底向上集成的组合。桩和驱动器的开发⼯作都⽐较⼩，不 过代价是有⼤爆炸的后果。</p>
+<img src="/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/%E4%B8%89%E6%98%8E%E6%B2%BB%E9%9B%86%E6%88%90.png" srcset="/img/loading.gif" lazyload class="">
+
+<h4 id="4）大爆炸集成"><a href="#4）大爆炸集成" class="headerlink" title="4）大爆炸集成"></a>4）大爆炸集成</h4><p>这种⽅法的优点是：将所有单元在⼀起编译并进⾏⼀次性测试。</p>
+<p>这种⽅法的缺点是，当发现缺陷时，没有多少线索能够⽤来帮助确定缺陷位置。</p>
+<h4 id="基于功能分解的集成测试优缺点"><a href="#基于功能分解的集成测试优缺点" class="headerlink" title="基于功能分解的集成测试优缺点"></a>基于功能分解的集成测试优缺点</h4><p><strong>优点</strong>：⽐较清晰；容易发现问题地点； </p>
+<p><strong>缺点</strong>：功能分解是基于⼈⼯和管理需要的；桩和驱动器有⼀定开发⼯作量；</p>
+<h3 id="2、基于调用图的集成测试"><a href="#2、基于调用图的集成测试" class="headerlink" title="2、基于调用图的集成测试"></a>2、基于调用图的集成测试</h3><h4 id="1）成对测试"><a href="#1）成对测试" class="headerlink" title="1）成对测试"></a>1）成对测试</h4><img src="/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/%E6%88%90%E5%AF%B9%E9%9B%86%E6%88%90.png" srcset="/img/loading.gif" lazyload class="">
+
+<h4 id="2）相邻集成"><a href="#2）相邻集成" class="headerlink" title="2）相邻集成"></a>2）相邻集成</h4><img src="/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/%E7%9B%B8%E9%82%BB%E9%9B%86%E6%88%90.png" srcset="/img/loading.gif" lazyload class="">
+
+<h4 id="基于调⽤图的集成测试优缺点"><a href="#基于调⽤图的集成测试优缺点" class="headerlink" title="基于调⽤图的集成测试优缺点"></a>基于调⽤图的集成测试优缺点</h4><p><strong>优点</strong>：偏离了纯结构基础，转向⾏为基础；免除了⼤量桩&#x2F;驱动器开发⼯作量；邻居序列可 以⽤于定义构建；</p>
+<p><strong>缺点</strong>：缺陷的隔离问题，尤其是对有⼤量邻居的情况；如果在多邻居的多个节点中发现缺 陷会出现什么情况？缺陷修改后的回归测试量很⼤。</p>
+<h3 id="3、基于路径的集成测试"><a href="#3、基于路径的集成测试" class="headerlink" title="3、基于路径的集成测试"></a>3、基于路径的集成测试</h3><h4 id="源节点："><a href="#源节点：" class="headerlink" title="源节点："></a>源节点：</h4><p>是程序执⾏开始或重复开始处的语句⽚段，单元中的第⼀个可执⾏语句是源节点，源 节点还会出现在紧接转移控制到其他单元节点之后。</p>
+<h4 id="汇节点："><a href="#汇节点：" class="headerlink" title="汇节点："></a>汇节点：</h4><p>是程序执⾏结束出的语句⽚段，程序中的最后⼀个可执⾏语句是汇节点，转移控制到 其他单元的节点也是汇节点</p>
+<h4 id="模块执⾏路径："><a href="#模块执⾏路径：" class="headerlink" title="模块执⾏路径："></a>模块执⾏路径：</h4><p>是以源节点开始，汇节点结束的⼀系列语句，中间没有插⼊汇节点。程序图有多个源 节点和汇节点。</p>
+<h4 id="消息"><a href="#消息" class="headerlink" title="消息"></a>消息</h4><p>是⼀种程序设计语⾔，通过这种机制⼀个单元将控制转移给另⼀个单元，消息可以被 解释为⼦程序调⽤过程调⽤和函数引⽤，约定接受信息的单元总是最终将控制返回给 消息源，消息可以向其他单元传递数据。</p>
+<h4 id="MM-路径："><a href="#MM-路径：" class="headerlink" title="MM-路径："></a>MM-路径：</h4><p>是穿插出现模块执⾏路径和消息的序列，对于传统（过程）软件，MM-路径永远从主 程序开始，在主程序中结束。</p>
+<h4 id="基于路径的集成测试优缺点"><a href="#基于路径的集成测试优缺点" class="headerlink" title="基于路径的集成测试优缺点"></a>基于路径的集成测试优缺点</h4><p><strong>优点</strong>：MM-路径是功能性测试和结构性测试的⼀种混合。它与实际系统⾏为密切匹配，⽽ 不是靠基于分解和调⽤图集成的结构性路径 </p>
+<p><strong>缺点</strong>：需要更多的⼯作量标识MM-路径</p>
+<h2 id="测试的类型"><a href="#测试的类型" class="headerlink" title="测试的类型"></a>测试的类型</h2><p>测试分为 <strong>功能测试</strong> 和 <strong>非功能测试</strong></p>
+<p>非功能测试又可分为性能测试、压力测试、容量测试、健壮性测试、安全性测试、可靠性测试、恢复性测试、备份测试、协议测试、兼容性测试、可通行测试、配置测试、GUI测试。</p>
+<h2 id="软件质量的六个特征"><a href="#软件质量的六个特征" class="headerlink" title="软件质量的六个特征"></a>软件质量的六个特征</h2><ul>
+<li>功能性：表示软件能够提供满足明确和隐含需求的功能。它涉及适用性、准确性、互操作性、安全性和符合性。</li>
+<li>可靠性：指软件在特定条件下持续正常运行的能力。包括成熟度、容错性、恢复能力等。</li>
+<li>易用性：软件的界面和功能对用户是否友好，是否易于理解、学习、使用和吸引用户&#x2F;包括可理解性、易学性、操作性、吸引力和用户界面的适用性。</li>
+<li>效率：指软件在特定条件下对系统资源的有效使用。这涉及时间效率和资源效率。</li>
+<li>可维护性：指在必要时能够有效地进行修正和改进软件的 能力。这包括模块化、可重用性、分析性、修改性、和测试性</li>
+<li>可移植性：表示软件从一个环境迁移到另一个环境的能力。包括适应性、安装性、共存性和更换性。</li>
+</ul>
+
                 
               </div>
             

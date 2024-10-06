@@ -55,7 +55,7 @@
 <meta property="og:image" content="https://zy674517173.github.io/2024/06/02/MyWebServer/%E6%9C%AC%E5%9C%B0%E5%A5%97%E6%8E%A5%E5%AD%97.png">
 <meta property="og:image" content="https://zy674517173.github.io/2024/06/02/MyWebServer/Webserver%E6%A1%86%E6%9E%B6%E5%9B%BE.png">
 <meta property="article:published_time" content="2024-06-02T05:58:56.000Z">
-<meta property="article:modified_time" content="2024-09-13T05:42:23.881Z">
+<meta property="article:modified_time" content="2024-09-24T12:25:02.404Z">
 <meta property="article:author" content="张同学">
 <meta property="article:tag" content="项目">
 <meta name="twitter:card" content="summary_large_image">
@@ -1611,7 +1611,8 @@
 <h4 id="2-防止魔法数字："><a href="#2-防止魔法数字：" class="headerlink" title="2. 防止魔法数字："></a>2. <strong>防止魔法数字</strong>：</h4><p>枚举类避免了在代码中使用“魔法数字”（magic numbers），即没有明确含义的常量数字。例如，直接使用 <code>0</code>、<code>1</code> 等作为状态值，可能会让代码变得难以理解；使用枚举可以提供清晰的语义。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">enum</span> <span class="hljs-title class_">HTTP_CODE</span> &#123;<br>    NO_REQUEST = <span class="hljs-number">0</span>,<br>    GET_REQUEST,<br>    BAD_REQUEST<br>&#125;;<br></code></pre></td></tr></table></figure>
 
-<h4 id="3-类型安全："><a href="#3-类型安全：" class="headerlink" title="3. 类型安全："></a>3. <strong>类型安全</strong>：</h4><h4 id="枚举类是一种强类型，能够防止无关的值被赋予相关变量。例如，如果定义了枚举类-METHOD，那么只能将-METHOD-中定义的值赋给该类型的变量，而不会错误地传递无关的数字或其他枚举类型的值，从而提高了代码的安全性。"><a href="#枚举类是一种强类型，能够防止无关的值被赋予相关变量。例如，如果定义了枚举类-METHOD，那么只能将-METHOD-中定义的值赋给该类型的变量，而不会错误地传递无关的数字或其他枚举类型的值，从而提高了代码的安全性。" class="headerlink" title="枚举类是一种强类型，能够防止无关的值被赋予相关变量。例如，如果定义了枚举类 METHOD，那么只能将 METHOD 中定义的值赋给该类型的变量，而不会错误地传递无关的数字或其他枚举类型的值，从而提高了代码的安全性。"></a>枚举类是一种强类型，能够防止无关的值被赋予相关变量。例如，如果定义了枚举类 <code>METHOD</code>，那么只能将 <code>METHOD</code> 中定义的值赋给该类型的变量，而不会错误地传递无关的数字或其他枚举类型的值，从而提高了代码的安全性。</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c++">cpp复制代码METHOD method = METHOD::GET;<br><span class="hljs-comment">// method 只能是枚举类METHOD中的值，不能是其他任意的整数</span><br></code></pre></td></tr></table></figure>
+<h4 id="3-类型安全："><a href="#3-类型安全：" class="headerlink" title="3. 类型安全："></a>3. <strong>类型安全</strong>：</h4><p>枚举类是一种强类型，能够防止无关的值被赋予相关变量。例如，如果定义了枚举类 <code>METHOD</code>，那么只能将 <code>METHOD</code> 中定义的值赋给该类型的变量，而不会错误地传递无关的数字或其他枚举类型的值，从而提高了代码的安全性。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c++">cpp复制代码METHOD method = METHOD::GET;<br><span class="hljs-comment">// method 只能是枚举类METHOD中的值，不能是其他任意的整数</span><br></code></pre></td></tr></table></figure>
 
 <h4 id="4-易于调试："><a href="#4-易于调试：" class="headerlink" title="4. 易于调试："></a>4. <strong>易于调试</strong>：</h4><p>当代码中使用枚举类时，调试时可以轻松看到相关变量的含义，而不是仅仅看到一些数字。这使得调试过程中能够更快地理解程序的状态和问题。</p>
 <h4 id="5-范围限制："><a href="#5-范围限制：" class="headerlink" title="5. 范围限制："></a>5. <strong>范围限制</strong>：</h4><p>枚举类型限制了可能的取值范围。例如，在 <code>HTTP_CODE</code> 枚举中，状态只能是 <code>NO_REQUEST</code>、<code>GET_REQUEST</code>、<code>BAD_REQUEST</code> 等定义的值。这样可以避免程序中出现非法状态。</p>

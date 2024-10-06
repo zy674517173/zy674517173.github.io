@@ -16,12 +16,12 @@
   <meta name="author" content="张同学">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Day1OSI模型和TCP&#x2F;IP模型OSI模型掌握程度：  理解OSI模型共有7层，能够说明是哪七层。 	物、数、网、传、会、表、应 能够粗浅描述每一层的基本功能和职责 对于某些层，熟悉一些常见的协议，比如网络层的IP，传输层的TCP和UDP  1）物理层 负责传输原始比特流，而不是数据包。涉及到硬件设备的物理特性，如网线、光纤、电缆、连接器、接口和信号传输方式（如电气信号、电压电平、光">
+    <meta name="description" content="HTTP篇HTTP特性HTTP&#x2F;1.1的优点HTTP最突出的优点就是【简单、灵活和易于扩展、应用广泛和跨平台】。 HTTP&#x2F;1.1的缺点1）无状态双刃剑2）明文传输双刃剑3）不安全HTTP&#x2F;1.1 的性能如何？HTTP 协议是基于 TCP&#x2F;IP，并且使⽤了「请求 - 应答」的通信模式，所以性能的关键就在这两点⾥。 1）长连接⽽且是串⾏请求，做了⽆谓的 TCP">
 <meta property="og:type" content="article">
 <meta property="og:title" content="八股训练营回答">
 <meta property="og:url" content="https://zy674517173.github.io/2024/09/13/%E5%85%AB%E8%82%A1%E8%AE%AD%E7%BB%83%E8%90%A5%E5%9B%9E%E7%AD%94/index.html">
 <meta property="og:site_name" content="Hello-ZY">
-<meta property="og:description" content="Day1OSI模型和TCP&#x2F;IP模型OSI模型掌握程度：  理解OSI模型共有7层，能够说明是哪七层。 	物、数、网、传、会、表、应 能够粗浅描述每一层的基本功能和职责 对于某些层，熟悉一些常见的协议，比如网络层的IP，传输层的TCP和UDP  1）物理层 负责传输原始比特流，而不是数据包。涉及到硬件设备的物理特性，如网线、光纤、电缆、连接器、接口和信号传输方式（如电气信号、电压电平、光">
+<meta property="og:description" content="HTTP篇HTTP特性HTTP&#x2F;1.1的优点HTTP最突出的优点就是【简单、灵活和易于扩展、应用广泛和跨平台】。 HTTP&#x2F;1.1的缺点1）无状态双刃剑2）明文传输双刃剑3）不安全HTTP&#x2F;1.1 的性能如何？HTTP 协议是基于 TCP&#x2F;IP，并且使⽤了「请求 - 应答」的通信模式，所以性能的关键就在这两点⾥。 1）长连接⽽且是串⾏请求，做了⽆谓的 TCP">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://zy674517173.github.io/2024/09/13/%E5%85%AB%E8%82%A1%E8%AE%AD%E7%BB%83%E8%90%A5%E5%9B%9E%E7%AD%94/%E6%95%B0%E6%8D%AE%E5%88%86%E4%B8%BATCP%E6%AE%B5.png">
 <meta property="og:image" content="https://zy674517173.github.io/2024/09/13/%E5%85%AB%E8%82%A1%E8%AE%AD%E7%BB%83%E8%90%A5%E5%9B%9E%E7%AD%94/%E7%BD%91%E7%BB%9C%E5%B1%82%E6%95%B0%E6%8D%AE%E5%8C%85.png">
@@ -32,7 +32,7 @@
 <meta property="og:image" content="https://zy674517173.github.io/2024/09/13/%E5%85%AB%E8%82%A1%E8%AE%AD%E7%BB%83%E8%90%A5%E5%9B%9E%E7%AD%94/TCP%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B.png">
 <meta property="og:image" content="https://zy674517173.github.io/2024/09/13/%E5%85%AB%E8%82%A1%E8%AE%AD%E7%BB%83%E8%90%A5%E5%9B%9E%E7%AD%94/%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B.png">
 <meta property="article:published_time" content="2024-09-13T03:55:36.000Z">
-<meta property="article:modified_time" content="2024-09-15T13:26:01.545Z">
+<meta property="article:modified_time" content="2024-09-26T03:42:50.230Z">
 <meta property="article:author" content="张同学">
 <meta property="article:tag" content="八股">
 <meta name="twitter:card" content="summary_large_image">
@@ -231,7 +231,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          4.3k 字
+          4.6k 字
         
       </span>
     
@@ -242,7 +242,7 @@
         
         
         
-          37 分钟
+          39 分钟
         
       </span>
     
@@ -292,18 +292,23 @@
             
               <div class="markdown-body">
                 
-                <h1 id="Day1"><a href="#Day1" class="headerlink" title="Day1"></a>Day1</h1><h2 id="OSI模型和TCP-IP模型"><a href="#OSI模型和TCP-IP模型" class="headerlink" title="OSI模型和TCP&#x2F;IP模型"></a>OSI模型和TCP&#x2F;IP模型</h2><h3 id="OSI模型"><a href="#OSI模型" class="headerlink" title="OSI模型"></a>OSI模型</h3><p><strong>掌握程度</strong>：</p>
+                <h1 id="HTTP篇"><a href="#HTTP篇" class="headerlink" title="HTTP篇"></a>HTTP篇</h1><h2 id="HTTP特性"><a href="#HTTP特性" class="headerlink" title="HTTP特性"></a>HTTP特性</h2><h3 id="HTTP-1-1的优点"><a href="#HTTP-1-1的优点" class="headerlink" title="HTTP&#x2F;1.1的优点"></a>HTTP&#x2F;1.1的优点</h3><p>HTTP最突出的优点就是【简单、灵活和易于扩展、应用广泛和跨平台】。</p>
+<h3 id="HTTP-1-1的缺点"><a href="#HTTP-1-1的缺点" class="headerlink" title="HTTP&#x2F;1.1的缺点"></a>HTTP&#x2F;1.1的缺点</h3><h4 id="1）无状态双刃剑"><a href="#1）无状态双刃剑" class="headerlink" title="1）无状态双刃剑"></a>1）无状态双刃剑</h4><h4 id="2）明文传输双刃剑"><a href="#2）明文传输双刃剑" class="headerlink" title="2）明文传输双刃剑"></a>2）明文传输双刃剑</h4><h4 id="3）不安全"><a href="#3）不安全" class="headerlink" title="3）不安全"></a>3）不安全</h4><h3 id="HTTP-1-1-的性能如何？"><a href="#HTTP-1-1-的性能如何？" class="headerlink" title="HTTP&#x2F;1.1 的性能如何？"></a>HTTP&#x2F;1.1 的性能如何？</h3><p>HTTP 协议是基于 TCP&#x2F;IP，并且使⽤了「请求 - 应答」的通信模式，所以性能的关键就在这两点⾥。</p>
+<h4 id="1）长连接"><a href="#1）长连接" class="headerlink" title="1）长连接"></a>1）长连接</h4><p>⽽且是串⾏请求，做了⽆谓的 TCP 连接建⽴和断开，增加了通信开销。</p>
+<h4 id="2）管道网络传输"><a href="#2）管道网络传输" class="headerlink" title="2）管道网络传输"></a>2）管道网络传输</h4><p>HTTP&#x2F;1.1 采⽤了⻓连接的⽅式，这使得管道（pipeline）⽹络传输成为了可能。</p>
+<p>即可在同⼀个 TCP 连接⾥⾯，客户端可以发起多个请求，只要第⼀个请求发出去了，不必等其回来，就可 以发第⼆个请求出去，可以减少整体的响应时间。</p>
+<h3 id="3）队头阻塞"><a href="#3）队头阻塞" class="headerlink" title="3）队头阻塞"></a>3）队头阻塞</h3><h1 id="八股训练营"><a href="#八股训练营" class="headerlink" title="八股训练营"></a>八股训练营</h1><h2 id="Day1"><a href="#Day1" class="headerlink" title="Day1"></a>Day1</h2><h3 id="OSI模型和TCP-IP模型"><a href="#OSI模型和TCP-IP模型" class="headerlink" title="OSI模型和TCP&#x2F;IP模型"></a>OSI模型和TCP&#x2F;IP模型</h3><h4 id="OSI模型"><a href="#OSI模型" class="headerlink" title="OSI模型"></a>OSI模型</h4><p><strong>掌握程度</strong>：</p>
 <ul>
 <li>理解OSI模型共有7层，能够说明是哪七层。 	物、数、网、传、会、表、应</li>
 <li>能够粗浅描述每一层的基本功能和职责</li>
 <li>对于某些层，熟悉一些常见的协议，比如网络层的IP，传输层的TCP和UDP</li>
 </ul>
-<h4 id="1）物理层"><a href="#1）物理层" class="headerlink" title="1）物理层"></a>1）物理层</h4><ul>
+<h5 id="1）物理层"><a href="#1）物理层" class="headerlink" title="1）物理层"></a>1）物理层</h5><ul>
 <li>负责<strong>传输原始比特流</strong>，而不是数据包。涉及到硬件设备的物理特性，如网线、光纤、电缆、连接器、接口和信号传输方式（如电气信号、电压电平、光信号等）。</li>
 <li><strong>定义物理设备的规范</strong>（如电缆类型、连接器类型、引脚结构等），以及<strong>如何将数据转换为物理信号</strong>（如电磁波、光信号等）在介质上传输。</li>
 <li><strong>处理数据的传输速率、传输模式（如半双工或全双工）和同步方法</strong></li>
 </ul>
-<h4 id="2）数据链路层"><a href="#2）数据链路层" class="headerlink" title="2）数据链路层"></a>2）数据链路层</h4><ul>
+<h5 id="2）数据链路层"><a href="#2）数据链路层" class="headerlink" title="2）数据链路层"></a>2）数据链路层</h5><ul>
 <li><strong>提供节点间的数据传输</strong>，并处理物理层传输过程中的<strong>误码检测与纠正</strong>。</li>
 <li>负责建立、维护和释放数据链路连接，确保数据的可靠传输。包括<strong>帧的封装与解封装</strong>，和<strong>数据流的控制</strong>。</li>
 <li>分为两个子层<ul>
@@ -312,43 +317,42 @@
 </ul>
 </li>
 </ul>
-<h4 id="3）网络层"><a href="#3）网络层" class="headerlink" title="3）网络层"></a>3）网络层</h4><ul>
+<h5 id="3）网络层"><a href="#3）网络层" class="headerlink" title="3）网络层"></a>3）网络层</h5><ul>
 <li>负责数据包的路由选择与转发，确保<strong>数据从源节点正确传输到目标节点</strong>。</li>
 <li>管理逻辑地址（如<strong>IP地址）和主机地址的映射关系</strong>，处理子网之间的通信</li>
 <li>实现<strong>拥塞控制、流量控制和分段重组</strong>功能，以应对不同网络之间的差异。</li>
 </ul>
-<h4 id="4）传输层"><a href="#4）传输层" class="headerlink" title="4）传输层"></a>4）传输层</h4><ul>
+<h5 id="4）传输层"><a href="#4）传输层" class="headerlink" title="4）传输层"></a>4）传输层</h5><ul>
 <li>提供端到端的通信服务，确保数据从<strong>源到目的应用程序的可靠传输</strong>。</li>
 <li>提供<strong>差错检测与纠正机制</strong>，确保数据的完整性和顺序性。</li>
 <li>定义了两种主要的传输协议：<strong>传输控制协议（TCP）</strong>，提供面向连接的、可靠的传输；<strong>用户数据报协议（UDP）</strong>，提供无连接的、不可靠但高效的传输。</li>
 <li>管理数据流的分段与重组，提供端口号来标识不同的应用程序</li>
 </ul>
-<h4 id="5）会话层"><a href="#5）会话层" class="headerlink" title="5）会话层"></a>5）会话层</h4><ul>
+<h5 id="5）会话层"><a href="#5）会话层" class="headerlink" title="5）会话层"></a>5）会话层</h5><ul>
 <li>负责在通信系统中<strong>建立、管理和终止会话（Session）</strong></li>
 <li>通过同步和检查点恢复等机制，<strong>确保数据在传输过程中不中断或崩溃。</strong></li>
 <li>提供全双工、半双工或单工模式的数据传输服务，管理会话层协议的对话控制和令牌管理。</li>
 </ul>
-<h4 id="6）表示层"><a href="#6）表示层" class="headerlink" title="6）表示层"></a>6）表示层</h4><ul>
+<h5 id="6）表示层"><a href="#6）表示层" class="headerlink" title="6）表示层"></a>6）表示层</h5><ul>
 <li><strong>负责数据的表示形式，提供格式化、加密和解密、数据压缩和解压缩功能</strong>，确保发送端和接收端以相同的格式处理数据。</li>
 <li><strong>处理数据的语法和语义转换</strong>（如字符编码、数据结构转换），使不同系统之间能够进行无缝的数据交换。</li>
 </ul>
-<h4 id="7）应用层"><a href="#7）应用层" class="headerlink" title="7）应用层"></a>7）应用层</h4><ul>
+<h5 id="7）应用层"><a href="#7）应用层" class="headerlink" title="7）应用层"></a>7）应用层</h5><ul>
 <li>直接<strong>为用户或应用程序提供各种网络服务</strong>，如文件传输、电子邮件、远程登录、网络管理等。</li>
 <li>提供<strong>用户与网络之间的接口</strong>，负责协议的建立和传输控制，以及终端设备的通信进程管理。</li>
 <li>常见的应用层协议包括HTTP、FTP、SMTP、DNS等。</li>
 </ul>
-<h3 id="TCP-IP模型"><a href="#TCP-IP模型" class="headerlink" title="TCP&#x2F;IP模型"></a>TCP&#x2F;IP模型</h3><p><strong>掌握程度</strong>：</p>
-<ul>
+<h4 id="TCP-IP模型"><a href="#TCP-IP模型" class="headerlink" title="TCP&#x2F;IP模型"></a>TCP&#x2F;IP模型</h4><h5 id="掌握程度："><a href="#掌握程度：" class="headerlink" title="掌握程度："></a><strong>掌握程度</strong>：</h5><ul>
 <li>理解 TCP&#x2F;IP 模型通常被描述为 4 层，<strong>能够清晰地描述网络模型的层次结构。</strong></li>
 <li><strong>能够解释每一层的作用</strong>，知道 TCP&#x2F;IP 模型的层次是如何与 OSI 模型相对应的。 </li>
 <li><strong>能够举例说明每层使用的协议，对某些层次的深入理解</strong>，比如 TCP 的三次握手、四次挥手，IP 数据报的路由选择。 </li>
 <li><strong>理解不同层次间的交互</strong>：了解数据是如何在这些层次之间流动的，以及每一层如何为数据的传输添加或移除其所需的头部信息。</li>
 </ul>
 <p>对于同⼀台设备上的进程间通信，有很多种⽅式，⽐如有<strong>管道、消息队列、共享内存、信号</strong>等⽅式，⽽对 于不同设备上的进程间通信，就需要⽹络通信，⽽设备是多样性的，所以要兼容多种多样的设备，就协商出了⼀套<strong>通⽤的⽹络协议</strong>。</p>
-<h4 id="1）应用层"><a href="#1）应用层" class="headerlink" title="1）应用层"></a>1）应用层</h4><p>最上层的，也是我们能直接接触到的就是应⽤层（Application Layer），我们电脑或⼿机使⽤的应⽤软件都是在应⽤层实现。那么，当两个不同设备的应⽤需要通信的时候，应⽤就把应⽤数据传给下⼀层，也就是传输层。</p>
+<h5 id="1）应用层"><a href="#1）应用层" class="headerlink" title="1）应用层"></a>1）应用层</h5><p>最上层的，也是我们能直接接触到的就是应⽤层（Application Layer），我们电脑或⼿机使⽤的应⽤软件都是在应⽤层实现。那么，当两个不同设备的应⽤需要通信的时候，应⽤就把应⽤数据传给下⼀层，也就是传输层。</p>
 <p><strong>所以，应⽤层只需要专注于为⽤户提供应⽤功能，⽐如 HTTP、FTP、Telnet、DNS、SMTP等。</strong></p>
 <p>应⽤层是不⽤去关⼼数据是如何传输的，就类似于，我们寄快递的时候，只需要把包裹交给快递员，由他负责运输快递，我们不需要关⼼快递是如何被运输的。</p>
-<h4 id="2）传输层"><a href="#2）传输层" class="headerlink" title="2）传输层"></a>2）传输层</h4><p>应⽤层的数据包会传给传输层，传输层（Transport Layer）是为应⽤层提供⽹络⽀持的。</p>
+<h5 id="2）传输层"><a href="#2）传输层" class="headerlink" title="2）传输层"></a>2）传输层</h5><p>应⽤层的数据包会传给传输层，传输层（Transport Layer）是为应⽤层提供⽹络⽀持的。</p>
 <p>在传输层会有两个传输协议，分别是 <strong>TCP 和 UDP。</strong></p>
 <p><strong>TCP 的全称叫传输控制协议（Transmission Control Protocol）</strong>，⼤部分应⽤使⽤的正是 TCP 传输层协 议，⽐如 HTTP 应⽤层协议。TCP 相⽐  UDP 多了很多特性，⽐如<strong>流量控制、超时重传、拥塞控制</strong>等，这 些都是为了保证数据包能可靠地传输给对⽅。 </p>
 <p><strong>UDP 相对来说就很简单，简单到只负责发送数据包</strong>，不保证数据包是否能抵达对⽅，但它实时性相对更好，传输效率也⾼。</p>
@@ -358,7 +362,7 @@
 <p>当设备作为接收⽅时，传输层则要负责把数据包传给应⽤，但是⼀台设备上可能会有很多应⽤在接收或者 传输数据，因此需要⽤⼀个编号将应⽤区分开来，这个编号就是<strong>端⼝</strong>。</p>
 <p>⽐如 <strong>80 端⼝</strong>通常是 Web 服务器⽤的，22 端⼝通常是远程登录服务器⽤的。⽽对于浏览器（客户端）中的 每个标签栏都是⼀个独⽴的进程，操作系统会为这些进程分配临时的端⼝号。</p>
 <p>由于传输层的报⽂中会携带端⼝号，因此接收⽅可以识别出该报⽂是发送给哪个应⽤。</p>
-<h4 id="3）网络层-1"><a href="#3）网络层-1" class="headerlink" title="3）网络层"></a>3）网络层</h4><p>我们不希望传输层协议处理太多的事情，只需要服务好应⽤即可，让其作为应⽤间数据传输的 媒介，帮助实现应⽤到应⽤的通信，⽽实际的传输功能就交给下⼀层，也就是⽹络层（Internet Layer）。</p>
+<h5 id="3）网络层-1"><a href="#3）网络层-1" class="headerlink" title="3）网络层"></a>3）网络层</h5><p>我们不希望传输层协议处理太多的事情，只需要服务好应⽤即可，让其作为应⽤间数据传输的 媒介，帮助实现应⽤到应⽤的通信，⽽实际的传输功能就交给下⼀层，也就是⽹络层（Internet Layer）。</p>
 <p>⽹络层最常使⽤的是 <strong>IP 协议（Internet Protocol）</strong>，IP 协议会将传输层的报⽂作为数据部分，再加上 IP 包 头组装成 IP 报⽂，如果 IP 报⽂⼤⼩超<strong>过 MTU（以太⽹中⼀般为 1500 字节）</strong>就会再次进⾏分⽚，得到⼀个即将发送到⽹络的 IP 报⽂。</p>
 <img src="/2024/09/13/%E5%85%AB%E8%82%A1%E8%AE%AD%E7%BB%83%E8%90%A5%E5%9B%9E%E7%AD%94/%E7%BD%91%E7%BB%9C%E5%B1%82%E6%95%B0%E6%8D%AE%E5%8C%85.png" srcset="/img/loading.gif" lazyload class="">
 
@@ -371,16 +375,16 @@
 </ul>
 <p>除了寻址能⼒， IP 协议还有另⼀个重要的能⼒就是<strong>路由</strong>。实际场景中，两台设备并不是⽤⼀条⽹线连接起来的，⽽是通过很多⽹关、路由器、交换机等众多⽹络设备连接起来的，那么就会形成很多条⽹络的路径，因此当数据包到达⼀个⽹络节点，就需要通过路由算法决定下⼀步⾛哪条路径。</p>
 <p>所以，<strong>IP 协议的寻址作⽤是告诉我们去往下⼀个⽬的地该朝哪个⽅向⾛，路由则是根据「下⼀个⽬的地」 选择路径。寻址更像在导航，路由更像在操作⽅向盘。</strong></p>
-<h4 id="4）网络接口层"><a href="#4）网络接口层" class="headerlink" title="4）网络接口层"></a>4）网络接口层</h4><p>⽣成了 IP 头部之后，接下来要交给<strong>⽹络接⼝层（Link Layer）</strong>在IP头部的前⾯加上 MAC 头部，并封装成 <strong>数据帧（Data frame）</strong>发送到⽹络上。</p>
+<h5 id="4）网络接口层"><a href="#4）网络接口层" class="headerlink" title="4）网络接口层"></a>4）网络接口层</h5><p>⽣成了 IP 头部之后，接下来要交给<strong>⽹络接⼝层（Link Layer）</strong>在IP头部的前⾯加上 MAC 头部，并封装成 <strong>数据帧（Data frame）</strong>发送到⽹络上。</p>
 <p>IP 头部中的接收⽅ IP 地址表示⽹络包的⽬的地，通过这个地址我们就可以判断要将包发到哪⾥，<strong>但在以太⽹的世界中，这个思路是⾏不通的</strong>。</p>
 <p>什么是以太⽹呢？电脑上的以太⽹接⼝，Wi-Fi接⼝，以太⽹交换机、路由器上的千兆，万兆以太⽹⼝，还 有⽹线，它们都是以太⽹的组成部分。<strong>以太⽹就是⼀种在「局域⽹」</strong>内，把附近的设备连接起来，使它们之间可以进⾏通讯的技术。</p>
 <p>以太⽹在判断⽹络包⽬的地时和 IP 的⽅式不同，因此必须采⽤相匹配的⽅式才能在以太⽹中将包发往⽬的地，⽽ MAC 头部就是⼲这个⽤的，所以，在以太⽹进⾏通讯要⽤到 MAC 地址</p>
 <p>MAC 头部是以太⽹使⽤的头部，它包含了接收⽅和发送⽅的 MAC 地址等信息，我们可以通过 ARP 协议 获取对⽅的 MAC 地址。</p>
 <p>所以说，⽹络接⼝层主要为⽹络层提供「链路级别」传输的服务，负责在以太⽹、WiFi 这样的底层⽹络上 发送原始数据包，⼯作在⽹卡这个层次，使⽤ MAC 地址来标识⽹络上的设备。</p>
-<h4 id="5）每⼀层的封装格式："><a href="#5）每⼀层的封装格式：" class="headerlink" title="5）每⼀层的封装格式："></a>5）每⼀层的封装格式：</h4><img src="/2024/09/13/%E5%85%AB%E8%82%A1%E8%AE%AD%E7%BB%83%E8%90%A5%E5%9B%9E%E7%AD%94/%E5%8D%8F%E8%AE%AE%E5%B0%81%E8%A3%85%E6%A0%BC%E5%BC%8F.png" srcset="/img/loading.gif" lazyload class="">
+<h5 id="5）每⼀层的封装格式："><a href="#5）每⼀层的封装格式：" class="headerlink" title="5）每⼀层的封装格式："></a>5）每⼀层的封装格式：</h5><img src="/2024/09/13/%E5%85%AB%E8%82%A1%E8%AE%AD%E7%BB%83%E8%90%A5%E5%9B%9E%E7%AD%94/%E5%8D%8F%E8%AE%AE%E5%B0%81%E8%A3%85%E6%A0%BC%E5%BC%8F.png" srcset="/img/loading.gif" lazyload class="">
 
 <p>⽹络接⼝层的传输单位是帧（frame），IP 层的传输单位是包（packet），TCP 层的传输单位是段 （segment），HTTP 的传输单位则是消息或报⽂（message）。但这些名词并没有什么本质的区分，可以统称为数据包。</p>
-<h3 id="从输入URL到页面展示发生了什么"><a href="#从输入URL到页面展示发生了什么" class="headerlink" title="从输入URL到页面展示发生了什么"></a>从输入URL到页面展示发生了什么</h3><p><strong>掌握程度</strong></p>
+<h4 id="从输入URL到页面展示发生了什么"><a href="#从输入URL到页面展示发生了什么" class="headerlink" title="从输入URL到页面展示发生了什么"></a>从输入URL到页面展示发生了什么</h4><p><strong>掌握程度</strong></p>
 <ul>
 <li><strong>基本要求</strong>：理解浏览器和服务器之间的交互工程，能够清晰地从输入URL到页面显示的整个流程。<ul>
 <li>DNS解析：描述如何将域名转换为IP地址。</li>
@@ -400,12 +404,12 @@
 
 
 
-<h4 id="1）第一步：输入URL并解析"><a href="#1）第一步：输入URL并解析" class="headerlink" title="1）第一步：输入URL并解析"></a>1）第一步：输入URL并解析</h4><p>输入URL后，浏览器会解析出<strong>协议、主机、端口、路径</strong>等信息，并且构造一个<strong>HTTP请求</strong>（浏览器会根据请求头判断<strong>是否有HTTP缓存</strong>，并根据是否有缓存决定是从服务器获取资源还是使用缓存资源）</p>
+<h5 id="1）第一步：输入URL并解析"><a href="#1）第一步：输入URL并解析" class="headerlink" title="1）第一步：输入URL并解析"></a>1）第一步：输入URL并解析</h5><p>输入URL后，浏览器会解析出<strong>协议、主机、端口、路径</strong>等信息，并且构造一个<strong>HTTP请求</strong>（浏览器会根据请求头判断<strong>是否有HTTP缓存</strong>，并根据是否有缓存决定是从服务器获取资源还是使用缓存资源）</p>
 <img src="/2024/09/13/%E5%85%AB%E8%82%A1%E8%AE%AD%E7%BB%83%E8%90%A5%E5%9B%9E%E7%AD%94/URL%E8%A7%A3%E6%9E%90.png" srcset="/img/loading.gif" lazyload class="">
 
-<h4 id="2）第二步：DNS域名解析，将域名解析成对应的IP地址"><a href="#2）第二步：DNS域名解析，将域名解析成对应的IP地址" class="headerlink" title="2）第二步：DNS域名解析，将域名解析成对应的IP地址"></a>2）第二步：DNS域名解析，将域名解析成对应的IP地址</h4><p>通过浏览器解析URL并生成HTTP消息后，需要委托操作系统将消息发送给 Web 服务器。</p>
+<h5 id="2）第二步：DNS域名解析，将域名解析成对应的IP地址"><a href="#2）第二步：DNS域名解析，将域名解析成对应的IP地址" class="headerlink" title="2）第二步：DNS域名解析，将域名解析成对应的IP地址"></a>2）第二步：DNS域名解析，将域名解析成对应的IP地址</h5><p>通过浏览器解析URL并生成HTTP消息后，需要委托操作系统将消息发送给 Web 服务器。</p>
 <p>但在发送之前，就是<strong>查询服务器域名对应的IP地址</strong>，就需要用到DNS域名解析。</p>
-<h5 id="域名解析的工作流程"><a href="#域名解析的工作流程" class="headerlink" title="域名解析的工作流程"></a>域名解析的工作流程</h5><ol>
+<h6 id="域名解析的工作流程"><a href="#域名解析的工作流程" class="headerlink" title="域名解析的工作流程"></a>域名解析的工作流程</h6><ol>
 <li>客户端首先会发出一个DNS请求，问 &#96;&#96;<a target="_blank" rel="noopener" href="http://www.server.com`/">www.server.com`</a> 的IP 是啥，并发给本地DNS服务器</li>
 <li>本地域名服务器收到客户端请求后，<strong>如果缓存表格里能找到</strong> <code>www.server.com</code> ，则它直接返回IP地址<strong>。如果没有</strong>，本地DNS服务器回去问<strong>根域名服务器</strong>。根域名服务器是最⾼层次的，它不直接⽤于域名解析，但能指明⼀条道路。 </li>
 <li>根DNS收到本地DNS的请求后，发现后置是<code>.com</code> ，会给出 <code>.com</code> 顶级域名服务器的地址</li>
@@ -415,7 +419,7 @@
 <li>权威DNS服务器 查询后将对应的 IP 地址 X.X.X.X 告诉本地 DNS。</li>
 <li>本地 DNS 再将 IP 地址返回客户端，客户端和⽬标建⽴连接。</li>
 </ol>
-<h4 id="3）第三步：建立起TCP连接之三次握手"><a href="#3）第三步：建立起TCP连接之三次握手" class="headerlink" title="3）第三步：建立起TCP连接之三次握手"></a>3）第三步：建立起TCP连接之三次握手</h4><h5 id="TCP包头格式"><a href="#TCP包头格式" class="headerlink" title="TCP包头格式"></a>TCP包头格式</h5><img src="/2024/09/13/%E5%85%AB%E8%82%A1%E8%AE%AD%E7%BB%83%E8%90%A5%E5%9B%9E%E7%AD%94/TCP%E5%8C%85%E5%A4%B4.png" srcset="/img/loading.gif" lazyload class="">
+<h5 id="3）第三步：建立起TCP连接之三次握手"><a href="#3）第三步：建立起TCP连接之三次握手" class="headerlink" title="3）第三步：建立起TCP连接之三次握手"></a>3）第三步：建立起TCP连接之三次握手</h5><h6 id="TCP包头格式"><a href="#TCP包头格式" class="headerlink" title="TCP包头格式"></a>TCP包头格式</h6><img src="/2024/09/13/%E5%85%AB%E8%82%A1%E8%AE%AD%E7%BB%83%E8%90%A5%E5%9B%9E%E7%AD%94/TCP%E5%8C%85%E5%A4%B4.png" srcset="/img/loading.gif" lazyload class="">
 
 <ol>
 <li>首先，<strong>源端口号</strong>和目的端口号是必不可少的，没有这两个端口号，就不知道该发给那个应用。</li>
@@ -424,7 +428,7 @@
 <li>状态位：<strong>SYN 是发起一个连接， ACK 是回复， RST是重新连接， FIN 是结束连接等</strong>。TCP面向连接的，所以需要双方维护连接状态。</li>
 <li>窗口大小，用于<strong>流量控制</strong>，标识自己当前能够处理的能力，别发太快，撑死，也别发太慢，饿死。</li>
 </ol>
-<h5 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h5><p>在 HTTP 传输数据之前，⾸先需要 TCP 建⽴连接，TCP 连接的建⽴，通常称为<strong>三次握⼿</strong>。</p>
+<h6 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h6><p>在 HTTP 传输数据之前，⾸先需要 TCP 建⽴连接，TCP 连接的建⽴，通常称为<strong>三次握⼿</strong>。</p>
 <p> 这个所谓的「连接」，只是双⽅计算机⾥维护⼀个状态机，在连接建⽴的过程中，双⽅的状态变化时序图 就像这样</p>
 <img src="/2024/09/13/%E5%85%AB%E8%82%A1%E8%AE%AD%E7%BB%83%E8%90%A5%E5%9B%9E%E7%AD%94/TCP%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B.png" srcset="/img/loading.gif" lazyload class="">
 
@@ -435,12 +439,12 @@
 <li>客户端收到服务端发送的 <code>SYN</code>和 <code>ACK</code> 之后，发送对 <code>SYN</code>的确认 <code>ACK</code>，之后处于 <code>ESTABLISHED</code> 状态，因为它一发一收成功了。</li>
 <li>服务端收到 <code>ACK</code> 的 <code>ACK</code> 之后，处于 <code>ESTABLISHED</code> 状态，因为他也一发一收了。</li>
 </ul>
-<h5 id="为什么要三次握手"><a href="#为什么要三次握手" class="headerlink" title="为什么要三次握手"></a>为什么要三次握手</h5><p><strong>所以三次握手的目的是保证双方都有发送和接收的能力</strong></p>
-<h5 id="如何查看TCP的连接状态"><a href="#如何查看TCP的连接状态" class="headerlink" title="如何查看TCP的连接状态?"></a>如何查看TCP的连接状态?</h5><p>TCP的连接状态查看，在Linux可以通过<code>netstat -napt</code>命令查看。</p>
-<h4 id="4）第四步：浏览器发送-HTTP-HTTPS-请求到服务器"><a href="#4）第四步：浏览器发送-HTTP-HTTPS-请求到服务器" class="headerlink" title="4）第四步：浏览器发送 HTTP&#x2F;HTTPS 请求到服务器"></a>4）第四步：浏览器发送 HTTP&#x2F;HTTPS 请求到服务器</h4><p>这一步也可以扩展很多问题，比如HTTP&#x2F;HTPS的区别?请求的方式?请求的状态码，凡是与HTTP请求的问题都可以问。</p>
-<h4 id="5）第五步：服务器处理HTTP请求并返回HTTP报文"><a href="#5）第五步：服务器处理HTTP请求并返回HTTP报文" class="headerlink" title="5）第五步：服务器处理HTTP请求并返回HTTP报文"></a>5）第五步：服务器处理HTTP请求并返回HTTP报文</h4><p>HTTP响应报文和状态码也是常考的内容。</p>
+<h6 id="为什么要三次握手"><a href="#为什么要三次握手" class="headerlink" title="为什么要三次握手"></a>为什么要三次握手</h6><p><strong>所以三次握手的目的是保证双方都有发送和接收的能力</strong></p>
+<h6 id="如何查看TCP的连接状态"><a href="#如何查看TCP的连接状态" class="headerlink" title="如何查看TCP的连接状态?"></a>如何查看TCP的连接状态?</h6><p>TCP的连接状态查看，在Linux可以通过<code>netstat -napt</code>命令查看。</p>
+<h5 id="4）第四步：浏览器发送-HTTP-HTTPS-请求到服务器"><a href="#4）第四步：浏览器发送-HTTP-HTTPS-请求到服务器" class="headerlink" title="4）第四步：浏览器发送 HTTP&#x2F;HTTPS 请求到服务器"></a>4）第四步：浏览器发送 HTTP&#x2F;HTTPS 请求到服务器</h5><p>这一步也可以扩展很多问题，比如HTTP&#x2F;HTPS的区别?请求的方式?请求的状态码，凡是与HTTP请求的问题都可以问。</p>
+<h5 id="5）第五步：服务器处理HTTP请求并返回HTTP报文"><a href="#5）第五步：服务器处理HTTP请求并返回HTTP报文" class="headerlink" title="5）第五步：服务器处理HTTP请求并返回HTTP报文"></a>5）第五步：服务器处理HTTP请求并返回HTTP报文</h5><p>HTTP响应报文和状态码也是常考的内容。</p>
 <p>服务器会接受请求并将其传递给请求处理程序并发送HTTP相应。<strong>一般响应报文包含：请求的网页以及状态码，压缩类型，如何缓存的页面，设置的cookie。</strong></p>
-<h4 id="6）第六步：浏览器渲染页面"><a href="#6）第六步：浏览器渲染页面" class="headerlink" title="6）第六步：浏览器渲染页面"></a>6）第六步：浏览器渲染页面</h4><h4 id="7）第七步：断开连接之TCP四次挥手"><a href="#7）第七步：断开连接之TCP四次挥手" class="headerlink" title="7）第七步：断开连接之TCP四次挥手"></a>7）第七步：断开连接之TCP四次挥手</h4><img src="/2024/09/13/%E5%85%AB%E8%82%A1%E8%AE%AD%E7%BB%83%E8%90%A5%E5%9B%9E%E7%AD%94/%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B.png" srcset="/img/loading.gif" lazyload class="">
+<h5 id="6）第六步：浏览器渲染页面"><a href="#6）第六步：浏览器渲染页面" class="headerlink" title="6）第六步：浏览器渲染页面"></a>6）第六步：浏览器渲染页面</h5><h5 id="7）第七步：断开连接之TCP四次挥手"><a href="#7）第七步：断开连接之TCP四次挥手" class="headerlink" title="7）第七步：断开连接之TCP四次挥手"></a>7）第七步：断开连接之TCP四次挥手</h5><img src="/2024/09/13/%E5%85%AB%E8%82%A1%E8%AE%AD%E7%BB%83%E8%90%A5%E5%9B%9E%E7%AD%94/%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B.png" srcset="/img/loading.gif" lazyload class="">
 
 <ul>
 <li>假设<strong>客户端</strong>打算关闭连接，发送一个TCP首部 <code>FIN</code>被置1的 <strong><code>FIN</code>报文</strong>给服务端，此时<strong>客户端</strong>处于 <code>FIN_WAIT1</code> 状态。</li>
@@ -449,7 +453,7 @@
 <li>客户端接收到 <code>FIN</code>报文后回一次 <code>ACK</code> 应答报文，之后客户端处于 <code>TIME_WAIT</code> 状态。</li>
 </ul>
 <p>服务器接收到<code>ACK</code>后，进入<code>CLOSE</code>状态，服务器完成连接关闭。客户端经过一段时间后，自动进入<code>CLOSE</code>状态。</p>
-<h5 id="为什么挥手要四次"><a href="#为什么挥手要四次" class="headerlink" title="为什么挥手要四次"></a>为什么挥手要四次</h5><p>关闭连接时，客户端发送<code>FIN</code>报文，表示其不再发送数据，但还可以接收数据。</p>
+<h6 id="为什么挥手要四次"><a href="#为什么挥手要四次" class="headerlink" title="为什么挥手要四次"></a>为什么挥手要四次</h6><p>关闭连接时，客户端发送<code>FIN</code>报文，表示其不再发送数据，但还可以接收数据。</p>
 <p>服务端收到<code>FIN</code>报文，可以直接发送<code>SYN+ACK</code>报文。其中<code>ACK</code>报文是用来应答的，<code>SYN</code>报文是用来同步的。但是关闭连接时，服务端可能还要数据需要处理和发送，所以先回一个<code>ACK</code>应答报文，等到其不再发送数据时，才发送<code>FIN</code>报文给客户端表示同意关闭连接。</p>
 <p>从上面过程可知:服务端通常需要等待完成数据的发送和处理，所以服务端的<code>ACK</code>和<code>FIN</code>一般都会分开发送，从而比三次握手导致多了一次。</p>
 
