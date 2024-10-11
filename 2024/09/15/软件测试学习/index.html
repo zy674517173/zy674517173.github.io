@@ -16,12 +16,12 @@
   <meta name="author" content="张同学">
   <meta name="keywords" content="">
   
-    <meta name="description" content="软件测试-黑马Day11、测试介绍1.1 什么是软件测试使⽤技术⼿段验证软件是否满⾜需求 1.2 测试主流技能 功能测试：测试主要验证程序的功能是否满足需求 自动化测试：使用代码或工具代替手工，对项目进行测试 接口测试：使用代码或工具验证程序中的接口是否访问正常 性能测试：模拟多人使用软件，查找服务器缺陷  主流方向建议：  功能测试 + 接口测试 自动化测试 + 接口 功能 + 性能  2、测试">
+    <meta name="description" content="软件测试-黑马测试基础1、测试介绍1.1 什么是软件测试使⽤技术⼿段验证软件是否满⾜需求 1.2 测试主流技能 功能测试：测试主要验证程序的功能是否满足需求 自动化测试：使用代码或工具代替手工，对项目进行测试 接口测试：使用代码或工具验证程序中的接口是否访问正常 性能测试：模拟多人使用软件，查找服务器缺陷  主流方向建议：  功能测试 + 接口测试 自动化测试 + 接口 功能 + 性能  2、测试">
 <meta property="og:type" content="article">
 <meta property="og:title" content="软件测试学习">
 <meta property="og:url" content="https://zy674517173.github.io/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="Hello-ZY">
-<meta property="og:description" content="软件测试-黑马Day11、测试介绍1.1 什么是软件测试使⽤技术⼿段验证软件是否满⾜需求 1.2 测试主流技能 功能测试：测试主要验证程序的功能是否满足需求 自动化测试：使用代码或工具代替手工，对项目进行测试 接口测试：使用代码或工具验证程序中的接口是否访问正常 性能测试：模拟多人使用软件，查找服务器缺陷  主流方向建议：  功能测试 + 接口测试 自动化测试 + 接口 功能 + 性能  2、测试">
+<meta property="og:description" content="软件测试-黑马测试基础1、测试介绍1.1 什么是软件测试使⽤技术⼿段验证软件是否满⾜需求 1.2 测试主流技能 功能测试：测试主要验证程序的功能是否满足需求 自动化测试：使用代码或工具代替手工，对项目进行测试 接口测试：使用代码或工具验证程序中的接口是否访问正常 性能测试：模拟多人使用软件，查找服务器缺陷  主流方向建议：  功能测试 + 接口测试 自动化测试 + 接口 功能 + 性能  2、测试">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://zy674517173.github.io/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/QQ%E7%99%BB%E9%99%86%E6%B5%8B%E8%AF%95.png">
 <meta property="og:image" content="https://zy674517173.github.io/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/%E8%BE%B9%E7%95%8C%E5%80%BC%E5%88%86%E6%9E%90%E6%96%B9%E6%B3%95.png">
@@ -31,6 +31,12 @@
 <meta property="og:image" content="https://zy674517173.github.io/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/%E7%BC%BA%E9%99%B7%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png">
 <meta property="og:image" content="https://zy674517173.github.io/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/excel%E7%BC%BA%E9%99%B7%E7%A4%BA%E4%BE%8B.png">
 <meta property="og:image" content="https://zy674517173.github.io/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/%E7%BC%BA%E9%99%B7%E6%8F%90%E4%BA%A4%E6%B5%81%E7%A8%8B.png">
+<meta property="og:image" content="https://zy674517173.github.io/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/HTTP%E8%AF%B7%E6%B1%82.png">
+<meta property="og:image" content="https://zy674517173.github.io/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95%E6%B5%81%E7%A8%8B.png">
+<meta property="og:image" content="https://zy674517173.github.io/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/%E7%B3%BB%E7%BB%9F%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3%E8%A7%A3%E6%9E%90.png">
+<meta property="og:image" content="https://zy674517173.github.io/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/%E5%8F%82%E6%95%B0%E5%8C%96%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95.png">
+<meta property="og:image" content="https://zy674517173.github.io/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/%E5%8D%95%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95%E7%99%BB%E9%99%86%E8%AE%BE%E8%AE%A1%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B.png">
+<meta property="og:image" content="https://zy674517173.github.io/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95%E6%A8%A1%E6%9D%BF.png">
 <meta property="og:image" content="https://zy674517173.github.io/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/V%E6%A8%A1%E5%9E%8B.png">
 <meta property="og:image" content="https://zy674517173.github.io/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/W%E6%A8%A1%E5%9E%8B.png">
 <meta property="og:image" content="https://zy674517173.github.io/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/H%E6%A8%A1%E5%9E%8B.png">
@@ -42,7 +48,7 @@
 <meta property="og:image" content="https://zy674517173.github.io/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/%E6%88%90%E5%AF%B9%E9%9B%86%E6%88%90.png">
 <meta property="og:image" content="https://zy674517173.github.io/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/%E7%9B%B8%E9%82%BB%E9%9B%86%E6%88%90.png">
 <meta property="article:published_time" content="2024-09-15T08:05:25.000Z">
-<meta property="article:modified_time" content="2024-10-06T14:00:14.444Z">
+<meta property="article:modified_time" content="2024-10-11T09:48:23.662Z">
 <meta property="article:author" content="张同学">
 <meta property="article:tag" content="八股">
 <meta property="article:tag" content="测试">
@@ -242,7 +248,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          6.9k 字
+          9.8k 字
         
       </span>
     
@@ -253,7 +259,7 @@
         
         
         
-          58 分钟
+          82 分钟
         
       </span>
     
@@ -303,7 +309,7 @@
             
               <div class="markdown-body">
                 
-                <h1 id="软件测试-黑马"><a href="#软件测试-黑马" class="headerlink" title="软件测试-黑马"></a>软件测试-黑马</h1><h2 id="Day1"><a href="#Day1" class="headerlink" title="Day1"></a>Day1</h2><h3 id="1、测试介绍"><a href="#1、测试介绍" class="headerlink" title="1、测试介绍"></a>1、测试介绍</h3><h4 id="1-1-什么是软件测试"><a href="#1-1-什么是软件测试" class="headerlink" title="1.1 什么是软件测试"></a>1.1 什么是软件测试</h4><p>使⽤技术⼿段验证软件是否满⾜需求</p>
+                <h1 id="软件测试-黑马"><a href="#软件测试-黑马" class="headerlink" title="软件测试-黑马"></a>软件测试-黑马</h1><h2 id="测试基础"><a href="#测试基础" class="headerlink" title="测试基础"></a>测试基础</h2><h3 id="1、测试介绍"><a href="#1、测试介绍" class="headerlink" title="1、测试介绍"></a>1、测试介绍</h3><h4 id="1-1-什么是软件测试"><a href="#1-1-什么是软件测试" class="headerlink" title="1.1 什么是软件测试"></a>1.1 什么是软件测试</h4><p>使⽤技术⼿段验证软件是否满⾜需求</p>
 <h4 id="1-2-测试主流技能"><a href="#1-2-测试主流技能" class="headerlink" title="1.2 测试主流技能"></a>1.2 测试主流技能</h4><ol>
 <li>功能测试：测试主要验证程序的功能是否满足需求</li>
 <li>自动化测试：使用代码或工具代替手工，对项目进行测试</li>
@@ -553,21 +559,21 @@
 <li>时间宽裕通过该方法列出之前出现问题较多的模块再次测试</li>
 </ol>
 <p>思想：根据经验列举出可能出现问题的清单，根据清单分析问题可能原因，推测发现缺陷。</p>
-<h2 id="Day2"><a href="#Day2" class="headerlink" title="Day2"></a>Day2</h2><h3 id="1、缺陷"><a href="#1、缺陷" class="headerlink" title="1、缺陷"></a>1、缺陷</h3><h4 id="1-1-定义"><a href="#1-1-定义" class="headerlink" title="1.1 定义"></a>1.1 定义</h4><p>软件中存在的各种问题，都为缺陷，简称bug；</p>
-<h4 id="1-2-缺陷标准"><a href="#1-2-缺陷标准" class="headerlink" title="1.2 缺陷标准"></a>1.2 缺陷标准</h4><ol>
+<h3 id="7、缺陷"><a href="#7、缺陷" class="headerlink" title="7、缺陷"></a>7、缺陷</h3><h4 id="7-1-定义"><a href="#7-1-定义" class="headerlink" title="7.1 定义"></a>7.1 定义</h4><p>软件中存在的各种问题，都为缺陷，简称bug；</p>
+<h4 id="7-2-缺陷标准"><a href="#7-2-缺陷标准" class="headerlink" title="7.2 缺陷标准"></a>7.2 缺陷标准</h4><ol>
 <li>少功能 </li>
 <li>功能错误 </li>
 <li>多功能 </li>
 <li>缺少隐性功能 </li>
 <li>易⽤性（软件测试⼈员专业⻆度）-不易使用</li>
 </ol>
-<h4 id="1-3-缺陷产生的原因"><a href="#1-3-缺陷产生的原因" class="headerlink" title="1.3 缺陷产生的原因"></a>1.3 缺陷产生的原因</h4><ol>
+<h4 id="7-3-缺陷产生的原因"><a href="#7-3-缺陷产生的原因" class="headerlink" title="7.3 缺陷产生的原因"></a>7.3 缺陷产生的原因</h4><ol>
 <li>需求⽂档 </li>
 <li>架构设计 </li>
 <li>编码实现 </li>
 <li>环境（硬件、软件）</li>
 </ol>
-<h4 id="1-4-缺陷的生命周期"><a href="#1-4-缺陷的生命周期" class="headerlink" title="1.4 缺陷的生命周期"></a>1.4 缺陷的生命周期</h4><img src="/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/%E7%BC%BA%E9%99%B7%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png" srcset="/img/loading.gif" lazyload class="">
+<h4 id="7-4-缺陷的生命周期"><a href="#7-4-缺陷的生命周期" class="headerlink" title="7.4 缺陷的生命周期"></a>7.4 缺陷的生命周期</h4><img src="/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/%E7%BC%BA%E9%99%B7%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png" srcset="/img/loading.gif" lazyload class="">
 
 <ol>
 <li>回归测试：<ol>
@@ -577,7 +583,7 @@
 </li>
 <li>回归bug：上⼀个版本发现的缺陷，开发修复完毕，在下个版本进⾏重新验证。</li>
 </ol>
-<h4 id="1-5-缺陷的核心要素"><a href="#1-5-缺陷的核心要素" class="headerlink" title="1.5 缺陷的核心要素"></a>1.5 缺陷的核心要素</h4><ol>
+<h4 id="7-5-缺陷的核心要素"><a href="#7-5-缺陷的核心要素" class="headerlink" title="7.5 缺陷的核心要素"></a>7.5 缺陷的核心要素</h4><ol>
 <li>缺陷的标题：描述缺陷的核心问题</li>
 <li>缺陷的预置条件：缺陷产生的前提</li>
 <li>缺陷的复现步骤：复现缺陷的步骤</li>
@@ -585,14 +591,14 @@
 <li>缺陷的实际结果：实际得到的结果</li>
 <li>缺陷的必要附件：图片、日志等信息（证据）</li>
 </ol>
-<h4 id="1-6-缺陷提交要素"><a href="#1-6-缺陷提交要素" class="headerlink" title="1.6 缺陷提交要素"></a>1.6 缺陷提交要素</h4><ol>
+<h4 id="7-6-缺陷提交要素"><a href="#7-6-缺陷提交要素" class="headerlink" title="7.6 缺陷提交要素"></a>7.6 缺陷提交要素</h4><ol>
 <li>缺陷报告编号：缺陷的唯一性标志</li>
 <li>严重程度：S1-S4，                                                                                                       S1(严重)主功能    S2(一般) 次要功能    S3(微小) 易用性、界面   S4(建议) 建议性问题</li>
 <li>缺陷优先级：P0~P3</li>
 <li>Bug类型：代码错误、兼容性问题、设计缺陷、性能问题</li>
 <li>缺陷状态：new(新建)、open(打开)、closed(关闭)、postponed(延期)</li>
 </ol>
-<h4 id="1-7-缺陷类型"><a href="#1-7-缺陷类型" class="headerlink" title="1.7 缺陷类型"></a>1.7 缺陷类型</h4><ol>
+<h4 id="7-7-缺陷类型"><a href="#7-7-缺陷类型" class="headerlink" title="7.7 缺陷类型"></a>7.7 缺陷类型</h4><ol>
 <li>功能错误 </li>
 <li>UI⻚⾯错误 </li>
 <li>兼容性 </li>
@@ -603,16 +609,356 @@
 </ol>
 <h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs clean">设计⽤例-&gt;执⾏⽤例（执⾏测试）-&gt;缺陷（提交、验证、关闭）<br>缺陷定义：任何问题（Bug）<br>缺陷标准：多功能、少功能、错误、缺少隐性功能、易⽤性<br>描述缺陷重点：缺陷标题、前置条件、复现步骤、预期结果、实际结果、附件备注<br>提交缺陷信息：指派⼈、缺陷等级、修复优先级、类型、状态（统计缺陷）<br></code></pre></td></tr></table></figure>
 
-<h3 id="2、缺陷管理"><a href="#2、缺陷管理" class="headerlink" title="2、缺陷管理"></a>2、缺陷管理</h3><h4 id="2-1-excel示例"><a href="#2-1-excel示例" class="headerlink" title="2.1 excel示例"></a>2.1 excel示例</h4><img src="/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/excel%E7%BC%BA%E9%99%B7%E7%A4%BA%E4%BE%8B.png" srcset="/img/loading.gif" lazyload class="">
+<h3 id="8、缺陷管理"><a href="#8、缺陷管理" class="headerlink" title="8、缺陷管理"></a>8、缺陷管理</h3><h4 id="8-1-excel示例"><a href="#8-1-excel示例" class="headerlink" title="8.1 excel示例"></a>8.1 excel示例</h4><img src="/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/excel%E7%BC%BA%E9%99%B7%E7%A4%BA%E4%BE%8B.png" srcset="/img/loading.gif" lazyload class="">
 
-<h4 id="2-2-缺陷跟踪流程"><a href="#2-2-缺陷跟踪流程" class="headerlink" title="2.2 缺陷跟踪流程"></a>2.2 缺陷跟踪流程</h4><img src="/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/%E7%BC%BA%E9%99%B7%E6%8F%90%E4%BA%A4%E6%B5%81%E7%A8%8B.png" srcset="/img/loading.gif" lazyload class="">
+<h4 id="8-2-缺陷跟踪流程"><a href="#8-2-缺陷跟踪流程" class="headerlink" title="8.2 缺陷跟踪流程"></a>8.2 缺陷跟踪流程</h4><img src="/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/%E7%BC%BA%E9%99%B7%E6%8F%90%E4%BA%A4%E6%B5%81%E7%A8%8B.png" srcset="/img/loading.gif" lazyload class="">
 
-<h4 id="2-3-提交注意事项"><a href="#2-3-提交注意事项" class="headerlink" title="2.3 提交注意事项"></a>2.3 提交注意事项</h4><ol>
+<h4 id="8-3-提交注意事项"><a href="#8-3-提交注意事项" class="headerlink" title="8.3 提交注意事项"></a>8.3 提交注意事项</h4><ol>
 <li>可重现：缺陷可以复现</li>
 <li>规范性：符合公司或者项目要求</li>
 </ol>
 <p><strong>面试题</strong></p>
 <p>发现缺陷后，首先会怎么办？ 确定bug可复现，确定时bug</p>
+<h2 id="接口自动化测试"><a href="#接口自动化测试" class="headerlink" title="接口自动化测试"></a>接口自动化测试</h2><h3 id="1、接口测试理论"><a href="#1、接口测试理论" class="headerlink" title="1、接口测试理论"></a>1、接口测试理论</h3><p>接口：系统与系统之间数据交互的通道</p>
+<p>接口测试：校验 预期结果 与 实际结果 是否一致</p>
+<p>特征：</p>
+<ul>
+<li>测试页面发现不了的问题（因为接口测试 绕过前端界面）</li>
+<li>符合质量控制前移理念</li>
+<li>低成本、高收益</li>
+</ul>
+<p>实现方式：</p>
+<ol>
+<li><p>工具实现</p>
+<ul>
+<li>Postman：使用简单。功能较少</li>
+<li>jmeter：功能完善，上手难度大</li>
+</ul>
+</li>
+<li><p>代码实现</p>
+<ul>
+<li>python + requests + pytest</li>
+<li>java + httpclient</li>
+</ul>
+</li>
+</ol>
+<h3 id="2、HTTP协议"><a href="#2、HTTP协议" class="headerlink" title="2、HTTP协议"></a>2、HTTP协议</h3><p>特性： </p>
+<ul>
+<li>客户端、服务器模式 </li>
+<li>简单快速 </li>
+<li>灵活 </li>
+<li>⽆状态 </li>
+<li>⽆连接</li>
+</ul>
+<h4 id="2-1-URL-统一志愿定位符-格式"><a href="#2-1-URL-统一志愿定位符-格式" class="headerlink" title="2.1 URL (统一志愿定位符)格式"></a>2.1 URL (统一志愿定位符)格式</h4><p><strong>格式</strong>：协议：&#x2F;&#x2F; 域名：端口&#x2F;资源路径？查询参数1 &amp; 查询参数2…..</p>
+<p>端口： http 	80 	https	443</p>
+<p>举例</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apl">http://tpshop-test.itheima.net/index.php?m=Home&amp;c=User&amp;a=do_login<br></code></pre></td></tr></table></figure>
+
+<h4 id="2-2-HTTP请求"><a href="#2-2-HTTP请求" class="headerlink" title="2.2 HTTP请求"></a>2.2 HTTP请求</h4><p>整体格式：</p>
+<ul>
+<li>请求行：http请求第一行</li>
+<li>请求头：第二行开始，到空行之前</li>
+<li>空行：代表请求头结束</li>
+<li>请求体：空行之后，直到结束</li>
+</ul>
+<img src="/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/HTTP%E8%AF%B7%E6%B1%82.png" srcset="/img/loading.gif" lazyload class="">
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs apl">POST http://demo.zentao.net/user-login.html HTTP/1.1 <br>Host: demo.zentao.net <br>User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101 <br>Firefox/68.0 <br>Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8 <br>Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2 <br>Accept-Encoding: gzip, deflate <br>Referer: http://demo.zentao.net/user-login.html <br>Content-Type: application/x-www-form-urlencoded <br>Content-Length: 54 <br>Connection: keep-alive <br>Upgrade-Insecure-Requests: 1 <br>account=demo&amp;password=efc4a3b32e48054865e5a8321cfda3e4 <br></code></pre></td></tr></table></figure>
+
+<h5 id="请求行"><a href="#请求行" class="headerlink" title="请求行"></a>请求行</h5><p>组成： 请求方法 （空格） URL (空格)  协议版本</p>
+<ul>
+<li>请求方法：<ul>
+<li>get：查询   – 没有请求体</li>
+<li>post：添加 （登陆、注册）</li>
+<li>put：修改</li>
+<li>delete：删除    – 没有请求体</li>
+</ul>
+</li>
+<li>URL</li>
+<li>协议版本：默认常用 HTTP&#x2F;1.1</li>
+</ul>
+<h5 id="请求头："><a href="#请求头：" class="headerlink" title="请求头："></a>请求头：</h5><p>Content-Type：描述 请求体 数据类型	</p>
+<ul>
+<li>text&#x2F;html： HTML格式</li>
+<li>text&#x2F;plain：纯文本格式</li>
+<li>image&#x2F;jpeg： jpg图片格式</li>
+<li>application&#x2F;json：请求体为 json 格式数据 </li>
+<li>application&#x2F;x-www-form-urlencoded:  请求体为 表单 格式的数据。</li>
+<li>multipart&#x2F;form-data： 在表单中进行文件上传时使用</li>
+</ul>
+<h5 id="请求体"><a href="#请求体" class="headerlink" title="请求体"></a>请求体</h5><p>get、delete没有，post、put有</p>
+<p>请求体中的数据，受Content-Type的内容影响</p>
+<h4 id="2-3-HTTP响应"><a href="#2-3-HTTP响应" class="headerlink" title="2.3 HTTP响应"></a>2.3 HTTP响应</h4><p>整体格式：</p>
+<ul>
+<li>响应行（第一行）: 协议版本（空格）状态码（空格）状态码描述</li>
+<li>响应头（第二行开始，到空行结束）：</li>
+<li>空行（表示响应头结束）</li>
+<li>响应体（空行、直到结束）</li>
+</ul>
+<p>示例</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs apl"> HTTP/1.1 200 OK <br>Date: Fri, 22 May 2009 06:07:21 GMT <br>Content-Type: text/html; charset=UTF-8 <br>&lt;html&gt;<br>     &lt;head&gt;&lt;/head&gt; <br>    &lt;body&gt;...&lt;/body&gt; <br>&lt;/html&gt;<br></code></pre></td></tr></table></figure>
+
+<h5 id="状态码"><a href="#状态码" class="headerlink" title="状态码"></a>状态码</h5><ul>
+<li>1xx：指示性信息 </li>
+<li>2xx：成功类信息。 200  ok </li>
+<li>3xx：重定向类信息 </li>
+<li>4xx：客户端错误。 404  Not Found </li>
+<li>5xx：服务器端错误</li>
+</ul>
+<h5 id="响应头"><a href="#响应头" class="headerlink" title="响应头"></a>响应头</h5><ul>
+<li>数据组织的格式为 k:v 键值对格式。 </li>
+<li>Content-Type：作⽤：响应体数据类型。（了解）</li>
+</ul>
+<h5 id="响应体"><a href="#响应体" class="headerlink" title="响应体"></a>响应体</h5><ul>
+<li>包含  接⼝测试过程中，需要 “实际结果” </li>
+<li>响应体，不受 请求⽅法 影响。 绝⼤多数 响应包，都包含响应体。</li>
+</ul>
+<p><strong>示例</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs apl">HTTP/1.1 200 OK<br>Server: nginx<br>Date: Mon, 29 Jun 2020 03:36:28 GMT<br>Content-Type: text/html; charset=UTF-8<br>Connection: keep-alive<br>Set-Cookie: is_mobile=0; expires=Mon, 29-Jun-2020 04:36:28 GMT;<br>Expires: Thu, 19 Nov 1981 08:52:00 GMT<br>Content-Length: 805<br><br>&#123;&quot;status&quot;:1,&quot;msg&quot;:&quot;\u767b\u9646\u6210\u529f&quot;,&quot;result&quot;:<br>&#123;&quot;user_id&quot;:3338,&quot;email&quot;:&quot;&quot;,&quot;password&quot;:&quot;519475228fe35ad067744465<br>c42a19b2&quot;,&quot;paypwd&quot;:null,&quot;sex&quot;:0,&quot;birthday&quot;:0,&quot;user_money&quot;:&quot;0.00<br>&quot;,&quot;frozen_money&quot;:&quot;0.00&quot;,&quot;distribut_money&quot;:&quot;0.00&quot;,&quot;underling_num<br>ber&quot;:0,&quot;pay_points&quot;:100,&quot;address_id&quot;:0,&quot;reg_time&quot;:1590980161,&quot;l<br>ast_login&quot;:1590980161,&quot;last_ip&quot;:&quot;&quot;,&quot;qq&quot;:&quot;&quot;,&quot;mobile&quot;:&quot;1380013800<br>6&quot;,&quot;level_name&quot;:&quot;\u6ce8\u518c\u4f1a\u5458&quot;&#125;,&quot;url&quot;:&quot;&quot;&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="3、接口规范"><a href="#3、接口规范" class="headerlink" title="3、接口规范"></a>3、接口规范</h3><h4 id="传统风格接口"><a href="#传统风格接口" class="headerlink" title="传统风格接口"></a>传统风格接口</h4><p>特性：</p>
+<ul>
+<li>请求⽅法，统⼀使⽤ get 或 post </li>
+<li>针对⼀个资源的操作，URL 不唯⼀ </li>
+<li>响应状态码统⼀使⽤ 200 表示</li>
+</ul>
+<h4 id="RESTful风格接口"><a href="#RESTful风格接口" class="headerlink" title="RESTful风格接口"></a>RESTful风格接口</h4><p>特性</p>
+<ul>
+<li>请求⽅法，与 http协议对应。 <ul>
+<li>get —— 查询 </li>
+<li>post —— 添加 </li>
+<li>put —— 修改 </li>
+<li>delete —— 删除</li>
+</ul>
+</li>
+<li>针对⼀个资源的操作，URL 唯⼀。 只看URL ⽆法确定具体操作。 </li>
+<li>状态码使⽤较灵活</li>
+</ul>
+<h3 id="4、结构测试流程"><a href="#4、结构测试流程" class="headerlink" title="4、结构测试流程"></a>4、结构测试流程</h3><ol>
+<li>需求分析（产品经理产出的需求文档）</li>
+<li>接口文档解析（由开发产出的接口文档）</li>
+<li>编写接口测试用例（将用例用Excel形式表现）</li>
+<li>编写接口测试脚本         （多这一项）<ul>
+<li>工具（postman）生成脚本</li>
+<li>代码（python）编写，生成脚本</li>
+</ul>
+</li>
+<li>执行脚本，跟踪缺陷</li>
+<li>生成接口测试报告</li>
+<li>（可选）接口自动化持续集成</li>
+</ol>
+<img src="/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95%E6%B5%81%E7%A8%8B.png" srcset="/img/loading.gif" lazyload class="">
+
+<h4 id="4-1-接口文档解析"><a href="#4-1-接口文档解析" class="headerlink" title="4.1 接口文档解析"></a>4.1 接口文档解析</h4><ul>
+<li><p>什么是接⼝⽂档 也叫 API⽂档，描述接⼝信息。 </p>
+</li>
+<li><p>接⼝⽂档的作⽤ ⽅便团队成员协同⼯作。</p>
+</li>
+</ul>
+<p><strong>解析核心目标</strong></p>
+<ul>
+<li><p>http请求 相关数据</p>
+<ul>
+<li>请求⽅法 </li>
+<li>URL </li>
+<li>请求头 </li>
+<li>请求体（数据类型）</li>
+</ul>
+</li>
+<li><p>http响应 相关数据（预期结果） </p>
+<ul>
+<li>响应状态码 </li>
+<li>响应体</li>
+</ul>
+<img src="/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/%E7%B3%BB%E7%BB%9F%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3%E8%A7%A3%E6%9E%90.png" srcset="/img/loading.gif" lazyload class=""></li>
+</ul>
+<h3 id="5、Postman使用"><a href="#5、Postman使用" class="headerlink" title="5、Postman使用"></a>5、Postman使用</h3><p>需要使用Postman工具构建请求头、请求行、请求体</p>
+<h4 id="5-1-Postman断言"><a href="#5-1-Postman断言" class="headerlink" title="5.1 Postman断言"></a>5.1 Postman断言</h4><p>借助Postman工具，代替人工自动判断，预期结果和实际结果是一致的</p>
+<p><strong>Postman常用断言</strong></p>
+<ol>
+<li><p>断言响应状态码</p>
+<p><strong>Status Code： code is 200</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 断言响应状态码</span><br>pm.<span class="hljs-title function_">test</span>(<span class="hljs-string">&quot;Status code is 200&quot;</span>, <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<br>    pm.<span class="hljs-property">response</span>.<span class="hljs-property">to</span>.<span class="hljs-property">have</span>.<span class="hljs-title function_">status</span>(<span class="hljs-number">200</span>);<br>&#125;);<br><br>pm.<span class="hljs-property">postman</span>的一个实例（对象）<br><span class="hljs-title function_">test</span>(): postman的一个测试方法。有两个参数<br>	参<span class="hljs-number">1</span>：断言完成后，给用户的提示性文字信息。可以任意修改（不参与断言）<br>    参<span class="hljs-number">2</span>：是一个 匿名函数 调用。<br>pm.<span class="hljs-property">response</span>.<span class="hljs-property">to</span>.<span class="hljs-property">have</span>.<span class="hljs-title function_">status</span>(<span class="hljs-number">200</span>);  postman的响应结果中应该有状态码 <span class="hljs-number">200</span><br>	这里面的 <span class="hljs-number">200</span> 为 预期结果<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>断言包含某个字符串</p>
+<p><strong>Response body: Contains string</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 断言响应体包含某字符串</span><br>pm.<span class="hljs-title function_">test</span>(<span class="hljs-string">&quot;Body matches string&quot;</span>, <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<br>    pm.<span class="hljs-title function_">expect</span>(pm.<span class="hljs-property">response</span>.<span class="hljs-title function_">text</span>()).<span class="hljs-property">to</span>.<span class="hljs-title function_">include</span>(<span class="hljs-string">&quot;string_you_want_to_search&quot;</span>);<br>&#125;);<br><br><span class="hljs-attr">pm</span>:postman的一个实例<br><span class="hljs-title function_">test</span>(): postman的方法。有两个参数。<br>	参<span class="hljs-number">1</span>：断言完成后，给用户的提示性文字信息。可以任意修改（不参与断言）<br>    参<span class="hljs-number">2</span>：是一个 匿名函数 调用。<br>pm.<span class="hljs-title function_">expect</span>(pm.<span class="hljs-property">response</span>.<span class="hljs-title function_">text</span>()).<span class="hljs-property">to</span>.<span class="hljs-title function_">include</span>(<span class="hljs-string">&quot;string_you_want_to_search&quot;</span>); <br>意思是：postman期望，在响应文本中，包含 “你想搜索的字符串”<br><br><span class="hljs-string">&quot;string_you_want_to_search&quot;</span> 可以替换为，欲判断的字符串 （预期结果）<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>断言 <code>JSON</code> 数据</p>
+<p><strong>Response body：JSON value check</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs js">pm.<span class="hljs-title function_">test</span>(<span class="hljs-string">&quot;断言json结果中指定key的值&quot;</span>, <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">var</span> jsonData = pm.<span class="hljs-property">response</span>.<span class="hljs-title function_">json</span>();<br>    pm.<span class="hljs-title function_">expect</span>(jsonData.<span class="hljs-property">value</span>).<span class="hljs-property">to</span>.<span class="hljs-title function_">eql</span>(<span class="hljs-number">100</span>);<br>&#125;);<br><br><span class="hljs-attr">pm</span>:postman的一个实例<br><span class="hljs-title function_">test</span>(): postman的方法。有两个参数。<br>	  参<span class="hljs-number">1</span>：断言完成后，给用户的提示性文字信息。可以任意修改（不参与断言）<br>    参<span class="hljs-number">2</span>：是一个 匿名函数 调用。<br><span class="hljs-keyword">var</span> jsonData = pm.<span class="hljs-property">response</span>.<span class="hljs-title function_">json</span>();<br>	<span class="hljs-keyword">var</span> 是 js 语言中，定义变量的关键字。<br>    jsonData 是变量名<br>    pm.<span class="hljs-property">response</span>.<span class="hljs-title function_">json</span>() 表示 postman的 json响应结果<br>    代表：<br>    &#123;<br>        <span class="hljs-string">&quot;success&quot;</span>: <span class="hljs-literal">true</span>,<br>        <span class="hljs-string">&quot;code&quot;</span>: <span class="hljs-number">10000</span>,<br>        <span class="hljs-string">&quot;message&quot;</span>: <span class="hljs-string">&quot;操作成功！&quot;</span>,<br>        <span class="hljs-string">&quot;data&quot;</span>: <span class="hljs-string">&quot;46b1fcde-e996-4520-b8f6-a2cd2da95350&quot;</span><br>	&#125;<br>pm.<span class="hljs-title function_">expect</span>(jsonData.<span class="hljs-property">value</span>).<span class="hljs-property">to</span>.<span class="hljs-title function_">eql</span>(<span class="hljs-number">100</span>);<br>	value 指代 json数据中的 “key” (举例：可以取值：success 或 code 或 message 或 data)<br>	<span class="hljs-number">100</span>，应该替换为 key 所对应的 value (预期结果)<br></code></pre></td></tr></table></figure></li>
+</ol>
+<h4 id="5-2-Postman关联"><a href="#5-2-Postman关联" class="headerlink" title="5.2 Postman关联"></a>5.2 Postman关联</h4><p><strong>简介</strong></p>
+<p>关联，是postman中，用来解决http请求之间有依赖关系时，使用的技术</p>
+<ul>
+<li>依赖：1个http请求响应结果中的数据，被另一个http请求使用。</li>
+<li>举例：<ul>
+<li>登陆http请求，返回的令牌。被添加员工请求依赖（请求头中使用）。可以使用postman的关联技术来使用。</li>
+</ul>
+</li>
+</ul>
+<p><strong>实现步骤</strong></p>
+<p>A接口响应结果，被B接口依赖</p>
+<ol>
+<li>发送 A 接口请求，得到响应结果</li>
+<li>将结果中的关联数据，存入 公共容器 （全局变量、环境变量）</li>
+<li>B接口，从公共容器中提起数据，发送 B 接口的请求</li>
+</ol>
+<p><strong>核心代码</strong></p>
+<ol>
+<li><p>获取相应结果  &#x3D;&#x3D;var jsonData &#x3D; pm.response.json();&#x3D;&#x3D;</p>
+</li>
+<li><p>将数据设置到全局中、环境变量中。</p>
+<ul>
+<li><p>全局变量：&#x3D;&#x3D;pm.globals.set(“全局变量名”, 全局变量值)&#x3D;&#x3D;，全局变量，在整个 postman 随处都能使用。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 示例</span><br>pm.<span class="hljs-property">globals</span>.<span class="hljs-title function_">set</span>(<span class="hljs-string">&quot;glb_age&quot;</span>, <span class="hljs-number">22</span>)<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>环境变量：&#x3D;&#x3D;pm.environment.set(“环境变量名”, 环境变量值)&#x3D;&#x3D;，在 特定的环境下，才能使用。因此，必须先创建环境，再创建 环境变量。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 示例</span><br>pm.<span class="hljs-property">environment</span>.<span class="hljs-title function_">set</span>(<span class="hljs-string">&quot;env_age&quot;</span>, <span class="hljs-number">88</span>)<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>在 请求参数（URL、请求头、请求体）中 获取 变量数据 &#x3D;&#x3D;  或者 &#x3D;&#x3D;</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs tex">&#123;&#123;glb<span class="hljs-built_in">_</span>age&#125;&#125; 或 &#123;&#123;env<span class="hljs-built_in">_</span>age&#125;&#125;<br></code></pre></td></tr></table></figure></li>
+</ol>
+<h4 id="5-3-Postman参数化"><a href="#5-3-Postman参数化" class="headerlink" title="5.3 Postman参数化"></a>5.3 Postman参数化</h4><p><strong>简介</strong></p>
+<ul>
+<li>什么是参数化：将 http请求需要的数据，和断言数据，组织到一个 文件中。从postman导入文件，实现 http请求发送、断言。</li>
+<li>应用场景：针对同一个接口，组织 N 条 不同的 测试用例。数据格式完全一致的。适用 参数化。</li>
+</ul>
+<p><strong>数据文件简介</strong></p>
+<ol>
+<li>CSV：</li>
+</ol>
+<ul>
+<li>优点：数据组织的格式简单。</li>
+<li>缺点：<ul>
+<li>不支持bool类型。（原因：postman读取csv文件后，将所有的非数值数据，自动添加 “ ” 包裹）</li>
+<li>不支持复杂数据类型。</li>
+<li>不支持参数测试。</li>
+</ul>
+</li>
+<li>应用场景：当有大量测试数据时，适用。</li>
+</ul>
+<ol>
+<li>JSON：</li>
+</ol>
+<ul>
+<li>优点：<ul>
+<li>支持bool类型。</li>
+<li>支持复杂数据类型。</li>
+<li>支持参数测试。</li>
+</ul>
+</li>
+<li>缺点：<ul>
+<li>相同的数据量，json文件要远大于 csv文件。</li>
+</ul>
+</li>
+<li>应用场景：测试数据量较少。需要进行 参数测试！</li>
+</ul>
+<p><strong>编写数据文件</strong></p>
+<p><code>csv</code> 和 <code>json</code> 格式</p>
+<p><strong>读取数据文件</strong></p>
+<p>理论</p>
+<p>根据 使用位置 不同，有两种方法。</p>
+<ul>
+<li><p>第一种：请求参数（URL、请求头、请求体）中，使用  数据文件中 的数据</p>
+<ul>
+<li><strong>&#x3D;&#x3D;使用包裹 csv文件第一行的字段名。或 json文件的 key名&#x3D;&#x3D;</strong></li>
+</ul>
+</li>
+<li><p>第二种：代码（Tests）中，使用  数据文件中 的数据</p>
+<ul>
+<li><strong>&#x3D;&#x3D;使用 postman 内置 关键字 data.csv文件的字段名  或  data.json文件的key名&#x3D;&#x3D;</strong></li>
+</ul>
+</li>
+</ul>
+<p><strong>案例</strong></p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs tex">需求：批量查询 手机号 所属运营商，校验运营商数据正确性<br><br>接口： http://cx.shouji.360.cn/phonearea.php?number=13012345678<br><br>测试数据：<br><br>​			手机号: 13012345678 	运营商: 联通<br>​			手机号: 13800001111 	运营商: 移动<br>​			手机号: 18966778899 	运营商: 电信<br></code></pre></td></tr></table></figure>
+
+<img src="/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/%E5%8F%82%E6%95%B0%E5%8C%96%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95.png" srcset="/img/loading.gif" lazyload class="">
+
+
+
+
+
+<h3 id="6、接口用例设计"><a href="#6、接口用例设计" class="headerlink" title="6、接口用例设计"></a>6、接口用例设计</h3><h4 id="6-1-接口测试的测试点"><a href="#6-1-接口测试的测试点" class="headerlink" title="6.1 接口测试的测试点"></a>6.1 接口测试的测试点</h4><ul>
+<li><p>功能测试：</p>
+<ul>
+<li><p>单接口功能：一个接口对应一个功能：如：登陆业务——登陆接口	注册业务——注册接口</p>
+</li>
+<li><p>业务场景功能：按用户的实际使用场景。模拟 连续调用 多个接口。测试功能正确性</p>
+</li>
+</ul>
+</li>
+<li><p>性能测试：响应时长、吞吐量、错误率、服务器资源利用率</p>
+</li>
+<li><p>安全测试：敏感数据是否加密、SQL注入、其他</p>
+<ul>
+<li>攻击安全：木马、病毒、黑客</li>
+<li>业务安全：保证系统在业务过程中，保证 业务上没有安全漏洞、敏感数据是否加密</li>
+</ul>
+</li>
+</ul>
+<h4 id="6-2-接口用例设计方法"><a href="#6-2-接口用例设计方法" class="headerlink" title="6.2 接口用例设计方法"></a>6.2 接口用例设计方法</h4><p><strong>单接口测试</strong></p>
+<ul>
+<li>正向测试<ol>
+<li>必填参数组合    P0</li>
+<li>必选 + 非必选组合    P2&#x2F;P3</li>
+<li>全部参数     P1</li>
+</ol>
+</li>
+<li>反向测试<ol>
+<li>功能异常（覆盖反向需求）P1		密码和手机号对应不上、登陆不了 就是功能异常</li>
+<li>数据异常（空、类型不符、长度不符）P2      【等价类、边界值测试法】</li>
+<li>参数异常（多参、少参、错误参数） P3</li>
+</ol>
+</li>
+</ul>
+<p><strong>业务场景测试</strong></p>
+<ul>
+<li>必须在单接口测试完成之后</li>
+<li>模拟用户实际使用场景，尽量用较少的测试用例，覆盖更多的接口</li>
+<li>一般情况下，只需要设计业务场景的正向测试用例即可</li>
+</ul>
+<h4 id="6-3-单接口测试用例"><a href="#6-3-单接口测试用例" class="headerlink" title="6.3 单接口测试用例"></a>6.3 单接口测试用例</h4><img src="/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/%E5%8D%95%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95%E7%99%BB%E9%99%86%E8%AE%BE%E8%AE%A1%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B.png" srcset="/img/loading.gif" lazyload class="">
+
+<p><strong>分析测试点</strong></p>
+<p><strong>登陆</strong>：</p>
+<ul>
+<li>正向<ul>
+<li>登陆成功</li>
+</ul>
+</li>
+<li>反向<ul>
+<li>手机号未注册</li>
+<li>密码错误</li>
+<li>手机号为空</li>
+<li>手机号有特殊字符、字母</li>
+<li>10位手机号</li>
+<li>12位手机号</li>
+<li>密码为空</li>
+<li>密码特殊字符、字母</li>
+<li>1位密码</li>
+<li>100位密码</li>
+<li>多参</li>
+<li>少参</li>
+<li>无参</li>
+<li>错误参数</li>
+</ul>
+</li>
+</ul>
+<p><strong>测试模板</strong></p>
+<img src="/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95%E6%A8%A1%E6%9D%BF.png" srcset="/img/loading.gif" lazyload class="">
+
+
+
+
+
+
+
+
+
 <h1 id="八股总结"><a href="#八股总结" class="headerlink" title="八股总结"></a>八股总结</h1><h2 id="软件测试的术语"><a href="#软件测试的术语" class="headerlink" title="软件测试的术语"></a>软件测试的术语</h2><p><strong>失效</strong></p>
 <p><strong>事故</strong></p>
 <p><strong>故障</strong></p>
