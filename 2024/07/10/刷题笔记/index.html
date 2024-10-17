@@ -23,6 +23,7 @@
 <meta property="og:site_name" content="Hello-ZY">
 <meta property="og:description" content="刷题笔记杂记STL基础123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://zy674517173.github.io/2024/07/10/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/41_%E7%BC%BA%E5%A4%B1%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%AD%A3%E6%95%B0.png">
 <meta property="og:image" content="https://zy674517173.github.io/2024/07/10/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/%E9%93%BE%E8%A1%A8%E6%80%BB%E7%BB%93.png">
 <meta property="og:image" content="https://zy674517173.github.io/2024/07/10/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/%E5%AE%8C%E5%85%A8%E4%BA%8C%E5%8F%89%E6%A0%91.png">
 <meta property="og:image" content="https://zy674517173.github.io/2024/07/10/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95.png">
@@ -30,11 +31,11 @@
 <meta property="og:image" content="https://zy674517173.github.io/2024/07/10/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/%E5%89%AA%E6%9E%9D%E4%BC%98%E5%8C%96.png">
 <meta property="og:image" content="https://zy674517173.github.io/2024/07/10/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8C%E2%85%A1.png">
 <meta property="article:published_time" content="2024-07-10T14:08:20.000Z">
-<meta property="article:modified_time" content="2024-10-11T02:45:11.597Z">
+<meta property="article:modified_time" content="2024-10-13T13:14:47.104Z">
 <meta property="article:author" content="张同学">
 <meta property="article:tag" content="算法">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://zy674517173.github.io/2024/07/10/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/%E9%93%BE%E8%A1%A8%E6%80%BB%E7%BB%93.png">
+<meta name="twitter:image" content="https://zy674517173.github.io/2024/07/10/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/41_%E7%BC%BA%E5%A4%B1%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%AD%A3%E6%95%B0.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -229,7 +230,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          22k 字
+          23k 字
         
       </span>
     
@@ -240,7 +241,7 @@
         
         
         
-          186 分钟
+          189 分钟
         
       </span>
     
@@ -562,6 +563,22 @@
 </ol>
 <p>左右乘积列表：初始化两个空数组 <code>L</code> 和 <code>R</code>。对于给定索引 <code>i</code>，<code>L[i]</code> 代表的是 <code>i</code> 左侧所有数字的乘积，<code>R[i]</code> 代表的是 <code>i</code> 右侧所有数字的乘积。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">productExceptSelf</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; nums)</span> </span>&#123;<br>        <span class="hljs-type">int</span> n = nums.<span class="hljs-built_in">size</span>();<br><br>        <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">L</span><span class="hljs-params">(n, <span class="hljs-number">0</span>)</span></span>;    <span class="hljs-comment">// L[i] 代表左侧所有数字的乘积</span><br>        <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">R</span><span class="hljs-params">(n, <span class="hljs-number">0</span>)</span></span>;    <span class="hljs-comment">// R[i] 代表右侧所有数字的乘积</span><br><br>        L[<span class="hljs-number">0</span>] = <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt; n; i++) L[i] = L[i - <span class="hljs-number">1</span>] * nums[i - <span class="hljs-number">1</span>];<br><br>        R[n - <span class="hljs-number">1</span>] = <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = n - <span class="hljs-number">2</span>; i &gt;= <span class="hljs-number">0</span>; i--) R[i] = R[i + <span class="hljs-number">1</span>] * nums[i + <span class="hljs-number">1</span>];<br><br>        <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">res</span><span class="hljs-params">(n)</span></span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++)<br>        &#123;<br>            res[i] = L[i] * R[i];<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="41、缺失的第一个正数"><a href="#41、缺失的第一个正数" class="headerlink" title="41、缺失的第一个正数"></a>41、缺失的第一个正数</h4><p>有点难呢</p>
+<p>算法的流程如下：</p>
+<ul>
+<li>我们将数组中所有小于等于 0 的数修改为 N+1；</li>
+<li>我们遍历数组中的每一个数 x，它可能已经被打了标记，因此原本对应的数为 ∣x∣，其中 ∣∣ 为绝对值符号。如果 ∣x∣∈[1,N]，那么我们给数组中的第 ∣x∣−1 个位置的数添加一个负号。注意如果它已经有负号，不需要重复添加；</li>
+<li>在遍历完成之后，如果数组中的每一个数都是负数，那么答案是 N+1，否则答案是第一个正数的位置加 1。</li>
+</ul>
+<img src="/2024/07/10/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/41_%E7%BC%BA%E5%A4%B1%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%AD%A3%E6%95%B0.png" srcset="/img/loading.gif" lazyload class="">
+
+<p>作者：力扣官方题解<br>链接：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/first-missing-positive/solutions/304743/que-shi-de-di-yi-ge-zheng-shu-by-leetcode-solution/">https://leetcode.cn/problems/first-missing-positive/solutions/304743/que-shi-de-di-yi-ge-zheng-shu-by-leetcode-solution/</a><br>来源：力扣（LeetCode）<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">firstMissingPositive</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; nums)</span> </span>&#123;<br>        <span class="hljs-type">int</span> n = nums.<span class="hljs-built_in">size</span>();<br><br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++)<br>        &#123;<br>            <span class="hljs-keyword">if</span>(nums[i] &lt;= <span class="hljs-number">0</span>)    nums[i] = n + <span class="hljs-number">1</span>;<br>        &#125;<br><br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++)<br>        &#123;   <br>            <span class="hljs-type">int</span> num = <span class="hljs-built_in">abs</span>(nums[i]);<br>            <span class="hljs-keyword">if</span>(num &lt;= n)<br>            &#123;<br>                nums[num - <span class="hljs-number">1</span>] = -<span class="hljs-built_in">abs</span>(nums[num - <span class="hljs-number">1</span>]);<br>            &#125;<br>        &#125;<br><br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++)<br>        &#123;<br>            <span class="hljs-keyword">if</span>(nums[i] &gt; <span class="hljs-number">0</span>)<br>                <span class="hljs-keyword">return</span> i + <span class="hljs-number">1</span>;<br>        &#125;<br><br>        <span class="hljs-keyword">return</span> n + <span class="hljs-number">1</span>;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+
+
 
 
 
