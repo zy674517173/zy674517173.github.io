@@ -48,7 +48,7 @@
 <meta property="og:image" content="https://zy674517173.github.io/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/%E6%88%90%E5%AF%B9%E9%9B%86%E6%88%90.png">
 <meta property="og:image" content="https://zy674517173.github.io/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/%E7%9B%B8%E9%82%BB%E9%9B%86%E6%88%90.png">
 <meta property="article:published_time" content="2024-09-15T08:05:25.000Z">
-<meta property="article:modified_time" content="2024-10-15T09:03:32.495Z">
+<meta property="article:modified_time" content="2024-10-18T11:43:49.580Z">
 <meta property="article:author" content="张同学">
 <meta property="article:tag" content="八股">
 <meta property="article:tag" content="测试">
@@ -965,9 +965,7 @@
 <p>【带 json数据 的post请求】使用Requests库，完成 iHRM系统 成功登录。返回 ”令牌数据“</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 导包</span><br><span class="hljs-keyword">import</span> requests<br><br><span class="hljs-comment"># 发送 post请求，登录 ihrm。得响应结果</span><br>resp = requests.post(url=<span class="hljs-string">&quot;http://ihrm-test.itheima.net/api/sys/login&quot;</span>,<br>                     <span class="hljs-comment"># headers=&#123;&quot;Content-Type&quot;: &quot;application/json&quot;&#125;,</span><br>                     json=&#123;<span class="hljs-string">&quot;mobile&quot;</span>: <span class="hljs-string">&quot;13800000002&quot;</span>, <span class="hljs-string">&quot;password&quot;</span>: <span class="hljs-string">&quot;123456&quot;</span>&#125;)<br><br><span class="hljs-comment"># 打印响应结果，转json格式</span><br><span class="hljs-built_in">print</span>(resp.json())<br></code></pre></td></tr></table></figure>
 
-
-
-<h1 id="八股总结"><a href="#八股总结" class="headerlink" title="八股总结"></a>八股总结</h1><h2 id="软件测试的术语"><a href="#软件测试的术语" class="headerlink" title="软件测试的术语"></a>软件测试的术语</h2><p><strong>失效</strong></p>
+<h2 id="项目实战-黑马头条"><a href="#项目实战-黑马头条" class="headerlink" title="项目实战-黑马头条"></a>项目实战-黑马头条</h2><h3 id="UI自动化测试"><a href="#UI自动化测试" class="headerlink" title="UI自动化测试"></a>UI自动化测试</h3><h1 id="八股总结"><a href="#八股总结" class="headerlink" title="八股总结"></a>八股总结</h1><h2 id="软件测试的术语"><a href="#软件测试的术语" class="headerlink" title="软件测试的术语"></a>软件测试的术语</h2><p><strong>失效</strong></p>
 <p><strong>事故</strong></p>
 <p><strong>故障</strong></p>
 <p><strong>错误</strong></p>
