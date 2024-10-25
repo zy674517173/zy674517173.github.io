@@ -49,7 +49,7 @@
 <meta property="og:image" content="https://zy674517173.github.io/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/%E6%88%90%E5%AF%B9%E9%9B%86%E6%88%90.png">
 <meta property="og:image" content="https://zy674517173.github.io/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/%E7%9B%B8%E9%82%BB%E9%9B%86%E6%88%90.png">
 <meta property="article:published_time" content="2024-09-15T08:05:25.000Z">
-<meta property="article:modified_time" content="2024-10-21T13:22:57.210Z">
+<meta property="article:modified_time" content="2024-10-25T11:56:57.864Z">
 <meta property="article:author" content="张同学">
 <meta property="article:tag" content="八股">
 <meta property="article:tag" content="测试">
@@ -249,7 +249,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          13k 字
+          16k 字
         
       </span>
     
@@ -260,7 +260,7 @@
         
         
         
-          113 分钟
+          133 分钟
         
       </span>
     
@@ -736,7 +736,7 @@
 <li>针对⼀个资源的操作，URL 唯⼀。 只看URL ⽆法确定具体操作。 </li>
 <li>状态码使⽤较灵活</li>
 </ul>
-<h3 id="4、结构测试流程"><a href="#4、结构测试流程" class="headerlink" title="4、结构测试流程"></a>4、结构测试流程</h3><ol>
+<h3 id="4、接口测试流程"><a href="#4、接口测试流程" class="headerlink" title="4、接口测试流程"></a>4、接口测试流程</h3><ol>
 <li>需求分析（产品经理产出的需求文档）</li>
 <li>接口文档解析（由开发产出的接口文档）</li>
 <li>编写接口测试用例（将用例用Excel形式表现）</li>
@@ -966,7 +966,7 @@
 <p>【带 json数据 的post请求】使用Requests库，完成 iHRM系统 成功登录。返回 ”令牌数据“</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 导包</span><br><span class="hljs-keyword">import</span> requests<br><br><span class="hljs-comment"># 发送 post请求，登录 ihrm。得响应结果</span><br>resp = requests.post(url=<span class="hljs-string">&quot;http://ihrm-test.itheima.net/api/sys/login&quot;</span>,<br>                     <span class="hljs-comment"># headers=&#123;&quot;Content-Type&quot;: &quot;application/json&quot;&#125;,</span><br>                     json=&#123;<span class="hljs-string">&quot;mobile&quot;</span>: <span class="hljs-string">&quot;13800000002&quot;</span>, <span class="hljs-string">&quot;password&quot;</span>: <span class="hljs-string">&quot;123456&quot;</span>&#125;)<br><br><span class="hljs-comment"># 打印响应结果，转json格式</span><br><span class="hljs-built_in">print</span>(resp.json())<br></code></pre></td></tr></table></figure>
 
-<h2 id="项目实战-黑马头条"><a href="#项目实战-黑马头条" class="headerlink" title="项目实战-黑马头条"></a>项目实战-黑马头条</h2><h3 id="UI自动化测试"><a href="#UI自动化测试" class="headerlink" title="UI自动化测试"></a>UI自动化测试</h3><h3 id="1、测试流程"><a href="#1、测试流程" class="headerlink" title="1、测试流程"></a>1、测试流程</h3><p>范围——计划——设计——实施——结果</p>
+<h2 id="项目实战-黑马头条"><a href="#项目实战-黑马头条" class="headerlink" title="项目实战-黑马头条"></a>项目实战-黑马头条</h2><h3 id="UI自动化测试"><a href="#UI自动化测试" class="headerlink" title="UI自动化测试"></a>UI自动化测试</h3><h4 id="1、测试流程"><a href="#1、测试流程" class="headerlink" title="1、测试流程"></a>1、测试流程</h4><p>范围——计划——设计——实施——结果</p>
 <figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs tex">范围<br>业务	功能<br><br>1、自媒体web端（发布文章）<br>url: http://pc-toutiao-python.itheima.net/<span class="hljs-params">#</span>/index<br>2、后端管理web端（审核文章）<br>url：暂未找到链接<br>3、App应用（查看文章）<br>用网易新闻代替<br></code></pre></td></tr></table></figure>
 
 <figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs tex">计划<br>工具<br>appium	/ webdriver	/ pytest<br>allure	/ logging<br>grid	/ jenkins<br><br>框架<br>1. 测试工具封装<br>	base / tools<br> 2. 页面对象封装<br>	page<br> 3. 测试用例编写<br>	cases / data<br> 4. 结果过程收集<br>	image / report / log<br></code></pre></td></tr></table></figure>
@@ -977,7 +977,7 @@
 
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs c++">结果<br>分析: 报告 / 截图 / 日志<br>定位: 脚本问题 / 软件缺陷 / 数据依赖<br></code></pre></td></tr></table></figure>
 
-<h3 id="2、Selenium-Grid"><a href="#2、Selenium-Grid" class="headerlink" title="2、Selenium 	Grid"></a>2、Selenium 	Grid</h3><p>作用：实现分布式测试，解决兼容性问题</p>
+<h4 id="2、Selenium-Grid"><a href="#2、Selenium-Grid" class="headerlink" title="2、Selenium 	Grid"></a>2、Selenium 	Grid</h4><p>作用：实现分布式测试，解决兼容性问题</p>
 <ol>
 <li>Selenium Grid分布式测试由hub主节点和node节点组成</li>
 <li>Hub节点用来管理node节点注册信息</li>
@@ -999,7 +999,7 @@
 <p><strong>多个浏览器传入参数问题</strong></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> threading<br><span class="hljs-keyword">import</span> time<br><br><span class="hljs-keyword">from</span> selenium <span class="hljs-keyword">import</span> webdriver<br><span class="hljs-keyword">from</span> selenium.webdriver.common.by <span class="hljs-keyword">import</span> By<br><br><span class="hljs-comment"># 2、 封装百度</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">task</span>(<span class="hljs-params">driver</span>):<br>	driver.get(<span class="hljs-string">&quot;https://www.baidu.com/&quot;</span>)<br>	driver.find_element(By.ID, <span class="hljs-string">&quot;kw&quot;</span>).send_keys(<span class="hljs-string">&quot;selenium grid&quot;</span>)<br>	time.sleep(<span class="hljs-number">2</span>)<br>	driver.quit()<br><br><span class="hljs-comment"># 3、封装 driver</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">getDrivder</span>(<span class="hljs-params">browser</span>):<br>	<span class="hljs-comment"># 浏览器描述</span><br>	cap = <span class="hljs-literal">None</span><br> 	<span class="hljs-comment"># 判断浏览器种类		# 拷贝浏览器默认参数</span><br>	<span class="hljs-keyword">if</span> browser == <span class="hljs-string">&quot;chrome&quot;</span>:<br> 		cap = webdriver.DesiredCapabilities.CHROME.copy()	<br> 	<span class="hljs-keyword">elif</span> browser == <span class="hljs-string">&quot;firefox&quot;</span>:<br>        cap = webdriver.DesiredCapabilities.FIREFOX.copy()<br>    <span class="hljs-comment"># 重构浏览器描述 修改默认平台名称</span><br>    cap[<span class="hljs-string">&quot;platform&quot;</span>] = <span class="hljs-string">&quot;WINDOWS&quot;</span><br>    <span class="hljs-comment"># 返回驱动对象</span><br>    <span class="hljs-keyword">return</span> webdriver.Remote(<span class="hljs-string">&#x27;http://192.168.40.21:4444/wd/hub&#x27;</span>, desired_capabilities=cap)<br> <br><span class="hljs-comment"># 4、遍历多线程</span><br><span class="hljs-comment"># 定义浏览器列表</span><br>browsers = [<span class="hljs-string">&#x27;chrome&#x27;</span>, <span class="hljs-string">&#x27;firefox&#x27;</span>]<br><span class="hljs-comment"># 遍历浏览器列表</span><br><span class="hljs-keyword">for</span> b <span class="hljs-keyword">in</span> browsers:<br>    <span class="hljs-comment"># 获取驱动</span><br>    driver = getDrivder(b)<br>    <span class="hljs-comment"># 创建线程执行任务</span><br>    threading.Thread(target=task, args=(driver,)).start()<br></code></pre></td></tr></table></figure></li>
 </ol>
-<h3 id="3、自动化测试流程"><a href="#3、自动化测试流程" class="headerlink" title="3、自动化测试流程"></a>3、自动化测试流程</h3><h4 id="3-1-测试流程"><a href="#3-1-测试流程" class="headerlink" title="3.1 测试流程"></a>3.1 测试流程</h4><ol>
+<h4 id="3、自动化测试流程"><a href="#3、自动化测试流程" class="headerlink" title="3、自动化测试流程"></a>3、自动化测试流程</h4><h5 id="3-1-测试流程"><a href="#3-1-测试流程" class="headerlink" title="3.1 测试流程"></a>3.1 测试流程</h5><ol>
 <li>需求分析</li>
 <li>挑选适合做自动化测试的功能</li>
 <li>设计测试用例</li>
@@ -1009,16 +1009,16 @@
 <li>执行测试用例</li>
 <li>生成测试报告并分析结果</li>
 </ol>
-<h4 id="3-2-测试用例的原则"><a href="#3-2-测试用例的原则" class="headerlink" title="3.2 测试用例的原则"></a>3.2 测试用例的原则</h4><ol>
+<h5 id="3-2-测试用例的原则"><a href="#3-2-测试用例的原则" class="headerlink" title="3.2 测试用例的原则"></a>3.2 测试用例的原则</h5><ol>
 <li>自动化测试用例一般只实现核心业务流程或者重复执行率较高的功能</li>
 <li>自动化测试用例的选择一般以“正向”逻辑的验证为主</li>
 <li>不是所有手工用例都可以使用自动化测试来执行</li>
 <li>尽量减少多个用例脚本之间的依赖</li>
 <li>自动化测试用例执行完毕之后，一般需要回归原点</li>
 </ol>
-<h4 id="3-3-自动化用例模板"><a href="#3-3-自动化用例模板" class="headerlink" title="3.3 自动化用例模板"></a>3.3 自动化用例模板</h4><img src="/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%A8%A1%E6%9D%BF.png" srcset="/img/loading.gif" lazyload class="">
+<h5 id="3-3-自动化用例模板"><a href="#3-3-自动化用例模板" class="headerlink" title="3.3 自动化用例模板"></a>3.3 自动化用例模板</h5><img src="/2024/09/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%A8%A1%E6%9D%BF.png" srcset="/img/loading.gif" lazyload class="">
 
-<h4 id="3-4-项目目录结构搭建"><a href="#3-4-项目目录结构搭建" class="headerlink" title="3.4 项目目录结构搭建"></a>3.4 项目目录结构搭建</h4><ol>
+<h5 id="3-4-项目目录结构搭建"><a href="#3-4-项目目录结构搭建" class="headerlink" title="3.4 项目目录结构搭建"></a>3.4 项目目录结构搭建</h5><ol>
 <li><code>base</code>：所有 <code>page</code> 页面基类，<code>page</code> 页面公共方法目录</li>
 <li><code>page</code>：页面对象目录</li>
 <li><code>scripts</code>：测试脚本</li>
@@ -1028,7 +1028,7 @@
 <li><code>log</code>：脚本运行日志存储目录</li>
 <li><code>tools</code>：工具类存储目录</li>
 </ol>
-<h4 id="3-5-自媒体登陆业务所需公共方法抽取"><a href="#3-5-自媒体登陆业务所需公共方法抽取" class="headerlink" title="3.5 自媒体登陆业务所需公共方法抽取"></a>3.5 自媒体登陆业务所需公共方法抽取</h4><p>base封装思路：根据用例执行业务步骤进行分析页面公共方法进行抽取</p>
+<h5 id="3-5-自媒体登陆业务所需公共方法抽取"><a href="#3-5-自媒体登陆业务所需公共方法抽取" class="headerlink" title="3.5 自媒体登陆业务所需公共方法抽取"></a>3.5 自媒体登陆业务所需公共方法抽取</h5><p>base封装思路：根据用例执行业务步骤进行分析页面公共方法进行抽取</p>
 <ul>
 <li>初始化（driver）</li>
 <li>查找元素封装</li>
@@ -1036,9 +1036,9 @@
 <li>点击元素封装</li>
 <li>获取元素文本</li>
 </ul>
-<h4 id="3-6-工具封装的实现"><a href="#3-6-工具封装的实现" class="headerlink" title="3.6 工具封装的实现"></a>3.6 工具封装的实现</h4><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs tex">a. 模块名编写建议：<br>page+下划线+模块名.py  (如：page<span class="hljs-built_in">_</span>login.py)<br>b. 类名编写建议：<br>大驼峰方式将模块名搬进来，有下划线去掉下划线<br>c. 函数名编写建议：<br>page+下划线+动词+下划线+名词.py  (如：page<span class="hljs-built_in">_</span>input<span class="hljs-built_in">_</span>username)<br></code></pre></td></tr></table></figure>
+<h5 id="3-6-工具封装的实现"><a href="#3-6-工具封装的实现" class="headerlink" title="3.6 工具封装的实现"></a>3.6 工具封装的实现</h5><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs tex">a. 模块名编写建议：<br>page+下划线+模块名.py  (如：page<span class="hljs-built_in">_</span>login.py)<br>b. 类名编写建议：<br>大驼峰方式将模块名搬进来，有下划线去掉下划线<br>c. 函数名编写建议：<br>page+下划线+动词+下划线+名词.py  (如：page<span class="hljs-built_in">_</span>input<span class="hljs-built_in">_</span>username)<br></code></pre></td></tr></table></figure>
 
-<h4 id="3-7-测试业务层结构搭建"><a href="#3-7-测试业务层结构搭建" class="headerlink" title="3.7 测试业务层结构搭建"></a>3.7 测试业务层结构搭建</h4><ol>
+<h5 id="3-7-测试业务层结构搭建"><a href="#3-7-测试业务层结构搭建" class="headerlink" title="3.7 测试业务层结构搭建"></a>3.7 测试业务层结构搭建</h5><ol>
 <li>初始化方法和销毁（结束）方法选择：<ol>
 <li>如果有多条参数化数据，采用类方法</li>
 <li>如果没有参数数据，使用类方法或函数方法没有区别</li>
@@ -1055,7 +1055,7 @@
 </ol>
 </li>
 </ol>
-<h4 id="3-8-pytest-配置文件"><a href="#3-8-pytest-配置文件" class="headerlink" title="3.8 pytest 配置文件"></a>3.8 pytest 配置文件</h4><p>新建在项目的根目录上</p>
+<h5 id="3-8-pytest-配置文件"><a href="#3-8-pytest-配置文件" class="headerlink" title="3.8 pytest 配置文件"></a>3.8 pytest 配置文件</h5><p>新建在项目的根目录上</p>
 <figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-section">[pytest]</span><br><span class="hljs-attr">addopts</span> = -s --alluredir report<br><span class="hljs-attr">testpaths</span> = ./scripts<br><span class="hljs-attr">python_files</span> = test*.py<br><span class="hljs-attr">python_classes</span> = Test*<br><span class="hljs-attr">python_functions</span> = test*<br><br></code></pre></td></tr></table></figure>
 
 <p>除此之外，还需要那幢<code>pytest</code>包和 <code>allure-pytest</code></p>
@@ -1065,7 +1065,7 @@
 <p>然后在终端运行命令</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c++">pytest<br></code></pre></td></tr></table></figure>
 
-<h4 id="3-9-断言和参数化"><a href="#3-9-断言和参数化" class="headerlink" title="3.9 断言和参数化"></a>3.9 断言和参数化</h4><p><strong>断言</strong></p>
+<h5 id="3-9-断言和参数化"><a href="#3-9-断言和参数化" class="headerlink" title="3.9 断言和参数化"></a>3.9 断言和参数化</h5><p><strong>断言</strong></p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs c++"># 测试业务方法<br>    <span class="hljs-function">def <span class="hljs-title">test_mp_login</span><span class="hljs-params">(self, username=<span class="hljs-string">&quot;12011111111&quot;</span>, code=<span class="hljs-string">&quot;246810&quot;</span>, expect = <span class="hljs-string">&quot;python&quot;</span>)</span>:</span><br><span class="hljs-function">        # 调用登陆业务方法</span><br><span class="hljs-function">        self.mp.page_mp_login(username, code)</span><br><span class="hljs-function">        # 断言</span><br><span class="hljs-function">        assert expect =</span>= self.mp.<span class="hljs-built_in">page_get_nickname</span>()  #######  断言<br></code></pre></td></tr></table></figure>
 
 <p><strong>参数化</strong></p>
@@ -1078,7 +1078,7 @@
 <p>scripts里的测试主函数 		scripts\test01_mp_login.py</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 测试业务方法</span><br>	<span class="hljs-comment">######## 参数化	</span><br><span class="hljs-meta">    @pytest.mark.parametrize(<span class="hljs-params"><span class="hljs-string">&#x27;username,code,expect&#x27;</span>, read_yaml(<span class="hljs-params"><span class="hljs-string">&quot;mp_login.yaml&quot;</span></span>)</span>)</span><br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">test_mp_login</span>(<span class="hljs-params">self, username, code, expect</span>):<br>        <span class="hljs-comment"># 调用登陆业务方法</span><br>        self.mp.page_mp_login(username, code)<br>        <span class="hljs-comment"># 断言</span><br>        <span class="hljs-keyword">assert</span> expect == self.mp.page_get_nickname()<br></code></pre></td></tr></table></figure>
 
-<h4 id="3-10-断言失败后的操作"><a href="#3-10-断言失败后的操作" class="headerlink" title="3.10 断言失败后的操作"></a>3.10 断言失败后的操作</h4><p><strong>捕获错误</strong></p>
+<h5 id="3-10-断言失败后的操作"><a href="#3-10-断言失败后的操作" class="headerlink" title="3.10 断言失败后的操作"></a>3.10 断言失败后的操作</h5><p><strong>捕获错误</strong></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">test_mp_login</span>(<span class="hljs-params">self, username, code, expect</span>):<br>    <span class="hljs-comment"># 调用登陆业务方法</span><br>    self.mp.page_mp_login(username, code)<br>    <span class="hljs-keyword">try</span>:<br>        <span class="hljs-comment"># 断言</span><br>        <span class="hljs-keyword">assert</span> expect == self.mp.page_get_nickname()<br>    <span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:<br>        <span class="hljs-comment"># 输出错误信息</span><br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;错误原因：&quot;</span>, e)<br>        <span class="hljs-comment"># 截图</span><br>        self.mp.base_get_img()<br>        <span class="hljs-comment"># 抛异常</span><br>        <span class="hljs-keyword">raise</span><br></code></pre></td></tr></table></figure>
 
 <p><strong>输出错误，截图保存错误，抛出异常</strong></p>
@@ -1087,12 +1087,12 @@
 
 
 
-<h4 id="3-11-生成报告"><a href="#3-11-生成报告" class="headerlink" title="3.11 生成报告"></a>3.11 生成报告</h4><p>离线和在线两种方式</p>
+<h5 id="3-11-生成报告"><a href="#3-11-生成报告" class="headerlink" title="3.11 生成报告"></a>3.11 生成报告</h5><p>离线和在线两种方式</p>
 <p>下面是在线，控制台输入</p>
 <p>你需要确保 Allure 命令行工具已正确安装，并将其添加到系统的 <code>PATH</code> 环境变量中。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">allure serve report<br></code></pre></td></tr></table></figure>
 
-<h4 id="3-12-日志封装"><a href="#3-12-日志封装" class="headerlink" title="3.12 日志封装"></a>3.12 日志封装</h4><ol>
+<h5 id="3-12-日志封装"><a href="#3-12-日志封装" class="headerlink" title="3.12 日志封装"></a>3.12 日志封装</h5><ol>
 <li>日志组件组成<ol>
 <li>格式器:日志输入格式</li>
 <li>处理器:处理日志信息</li>
@@ -1112,7 +1112,7 @@
 
 <p>一般在 <code>Base</code>、<code>Page</code>和测试脚本里    使用</p>
 <p>日志必须标注地点:base所有方法、page业务方法、scripts断言异常区域</p>
-<h4 id="3-13-发布文章-自动化测试方法-和-封装抽取"><a href="#3-13-发布文章-自动化测试方法-和-封装抽取" class="headerlink" title="3.13 发布文章 自动化测试方法 和 封装抽取"></a>3.13 发布文章 自动化测试方法 和 封装抽取</h4><p>前面是登陆，现在是发布文章</p>
+<h5 id="3-13-发布文章-自动化测试方法-和-封装抽取"><a href="#3-13-发布文章-自动化测试方法-和-封装抽取" class="headerlink" title="3.13 发布文章 自动化测试方法 和 封装抽取"></a>3.13 发布文章 自动化测试方法 和 封装抽取</h5><p>前面是登陆，现在是发布文章</p>
 <p><strong>重点</strong></p>
 <ol>
 <li>依赖登录方法(在 PageMpLogin 单独封装中实现)</li>
@@ -1130,7 +1130,7 @@
 </li>
 </ol>
 <p><strong>封装抽取</strong></p>
-<h4 id="3-13-web专属方法存储到web-base中-集成Base"><a href="#3-13-web专属方法存储到web-base中-集成Base" class="headerlink" title="3.13 web专属方法存储到web_base中(集成Base)"></a>3.13 web专属方法存储到web_base中(集成Base)</h4><p>web 页面模块继承 <code>WebBase</code></p>
+<h5 id="3-13-web专属方法存储到web-base中-集成Base"><a href="#3-13-web专属方法存储到web-base中-集成Base" class="headerlink" title="3.13 web专属方法存储到web_base中(集成Base)"></a>3.13 web专属方法存储到web_base中(集成Base)</h5><p>web 页面模块继承 <code>WebBase</code></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> time <span class="hljs-keyword">import</span> sleep<br><br><span class="hljs-keyword">from</span> selenium.webdriver.common.by <span class="hljs-keyword">import</span> By<br><br><span class="hljs-keyword">from</span> base.base <span class="hljs-keyword">import</span> Base<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">WebBase</span>(<span class="hljs-title class_ inherited__">Base</span>):<br>    <span class="hljs-string">&#x27;&#x27;&#x27;以下为web项目专属方法&#x27;&#x27;&#x27;</span><br><br>    <span class="hljs-comment"># 根据显示文本点击指定元素</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">web_base_click_element</span>(<span class="hljs-params">self, placeholder_text, click_text</span>):<br>        <span class="hljs-comment"># 1. 点击元素框</span><br>        loc = By.CSS_SELECTOR, <span class="hljs-string">&quot;[placeholder=&#x27;&#123;&#125;&#x27;]&quot;</span>.<span class="hljs-built_in">format</span>(placeholder_text)<br>        self.base_click(loc)<br><br>        <span class="hljs-comment"># 2. 暂停     必须暂停，因为这里是动态加载的复选框</span><br>        sleep(<span class="hljs-number">1</span>)<br><br>        <span class="hljs-comment"># 3. 点击包含显示文本的元素        文本只能使用 Xpath</span><br>        loc = By.XPATH, <span class="hljs-string">&quot;//*[text()=&#x27;&#123;&#125;&#x27;]&quot;</span>.<span class="hljs-built_in">format</span>(click_text)<br>        self.base_click(loc)<br><br></code></pre></td></tr></table></figure>
 
 <p><code>page</code> 封装方法</p>
@@ -1138,7 +1138,7 @@
 
 
 
-<h4 id="3-14-完善-Page-内容"><a href="#3-14-完善-Page-内容" class="headerlink" title="3.14 完善 Page 内容"></a>3.14 完善 Page 内容</h4><p>配置信息		page&#x2F;<strong>init</strong>.py</p>
+<h5 id="3-14-完善-Page-内容"><a href="#3-14-完善-Page-内容" class="headerlink" title="3.14 完善 Page 内容"></a>3.14 完善 Page 内容</h5><p>配置信息		page&#x2F;<strong>init</strong>.py</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><code class="hljs python"><br><span class="hljs-keyword">from</span> selenium.webdriver.common.by <span class="hljs-keyword">import</span> By<br><br><span class="hljs-comment"># 元素配置信息统一存放管理（__init__.py）</span><br><span class="hljs-comment"># 能使用 CSS 选择器定位， 不适用 xpath 定位</span><br><span class="hljs-string">&quot;&quot;&quot;以下数据为自媒体、后台管理 url&quot;&quot;&quot;</span><br><span class="hljs-comment"># 自媒体 url</span><br>url_mp = <span class="hljs-string">&quot;http://pc-toutiao-python.itheima.net/#/login&quot;</span><br><span class="hljs-comment"># 后台管理</span><br>url_mis = <span class="hljs-string">&quot;&quot;</span><br><br><span class="hljs-string">&quot;&quot;&quot;以下数据为自媒体模块配置数据&quot;&quot;&quot;</span><br><br><span class="hljs-comment"># 用户名</span><br>mp_username = (By.CSS_SELECTOR, <span class="hljs-string">&#x27;[placeholder=&quot;请输入手机号&quot;]&#x27;</span>)<br><br><span class="hljs-comment"># 验证码</span><br>mp_code = (By.CSS_SELECTOR, <span class="hljs-string">&#x27;[placeholder=&quot;验证码&quot;]&#x27;</span>)<br><br><span class="hljs-comment"># 登陆按钮</span><br>mp_login_btn = (By.CSS_SELECTOR, <span class="hljs-string">&#x27;.el-button--primary&#x27;</span>)<br><br><span class="hljs-comment"># 昵称</span><br>mp_nickname = (By.CSS_SELECTOR, <span class="hljs-string">&#x27;.user-name&#x27;</span>)<br><br><span class="hljs-comment"># 内容管理      XPATH 查找</span><br>mp_content_manager = By.XPATH, <span class="hljs-string">&quot;//span[text()=&#x27;内容管理&#x27;]/..&quot;</span><br><br><span class="hljs-comment"># 发布文章</span><br>mp_publish_article = By.XPATH, <span class="hljs-string">&quot;//*[contains(text(), &#x27;发布文章&#x27;)]&quot;</span><br><br><span class="hljs-comment"># 文章标题</span><br>mp_title = By.CSS_SELECTOR, <span class="hljs-string">&quot;[placeholder=&#x27;文章名称&#x27;]&quot;</span><br><br><span class="hljs-comment"># iframe</span><br>mp_iframe = By.CSS_SELECTOR, <span class="hljs-string">&quot;#publishTinymce_ifr&quot;</span><br><br><span class="hljs-comment"># 文章内容   定位到body， 勿定位到p标题</span><br>mp_content = By.CSS_SELECTOR, <span class="hljs-string">&quot;#tinymce&quot;</span><br><br><span class="hljs-comment"># 封面</span><br>mp_cover = By.XPATH, <span class="hljs-string">&quot;//*[text()=&#x27;自动&#x27;]&quot;</span><br><br><span class="hljs-comment"># 发表</span><br>mp_submit = By.XPATH, <span class="hljs-string">&quot;//*[text()=&#x27;发表&#x27;]/..&quot;</span><br><br><span class="hljs-comment"># 结果</span><br>mp_result = By.XPATH, <span class="hljs-string">&quot;//*[contains(text(), &#x27;新增文章成功&#x27;)]&quot;</span><br></code></pre></td></tr></table></figure>
 
 <p>页面结构实际操作实践		page&#x2F;page_mp_article.py</p>
@@ -1147,13 +1147,181 @@
 <p>获取这个页面对象的方法，放在统一入口类			page&#x2F;page_in.py</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> page.page_mp_article <span class="hljs-keyword">import</span> PageMpArticle<br><span class="hljs-keyword">from</span> page.page_mp_login <span class="hljs-keyword">import</span> PageMpLogin<br><br><span class="hljs-comment"># 统一入口类</span><br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">PageIn</span>:<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, driver</span>):<br>        self.driver = driver<br><br>    <span class="hljs-comment"># 获取 PageMpLogin 对象</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">page_get_PageMpLogin</span>(<span class="hljs-params">self</span>):<br>        <span class="hljs-keyword">return</span> PageMpLogin(self.driver)<br><br>    <span class="hljs-comment"># 获取 PageMpArticle 对象</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">page_get_PageMpAriticle</span>(<span class="hljs-params">self</span>):<br>        <span class="hljs-keyword">return</span> PageMpArticle(self.driver)<br></code></pre></td></tr></table></figure>
 
-<h4 id="3-15-发布文章-测试代码的编写"><a href="#3-15-发布文章-测试代码的编写" class="headerlink" title="3.15 发布文章  测试代码的编写"></a>3.15 发布文章  测试代码的编写</h4><p>scripts&#x2F;test02_mp_article.py</p>
+<h5 id="3-15-发布文章-测试代码的编写"><a href="#3-15-发布文章-测试代码的编写" class="headerlink" title="3.15 发布文章  测试代码的编写"></a>3.15 发布文章  测试代码的编写</h5><p>scripts&#x2F;test02_mp_article.py</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs c++">from page.page_in <span class="hljs-keyword">import</span> PageIn<br>from tools.get_driver <span class="hljs-keyword">import</span> GetDriver<br><span class="hljs-keyword">import</span> page<br><br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">TestMpArticle</span>:<br>    # <span class="hljs-number">1.</span> 初始化<br>    <span class="hljs-function">def <span class="hljs-title">setup_class</span><span class="hljs-params">(self)</span>:</span><br><span class="hljs-function">        # <span class="hljs-number">1.</span> 获取 driver</span><br><span class="hljs-function">        driver =</span> GetDriver.<span class="hljs-built_in">get_web_driver</span>(page.url_mp)<br>        # <span class="hljs-number">2.</span> 获取统一入口类<br>        self.page_in = <span class="hljs-built_in">PageIn</span>(driver)<br>        # <span class="hljs-number">3.</span> 获取 PageMpLogin 对象 并调用成功登录依赖方法<br>        self.page_in.<span class="hljs-built_in">page_get_PageMpLogin</span>().<span class="hljs-built_in">page_mp_login_success</span>()<br>        # <span class="hljs-number">4.</span> 获取 PageMpArticle 页面对象<br>        self.article = self.page_in.<span class="hljs-built_in">page_get_PageMpAriticle</span>()<br><br><br>    # <span class="hljs-number">2.</span> 结束<br>    def <span class="hljs-built_in">teardown_class</span>(self):<br>        # 关闭 driver<br>        GetDriver.<span class="hljs-built_in">quit_web_driver</span>()<br><br>    # <span class="hljs-number">3.</span>测试发布文章方法<br>    def <span class="hljs-built_in">test_mp_article</span>(self, title=<span class="hljs-string">&quot;test001-bj001&quot;</span>, content=<span class="hljs-string">&quot;今晚吃汤饭！&quot;</span>):<br>        # 调用发布文章业务方法<br>        self.article.<span class="hljs-built_in">page_mp_article</span>(title, content)<br>        # 查看断言信息<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;发布文章的结果为：&quot;</span>, self.article.<span class="hljs-built_in">page_get_info</span>())<br><br><br></code></pre></td></tr></table></figure>
 
 <p> 修改		pytest.ini</p>
 <figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-section">[pytest]</span><br><span class="hljs-attr">addopts</span> = -s --alluredir report<br><span class="hljs-attr">testpaths</span> = ./scripts<br><span class="hljs-attr">python_files</span> = test02_mp_article.py		<span class="hljs-comment">#    改了这里</span><br><span class="hljs-attr">python_classes</span> = Test*<br><span class="hljs-attr">python_functions</span> = test*<br><br></code></pre></td></tr></table></figure>
 
 <p>终端执行 <code>pytest</code> 运行测试程序</p>
+<h3 id="性能测试"><a href="#性能测试" class="headerlink" title="性能测试"></a>性能测试</h3><h4 id="1、Locust介绍"><a href="#1、Locust介绍" class="headerlink" title="1、Locust介绍"></a>1、Locust介绍</h4><p>介绍：python语言中开源的一个性能测试工具，主要思想是模拟一群用户访问你的系统</p>
+<p>特点：</p>
+<ol>
+<li>在代码中定义用户行为<ul>
+<li>不需要安装笨重的软件，只是简单的Python代码</li>
+</ul>
+</li>
+<li>分布式和可扩展<ul>
+<li>Locust支持在多台机器上的运行负载测试，因此可用于模拟数百万用户的请求</li>
+</ul>
+</li>
+<li>经过验证和战斗测试<ul>
+<li>Locust被用于许多真实的项目中</li>
+</ul>
+</li>
+<li>Locust有一个整洁的HTML+JS的用户界面，实时显示相关测试细节<ul>
+<li>由于用户界面是基于网络的，它是跨平台的和容易扩展</li>
+</ul>
+</li>
+</ol>
+<p>安装locust</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">pip install locustio==0.11.0	// 安装<br>pip show locust		// 查看安装信息<br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="2、编写测试脚本"><a href="#2、编写测试脚本" class="headerlink" title="2、编写测试脚本"></a>2、编写测试脚本</h4><p>实现步骤</p>
+<ol>
+<li><p>定义任务（接口请求）</p>
+</li>
+<li><p>定义任务集（用户行为）</p>
+</li>
+<li><p>定义Locust（用户）</p>
+</li>
+</ol>
+<h5 id="2-1-脚本代码实现"><a href="#2-1-脚本代码实现" class="headerlink" title="2.1 脚本代码实现"></a>2.1 脚本代码实现</h5><p>scripts&#x2F;locustfile.py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> locust <span class="hljs-keyword">import</span> TaskSet, HttpLocust<br><br><span class="hljs-comment"># 1. 定义任务</span><br><span class="hljs-string">&#x27;&#x27;&#x27; 注： 普通函数，必须有一个形参&#x27;&#x27;&#x27;</span><br><br><span class="hljs-comment"># 任务1 说话</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">say</span>(<span class="hljs-params">params</span>):<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;正在说话&quot;</span>)<br><br><span class="hljs-comment"># 任务2 唱歌</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">sing</span>(<span class="hljs-params">params</span>):<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;正在唱歌&quot;</span>)<br><br><br><br><span class="hljs-comment"># 2. 定义任务集</span><br><span class="hljs-string">&#x27;&#x27;&#x27; 注: 一个类必须继承 TaskSet , 复写tasks-格式为列表或字典，值为任务函数名&#x27;&#x27;&#x27;</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">TaskTest</span>(<span class="hljs-title class_ inherited__">TaskSet</span>):<br>    <span class="hljs-comment"># 复写 tasks</span><br>    tasks = [say, sing]<br><br><span class="hljs-comment"># 3. 定义用户类</span><br><span class="hljs-string">&#x27;&#x27;&#x27; 注： 一个类必须继承HttpLocust, 复写 task_set 参数，值为任务及类名称&#x27;&#x27;&#x27;</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">RunUser</span>(<span class="hljs-title class_ inherited__">HttpLocust</span>):<br>    <span class="hljs-comment"># 复写 task_set 参数</span><br>    task_set = TaskTest<br></code></pre></td></tr></table></figure>
+
+
+
+<h5 id="2-2-运行脚本"><a href="#2-2-运行脚本" class="headerlink" title="2.2 运行脚本"></a>2.2 运行脚本</h5><p>你当前的代码使用了旧版本的 Locust 类 <code>HttpLocust</code> 和 <code>TaskSet</code>，而在 Locust 1.0 之后，这些类已被重命名。要解决这个问题，需要将 <code>HttpLocust</code> 替换为 <code>HttpUser</code>，将 <code>TaskSet</code> 替换为 <code>SequentialTaskSet</code>（如果你希望任务按顺序执行）或 <code>TaskSet</code>（如果你希望任务随机执行），并调整一些语法。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> locust <span class="hljs-keyword">import</span> HttpUser, SequentialTaskSet, task<br><br><span class="hljs-comment"># 1. 定义任务</span><br><span class="hljs-string">&#x27;&#x27;&#x27; 注： 普通函数，必须有一个形参&#x27;&#x27;&#x27;</span><br><span class="hljs-comment"># 任务1 说话</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">say</span>(<span class="hljs-params">params</span>):<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;正在说话&quot;</span>)<br><br><span class="hljs-comment"># 任务2 唱歌</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">sing</span>(<span class="hljs-params">params</span>):<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;正在唱歌&quot;</span>)<br><br><br><span class="hljs-comment"># 2. 定义任务集</span><br><span class="hljs-string">&#x27;&#x27;&#x27; 注: 一个类必须继承 SequentialTaskSet 或 TaskSet，并使用 @task 注解来标记任务函数 &#x27;&#x27;&#x27;</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">TaskTest</span>(<span class="hljs-title class_ inherited__">SequentialTaskSet</span>):<br><br>    tasks = [say, sing]<br><br><span class="hljs-comment"># 3. 定义用户类</span><br><span class="hljs-string">&#x27;&#x27;&#x27; 注： 一个类必须继承HttpLocust, 复写 task_set 参数，值为任务及类名称&#x27;&#x27;&#x27;</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">RunUser</span>(<span class="hljs-title class_ inherited__">HttpUser</span>):<br>    <span class="hljs-comment"># 复写 tasks 参数，值为任务集类名称</span><br>    taskset = [TaskTest]<br><br>    <span class="hljs-comment"># 设置用户的等待时间（可选，可根据需要进行调整）</span><br>    wait_time = <span class="hljs-keyword">lambda</span> self: <span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>第一种</strong>：文件名以<code>locustfile.py</code>命名</p>
+<p>在切换到 <code>scripts</code> 目录下，在终端执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">\locust_case\scripts&gt;(前面是目录，后面是命令) locust --host=http://localhost<br></code></pre></td></tr></table></figure>
+
+<p><strong>第二种</strong>：任意名称 比如 <code>test01.py</code>   用  <code>-f</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">lucost -f scripts/test01.py --host=http://localhost<br><br>执行结果<br>[2024-10-25 15:54:02,138] DESKTOP-ZY/INFO/locust.main: Starting Locust 2.32.0<br>[2024-10-25 15:54:02,161] DESKTOP-ZY/INFO/locust.main: Starting web interface at http://localhost:8089 (accepting connections from all network interfaces)<br>[2024-10-25 15:56:26,302] DESKTOP-ZY/INFO/locust.runners: Ramping to 10 <span class="hljs-built_in">users</span> at a rate of 2.00 per second<br><br></code></pre></td></tr></table></figure>
+
+
+
+<h5 id="2-3-案例演示环境说明"><a href="#2-3-案例演示环境说明" class="headerlink" title="2.3 案例演示环境说明"></a>2.3 案例演示环境说明</h5><p>系统包含以下接口</p>
+<ol>
+<li><p>登陆</p>
+<ul>
+<li><p>URL：<a target="_blank" rel="noopener" href="http://182.92.81.159:1880/bms/login">http://182.92.81.159:1880/bms/login</a></p>
+</li>
+<li><p>请求方法：POST</p>
+</li>
+<li><p>请求参数：{“username”:”admin”,”password”:”123456”}</p>
+</li>
+</ul>
+</li>
+<li><p>首页</p>
+<ul>
+<li>URL: <a target="_blank" rel="noopener" href="http://182.92.81.159:1880/bms/index">http://182.92.81.159:1880/bms/index</a></li>
+<li>请求方式:GET</li>
+</ul>
+</li>
+<li><p>获取用户信息</p>
+<ul>
+<li>URL: <a target="_blank" rel="noopener" href="http://182.92.81.159:1880/bms/profile">http://182.92.81.159:1880/bms/profile</a></li>
+<li>请求方式:GET</li>
+</ul>
+</li>
+<li><p>退出</p>
+<ul>
+<li>URL: <a target="_blank" rel="noopener" href="http://182.92.81.159:1880/bms/logout">http://182.92.81.159:1880/bms/logout</a></li>
+<li>请求方式:POST</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><code class="hljs python"><br><span class="hljs-keyword">from</span> locust <span class="hljs-keyword">import</span> HttpUser, SequentialTaskSet<br><br><br><span class="hljs-string">&#x27;&#x27;&#x27; 1. 定义任务 &#x27;&#x27;&#x27;</span><br><span class="hljs-comment"># 1. 登陆</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">login</span>(<span class="hljs-params">session</span>):<br>    <span class="hljs-comment"># 请求post方法</span><br>    r = session.client.post(url=<span class="hljs-string">&quot;/bms/login&quot;</span>, data=&#123;<span class="hljs-string">&quot;username&quot;</span>:<span class="hljs-string">&quot;admin&quot;</span>,<span class="hljs-string">&quot;password&quot;</span>:<span class="hljs-string">&quot;123456&quot;</span>&#125;)<br>    <span class="hljs-comment"># 查看登陆结果 json</span><br>    <span class="hljs-built_in">print</span>(r.json)<br><br><span class="hljs-comment"># 2. 打开首页</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">index</span>(<span class="hljs-params">session</span>):<br>    <span class="hljs-comment"># 调用get方法</span><br>    r = session.client.get(url=<span class="hljs-string">&quot;/bms/index&quot;</span>)<br>    <span class="hljs-comment"># 查看结果 text 方法解析</span><br>    <span class="hljs-built_in">print</span>(r.text)<br><br><span class="hljs-comment"># 3. 查询用户信息</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">user</span>(<span class="hljs-params">session</span>):<br>    <span class="hljs-comment"># 调用get方法</span><br>    r = session.client.get(url=<span class="hljs-string">&quot;/bms/user&quot;</span>)<br>    <span class="hljs-comment"># 查看结果</span><br>    <span class="hljs-built_in">print</span>(r.text)<br><br><span class="hljs-comment"># 4. 退出登陆</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">logout</span>(<span class="hljs-params">session</span>):<br>    <span class="hljs-comment"># 调用post方法</span><br>    r = session.client.post(url=<span class="hljs-string">&quot;/bms/logout&quot;</span>)<br>    <span class="hljs-comment"># 查看结果</span><br>    <span class="hljs-built_in">print</span>(r.json)<br><br><span class="hljs-string">&#x27;&#x27;&#x27; 2. 定义任务集 &#x27;&#x27;&#x27;</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">TaskTest</span>(<span class="hljs-title class_ inherited__">SequentialTaskSet</span>):<br>    <span class="hljs-comment"># 复写Tasks属性</span><br>    tasks = [login, index, user, logout]<br><br><span class="hljs-string">&#x27;&#x27;&#x27; 3. 定义用户类 &#x27;&#x27;&#x27;</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">UserRun</span>(<span class="hljs-title class_ inherited__">HttpUser</span>):<br>    <span class="hljs-comment"># 复写 taskset</span><br>    taskset = TaskTest<br><br>    <span class="hljs-comment"># 定义 host</span><br>    host = <span class="hljs-string">&quot;http://182.92.81.159:1880&quot;</span><br></code></pre></td></tr></table></figure>
+
+<h5 id="2-4-任务集、用户集和常用的方法"><a href="#2-4-任务集、用户集和常用的方法" class="headerlink" title="2.4 任务集、用户集和常用的方法"></a>2.4 任务集、用户集和常用的方法</h5><p><strong>定义任务集</strong></p>
+<p>定义一个用户行为（任务集），包含多个具体的任务</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> locust <span class="hljs-keyword">import</span> TaskSet<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">UserBehavior</span>(<span class="hljs-title class_ inherited__">TaskSet</span>):<br>	tasks =&#123;index:<span class="hljs-number">3</span>,profile:<span class="hljs-number">1</span>&#125;<br>	<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">on_start</span>(<span class="hljs-params">self</span>):<br>		login(self)<br>	<span class="hljs-keyword">def</span> <span class="hljs-title function_">on_stop</span>(<span class="hljs-params">self</span>):<br>		logout(self)<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>一个用户行为类，要继承<code>TaskSet</code>类，表示一个任务集</li>
+<li><code>on_start</code>:前置方法(前置任务)，在所有任务之前调用</li>
+<li><code>on_stop</code>: 后置方法(后置任务)，当任务集停止时调用</li>
+<li>tasks:用来添加任务，它是一个dict类型，key表示任务的方法名，value表示挑选执行的权重，数值越大执行频率越高</li>
+</ul>
+<p><strong>定义Locust类</strong></p>
+<p>定义一个<code>Locust</code>类，这个类代表用户</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> locust <span class="hljs-keyword">import</span> HttpLocust<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">WebsiteUser</span>(<span class="hljs-title class_ inherited__">HttpLocust</span>):<br>	task_set = UserBehavior<br>	min_wait = <span class="hljs-number">2000</span><br>	max_wait = <span class="hljs-number">3000</span><br>	host = <span class="hljs-string">&quot;http://182.92.81.159:1880/bms&#x27;</span><br><span class="hljs-string">	weight = 10</span><br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>自定义的<code>Locupt</code>类继承了 <code>HttpLocust</code> 类，这个类代表用户，生成一个实例，模拟用户发送http请求</li>
+<li><code>task_set</code>:该属性指向<code>Taskset</code> 类，定义用户的行为</li>
+<li><code>min_wait</code>:用户执行任务之间等待时间的下界，单位:毫秒，默认值:1000</li>
+<li><code>max_wait</code>:用户执行任务之间等待时间的上界，单位:毫秒，默认值:1000</li>
+<li>host:被测应用的网址，例如:<a target="_blank" rel="noopener" href="http://localhost:8080/bms">http://localhost:8080/bms</a></li>
+<li>weight:用户被选中的概率，权重越大，被选中的机会就越大。默认值:10</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-string">&#x27;&#x27;&#x27; 2. 定义任务集 &#x27;&#x27;&#x27;</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">TaskTest</span>(<span class="hljs-title class_ inherited__">SequentialTaskSet</span>):<br>    <span class="hljs-comment"># 复写Tasks属性</span><br>    <span class="hljs-comment"># tasks = [index, user]</span><br>    tasks = &#123;index:<span class="hljs-number">10</span>, user:<span class="hljs-number">1</span>&#125;			<span class="hljs-comment">#########################</span><br><br>    <span class="hljs-comment"># 初始化执行方法</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">onstart</span>(<span class="hljs-params">self</span>):<br>        login(self)<br><br>    <span class="hljs-comment"># 结束执行方法</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">on_start</span>(<span class="hljs-params">self</span>):<br>        logout(self)<br><br><span class="hljs-string">&#x27;&#x27;&#x27; 3. 定义用户类 &#x27;&#x27;&#x27;</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">UserRun</span>(<span class="hljs-title class_ inherited__">HttpUser</span>):<br>    <span class="hljs-comment"># 复写 taskset</span><br>    taskset = TaskTest<br><br>    <span class="hljs-comment"># 定义 host</span><br>    host = <span class="hljs-string">&quot;http://182.92.81.159:1880&quot;</span><br><br>    <span class="hljs-comment"># 最小延迟时间 毫秒					#####################</span><br>    min_wait= <span class="hljs-number">1000</span><br>    <span class="hljs-comment"># 最大延迟时间</span><br>    max_wait = <span class="hljs-number">3000</span><br>    <span class="hljs-comment"># 权重</span><br>    weight = <span class="hljs-number">10</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>图标结果</strong></p>
+<p>RPS:每秒相应时间</p>
+<p>平均时延</p>
+<p>模拟用户数</p>
+<h5 id="2-5-任务集的第二种写法"><a href="#2-5-任务集的第二种写法" class="headerlink" title="2.5 任务集的第二种写法"></a>2.5 任务集的第二种写法</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><code class="hljs python"><br><span class="hljs-keyword">from</span> locust <span class="hljs-keyword">import</span> HttpUser, SequentialTaskSet, task<br><br><span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">    目标：任务和任务集第二种写法</span><br><span class="hljs-string">    核心：@tasks</span><br><span class="hljs-string">&quot;&quot;&quot;</span><br><br><br><span class="hljs-string">&#x27;&#x27;&#x27; 2. 定义任务集 &#x27;&#x27;&#x27;</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">TaskTest</span>(<span class="hljs-title class_ inherited__">SequentialTaskSet</span>):<br>    <span class="hljs-comment"># 复写Tasks属性</span><br>    <span class="hljs-comment"># tasks = [index, user]</span><br>    <span class="hljs-comment"># tasks = &#123;index:10, user:1&#125;</span><br><br>    <span class="hljs-comment"># 1. 登陆</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">login</span>(<span class="hljs-params">self</span>):<br>        <span class="hljs-comment"># 请求post方法</span><br>        r = self.client.post(url=<span class="hljs-string">&quot;/bms/login&quot;</span>, data=&#123;<span class="hljs-string">&quot;username&quot;</span>: <span class="hljs-string">&quot;admin&quot;</span>, <span class="hljs-string">&quot;password&quot;</span>: <span class="hljs-string">&quot;123456&quot;</span>&#125;)<br>        <span class="hljs-comment"># 查看登陆结果 json</span><br>        <span class="hljs-built_in">print</span>(r.json)<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;正在调用登陆方法。。。&quot;</span>)<br><br>    <span class="hljs-comment"># 2. 打开首页</span><br><span class="hljs-meta">    @task(<span class="hljs-params"><span class="hljs-number">10</span></span>)</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">index</span>(<span class="hljs-params">self</span>):<br>        <span class="hljs-comment"># 调用get方法</span><br>        r = self.client.get(url=<span class="hljs-string">&quot;/bms/index&quot;</span>)<br>        <span class="hljs-comment"># 查看结果 text 方法解析</span><br>        <span class="hljs-built_in">print</span>(r.text)<br><br>    <span class="hljs-comment"># 3. 查询用户信息</span><br><span class="hljs-meta">    @task(<span class="hljs-params"><span class="hljs-number">1</span></span>)</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">user</span>(<span class="hljs-params">self</span>):<br>        <span class="hljs-comment"># 调用get方法</span><br>        r = self.client.get(url=<span class="hljs-string">&quot;/bms/user&quot;</span>)<br>        <span class="hljs-comment"># 查看结果</span><br>        <span class="hljs-built_in">print</span>(r.text)<br><br>    <span class="hljs-comment"># 4. 退出登陆</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">logout</span>(<span class="hljs-params">self</span>):<br>        <span class="hljs-comment"># 调用post方法</span><br>        r = self.client.post(url=<span class="hljs-string">&quot;/bms/logout&quot;</span>)<br>        <span class="hljs-comment"># 查看结果</span><br>        <span class="hljs-built_in">print</span>(r.json)<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;正在调用退出登陆方法。。。&quot;</span>)<br><br>    <span class="hljs-comment"># 初始化执行方法</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">onstart</span>(<span class="hljs-params">self</span>):<br>        self.login()<br><br>    <span class="hljs-comment"># 结束执行方法</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">on_start</span>(<span class="hljs-params">self</span>):<br>        self.logout()<br><br><span class="hljs-string">&#x27;&#x27;&#x27; 3. 定义用户类 &#x27;&#x27;&#x27;</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">UserRun</span>(<span class="hljs-title class_ inherited__">HttpUser</span>):<br>    <span class="hljs-comment"># 复写 taskset</span><br>    taskset = TaskTest<br><br>    <span class="hljs-comment"># 定义 host</span><br>    host = <span class="hljs-string">&quot;http://182.92.81.159:1880&quot;</span><br><br>    <span class="hljs-comment"># 最小延迟时间 毫秒</span><br>    min_wait= <span class="hljs-number">1000</span><br>    <span class="hljs-comment"># 最大延迟时间</span><br>    max_wait = <span class="hljs-number">3000</span><br>    <span class="hljs-comment"># 权重</span><br>    weight = <span class="hljs-number">10</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h5 id="2-6-Locust分布式"><a href="#2-6-Locust分布式" class="headerlink" title="2.6 Locust分布式"></a>2.6 Locust分布式</h5><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs stylus">分布式实现(分布式控制机和执行机需要有locust环境和脚本)<br> b)  运行：<br>    <span class="hljs-selector-tag">i</span>:  主机：locust -f 目录\模块<span class="hljs-selector-class">.py</span> <span class="hljs-attr">--master</span> <br>    ii: 从属主机：locust -f 目录\模块<span class="hljs-selector-class">.py</span> <span class="hljs-attr">--slave</span> <span class="hljs-attr">--master-host</span>=主机ip地址<br> c)  参数：<br>	<span class="hljs-selector-tag">i</span>:  <span class="hljs-attr">--master</span>: 主机（控制机）<br>	ii: <span class="hljs-attr">--slave</span>: 从属主机（执行机）<br>	<br>命令行处理<br>a)  命令<br>	<span class="hljs-selector-tag">i</span>:  主机：locust -f 目录/模块<span class="hljs-selector-class">.py</span> <span class="hljs-attr">--master</span> <span class="hljs-attr">--no-web</span> -c <span class="hljs-number">100</span> -r <span class="hljs-number">10</span> <span class="hljs-attr">--expect</span> slaves <span class="hljs-number">2</span> <span class="hljs-attr">--run-time</span> <span class="hljs-number">20</span> <span class="hljs-attr">--csv</span>=./master_result<span class="hljs-selector-class">.csv</span><br> 	ii: 从属主机：locust -f 目录\模块<span class="hljs-selector-class">.py</span> <span class="hljs-attr">--slave</span> <span class="hljs-attr">--master-host</span>=主机ip地址 <span class="hljs-attr">--csv</span>=slave_result<span class="hljs-selector-class">.csv</span><br> b)  参数：<br>	<span class="hljs-selector-tag">i</span>:  <span class="hljs-attr">--no-web</span>: 无web页面运行<br>	ii: -c : 虚拟用户数<br>	iii:-r : 每秒孵化数<br>	iv: <span class="hljs-attr">--expect-slaves</span> : 指定从属主机数量<br>	v:  <span class="hljs-attr">--run-time</span>: 运行指定时长<br>	vi: <span class="hljs-attr">--csv</span>: 保存结果<br></code></pre></td></tr></table></figure>
+
+
+
+<h5 id="2-7-集成使用"><a href="#2-7-集成使用" class="headerlink" title="2.7 集成使用"></a>2.7 集成使用</h5><h4 id="3-App-性能测试"><a href="#3-App-性能测试" class="headerlink" title="3 App 性能测试"></a>3 App 性能测试</h4><h5 id="3-1-App-性能常见测试指标"><a href="#3-1-App-性能常见测试指标" class="headerlink" title="3.1 App 性能常见测试指标"></a>3.1 App 性能常见测试指标</h5><p><strong>性能指标</strong></p>
+<ol>
+<li>启动时长 </li>
+<li>cpu </li>
+<li>内存 </li>
+<li>电量 </li>
+<li>流量</li>
+</ol>
+<p><strong>性能指标参考</strong></p>
+<ol>
+<li>竞品分析</li>
+<li>版本对比</li>
+<li>产品经理给的预期指标值</li>
+</ol>
+<h5 id="3-2-启动时长"><a href="#3-2-启动时长" class="headerlink" title="3.2 启动时长"></a>3.2 启动时长</h5><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs tex">a)  App启动方式：<br>	i.  冷启动：app应用进程没有在手机中运行<br>	ii. 热启动：app应用在手机中已启动（当前界面、置于后台）<br>	<br>b)  查看启动时长命令：<br>	i.  命令：adb shell am start -W -n 报名/启动名<br>	ii. 关注：TotalTime<br>	<br>c)  停止App命令：<br>	i.  命令：adb shell am force-stop 包名<br>	ii. 说明：停止不是杀死App，相当于设置-&gt;应用-&gt;强制停止<br>d)  把App置于后台：<br>	i.  命令：adb shell input keyevent 3<br> 	ii. 说明：3为home键码<br>	iii.    其他键码： 参考android键码表<br></code></pre></td></tr></table></figure>
+
+<h5 id="3-3-cpu"><a href="#3-3-cpu" class="headerlink" title="3.3 cpu"></a>3.3 cpu</h5><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs tex">a)  cpu：<br>	i.  瞬时：adb shell top | grep 包名<br>	ii. 一段时间：adb shell dumpsys cpuinfo grep 包名<br><br>b)  提示：<br>	i.  查看数据时，需要操作app应用才有意义<br></code></pre></td></tr></table></figure>
+
+<h5 id="3-4-内存"><a href="#3-4-内存" class="headerlink" title="3.4 内存"></a>3.4 内存</h5><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs tex">1.  占用：adb shell dumpsys meminfo 包名<br>	a)  关注：TOTAl<br>2.  扩展：adb shell free -m<br> 	ii. -m 已MB显示内存<br>	iii.    关注：used<br></code></pre></td></tr></table></figure>
+
+<h5 id="3-5-电量"><a href="#3-5-电量" class="headerlink" title="3.5 电量"></a>3.5 电量</h5><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs tex">a)  查看手机的电池信息<br>	命令: adb shell dumpsys battery <br>	<br>	i.  关闭USB充电模式<br>		命令: adb shell dumpsys battery set usb 0 <br>		参数：0为关闭 1为开启<br><br>b)  查看手机的电池详细信息<br>	命令: adb shell dumpsys batterystats <br>	<br>	i.  获取指定APP的Uid<br>命令: adb shell ps | findstr 包名 <br>	<br>	ii. 重置电池详情信息<br>	命令: adb shell dumpsys batterystats --reset <br></code></pre></td></tr></table></figure>
+
+<h5 id="3-6-流量"><a href="#3-6-流量" class="headerlink" title="3.6 流量"></a>3.6 流量</h5><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs tex">1. 操作步骤: <br>	1)  获取当前APP的进程号<br>		adb shell ps | findstr 包名 <br>	2)  根据进程号获取流量信息<br>		adb shell cat /proc/&#123;pid&#125;/net/dev <br>		<br>2. 关注：<br>	a)  Receive: 当前进程接收的数据流量<br>	b)  Transmit：指当前进程发出请求的数据流量<br>	c)  enth0和enthx:代表网卡<br></code></pre></td></tr></table></figure>
+
+<h5 id="3-7-python调用adb命令"><a href="#3-7-python调用adb命令" class="headerlink" title="3.7 python调用adb命令"></a>3.7 python调用adb命令</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">    目标：通过python语言调用adb命令</span><br><span class="hljs-string">    需求：获取黑马头条内存使用情况</span><br><span class="hljs-string">    命令：adb shell dumpsys meminfo com.itcast.toutiaoApp</span><br><span class="hljs-string">&quot;&quot;&quot;</span><br> <br> <span class="hljs-comment"># 1. 导包</span><br><span class="hljs-keyword">import</span> os<br><span class="hljs-keyword">from</span> time <span class="hljs-keyword">import</span> sleep<br><br><span class="hljs-comment"># 2. 封装读取内存函数</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">get_mem_data</span>():<br>	<span class="hljs-comment"># 1. 调用os.popen()方法 -&gt; 返回对象</span><br>	data = os.popen(<span class="hljs-string">&quot;adb shell dumpsys meminfo com.itcast.toutiaoApp&quot;</span>)<br> 	<span class="hljs-comment"># print(data)</span><br> 	<span class="hljs-comment"># 遍历</span><br>	<span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> data:<br> 		<span class="hljs-keyword">if</span> <span class="hljs-string">&quot;TOTAL&quot;</span> <span class="hljs-keyword">in</span> line:<br> 			<span class="hljs-keyword">return</span> line.split()[<span class="hljs-number">1</span>]<br> <br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:<br>	<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">10</span>):<br> 		mem = get_mem_data()<br> 		<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;mem=&quot;</span>, mem)<br> 		sleep(<span class="hljs-number">1</span>)<br></code></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <h1 id="八股总结"><a href="#八股总结" class="headerlink" title="八股总结"></a>八股总结</h1><h2 id="软件测试的术语"><a href="#软件测试的术语" class="headerlink" title="软件测试的术语"></a>软件测试的术语</h2><p><strong>失效</strong></p>
 <p><strong>事故</strong></p>
 <p><strong>故障</strong></p>
@@ -1407,6 +1575,12 @@
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2024/10/24/%E4%BA%91%E8%AE%A1%E7%AE%97%E5%9F%BA%E7%A1%80/" title="云计算基础.md">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">云计算基础.md</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
