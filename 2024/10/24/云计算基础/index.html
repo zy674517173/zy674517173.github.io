@@ -16,18 +16,32 @@
   <meta name="author" content="张同学">
   <meta name="keywords" content="">
   
-    <meta name="description" content="云计算基础知识1、云计算云计算：是一种通过网络提供计算资源和服务的模式，比如：数据存储、数据计算、大数据处理能力、以及应用服务等&#x2F; 云计算的本质：将计算能力从本地迁移到网络上的大型数据中心，使用户能够以更灵活、经济高效的方式使用这些资源，就像使用水电一样。 四大特点 弹性和可伸缩性：云计算允许根据需求动态调整资源，使用户可以根据流量变化、或业务需求随时增加或减少计算资源。 自服务行：用户">
+    <meta name="description" content="华为云云原生入门级开发者认证笔记内容来自     2020的论坛主题_云社区-华为云 1、云原生总览1.1 云原生定义 CNCF关于云原生的定义：云原生技术有利于各组织在公有云、私有云和混合云等新型动态环境中，构建和运行可弹性扩展的应用。云原生的代表技术包括容器、服务网格、微服务、不可变基础设施和声明式 API。 容器：将应用本身及其依赖打包，是的应用可以实现“一次封装，到处运行”。其主流技术比如">
 <meta property="og:type" content="article">
 <meta property="og:title" content="云计算基础.md">
 <meta property="og:url" content="https://zy674517173.github.io/2024/10/24/%E4%BA%91%E8%AE%A1%E7%AE%97%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="Hello-ZY">
-<meta property="og:description" content="云计算基础知识1、云计算云计算：是一种通过网络提供计算资源和服务的模式，比如：数据存储、数据计算、大数据处理能力、以及应用服务等&#x2F; 云计算的本质：将计算能力从本地迁移到网络上的大型数据中心，使用户能够以更灵活、经济高效的方式使用这些资源，就像使用水电一样。 四大特点 弹性和可伸缩性：云计算允许根据需求动态调整资源，使用户可以根据流量变化、或业务需求随时增加或减少计算资源。 自服务行：用户">
+<meta property="og:description" content="华为云云原生入门级开发者认证笔记内容来自     2020的论坛主题_云社区-华为云 1、云原生总览1.1 云原生定义 CNCF关于云原生的定义：云原生技术有利于各组织在公有云、私有云和混合云等新型动态环境中，构建和运行可弹性扩展的应用。云原生的代表技术包括容器、服务网格、微服务、不可变基础设施和声明式 API。 容器：将应用本身及其依赖打包，是的应用可以实现“一次封装，到处运行”。其主流技术比如">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://zy674517173.github.io/2024/10/24/%E4%BA%91%E8%AE%A1%E7%AE%97%E5%9F%BA%E7%A1%80/%E5%AE%B9%E5%99%A8%E5%BC%95%E6%93%8E.png">
+<meta property="og:image" content="https://zy674517173.github.io/2024/10/24/%E4%BA%91%E8%AE%A1%E7%AE%97%E5%9F%BA%E7%A1%80/%E5%8D%8E%E4%B8%BA%E4%BA%91%E5%AE%B9%E5%99%A8%E5%85%A8%E6%A0%88%E6%9C%8D%E5%8A%A1%E4%B8%80%E8%A7%88.png">
+<meta property="og:image" content="https://zy674517173.github.io/2024/10/24/%E4%BA%91%E8%AE%A1%E7%AE%97%E5%9F%BA%E7%A1%80/CCE%E4%BA%A7%E5%93%81%E6%9E%B6%E6%9E%84%E5%9B%BE.png">
+<meta property="og:image" content="https://zy674517173.github.io/2024/10/24/%E4%BA%91%E8%AE%A1%E7%AE%97%E5%9F%BA%E7%A1%80/CCE%E5%85%B3%E9%94%AE%E7%89%B9%E6%80%A7.png">
+<meta property="og:image" content="https://zy674517173.github.io/2024/10/24/%E4%BA%91%E8%AE%A1%E7%AE%97%E5%9F%BA%E7%A1%80/%E5%BA%94%E7%94%A8%E6%9E%B6%E6%9E%84%E6%BC%94%E8%BF%9B.png">
+<meta property="og:image" content="https://zy674517173.github.io/2024/10/24/%E4%BA%91%E8%AE%A1%E7%AE%97%E5%9F%BA%E7%A1%80/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E7%89%B9%E5%BE%81.png">
+<meta property="og:image" content="https://zy674517173.github.io/2024/10/24/%E4%BA%91%E8%AE%A1%E7%AE%97%E5%9F%BA%E7%A1%80/%E5%8D%95%E4%BD%93%E6%9E%B6%E6%9E%84%E5%88%B0SOA.png">
+<meta property="og:image" content="https://zy674517173.github.io/2024/10/24/%E4%BA%91%E8%AE%A1%E7%AE%97%E5%9F%BA%E7%A1%80/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84.png">
+<meta property="og:image" content="https://zy674517173.github.io/2024/10/24/%E4%BA%91%E8%AE%A1%E7%AE%97%E5%9F%BA%E7%A1%80/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91%E6%80%9D%E6%83%B3.png">
+<meta property="og:image" content="https://zy674517173.github.io/2024/10/24/%E4%BA%91%E8%AE%A1%E7%AE%97%E5%9F%BA%E7%A1%80/Scrum%E5%9B%A2%E9%98%9F.png">
+<meta property="og:image" content="https://zy674517173.github.io/2024/10/24/%E4%BA%91%E8%AE%A1%E7%AE%97%E5%9F%BA%E7%A1%80/DevOps%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB.png">
+<meta property="og:image" content="https://zy674517173.github.io/2024/10/24/%E4%BA%91%E8%AE%A1%E7%AE%97%E5%9F%BA%E7%A1%80/%E5%BA%94%E7%94%A8%E9%83%A8%E7%BD%B2%E6%B5%81%E7%A8%8B.png">
+<meta property="og:image" content="https://zy674517173.github.io/2024/10/24/%E4%BA%91%E8%AE%A1%E7%AE%97%E5%9F%BA%E7%A1%80/%E4%BA%91%E5%8E%9F%E7%94%9F%E4%B8%8E%E4%BC%A0%E7%BB%9F%E5%BA%94%E7%94%A8%E7%9A%84%E5%8C%BA%E5%88%AB.png">
 <meta property="article:published_time" content="2024-10-24T07:36:01.000Z">
-<meta property="article:modified_time" content="2024-10-24T12:56:18.513Z">
+<meta property="article:modified_time" content="2024-10-28T08:11:20.378Z">
 <meta property="article:author" content="张同学">
 <meta property="article:tag" content="基础知识">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://zy674517173.github.io/2024/10/24/%E4%BA%91%E8%AE%A1%E7%AE%97%E5%9F%BA%E7%A1%80/%E5%AE%B9%E5%99%A8%E5%BC%95%E6%93%8E.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -222,7 +236,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          299 字
+          7.8k 字
         
       </span>
     
@@ -233,7 +247,7 @@
         
         
         
-          3 分钟
+          65 分钟
         
       </span>
     
@@ -283,7 +297,584 @@
             
               <div class="markdown-body">
                 
-                <h1 id="云计算基础知识"><a href="#云计算基础知识" class="headerlink" title="云计算基础知识"></a>云计算基础知识</h1><h2 id="1、云计算"><a href="#1、云计算" class="headerlink" title="1、云计算"></a>1、云计算</h2><p>云计算：是一种通过网络提供计算资源和服务的模式，比如：数据存储、数据计算、大数据处理能力、以及应用服务等&#x2F;</p>
+                <h1 id="华为云云原生入门级开发者认证笔记"><a href="#华为云云原生入门级开发者认证笔记" class="headerlink" title="华为云云原生入门级开发者认证笔记"></a>华为云云原生入门级开发者认证笔记</h1><p>内容来自     <a target="_blank" rel="noopener" href="https://bbs.huaweicloud.com/community/hisforum/id_1575277440261230">2020的论坛主题_云社区-华为云</a></p>
+<h2 id="1、云原生总览"><a href="#1、云原生总览" class="headerlink" title="1、云原生总览"></a>1、云原生总览</h2><h3 id="1-1-云原生定义"><a href="#1-1-云原生定义" class="headerlink" title="1.1 云原生定义"></a>1.1 云原生定义</h3><ul>
+<li>CNCF关于云原生的定义：云原生技术有利于各组织在<strong>公有云、私有云和混合云</strong>等新型动态环境中，构建和运行<strong>可弹性扩展</strong>的应用。云原生的代表技术包括<strong>容器、服务网格、微服务、不可变基础设施和声明式 API</strong>。</li>
+<li><strong>容器</strong>：将应用本身及其依赖打包，是的应用可以实现“<strong>一次封装，到处运行</strong>”。其主流技术比如Docker，通过内核虚拟化技术（namespace及cgroup）来提供容器的资源隔离与安全保证。</li>
+<li><strong>服务网格</strong>（Service Mesh）：通过非入侵式的方式接管应用的服务通信。提供细粒度的流量治理，包括灰度发布，故障注入，可观测性支持等能力。</li>
+<li><strong>微服务</strong>：一种构建应用的架构方案，是松散耦合的分布式架构，可将应用拆分成多个核心功能，每个功能都被称为一项服务，可以单独构建和部署，各项服务在工作（和出现故障时不会相互影响）。</li>
+<li><strong>不可变基础设施</strong>：服务器部署后不会被修改，如果需要以任何方式更新、修复或修改某些内容，则会根据具有相应更改的公共映像构建新服务器以替换旧服务器。</li>
+<li><strong>声明式API</strong>：通过提交一个定义好的API对象来“声明”（常见方式是编写对应API对象的YAML文件交给Kubernetes），表示所期望的最终状态是什么样子，即针对期望状态给出声明，而不是过程（不是使用一个个命令来一步一步指导怎么达到期望状态来操作API——命令式）</li>
+</ul>
+<h3 id="1-2-云原生应用"><a href="#1-2-云原生应用" class="headerlink" title="1.2 云原生应用"></a>1.2 云原生应用</h3><p>云原生应用：一般采用<strong>容器</strong>的打包、分发、部署的形式，应用内（间）采用<strong>微服务的架构</strong>，充分利用云提供的组件服务，采用<strong>DevOps</strong>的组织架构和方法，通过<strong>CI&#x2F;CD工</strong>具链，实现产品和服务的持续交付。</p>
+<h4 id="云原生应用与传统应用的区别"><a href="#云原生应用与传统应用的区别" class="headerlink" title="云原生应用与传统应用的区别"></a><strong>云原生应用与传统应用的区别</strong></h4><table>
+<thead>
+<tr>
+<th align="center">云原生应用</th>
+<th align="center">传统应用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">可预测，云原生应用符合旨在通过可预测行为最大限度提高弹性的框架或“合同“</td>
+<td align="center">不可预测，通常构建时间更长，大批量发布，只能逐渐扩展，并且会发生更多的单点故障</td>
+</tr>
+<tr>
+<td align="center">操作系统抽象化</td>
+<td align="center">依赖操作系统</td>
+</tr>
+<tr>
+<td align="center">资源调度有弹性</td>
+<td align="center">资源冗余较多，缺乏扩展能力</td>
+</tr>
+<tr>
+<td align="center">团队借助DevOps更容易达成协作</td>
+<td align="center">部门墙导致团队彼此独立</td>
+</tr>
+<tr>
+<td align="center">敏捷开发</td>
+<td align="center">瀑布式开发</td>
+</tr>
+<tr>
+<td align="center">微服务各自独立，高内聚，低耦合</td>
+<td align="center">单体服务耦合严重</td>
+</tr>
+<tr>
+<td align="center">自动化运维能力</td>
+<td align="center">手动运维</td>
+</tr>
+<tr>
+<td align="center">快速恢复</td>
+<td align="center">恢复缓慢</td>
+</tr>
+</tbody></table>
+<h3 id="1-3-云原生架构"><a href="#1-3-云原生架构" class="headerlink" title="1.3 云原生架构"></a>1.3 云原生架构</h3><p><strong>云原生架构演进原则：</strong>弹性、分布式、高可用、自动化、自服务</p>
+<ul>
+<li>弹性：指的是系统能够动态适应负载的变化，根据需求自动增加或减少资源。</li>
+<li>分布式：应用程序各个组件或服务部署在不同的服务器或地理位置，形成多节点协同工作。</li>
+<li>高可用：长时间运行过程中，能保持较高的正常运转时间，避免停机或服务中断。</li>
+<li>自动化：系统的部署、监控、管理和恢复操作都通过自动化工具，减少认为干预。</li>
+<li>自服务：开发人员能自主获取资源和工具，而不需要依赖其他团队的协作。</li>
+</ul>
+<p><strong>单体架构的局限性</strong>：大规模团队，上线周期长，重复造轮子，粗粒度扩展；其问题不在于不可拆分，在于无法隔离和自治。应用规模越大，局限性越明显。</p>
+<p><strong>微服务架构：</strong>全功能小团队，快速交付，促进重用，细粒度扩容；独立性和敏捷性更好，架构持续演进更容易，更适合云原生应用。</p>
+<p><strong>Serverless：</strong>服务端逻辑运行在无状态的计算容器中，由事件触发，完全被第三方管理，适合短时运行处理、事件驱动处理、显著波峰波谷等业务场景。</p>
+<h3 id="1-4-云原生解决方案"><a href="#1-4-云原生解决方案" class="headerlink" title="1.4 云原生解决方案"></a>1.4 云原生解决方案</h3><p>华为云长期突入云原生技术与产业，是全球云原生领域领导者。</p>
+<p>华为云云原生解决方案<strong>（基础设施、混合云MCP、高性能计算volcano、边缘、DevOps、微服务管理平台、立体运维）</strong>适用场景和方案特点。</p>
+<h3 id="1-5-云原生未来发展趋势"><a href="#1-5-云原生未来发展趋势" class="headerlink" title="1.5 云原生未来发展趋势"></a>1.5 云原生未来发展趋势</h3><ul>
+<li>Kubernetes 编排统一化，编排对象不断扩展延伸</li>
+<li>服务治理Mesh化，加速传统应用转型</li>
+<li>应用服务Serverless化，更加聚焦业务的核心价值</li>
+<li>云原生服务部署形态多元化，多云将称为主流</li>
+</ul>
+<h2 id="2、容器技术学习"><a href="#2、容器技术学习" class="headerlink" title="2、容器技术学习"></a>2、容器技术学习</h2><h3 id="2-1-容器发展背景"><a href="#2-1-容器发展背景" class="headerlink" title="2.1 容器发展背景"></a>2.1 容器发展背景</h3><h4 id="企业IT业务云华路径"><a href="#企业IT业务云华路径" class="headerlink" title="企业IT业务云华路径"></a>企业IT业务云华路径</h4><p>传统业务云化：物理机部署云管平台统一管理  VS  P2V&#x2F;V2V 虚拟化部署；</p>
+<p>业务云化创新：容器部署   VS  云原生</p>
+<h4 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h4><p>容器：一种轻量级、可移植、自包含的软件打包技术，使应用程序可以在几乎任何地方以相同的方式运行。</p>
+<p>容器和虚拟机的区别：虚拟化层的位置和操作系统的使用方式</p>
+<ul>
+<li>虚拟机通过hypervisor层提供硬件虚拟化的能力，允许多个操作系统和应用共享硬件，虚拟机上安装完成的OS，有完成的OS内核；</li>
+<li>所有容器共享一个 hostOS</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="center">容器</th>
+<th align="center">虚拟机</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>启动速度</td>
+<td align="center">秒甚至毫秒启动</td>
+<td align="center">数秒至数十秒</td>
+</tr>
+<tr>
+<td>系统内核</td>
+<td align="center">共享内核</td>
+<td align="center">不共享内核</td>
+</tr>
+<tr>
+<td>实现技术</td>
+<td align="center">利用Linux内核技术namespace&#x2F;cgroup等实现</td>
+<td align="center">依赖虚拟化技术实现，由Hypervisor层实现对资源的隔离</td>
+</tr>
+<tr>
+<td>隔离效果</td>
+<td align="center">进程级别的隔离</td>
+<td align="center">系统资源级别的隔离</td>
+</tr>
+<tr>
+<td>资源消耗(性能)</td>
+<td align="center">容器中的应用只是宿主机上的一个普通进程</td>
+<td align="center">使用虚拟化技术，就会有额外的资源消耗和占用</td>
+</tr>
+<tr>
+<td>资源调度(敏捷性)</td>
+<td align="center">应用进程直接由宿主机管理</td>
+<td align="center">应用进程需经过Hypervisor的拦截和处理，才能调用系统资源</td>
+</tr>
+<tr>
+<td>运行数量</td>
+<td align="center">启动1000+容器</td>
+<td align="center">不超过100台虚拟机</td>
+</tr>
+<tr>
+<td>应用</td>
+<td align="center">DevOps、微服务</td>
+<td align="center">用于硬件资源划分</td>
+</tr>
+<tr>
+<td>镜像</td>
+<td align="center">分层镜像</td>
+<td align="center">非分层镜像</td>
+</tr>
+</tbody></table>
+<ul>
+<li>Docker：最常使用的容器引擎，2013年由dotCloud公司开源，GO语言编写，当前有Docker CE和Docker EE两个版本</li>
+</ul>
+<h3 id="2-2-容器关键技术介绍"><a href="#2-2-容器关键技术介绍" class="headerlink" title="2.2 容器关键技术介绍"></a>2.2 容器关键技术介绍</h3><p>Open Container Initiative(OCI)，制定开发的容器规范：</p>
+<ul>
+<li>runtime spec定义可移植性</li>
+<li>image format spec定义互操作性</li>
+</ul>
+<p>容器runtime：runtime与操作系统kernel紧密协作，为容器提供运行环境。不同公司有不同的runtime工具，但都符合OCI规范，如runC、rkt、Kata、gVisor等。</p>
+<p><strong>Docker Engine</strong>（Client&#x2F;Server结构）</p>
+<p>Server又叫Daemon进程，长期运行的程序，创建和管理Docker的对象（镜像、容器、网络、卷）</p>
+<p>Rest API： Client与Daemon进程的通信接口</p>
+<p>Client（Docker CLI）使用Rest API通过脚本或直接的CLI命令与Docker daemon交互 </p>
+<img src="/2024/10/24/%E4%BA%91%E8%AE%A1%E7%AE%97%E5%9F%BA%E7%A1%80/%E5%AE%B9%E5%99%A8%E5%BC%95%E6%93%8E.png" srcset="/img/loading.gif" lazyload class="">
+
+<p><strong>Container****容器</strong>是从镜像创建的运行实例，它可以被启动、开始、停止、 删除。每个容器都是相互隔离的、保证安全的平台</p>
+<p>Docker容器通过namespace技术实现进程隔离，通过cgroup技术实现容器进程可用资源的限制。</p>
+<ul>
+<li><strong>Namespace</strong>：命名空间，用于资源隔离，不同类型的namespace隔离不同的资源</li>
+<li><strong>Cgroups</strong>：限制一个进程组对系统资源的使用上限，包括CPU、内存、Block I&#x2F;O等，<ul>
+<li>Cgroups还可以设置进程优先级，对进程进行挂起和恢复等操作。</li>
+</ul>
+</li>
+</ul>
+<p>容器镜像Image是容器的模板，容器是镜像的运行实例，runtime根据容器镜像创建容器。容器镜像打包了整个操作系统的文件和目录(rootfs)，也包括应用本身。所有容器共享宿主机Kernel，并且不能修改宿主机Kernel</p>
+<p><strong>UnionFS</strong>： Docker镜像分层结构的实现，借助于UnionFS联合文件系统的能力，UnionFS主要的功能是将多个不同位置的目录联合挂载(union mount)到同一个目录下。</p>
+<p>容器数据卷：卷就是目录或文件，存在于一个或多个容器中，由docker挂载到容器，但不属于联合文件系统；卷的设计目的就是数据的持久化，完全独立于容器的生存周期，因此Docker不会在容器删除时删除其挂载的数据卷。挂在数据卷的方法：</p>
+<ul>
+<li>启动容器的时使用-v命令进行数据卷的挂载。</li>
+<li>在Dockerfile中使用VOLUME指令来给镜像添加一个或多个数据卷。</li>
+</ul>
+<h3 id="2-3-如何使用Dockerfile构建镜像"><a href="#2-3-如何使用Dockerfile构建镜像" class="headerlink" title="2.3 如何使用Dockerfile构建镜像"></a>2.3 如何使用Dockerfile构建镜像</h3><p>Dockerfile是一个文本文件，其内包含了一条条的指令，每一条指令构建一层，因此每一条指令的内容，就是描述该层应当如何构建容器镜像。</p>
+<ul>
+<li>Docker提供了两种构建镜像的方法：docker commit命令与dockerfile构建文件。</li>
+<li>Build命令生成docker image；run命令运行docker container</li>
+<li>Dockerfile文件中的指令执行后，会创建一个个新的镜像层</li>
+<li>Dockerfile文件中的注释以”#”开始。</li>
+<li>Dockerfile一般由4部分组成：基础镜像信息、维护者信息、镜像操作指令、容器启动指令</li>
+<li>build context：为镜像构建提供所需的文件或目录。</li>
+<li>Dockerfile在执行过程中，会启动临时容器，然后在临时容器中执行一条指令对容器内容进行修改，再将该容器保存为镜像生成一个新的镜像层，最后删除这个临时容器。若dockerfile中有多条指令，则会重复这个过程，直到执行结束。</li>
+</ul>
+<p><strong>常见镜像管理命令</strong></p>
+<ul>
+<li>docker push：上传镜像到registry。</li>
+<li>docker pull：从registry下载镜像。</li>
+<li>docker rmi：删除本地镜像。</li>
+<li>docker images：显示本地镜像。</li>
+<li>docker search：搜索docker hub上的镜像。</li>
+<li>docker tag：为镜像标记tag。</li>
+<li>docker history：显示镜像构建过程。</li>
+<li>docker commit：将容器保存为镜像。</li>
+<li>docker build：从dockerfile创建镜像。</li>
+</ul>
+<p><strong>容器生命周期管理</strong></p>
+<ul>
+<li>systemctl status docker.service：查看Docker engine状态</li>
+<li>docker run -d -p 8080:80 httpd：运行一个容器 （“-d”参数可在后台运行容器；“-p”参数将宿主机8080端口映射到容器80端口）</li>
+<li>docker ps：查看容器运行状态</li>
+<li>docker stop：停止一个容器</li>
+<li>docker start：启动一个容器</li>
+<li>docker pause：暂停一个容器</li>
+<li>docker unpause：恢复启动一个容器</li>
+<li>docker rm：删除一个容器</li>
+<li>docker attach：进入一个容器</li>
+<li>docker exec：进入同一个容器</li>
+<li>docker inspect：获取容器&#x2F;镜像元数据</li>
+<li>docker top：查看容器中运行的进程信息</li>
+<li>docker events：从服务器获取实时事件</li>
+<li>docker port：列出指定的容器的端口映射</li>
+<li>docker cp：与主机之间进行数据拷贝</li>
+<li>docker容器的状态有7种：<ul>
+<li>created（已创建）</li>
+<li>restarting（重启中）</li>
+<li>running（运行中）</li>
+<li>removing（迁移中）</li>
+<li>paused（暂停）</li>
+<li>exited（停止）</li>
+<li>dead（死亡）</li>
+</ul>
+</li>
+</ul>
+<h2 id="3、Kubernetes学习"><a href="#3、Kubernetes学习" class="headerlink" title="3、Kubernetes学习"></a>3、Kubernetes学习</h2><h3 id="3-1-什么是Kubernetes"><a href="#3-1-什么是Kubernetes" class="headerlink" title="3.1 什么是Kubernetes"></a>3.1 什么是Kubernetes</h3><p>Kubernetes 是一个开源的容器编排平台，用于自动化容器应用程序的部署、扩展和管理。它最初是由 Google 设计并捐赠给 Cloud Native Computing Foundation（CNCF）来维护和发展的。以下是 Kubernetes 的一些主要功能和特点：</p>
+<ol>
+<li><strong>自动化容器部署与回滚</strong>：Kubernetes 允许你在不停止服务的情况下，自动部署和更新容器化应用程序，并在新版本部署不成功时，自动回滚到之前的版本。</li>
+<li><strong>服务发现和负载均衡</strong>：Kubernetes 可以自动识别服务之间的通信需求，并通过内置的服务发现和负载均衡机制来自动路由网络流量。</li>
+<li><strong>水平扩展</strong>：你可以根据负载的需要自动增加或减少应用副本的数量，以确保应用程序可以根据需求扩展或收缩。</li>
+<li><strong>自我修复</strong>：Kubernetes 能够自动替换、重启、重新调度，或者删除那些不响应用户定义的健康检查的容器，确保服务的高可用性。</li>
+<li><strong>密钥与配置管理</strong>：Kubernetes 允许你存储和管理敏感信息，如密码、OAuth 令牌和 SSH 密钥，你可以在不重建容器镜像的情况下，部署和更新密钥和应用配置。</li>
+<li><strong>存储编排</strong>：Kubernetes 允许你自动挂载选择的存储系统，无论是本地存储、公共云提供商的存储解决方案，还是网络存储系统。</li>
+</ol>
+<p>Kubernetes 提供了一个可扩展和灵活的框架，以支持各种各样的工作负载，包括无状态、有状态和数据处理工作负载，可以广泛应用于生产环境中，帮助管理复杂度和简化容器操作。</p>
+<h3 id="3-2-容器集群管理的概述"><a href="#3-2-容器集群管理的概述" class="headerlink" title="3.2  容器集群管理的概述"></a>3.2  容器集群管理的概述</h3><p>容器编排指自动化容器的部署、管理、扩展和联网，其价值：</p>
+<ul>
+<li>灵活的资源管理及调度</li>
+<li>自动化部署及服务发现</li>
+<li>高效的监控及运维</li>
+<li>弹性扩展及高可用</li>
+</ul>
+<h3 id="3-3-Kubernetes-架构"><a href="#3-3-Kubernetes-架构" class="headerlink" title="3.3 Kubernetes 架构"></a>3.3 Kubernetes 架构</h3><p>基础的K8s集群通常包含一个Master节点和多个Node节点，每个节点可以是物理机也可以是虚拟机。</p>
+<p>Master节点：</p>
+<ul>
+<li>Kube-apiserver：对外暴露K8s API</li>
+<li>etcd：用于后端存储，提供数据备份</li>
+<li>Kube-controller-manager：控制器，策略控制</li>
+<li>Kube-scheduler：负责任务调度</li>
+</ul>
+<p>Node节点：</p>
+<ul>
+<li>Kubelet：接受Master指令，负责管理容器（Pod）</li>
+<li>Kube-proxy：负责助理集群内外部的网路通信</li>
+<li>Add-ons：插件，用于扩展K8s的功能</li>
+<li>Container runtime：使用Docker运行容</li>
+</ul>
+<p>开放接口CRI、CNI、CSI</p>
+<ul>
+<li>CRI：容器运行时的接口，提供计算能力</li>
+<li>CNI：容器网络接口，提供网络能力</li>
+<li>CSI： 容器存储接口，提供存储能力</li>
+</ul>
+<h4 id="K8s工作流程"><a href="#K8s工作流程" class="headerlink" title="K8s工作流程"></a>K8s工作流程</h4><h4 id="K8s核心概念"><a href="#K8s核心概念" class="headerlink" title="K8s核心概念"></a>K8s核心概念</h4><ol>
+<li>Pod：最小工作单元，每一个Pod包含一个或多个相关容器，K8s将其视为一个整体进行调度。（引入Pod目的：扩展和实现生命周期管理）</li>
+<li>Label：为资源打上标签</li>
+<li>Namespace：命名空间</li>
+<li>Conroller：控制器</li>
+<li>Service： Pod逻辑集合</li>
+<li>Volume：管理Kubernetes存储</li>
+</ol>
+<h3 id="3-4-Kubernetes应用编排和管理"><a href="#3-4-Kubernetes应用编排和管理" class="headerlink" title="3.4 Kubernetes应用编排和管理"></a>3.4 Kubernetes应用编排和管理</h3><p>Kubectl：K8s的命令行工具，支持指令式和声明式</p>
+<h4 id="Kubernetes应用编排"><a href="#Kubernetes应用编排" class="headerlink" title="Kubernetes应用编排"></a>Kubernetes应用编排</h4><p>Kubernetes 的应用编排是指在 Kubernetes 环境中自动化部署、管理和扩展容器化应用程序的过程。这种编排涵盖了容器的生命周期管理，包括启动、扩展、维护和终止应用。应用编排的主要目的是确保应用的部署按照预定义的方式运行，同时提供高可用性和可扩展性。</p>
+<ul>
+<li>无状态工作负载：Deployment、ReplicaSet</li>
+<li>有状态工作负载：StatefulSet</li>
+<li>守护进程工作负载：DaemonSet</li>
+<li>批处理工作负载：Job、CronJob</li>
+<li>Deployment：不具有唯一标识的多个Pod集合</li>
+</ul>
+<p><strong>使用命令行创建Deployment</strong></p>
+<p><strong>使用 yaml 创建Deployment</strong></p>
+<p><strong>StatefulSet 创建</strong></p>
+<h4 id="Kubernetes-服务发布"><a href="#Kubernetes-服务发布" class="headerlink" title="Kubernetes 服务发布"></a>Kubernetes 服务发布</h4><ul>
+<li>Pod特征：有独立IP、扩缩容时数量会变更、故障时ReplicaSet会创建新的Pod</li>
+<li>Service： ClusterIP、NodePort、LoadBalance<ul>
+<li>NodePort模型：通过每个节点上的静态端口对外暴露以访问内部ClusterIP</li>
+<li>LoadBalancer模型：负载均衡（LoadBalancer）可以通过弹性负载均衡从公网访问到工作负载，与NodePort加公网IP的方式相比提供了高可靠的保障。</li>
+</ul>
+</li>
+</ul>
+<h4 id="Kubernentes-存储管理"><a href="#Kubernentes-存储管理" class="headerlink" title="Kubernentes 存储管理"></a>Kubernentes 存储管理</h4><ul>
+<li>Volume的核心是一个目录，其中可能存有数据，Pod中的容器可以访问该目录中的数据。</li>
+<li>Kubernetes常用类型：</li>
+<li>emptyDir（一种简单的空目录，主要用于临时存储）</li>
+<li>hostPath（将主机（节点）某个目录挂载到容器中，适用于读取主机上的数据）</li>
+<li>ConfigMap（特殊类型，将Kubernetes特定的对象类型挂载到容器）</li>
+<li>Secret（特殊类型，将Kubernetes特定的对象类型挂载到容器）</li>
+<li>PVC（PersistentVolumeClaim，用来挂载PersistentVolume（持久化卷），提供可靠的存储来保存应用的持久化数据）</li>
+<li>PersistentVolume（持久化存储）</li>
+<li>StorageClass（存储类）</li>
+</ul>
+<h2 id="4、云容器服务介绍"><a href="#4、云容器服务介绍" class="headerlink" title="4、云容器服务介绍"></a>4、云容器服务介绍</h2><h3 id="4-1-华为云容器全栈服务"><a href="#4-1-华为云容器全栈服务" class="headerlink" title="4.1 华为云容器全栈服务"></a>4.1 华为云容器全栈服务</h3><img src="/2024/10/24/%E4%BA%91%E8%AE%A1%E7%AE%97%E5%9F%BA%E7%A1%80/%E5%8D%8E%E4%B8%BA%E4%BA%91%E5%AE%B9%E5%99%A8%E5%85%A8%E6%A0%88%E6%9C%8D%E5%8A%A1%E4%B8%80%E8%A7%88.png" srcset="/img/loading.gif" lazyload class="">
+
+<p>特点：易使用、易运维、高性能</p>
+<h3 id="4-2-云容器引擎CCE"><a href="#4-2-云容器引擎CCE" class="headerlink" title="4.2  云容器引擎CCE"></a>4.2  云容器引擎CCE</h3><ol>
+<li><p>基于开源Kubernetes、Docker技术的企业级容器服务。</p>
+</li>
+<li><p>借助云容器引擎，用户可以在华为云上轻松部署、管理和扩展容器化应用程序。</p>
+</li>
+<li><p>CCE和Kubernetes关系</p>
+<ul>
+<li>CCE集群：丰富异构、高性能、安全、统一调度的容器基础设施产品</li>
+</ul>
+</li>
+<li><p>CCE产品架构图</p>
+<img src="/2024/10/24/%E4%BA%91%E8%AE%A1%E7%AE%97%E5%9F%BA%E7%A1%80/CCE%E4%BA%A7%E5%93%81%E6%9E%B6%E6%9E%84%E5%9B%BE.png" srcset="/img/loading.gif" lazyload class="">
+
+<ol>
+<li>丰富的异构算力支持：全面支持华为云各类计算实例、支持存量实例纳管；</li>
+<li>高性能云原生网络：Overlay模式下网络性能较开源Flannel方案提升30%、Underlay模式下网络性能较直连损耗在55之内；</li>
+<li>全面安全的云原生能力：安全加固的容器运行时，有效屏蔽各类开源漏洞、容器镜像多种策略扫描、有效识别镜像中风险</li>
+<li>统一的大规模云原生调度：单集群最大支持1万节点，自研Volcano调度效率较开源调度方案提升30%</li>
+</ol>
+</li>
+</ol>
+<h4 id="CCE关键特性总览"><a href="#CCE关键特性总览" class="headerlink" title="CCE关键特性总览"></a>CCE关键特性总览</h4><img src="/2024/10/24/%E4%BA%91%E8%AE%A1%E7%AE%97%E5%9F%BA%E7%A1%80/CCE%E5%85%B3%E9%94%AE%E7%89%B9%E6%80%A7.png" srcset="/img/loading.gif" lazyload class="">
+
+<ul>
+<li>集群管理：可一键创建集群，支持多种异构基础设置</li>
+<li>节点\节点池管理<ul>
+<li>节点：节点是容器集群组成的基本元素，取决于业务、既可以是虚拟机、也可以是物理机。</li>
+<li>节点池管理：节点池中有多个节点，节点参数配置相同，可通过设置节点模板创建节点，通过节点池功能方便实现节点动态扩缩容。</li>
+</ul>
+</li>
+<li>工作负载：Deployment、Statefulset、Daemonset、Job、CronJob等类型。</li>
+<li>亲和&#x2F;反亲和调度<ol>
+<li>工作负载和可用区的亲和性：基于可用区可设置多条调度策略，只需满足其中一条就会进行调度</li>
+<li>工作负载和节点的亲和性：基于节点可以设置多条调度策略，只需满足其中一条就会进行调度</li>
+<li>工作负载间的亲和性：基于工作负载可以设置多条调度策略，但多条策略中设置的标签必须同时出现在一个工作负载中</li>
+</ol>
+</li>
+<li>容器网络<ol>
+<li>容器隧道网络</li>
+<li>VPC网络</li>
+<li>云原生网络</li>
+</ol>
+</li>
+<li>持久化卷存储：CCE除支持本地磁盘存储外，还支持将工作负载数据存储在华为云的云存储上，当前支持云存储包括四点<ul>
+<li>本地磁盘存储</li>
+<li>云硬盘存储</li>
+<li>文件存储卷</li>
+<li>对象存储卷</li>
+</ul>
+</li>
+<li>弹性伸缩：根据业务需求和策略自动调整资源使用策略</li>
+</ul>
+<h2 id="5、Isito技术介绍"><a href="#5、Isito技术介绍" class="headerlink" title="5、Isito技术介绍"></a>5、Isito技术介绍</h2><h2 id="7、微服务架构介绍"><a href="#7、微服务架构介绍" class="headerlink" title="7、微服务架构介绍"></a>7、微服务架构介绍</h2><h3 id="7-1-应用架构的演进"><a href="#7-1-应用架构的演进" class="headerlink" title="7.1  应用架构的演进"></a>7.1  应用架构的演进</h3><ol>
+<li>单体架构<ul>
+<li>紧耦合</li>
+<li>系统复杂、错综交互、牵一发而动全身</li>
+<li>重复制造各种轮子：OS、DB、Middleware</li>
+<li>完全封闭的架构</li>
+</ul>
+</li>
+<li>SOA架构<ul>
+<li>松耦合</li>
+<li>在大型、超大型企业中仍然流行</li>
+<li>通常通过ESB进行系统集成</li>
+<li>大团队：100-200人</li>
+<li>TTM：1年、半年、月</li>
+<li>集中式、计划内停机扩容</li>
+</ul>
+</li>
+<li>微服务架构<ul>
+<li>解耦</li>
+<li>互联网公司、中小企业、初创公司</li>
+<li>小团队：2 Pizza Team</li>
+<li>TTM：按天、周进行升级发布</li>
+<li>DevOps： CI, CD, 全自动化</li>
+<li>高可用：升级、扩容不中断业务</li>
+</ul>
+</li>
+</ol>
+<img src="/2024/10/24/%E4%BA%91%E8%AE%A1%E7%AE%97%E5%9F%BA%E7%A1%80/%E5%BA%94%E7%94%A8%E6%9E%B6%E6%9E%84%E6%BC%94%E8%BF%9B.png" srcset="/img/loading.gif" lazyload class="">
+
+
+
+<h3 id="7-2-什么是微服务"><a href="#7-2-什么是微服务" class="headerlink" title="7.2 什么是微服务"></a>7.2 什么是微服务</h3><p>微服务架构是一种架构模式，将单体应用划分成一组小的服务，通过服务之间互相协作，共同实现系统功能。</p>
+<h4 id="微服务的特征"><a href="#微服务的特征" class="headerlink" title="微服务的特征"></a>微服务的特征</h4><img src="/2024/10/24/%E4%BA%91%E8%AE%A1%E7%AE%97%E5%9F%BA%E7%A1%80/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E7%89%B9%E5%BE%81.png" srcset="/img/loading.gif" lazyload class="">
+
+<p><strong>消毒轻松</strong></p>
+<h4 id="单体架构"><a href="#单体架构" class="headerlink" title="单体架构"></a>单体架构</h4><p>一种软件设计规范，用一种将业务逻辑、数据、显示分离的方法组织代码</p>
+<p><strong>单体架构的优缺点</strong></p>
+<ul>
+<li>优点<ol>
+<li>开发和测试简单</li>
+<li>部署简单</li>
+<li>运维简单</li>
+</ol>
+</li>
+<li>缺点<ol>
+<li>交付周期长</li>
+<li>维护成本增加</li>
+<li>可扩展性差</li>
+<li>技术选型成本高</li>
+<li>新成员培养周期长</li>
+</ol>
+</li>
+</ul>
+<h4 id="从单体架构到SOA服务化架构"><a href="#从单体架构到SOA服务化架构" class="headerlink" title="从单体架构到SOA服务化架构"></a>从单体架构到SOA服务化架构</h4><img src="/2024/10/24/%E4%BA%91%E8%AE%A1%E7%AE%97%E5%9F%BA%E7%A1%80/%E5%8D%95%E4%BD%93%E6%9E%B6%E6%9E%84%E5%88%B0SOA.png" srcset="/img/loading.gif" lazyload class="">
+
+<h4 id="微服务架构"><a href="#微服务架构" class="headerlink" title="微服务架构"></a>微服务架构</h4><img src="/2024/10/24/%E4%BA%91%E8%AE%A1%E7%AE%97%E5%9F%BA%E7%A1%80/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84.png" srcset="/img/loading.gif" lazyload class="">
+
+<p><strong>微服务的优势和挑战</strong></p>
+<ul>
+<li>优势：服务模块边界更清晰、支持独立的部署、允许技术多样性</li>
+<li>挑战：分布式编程难度大有风险、需处理分布式系统的一致性、增加运维复杂性</li>
+</ul>
+<p><strong>常见的微服务框架</strong></p>
+<ol>
+<li>Spring Cloud</li>
+<li>Service Comb</li>
+<li>Apache Dubbo</li>
+</ol>
+<p><strong>微服务架构模式</strong></p>
+<h3 id="7-3-Spring-Cloud-框架"><a href="#7-3-Spring-Cloud-框架" class="headerlink" title="7.3 Spring  Cloud 框架"></a>7.3 Spring  Cloud 框架</h3><ol>
+<li>服务注册</li>
+<li>服务发现</li>
+<li>负载均衡</li>
+<li>API网关</li>
+<li>配置中心</li>
+</ol>
+<h2 id="8、云原生DevSecOps介绍"><a href="#8、云原生DevSecOps介绍" class="headerlink" title="8、云原生DevSecOps介绍"></a>8、云原生DevSecOps介绍</h2><h3 id="8-1-敏捷开发及DevOps思想"><a href="#8-1-敏捷开发及DevOps思想" class="headerlink" title="8.1 敏捷开发及DevOps思想"></a>8.1 敏捷开发及DevOps思想</h3><p>敏捷可以实现研发过程的持续高可视性、高可适应性、更早且持续产出业务价值、更早发现和解决风险。</p>
+<img src="/2024/10/24/%E4%BA%91%E8%AE%A1%E7%AE%97%E5%9F%BA%E7%A1%80/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91%E6%80%9D%E6%83%B3.png" srcset="/img/loading.gif" lazyload class="">
+
+<h3 id="8-2-Scrum"><a href="#8-2-Scrum" class="headerlink" title="8.2 Scrum"></a>8.2 Scrum</h3><h4 id="Scrum特点"><a href="#Scrum特点" class="headerlink" title="Scrum特点"></a>Scrum特点</h4><ol>
+<li>团队自组织，自管理</li>
+<li>面对面沟通</li>
+<li>“可能性的”艺术，强调关注事情当下状态</li>
+</ol>
+<h4 id="Scrum团队"><a href="#Scrum团队" class="headerlink" title="Scrum团队"></a>Scrum团队</h4><img src="/2024/10/24/%E4%BA%91%E8%AE%A1%E7%AE%97%E5%9F%BA%E7%A1%80/Scrum%E5%9B%A2%E9%98%9F.png" srcset="/img/loading.gif" lazyload class="">
+
+
+
+<h3 id="8-3-DevOps是什么"><a href="#8-3-DevOps是什么" class="headerlink" title="8.3 DevOps是什么"></a>8.3 DevOps是什么</h3><p>  <strong>一种重视“软件开发人员”和“IT运维技术人员”之间沟通合作的文化、运动或惯例。</strong></p>
+<p>DevOps知识体系如下图，包括敏捷管理、持续交付、IT服务管理（ITSM）、精益管理等构成部分</p>
+<img src="/2024/10/24/%E4%BA%91%E8%AE%A1%E7%AE%97%E5%9F%BA%E7%A1%80/DevOps%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB.png" srcset="/img/loading.gif" lazyload class="">
+
+
+
+<h3 id="8-4-应用部署流程"><a href="#8-4-应用部署流程" class="headerlink" title="8.4 应用部署流程"></a>8.4 应用部署流程</h3><img src="/2024/10/24/%E4%BA%91%E8%AE%A1%E7%AE%97%E5%9F%BA%E7%A1%80/%E5%BA%94%E7%94%A8%E9%83%A8%E7%BD%B2%E6%B5%81%E7%A8%8B.png" srcset="/img/loading.gif" lazyload class="">
+
+<ol>
+<li><strong>设计与规划阶段</strong>：使用华为云DevCloud完成规划和敏捷项目管理<ul>
+<li>敏捷项目开发的特点：透明、可控、可跟踪、可继承、固化到公司、流程顺畅</li>
+</ul>
+</li>
+<li><strong>持续开发与测试</strong>：使用华为云DevCloud协助团队完成编码开发、代码质量检查和质量验证。<ul>
+<li>代码托管：注重安全、高效协作、贡献可视化</li>
+<li>代码检查：持续看护代码质量、防护代码腐化</li>
+<li>云测：一站式云端测试平台、云端高效自动化测试、全生命周期追溯和可视化</li>
+</ul>
+</li>
+<li><strong>持续安全审计</strong>：完成DevCloud静态代码检查</li>
+<li><strong>持续集成与部署</strong><ol>
+<li>持续交付：目标在于让软件的建置、测试与释出变得更快以及更频繁、这种方式可以减少软件开发时间和成本，减少风险。持续交付以持续集成为基础。</li>
+<li>持续部署：持续交付的下一步，指的是代码通过评审以后，自动部署到生产环境。</li>
+<li>持续交付：是持续集成的延伸，将集成后的代码部署到类生产环境，确保可以以可持续的方式快速向客户发布新的更改。</li>
+</ol>
+</li>
+<li>使用华为云DevCloud内置的CI\CD能力，体现持续交付价值。<ul>
+<li>CI&#x2F;CD 是 “持续集成”（Continuous Integration）和 “持续交付”（Continuous Delivery）或 “持续部署”（Continuous Deployment）的缩写，是现代软件开发流程中的核心实践。在华为云的 DevCloud 环境中，CI&#x2F;CD 能力指的是提供一套工具和服务，以支持软件开发项目的自动化构建、测试和部署过程。</li>
+</ul>
+</li>
+<li><strong>DevCloud部署服务<strong><strong>，</strong></strong>提供自动化部署能力</strong>：</li>
+</ol>
+<ul>
+<li>多形态：可部署到物理机、虚机、容器、函数</li>
+<li>多技术栈：可支持多种技术栈应用的部署</li>
+<li>多集成：流水线、ServiceStage应用托管、AOM运维无缝集成</li>
+<li>专业的部署能力</li>
+</ul>
+<ol start="7">
+<li><strong>DevOps下的运维系统特点</strong>：高可用、高成功率、高效率、可回滚、自动化运维、应用管理</li>
+<li><strong>DevOps运维目标</strong>：报账系统的稳定运行，达成服务的质量目标</li>
+<li><strong>通过自动化实现软件快速部署和发布</strong><ul>
+<li>优势：开源的自动化工具、“一切即代码”、统一的平台、流水线部署与发布、实现一定功能的子系统、解耦、拼接</li>
+</ul>
+</li>
+<li><strong>应用运维管理AOM</strong>：云上应用的一站式立体化运维管理平台。</li>
+</ol>
+<h3 id="8-5-无服务-Serverless"><a href="#8-5-无服务-Serverless" class="headerlink" title="8.5 无服务   Serverless"></a>8.5 无服务   Serverless</h3><p>一种新型的云计算代码开发及执行模式。函数开发者不需要考虑或者管理扩容。Serverless以计量方式收费，只收取函数运行时计算资源的使用费用。</p>
+<h4 id="Serverless分类"><a href="#Serverless分类" class="headerlink" title="Serverless分类"></a>Serverless分类</h4><ol>
+<li>Backend-as-a-Service（BaaS）基于API的第三方服务，可替代应用程序中的核心功能子集。</li>
+<li>Functions-as-a-Service（FaaS）通常提供事件驱使计算。</li>
+</ol>
+<h4 id="Serverless应用场景特征分析"><a href="#Serverless应用场景特征分析" class="headerlink" title="Serverless应用场景特征分析"></a>Serverless应用场景特征分析</h4><p>Serverless主要用户场景有以下几个特点：</p>
+<ol>
+<li>短时间任务为主</li>
+<li>大部分时间请求平缓、偶然有突发流量</li>
+<li>基于事件驱动</li>
+<li>无状态，无会话保持</li>
+</ol>
+<p>典型的Serverless应用场景：</p>
+<ol>
+<li>电商</li>
+<li>IoT数据分析处理</li>
+<li>多媒体数据存储时的实时处理</li>
+<li>移动后端</li>
+</ol>
+<h4 id="Serverless价值"><a href="#Serverless价值" class="headerlink" title="Serverless价值"></a>Serverless价值</h4><ul>
+<li>快：秒级快速上线，毫秒级弹性伸缩，天然高可用</li>
+<li>简：免运维，函数代码即服务</li>
+<li>省：按实际使用100毫秒计费</li>
+</ul>
+<h1 id="云培训知识"><a href="#云培训知识" class="headerlink" title="云培训知识"></a>云培训知识</h1><h2 id="1、云开发基础"><a href="#1、云开发基础" class="headerlink" title="1、云开发基础"></a>1、云开发基础</h2><h3 id="1-1-传统应用开发的瓶颈"><a href="#1-1-传统应用开发的瓶颈" class="headerlink" title="1.1 传统应用开发的瓶颈"></a>1.1 传统应用开发的瓶颈</h3><p><strong>传统应用开发模式：</strong></p>
+<ul>
+<li>瀑布模式：给出了固定的顺序，将生命周期从上一个阶段向下一个阶段逐级过度，如同流水下泄，最终得到所开发的软件产品投入使用<ul>
+<li>计划-&gt;需求分析-&gt;设计-&gt;编码-&gt;测试-&gt;运行</li>
+</ul>
+</li>
+<li>迭代模式：每次只设计和实现这个产品的一部分，逐步完成的方法</li>
+</ul>
+<p><strong>传统的应用架构：</strong></p>
+<ul>
+<li>单体模式：最简单的软件架构</li>
+<li>SOA架构：面向服务的架构<ul>
+<li>思想：将重复公用的功能抽取为组件，以服务的方式给各个系统提供服务</li>
+</ul>
+</li>
+</ul>
+<p>云原生应用</p>
+<img src="/2024/10/24/%E4%BA%91%E8%AE%A1%E7%AE%97%E5%9F%BA%E7%A1%80/%E4%BA%91%E5%8E%9F%E7%94%9F%E4%B8%8E%E4%BC%A0%E7%BB%9F%E5%BA%94%E7%94%A8%E7%9A%84%E5%8C%BA%E5%88%AB.png" srcset="/img/loading.gif" lazyload class="">
+
+<h3 id="1-2-云计算简介"><a href="#1-2-云计算简介" class="headerlink" title="1.2 云计算简介"></a>1.2 云计算简介</h3><p><strong>云原生概念</strong></p>
+<ul>
+<li>CNCF关于云原生的定义：云原生技术有利于各组织在公有云、私有云和混合云等新型动态环境中，构建和运行可弹性扩展的应用。云原生的代表技术包括<strong>容器、服务网格、微服务、不可变基础设施和声明式 API</strong>。</li>
+<li><strong>容器</strong>：将应用本身及其依赖打包，是的应用可以实现“<strong>一次封装，到处运行</strong>”。其主流技术比如Docker，通过内核虚拟化技术（namespace及cgroup）来提供容器的资源隔离与安全保证。</li>
+<li><strong>服务网格</strong>（Service Mesh）：通过非入侵式的方式接管应用的服务通信。提供细粒度的流量治理，包括灰度发布，故障注入，可观测性支持等能力。</li>
+<li><strong>微服务</strong>：一种构建应用的架构方案，是松散耦合的分布式架构，可将应用拆分成多个核心功能，每个功能都被称为一项服务，可以单独构建和部署，各项服务在工作（和出现故障时不会相互影响）。</li>
+<li><strong>不可变基础设施</strong>：服务器部署后不会被修改，如果需要以任何方式更新、修复或修改某些内容，则会根据具有相应更改的公共映像构建新服务器以替换旧服务器。</li>
+<li><strong>声明式API</strong>：通过提交一个定义好的API对象来“声明”（常见方式是编写对应API对象的YAML文件交给Kubernetes），表示所期望的最终状态是什么样子，即针对期望状态给出声明，而不是过程（不是使用一个个命令来一步一步指导怎么达到期望状态来操作API——命令式）。</li>
+</ul>
+<p><strong>云计算概念：</strong></p>
+<ol>
+<li>一种新的提供资源按需租用的服务模式</li>
+<li>一种新型的互联网数据中心</li>
+</ol>
+<p><strong>云计算分类（服务模式）：</strong></p>
+<ol>
+<li>SaaS：软件即服务</li>
+<li>PaaS：平台即服务</li>
+<li>IaaS：基础设施即服务</li>
+</ol>
+<p><strong>云服务的发展：</strong></p>
+<ol>
+<li>本地应用迁移到云端：已有应用使用云计算资源，实现弹性伸缩，减少成本以及维护工作，适合旧系统迁移，无需系统重构</li>
+<li>基于云端特性开发：基于云计算资源，云数据库等进行开发工作，负载能力有一定提升，但还不足以应对高并发，市场快速变化需求</li>
+<li>云原生应用开发：基于微服务架构，容器，持续集成，devops等；适合新业务、需求快速变化、高并发等互联网应用场景。</li>
+<li>无服务器：业务代码委托给平台，通过事件触发，使用简单、高效、大幅降低开销</li>
+</ol>
+<p><strong>云计算对开发的改变</strong></p>
+<ol>
+<li>开发模式：从瀑布开发转变为敏捷开发。敏捷开发是一种应对需求快速变化的软件开发模式<ul>
+<li>敏捷开发特点<ul>
+<li>迭代快，开发周期短</li>
+<li>面对面交流，只写必要的文档</li>
+<li>每天都输出成果，客户能够看到</li>
+<li>沟通多，容易发现问题</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>软件架构：<ol>
+<li>传统单体架构转变为微服务架构。把一个庞大的应用拆成几个小的独立的服务，再把独立的服务串起来的一种架构设计<ul>
+<li>微服务特性：日日可更新、实时可更新、能力可积累、技术可共存</li>
+</ul>
+</li>
+<li>无服务Serverless</li>
+</ol>
+</li>
+</ol>
+<p><strong>云原生架构</strong></p>
+<ul>
+<li>云原生架构演进原则：弹性、分布式、高可用、自动化、自服务，理解每种原则的含义。</li>
+<li>单体架构的局限性：大规模团队，上线周期长，重复造轮子，粗粒度扩展；其问题不在于不可拆分，在于无法隔离和自治。应用规模越大，局限性越明显。</li>
+<li>微服务架构：全功能小团队，快速交付，促进重用，细粒度扩容；独立性和敏捷性更好，架构持续演进更容易，更适合云原生应用。</li>
+<li>Serverless架构：服务端逻辑运行在无状态的计算容器中，由事件触发，完全被第三方管理，适合短时运行处理、事件驱动处理、显著波峰波谷等业务场景</li>
+</ul>
+<h3 id="1-3-云开发"><a href="#1-3-云开发" class="headerlink" title="1.3 云开发"></a>1.3 云开发</h3><h1 id="云计算基础知识"><a href="#云计算基础知识" class="headerlink" title="云计算基础知识"></a>云计算基础知识</h1><h2 id="1、云计算"><a href="#1、云计算" class="headerlink" title="1、云计算"></a>1、云计算</h2><p>云计算：是一种通过网络提供计算资源和服务的模式，比如：数据存储、数据计算、大数据处理能力、以及应用服务等&#x2F;</p>
 <p>云计算的本质：将计算能力从本地迁移到网络上的大型数据中心，使用户能够以更灵活、经济高效的方式使用这些资源，就像使用水电一样。</p>
 <h3 id="四大特点"><a href="#四大特点" class="headerlink" title="四大特点"></a>四大特点</h3><ol>
 <li>弹性和可伸缩性：云计算允许根据需求动态调整资源，使用户可以根据流量变化、或业务需求随时增加或减少计算资源。</li>
@@ -359,6 +950,12 @@
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2024/11/05/Selenium/" title="Selenium">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Selenium</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
