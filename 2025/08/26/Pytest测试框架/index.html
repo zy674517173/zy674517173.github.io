@@ -16,25 +16,25 @@
   <meta name="author" content="张同学">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Selenium学习网站原理与安装 - 白月黑羽">
+    <meta name="description" content="Test-Automation-Framework【代码随想录知识星球】项目分享-自动化测试框架 项目结构1234567891011121314151617├── base                    # 基础工具类├── common                  # 公共模块├── conf                    # 配置文件├── data">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Selenium">
-<meta property="og:url" content="https://zy674517173.github.io/2024/11/05/Selenium/index.html">
+<meta property="og:title" content="Pytest测试框架">
+<meta property="og:url" content="https://zy674517173.github.io/2025/08/26/Pytest%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6/index.html">
 <meta property="og:site_name" content="Hello-ZY">
-<meta property="og:description" content="Selenium学习网站原理与安装 - 白月黑羽">
+<meta property="og:description" content="Test-Automation-Framework【代码随想录知识星球】项目分享-自动化测试框架 项目结构1234567891011121314151617├── base                    # 基础工具类├── common                  # 公共模块├── conf                    # 配置文件├── data">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-11-05T14:28:33.000Z">
-<meta property="article:modified_time" content="2024-11-05T14:45:07.401Z">
+<meta property="article:published_time" content="2025-08-26T15:45:24.000Z">
+<meta property="article:modified_time" content="2025-08-31T13:59:14.000Z">
 <meta property="article:author" content="张同学">
+<meta property="article:tag" content="项目">
 <meta property="article:tag" content="测试">
-<meta property="article:tag" content="工具">
 <meta name="twitter:card" content="summary_large_image">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Selenium - Hello-ZY</title>
+  <title>Pytest测试框架 - Hello-ZY</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -200,7 +200,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Selenium"></span>
+            <span id="subtitle" data-typed-text="Pytest测试框架"></span>
           
         </div>
 
@@ -211,8 +211,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-11-05 22:28" pubdate>
-          2024年11月5日 晚上
+        <time datetime="2025-08-26 23:45" pubdate>
+          2025年8月26日 晚上
         </time>
       </span>
     
@@ -223,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          14 字
+          113 字
         
       </span>
     
@@ -279,12 +279,14 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Selenium</h1>
+            <h1 id="seo-header">Pytest测试框架</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="Selenium"><a href="#Selenium" class="headerlink" title="Selenium"></a>Selenium</h1><h2 id="学习网站"><a href="#学习网站" class="headerlink" title="学习网站"></a>学习网站</h2><p><a target="_blank" rel="noopener" href="https://www.byhy.net/auto/selenium/01/">原理与安装 - 白月黑羽</a></p>
+                <h1 id="Test-Automation-Framework"><a href="#Test-Automation-Framework" class="headerlink" title="Test-Automation-Framework"></a>Test-Automation-Framework</h1><p>【代码随想录知识星球】项目分享-自动化测试框架</p>
+<h2 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h2><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs tex"><br>├── base                    <span class="hljs-params">#</span> 基础工具类<br>├── common                  <span class="hljs-params">#</span> 公共模块<br>├── conf                    <span class="hljs-params">#</span> 配置文件<br>├── data                    <span class="hljs-params">#</span> 测试数据<br>├── logs                    <span class="hljs-params">#</span> 日志文件<br>├── report                  <span class="hljs-params">#</span> 测试报告<br>│   ├── allureReport       <span class="hljs-params">#</span> Allure报告<br>│   ├── temp               <span class="hljs-params">#</span> 临时文件<br>│   └── tmreport           <br>├── testcase               <span class="hljs-params">#</span> 测试用例<br>│   ├── Business interface <span class="hljs-params">#</span> 业务流程测试<br>│   ├── ProductManager     <span class="hljs-params">#</span> 商品管理测试<br>│   └── Single interface   <span class="hljs-params">#</span> 单接口测试<br>├── conftest.py            <span class="hljs-params">#</span> pytest配置文件<br>├── environment.xml        <span class="hljs-params">#</span> 环境配置<br>└── run.py                 <span class="hljs-params">#</span> 启动入口<br></code></pre></td></tr></table></figure>
+
 
                 
               </div>
@@ -297,9 +299,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E6%B5%8B%E8%AF%95/" class="print-no-link">#测试</a>
+        <a href="/tags/%E9%A1%B9%E7%9B%AE/" class="print-no-link">#项目</a>
       
-        <a href="/tags/%E5%B7%A5%E5%85%B7/" class="print-no-link">#工具</a>
+        <a href="/tags/%E6%B5%8B%E8%AF%95/" class="print-no-link">#测试</a>
       
     </div>
   
@@ -311,8 +313,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Selenium</div>
-      <div>https://zy674517173.github.io/2024/11/05/Selenium/</div>
+      <div>Pytest测试框架</div>
+      <div>https://zy674517173.github.io/2025/08/26/Pytest测试框架/</div>
     </div>
     <div class="license-meta">
       
@@ -324,7 +326,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年11月5日</div>
+          <div>2025年8月26日</div>
         </div>
       
       
@@ -356,18 +358,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/08/26/Pytest%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6/" title="Pytest测试框架">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Pytest测试框架</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/10/24/%E4%BA%91%E8%AE%A1%E7%AE%97%E5%9F%BA%E7%A1%80/" title="云计算基础.md">
-                        <span class="hidden-mobile">云计算基础.md</span>
+                      <a href="/2024/11/05/Selenium/" title="Selenium">
+                        <span class="hidden-mobile">Selenium</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
